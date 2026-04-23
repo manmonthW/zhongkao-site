@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>铁岭九年级历史二模试卷深度分析</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+  :root {
+    --bg: #f5f1e8; --text: #1a1815; --accent: #8b2e2e; --accent-light: #c44d4d;
+    --border: #d4cfc4; --card-bg: #faf8f3; --tag-bg: #e8e2d6;
+    --success: #2e6b3e; --warning: #b8860b; --info: #2e4a8b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Serif SC', serif; background: var(--bg); color: var(--text); line-height: 1.8; font-size: 16px; }
+  .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+  .cover { text-align: center; padding: 60px 40px; border-bottom: 3px double var(--accent); margin-bottom: 50px; }
+  .cover h1 { font-size: 2.2em; font-weight: 900; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 12px; }
+  .cover .subtitle { font-size: 1.1em; color: #666; margin-bottom: 6px; }
+  .cover .meta { font-size: 0.9em; color: #999; margin-top: 20px; }
+  .toc { background: var(--card-bg); border: 1px solid var(--border); padding: 24px 36px; margin-bottom: 40px; }
+  .toc h2 { font-size: 1.2em; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 12px; }
+  .toc ol { padding-left: 20px; } .toc li { margin-bottom: 4px; }
+  .toc a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--border); }
+  .toc a:hover { color: var(--accent); }
+  h2.section-title { font-size: 1.5em; color: var(--accent); border-left: 5px solid var(--accent); padding-left: 14px; margin: 45px 0 20px; }
+  h3 { font-size: 1.15em; color: var(--text); margin: 26px 0 12px; padding-bottom: 5px; border-bottom: 1px solid var(--border); }
+  h4 { font-size: 1em; color: var(--accent); margin: 16px 0 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 0.9em; }
+  th { background: var(--accent); color: #fff; padding: 8px 10px; text-align: left; font-weight: 600; }
+  td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) { background: var(--card-bg); }
+  .bar-chart { margin: 14px 0 20px; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 6px; }
+  .bar-label { width: 130px; font-size: 0.88em; text-align: right; padding-right: 10px; flex-shrink: 0; }
+  .bar-track { flex: 1; background: var(--tag-bg); height: 22px; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; display: flex; align-items: center; padding-left: 8px; font-size: 0.78em; color: #fff; font-weight: 600; min-width: 28px; }
+  .bar-fill.c1 { background: var(--accent); } .bar-fill.c2 { background: var(--info); }
+  .bar-fill.c3 { background: var(--success); } .bar-fill.c4 { background: var(--warning); }
+  .card { background: var(--card-bg); border: 1px solid var(--border); padding: 16px 20px; margin: 14px 0; border-left: 4px solid var(--accent); }
+  .card.info { border-left-color: var(--info); } .card.success { border-left-color: var(--success); }
+  .card.warning { border-left-color: var(--warning); }
+  .card-title { font-weight: 700; color: var(--accent); margin-bottom: 6px; font-size: 1.02em; }
+  .card.info .card-title { color: var(--info); } .card.success .card-title { color: var(--success); }
+  .card.warning .card-title { color: var(--warning); }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 0.78em; margin: 2px 3px 2px 0; }
+  .tag.red { background: #f5d5d5; color: var(--accent); } .tag.blue { background: #d5dff5; color: var(--info); }
+  .tag.green { background: #d5f5df; color: var(--success); } .tag.orange { background: #f5eed5; color: var(--warning); }
+  .tag.purple { background: #e8d5f5; color: #6b2e8b; }
+  ul, ol { padding-left: 22px; margin: 6px 0; } li { margin-bottom: 3px; }
+  p { margin: 8px 0; } strong { color: var(--accent); }
+  .highlight { background: #fff3cd; padding: 1px 5px; border-radius: 2px; }
+  .priority-high { color: var(--accent); font-weight: 700; }
+  .priority-mid { color: var(--warning); font-weight: 600; }
+  .footnote { font-size: 0.85em; color: #888; border-top: 1px solid var(--border); padding-top: 16px; margin-top: 50px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  @media (max-width: 700px) { .cover h1 { font-size: 1.5em; } .two-col { grid-template-columns: 1fr; } .bar-label { width: 100px; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 封面 -->
+<div class="cover">
+  <h1>铁岭九年级历史二模试卷<br>深度分析报告</h1>
+  <div class="subtitle">2026年4月 · 历史模拟练习（二）</div>
+  <div class="subtitle" style="font-size:0.95em; color:#999;">骨架图 · 题型谱 · 考点标签 · 命题DNA · 作战地图</div>
+  <div class="meta">分析日期：2026年4月22日</div>
+</div>
+
+<!-- 目录 -->
+<div class="toc">
+  <h2>目 录</h2>
+  <ol>
+    <li><a href="#ch1">维度一 · 骨架图（结构解剖）</a></li>
+    <li><a href="#ch2">维度二 · 题型谱（逐题档案）</a></li>
+    <li><a href="#ch3">维度三 · 考点标签（知识定位）</a></li>
+    <li><a href="#ch4">维度四 · 命题DNA（命题解码）</a></li>
+    <li><a href="#ch5">维度五 · 作战地图（行动转化）</a></li>
+  </ol>
+</div>
+
+<!-- ==================== 维度一 ==================== -->
+<h2 class="section-title" id="ch1">维度一 · 骨架图（结构解剖）</h2>
+<p>这份卷子是给铁岭市九年级学生、在约65分钟内、通过70分值考出历史学科基本素养水平的。</p>
+
+<h3>基本参数</h3>
+<table>
+  <tr><th>参数</th><th>本卷</th><th>辽宁省卷对标</th></tr>
+  <tr><td>总分</td><td>70 分</td><td>70 分 ✓ 一致</td></tr>
+  <tr><td>总题量</td><td>19 题</td><td>19 题 ✓ 一致</td></tr>
+  <tr><td>考试形式</td><td>闭卷笔试，与道法合卷</td><td>闭卷笔试，与道法合卷 ✓</td></tr>
+  <tr><td>合卷时长</td><td>150 分钟</td><td>150 分钟 ✓</td></tr>
+  <tr><td>命题级别</td><td>地市级模拟卷（铁岭）</td><td>省级统考卷</td></tr>
+</table>
+
+<h3>结构分布</h3>
+<table>
+  <tr><th>部分</th><th>题型</th><th>题号</th><th>题量</th><th>分值</th><th>占比</th><th>建议用时</th></tr>
+  <tr><td>第一部分</td><td>单项选择题</td><td>1-15</td><td>15题</td><td>30分（每题2分）</td><td>42.9%</td><td>15-18分钟</td></tr>
+  <tr><td rowspan="4">第二部分</td><td rowspan="4">综合题</td><td>16</td><td>5小问</td><td>11分</td><td>15.7%</td><td>10-12分钟</td></tr>
+  <tr><td>17</td><td>4小问</td><td>8分</td><td>11.4%</td><td>8-10分钟</td></tr>
+  <tr><td>18</td><td>5小问</td><td>9分</td><td>12.9%</td><td>10-12分钟</td></tr>
+  <tr><td>19</td><td>3小问</td><td>12分</td><td>17.1%</td><td>15-18分钟</td></tr>
+  <tr><td colspan="3"><strong>合计</strong></td><td><strong>19题</strong></td><td><strong>70分</strong></td><td><strong>100%</strong></td><td><strong>~65分钟</strong></td></tr>
+</table>
+
+<h3>客观题 vs 主观题比例</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">选择题（客观）</div>
+    <div class="bar-track"><div class="bar-fill c2" style="width:42.9%">30分 / 42.9%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">综合题（主观）</div>
+    <div class="bar-track"><div class="bar-fill c1" style="width:57.1%">40分 / 57.1%</div></div>
+  </div>
+</div>
+
+<h3>能力层级分布（布鲁姆认知分类估算）</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">识记（~22%）</div>
+    <div class="bar-track"><div class="bar-fill c3" style="width:22%">~15分</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">理解（~33%）</div>
+    <div class="bar-track"><div class="bar-fill c2" style="width:33%">~23分</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">分析综合（~28%）</div>
+    <div class="bar-track"><div class="bar-fill c1" style="width:28%">~20分</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">评价创造（~17%）</div>
+    <div class="bar-track"><div class="bar-fill c4" style="width:17%">~12分</div></div>
+  </div>
+</div>
+<div class="card info">
+  <div class="card-title">骨架图解读</div>
+  <p>本卷与辽宁省卷结构<strong>完全对齐</strong>（19题70分），仿真度非常高。能力层级分布中，<strong>理解+分析综合</strong>合计约61%，是得分核心区。纯识记仅占22%——说明单靠背诵无法拿高分。第19题独占12分（含6分论述题），是全卷最大分值题，也是区分度最高的"天花板题"。</p>
+</div>
+
+<!-- ==================== 维度二 ==================== -->
+<h2 class="section-title" id="ch2">维度二 · 题型谱（逐题档案）</h2>
+
+<table>
+  <tr><th>题号</th><th>题型</th><th>简要内容</th><th>分值</th><th>答案</th><th>标记</th></tr>
+  <tr><td>1</td><td>选择</td><td>盐铁官营→中央集权加强（春秋→秦→西汉）</td><td>2</td><td>D</td><td><span class="tag blue">分析</span></td></tr>
+  <tr><td>2</td><td>选择</td><td>匈奴/鲜卑政权沿用中原国号→民族交融文化认同</td><td>2</td><td>C</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>3</td><td>选择</td><td>宋诗描写草市→商业突破时空限制</td><td>2</td><td>D</td><td><span class="tag blue">分析</span></td></tr>
+  <tr><td>4</td><td>选择</td><td>朝代政治谱系一脉相承→中华文明连续性</td><td>2</td><td>D</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>5</td><td>选择</td><td>历史漫画→列强瓜分中国狂潮</td><td>2</td><td>A</td><td><span class="tag orange">图片题</span></td></tr>
+  <tr><td>6</td><td>选择</td><td>图示法梳理历史事件联系→太平天国《天朝田亩制度》</td><td>2</td><td>A</td><td><span class="tag orange">图示题</span></td></tr>
+  <tr><td>7</td><td>选择</td><td>总理各国事务衙门→适应洋务运动需要</td><td>2</td><td>B</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>8</td><td>选择</td><td>1895年前后外资在华设厂数据→《马关条约》开设工厂权利</td><td>2</td><td>D</td><td><span class="tag orange">数据表格</span></td></tr>
+  <tr><td>9</td><td>选择</td><td>五四运动→新革命力量（工人阶级）和新民主主义革命</td><td>2</td><td>C</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>10</td><td>选择</td><td>上海一大会址、南湖红船→开天辟地焕然一新（中共成立）</td><td>2</td><td>D</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>11</td><td>选择</td><td>中非合作论坛、一带一路→加强同发展中国家团结合作</td><td>2</td><td>D</td><td><span class="tag green">时政</span></td></tr>
+  <tr><td>12</td><td>选择</td><td>古巴比伦借贷机构→商品经济活跃</td><td>2</td><td>C</td><td><span class="tag blue">理解</span></td></tr>
+  <tr><td>13</td><td>选择</td><td>20世纪初俄国人民需求→十月革命爆发背景</td><td>2</td><td>B</td><td><span class="tag blue">分析</span></td></tr>
+  <tr><td>14</td><td>选择</td><td>凡尔赛-华盛顿体系评价→未解决战胜国间矛盾</td><td>2</td><td>A</td><td><span class="tag blue">分析</span></td></tr>
+  <tr><td>15</td><td>选择</td><td>微塑料污染遍布全球→人类生产消费的全球影响</td><td>2</td><td>D</td><td><span class="tag green">现实联系</span></td></tr>
+  <tr><td>16</td><td>综合</td><td>中华传统文化专题（儒家思想、四大发明、唐诗、传承）</td><td>11</td><td>—</td><td><span class="tag red">主题探究</span></td></tr>
+  <tr><td>17</td><td>综合</td><td>近代不平等条约图片解读（南京→北京→马关→辛丑）</td><td>8</td><td>—</td><td><span class="tag red">图片材料</span></td></tr>
+  <tr><td>18</td><td>综合</td><td>近代化探索（器物→制度→思想：洋务→戊戌→辛亥→新文化）</td><td>9</td><td>—</td><td><span class="tag red">主线串联</span></td></tr>
+  <tr><td>19</td><td>综合</td><td>人类群星闪耀（典籍分类+人物评价+开放论述"交流互鉴"）</td><td>12</td><td>—</td><td><span class="tag purple">开放论述</span></td></tr>
+</table>
+
+<div class="card warning">
+  <div class="card-title">题型谱关键发现</div>
+  <ul>
+    <li><strong>情境化命题贯穿全卷</strong>：漫画题（第5题）、图示法（第6题）、数据表格（第8题）、图片材料（第17题）——多种信息载体交替出现</li>
+    <li><strong>第19题(3)为开放性论述题（6分）</strong>，要求"观点+两个史实论证+总结"，采用分层评分标准（水平1-4级），这是全卷最有区分度的题</li>
+    <li>选择题1-4考中国古代史、5-10考中国近现代史、11考中国当代外交、12-15考世界史——<strong>时序排列清晰</strong></li>
+  </ul>
+</div>
+
+<!-- ==================== 维度三 ==================== -->
+<h2 class="section-title" id="ch3">维度三 · 考点标签（知识定位）</h2>
+
+<h3>模块一：中国古代史（题1-4 + 题16）</h3>
+<table>
+  <tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位</th></tr>
+  <tr><td>1</td><td>盐铁官营制度、中央集权</td><td>分析综合</td><td>七上·第三单元（秦汉）</td></tr>
+  <tr><td>2</td><td>民族交融、文化认同</td><td>理解</td><td>七上·第四单元（魏晋南北朝）</td></tr>
+  <tr><td>3</td><td>宋代商业繁荣（草市）</td><td>分析</td><td>七下·第二单元（宋元）</td></tr>
+  <tr><td>4</td><td>中华文明连续性</td><td>理解·概括</td><td>跨单元综合</td></tr>
+  <tr><td>16(1)</td><td>儒家思想、《论语》</td><td>识记</td><td>七上·第二单元（春秋战国）</td></tr>
+  <tr><td>16(2)</td><td>蔡伦/毕昇（造纸术/印刷术）</td><td>识记</td><td>七上·七下</td></tr>
+  <tr><td>16(3)</td><td>指南针、火药对世界的影响</td><td>理解·评价</td><td>七下·第二单元</td></tr>
+  <tr><td>16(4)</td><td>唐诗代表人物（李白等）</td><td>识记</td><td>七下·第一单元（隋唐）</td></tr>
+</table>
+<div class="card">
+  <div class="card-title">模块评估：中国古代史</div>
+  <p>涉及 <strong>4道选择（8分）+ 综合题16大部分（~9分）= 约17分</strong>，占全卷 <strong>24.3%</strong>。<br>
+  <strong>性质判断：</strong>选择题以分析理解为主（非死记硬背），综合题16以识记+理解为主（难度偏低）。<br>
+  <strong>性价比评估：★★★★</strong> 综合题16是最容易拿分的大题，基础好的学生应力争满分。</p>
+</div>
+
+<h3>模块二：中国近现代史（题5-10 + 题17 + 题18）</h3>
+<table>
+  <tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位</th></tr>
+  <tr><td>5</td><td>列强侵略（漫画：瓜分狂潮/联军劫掠）</td><td>图片解读</td><td>八上·第一/二单元</td></tr>
+  <tr><td>6</td><td>太平天国运动·《天朝田亩制度》</td><td>知识匹配</td><td>八上·第一单元</td></tr>
+  <tr><td>7</td><td>总理衙门·洋务运动</td><td>理解</td><td>八上·第二单元</td></tr>
+  <tr><td>8</td><td>《马关条约》·开设工厂权利</td><td>数据分析</td><td>八上·第二单元</td></tr>
+  <tr><td>9</td><td>五四运动·工人阶级·新民主主义革命</td><td>理解</td><td>八上·第四单元</td></tr>
+  <tr><td>10</td><td>中共一大·开天辟地</td><td>理解</td><td>八上·第四单元</td></tr>
+  <tr><td>11</td><td>新中国外交（发展中国家合作）</td><td>理解·概括</td><td>八下·第五单元</td></tr>
+  <tr><td>17(1-4)</td><td>四大不平等条约：南京→北京→马关→辛丑</td><td>识记+理解</td><td>八上·第一/二/三单元</td></tr>
+  <tr><td>18(1-5)</td><td>近代化探索：洋务→戊戌→辛亥→新文化</td><td>理解+分析+概括</td><td>八上·第二/三/四单元</td></tr>
+</table>
+<div class="card">
+  <div class="card-title">模块评估：中国近现代史</div>
+  <p>涉及 <strong>7道选择（14分）+ 综合题17（8分）+ 综合题18（9分）= 约31分</strong>，占全卷 <strong>44.3%</strong>。<br>
+  <strong>性质判断：</strong>这是全卷<span class="highlight">分值最重的板块</span>，且两道综合题均聚焦此板块。<br>
+  <strong>性价比评估：★★★★★</strong> 近代史是"投入产出比"最高的复习板块——掌握四大条约+四步近代化探索，可直接拿下17分综合题分。</p>
+</div>
+
+<h3>模块三：世界史（题12-15 + 题19部分）</h3>
+<table>
+  <tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位</th></tr>
+  <tr><td>12</td><td>古巴比伦·商品经济</td><td>理解</td><td>九上·第一单元</td></tr>
+  <tr><td>13</td><td>十月革命背景</td><td>分析</td><td>九下·第一单元</td></tr>
+  <tr><td>14</td><td>凡尔赛-华盛顿体系·内在矛盾</td><td>分析·评价</td><td>九下·第二单元</td></tr>
+  <tr><td>15</td><td>微塑料污染·全球影响</td><td>分析·现实联系</td><td>九下·第五单元</td></tr>
+  <tr><td>19(1)</td><td>典籍分类（汉谟拉比法典、几何原本等）</td><td>识记·分类</td><td>九上+九下</td></tr>
+  <tr><td>19(2)</td><td>祖冲之或牛顿成就评价</td><td>识记·表述</td><td>七上/九上</td></tr>
+  <tr><td>19(3)</td><td>开放论述：交流互鉴推动文明进步</td><td>评价·创造</td><td>跨模块综合</td></tr>
+</table>
+<div class="card">
+  <div class="card-title">模块评估：世界史</div>
+  <p>涉及 <strong>4道选择（8分）+ 综合题19大部分（~12分，含中国史交叉）= 约20分</strong>，占全卷 <strong>约28.6%</strong>。<br>
+  <strong>性质判断：</strong>选择题以分析为主，综合题19的开放论述（6分）是全卷最难的题。<br>
+  <strong>性价比评估：★★★</strong> 第19(3)论述题需要较高的综合能力，但掌握答题模板后有章可循。</p>
+</div>
+
+<h3>内容板块分值占比</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">中国近现代史</div>
+    <div class="bar-track"><div class="bar-fill c2" style="width:44.3%">~31分 / 44.3%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">世界史</div>
+    <div class="bar-track"><div class="bar-fill c3" style="width:28.6%">~20分 / 28.6%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">中国古代史</div>
+    <div class="bar-track"><div class="bar-fill c1" style="width:24.3%">~17分 / 24.3%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">跨模块综合</div>
+    <div class="bar-track"><div class="bar-fill c4" style="width:2.8%">~2分</div></div>
+  </div>
+</div>
+
+<!-- ==================== 维度四 ==================== -->
+<h2 class="section-title" id="ch4">维度四 · 命题DNA（命题解码）</h2>
+
+<div class="card">
+  <div class="card-title">观察一 · 史料情境化：每道选择题都"有来头"</div>
+  <p><strong>具体表现：</strong>15道选择题中，至少10道以上使用了文献摘录、漫画图片、数据表格、诗歌材料等作为情境载体。没有一道是"裸考"式直接问"XX是什么"。</p>
+  <p><strong>例证：</strong>第1题引用管仲"管山海"史料；第3题引用宋诗；第8题给出外资在华设厂数据表；第13题引用历史文献段落；第14题引用学者评价。</p>
+  <p><strong>含义 →</strong> 不能只背知识点，必须训练"读材料→提取关键信息→对接所学知识"的能力。</p>
+</div>
+
+<div class="card info">
+  <div class="card-title">观察二 · 中国近代史"双题重压"：两道大题锁定八上教材</div>
+  <p><strong>具体表现：</strong>综合题17（不平等条约线）和综合题18（近代化探索线）双双聚焦中国近代史，合计17分。加上选择题5-10的12分，<strong>中国近现代史在全卷占比高达44.3%</strong>。</p>
+  <p><strong>例证：</strong>第17题沿"南京条约→北京条约→马关条约→辛丑条约"这条侵略线逐步展开；第18题沿"洋务运动→戊戌变法→辛亥革命→新文化运动"这条探索线层层深入。</p>
+  <p><strong>含义 →</strong> 八年级上册是本卷的"绝对重镇"。复习时<strong>至少投入40%精力</strong>在此板块。</p>
+</div>
+
+<div class="card success">
+  <div class="card-title">观察三 · "双线并行"命题法：侵略线+探索线同时考</div>
+  <p><strong>具体表现：</strong>第17题考"列强侵略→条约屈辱→半殖民地化加深"这条被动线；第18题考"器物→制度→思想"这条主动线。两条线并行展开，完整覆盖中国近代史核心框架。</p>
+  <p><strong>含义 →</strong> 复习中国近代史时，<strong>侵略与探索这两条主线必须同时掌握</strong>，缺一不可。</p>
+</div>
+
+<div class="card warning">
+  <div class="card-title">观察四 · 开放论述题成"标配"，6分权重不低</div>
+  <p><strong>具体表现：</strong>第19(3)要求以"交流互鉴推动文明进步"为观点，从丝绸之路、鉴真东渡、阿拉伯人文化传播、新航路开辟中选两项论证，6分采用<strong>四级水平分层评分</strong>。</p>
+  <p><strong>评分标准：</strong>必须有"观点+论述+总结"三部分，缺观点或总结扣1分；选两个史实且论证充分得6分，只选一个或论证不充分降级处理。</p>
+  <p><strong>含义 →</strong> 这道题不能靠背——需要训练"观点表达→史实选择→分析论证→总结回扣"的完整思维链。建议专项练习此类题，形成固定答题模板。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">观察五 · 文化自信与价值观导向鲜明</div>
+  <p><strong>具体表现：</strong>第16题以"凝聚民族力量，赓续华夏血脉"为主题，考查儒家思想、四大发明、唐诗，最后设问"如何保护和传承优秀传统文化"；第4题考"中华文明连续性"；第2题考"民族交融文化认同"。</p>
+  <p><strong>含义 →</strong> 命题充分体现了新课标"文化自信""家国情怀"导向。作答时需注意使用积极正面的表述，体现对中华文化的认同。</p>
+</div>
+
+<div class="card info">
+  <div class="card-title">观察六 · 现实关联题出现，打通"历史-当下"</div>
+  <p><strong>具体表现：</strong>第11题考查新时代中国外交（中非合作论坛、一带一路）；第15题用微塑料污染切入全球化议题；第16(5)要求学生以"新时代中学生"身份谈传承文化。</p>
+  <p><strong>含义 →</strong> 要关注历史与现实的联系，特别是当前热点（一带一路、人类命运共同体、生态文明等）。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">观察七 · 综合题分值分布呈"金字塔"结构</div>
+  <p><strong>具体表现：</strong>4道综合题分值为 11 → 8 → 9 → 12，第19题（12分）权重最大。而在第19题内部，论述题独占6分（全卷8.6%），是单一设问的最高分值。</p>
+  <p><strong>含义 →</strong> 时间分配上，第19题应预留15-18分钟，不要在简单题上浪费时间。</p>
+</div>
+
+<!-- ==================== 维度五 ==================== -->
+<h2 class="section-title" id="ch5">维度五 · 作战地图（行动转化）</h2>
+
+<div class="card">
+  <div class="card-title">🎯 优先级 1：近代史"双线"突破（目标分值：~31分）</div>
+  <h4>针对：选择题5-10 + 综合题17 + 综合题18</h4>
+  <p><strong>训练方法：</strong></p>
+  <ul>
+    <li>制作<strong>"侵略线"专题卡</strong>：鸦片战争→第二次鸦片战争→甲午战争→八国联军侵华，每场战争记住"起因→条约→影响"三要素</li>
+    <li>制作<strong>"探索线"专题卡</strong>：洋务运动（学器物）→戊戌变法（学制度）→辛亥革命（学制度）→新文化运动（学思想），每步记住"代表人物→核心主张→历史意义"</li>
+    <li>对比练习：将两条线<strong>横向对照</strong>——每一次侵略挫败如何推动下一步探索</li>
+  </ul>
+  <p><strong>本周任务：</strong>每天花20分钟，用"填空+默写"方式过一遍八上教材第1-4单元核心知识。</p>
+</div>
+
+<div class="card warning">
+  <div class="card-title">⚡ 优先级 2：开放论述题模板训练（目标分值：6分）</div>
+  <h4>针对：第19(3)类型题</h4>
+  <p><strong>训练方法：</strong></p>
+  <p>固定答题模板（三段式）：</p>
+  <ol>
+    <li><strong>开头亮观点：</strong>"我认为[观点]。"</li>
+    <li><strong>中间论证（×2）：</strong>"[史实一]……[展开论证，说明如何体现观点]。""[史实二]……[展开论证]。"</li>
+    <li><strong>结尾回扣：</strong>"综上所述，[重申观点]。"</li>
+  </ol>
+  <p><strong>关键技巧：</strong></p>
+  <ul>
+    <li>每个史实论证要有<strong>具体内容</strong>（时间、人物、事件、影响），不能只写名称</li>
+    <li>两个史实最好<strong>一中一外</strong>或<strong>一古一今</strong>，体现全面性</li>
+    <li>论述与观点之间必须有<strong>逻辑联系</strong>，不能"说了等于没说"</li>
+  </ul>
+  <p><strong>本周任务：</strong>用"交流互鉴""科技推动社会进步""制度创新促进发展"三个观点各写一篇练习。</p>
+</div>
+
+<div class="card success">
+  <div class="card-title">📌 优先级 3：中国古代史基础拿分（目标分值：~17分）</div>
+  <h4>针对：选择题1-4 + 综合题16</h4>
+  <p><strong>训练方法：</strong></p>
+  <ul>
+    <li>重点背诵：儒家/道家/法家代表人物和核心思想、四大发明及其世界影响、唐宋文化成就</li>
+    <li>理解：中央集权演变（分封制→郡县制→推恩令→行省制）、民族交融（北魏孝文帝改革）、商业发展（宋代草市/夜市）</li>
+    <li>综合题16属于<strong>送分型大题</strong>——知识点明确，设问直接。必须力争满分</li>
+  </ul>
+</div>
+
+<div class="card info">
+  <div class="card-title">📋 优先级 4：世界史选择题稳固（目标分值：~8分）</div>
+  <h4>针对：选择题12-15</h4>
+  <p><strong>训练方法：</strong></p>
+  <ul>
+    <li>重点掌握：古代文明特征（古巴比伦/古希腊）、十月革命背景与影响、凡尔赛-华盛顿体系、全球化议题</li>
+    <li>选择题排除法技巧：先判断时代→再锁定地区→最后看关键词</li>
+  </ul>
+</div>
+
+<h3>针对本卷的易错预警</h3>
+<table>
+  <tr><th>题号</th><th>易错点</th><th>正确思路</th></tr>
+  <tr><td>5</td><td>容易混淆英法联军烧圆明园 vs 列强瓜分 vs 八国联军</td><td>看漫画细节，"瓜分"是刀叉切蛋糕形象</td></tr>
+  <tr><td>6</td><td>《天朝田亩制度》和《资政新篇》容易搞混</td><td>《天朝田亩制度》=太平天国=分田方案；《资政新篇》=洪仁玕=改革方案</td></tr>
+  <tr><td>8</td><td>容易选成A或C（实业救国/放宽限制），因为都与民族资本主义有关</td><td>注意看的是"外资"设厂数据，不是中国民族资本→《马关条约》允许外国在通商口岸开设工厂</td></tr>
+  <tr><td>14</td><td>容易选B（经济大危机），因为时间接近</td><td>题目问"该体系"本身的问题→没有解决帝国主义国家之间的根本矛盾</td></tr>
+  <tr><td>19(1)</td><td>典籍归类容易出错</td><td>排序2341意味着要精确判断每本典籍的学科属性</td></tr>
+</table>
+
+<h3>全卷目标分数规划</h3>
+<table>
+  <tr><th>板块</th><th>题号</th><th>满分</th><th>保底目标</th><th>冲刺目标</th></tr>
+  <tr><td>选择题</td><td>1-15</td><td>30分</td><td>24分（错3题）</td><td>28分（错1题）</td></tr>
+  <tr><td>综合题16</td><td>16</td><td>11分</td><td>9分</td><td>11分</td></tr>
+  <tr><td>综合题17</td><td>17</td><td>8分</td><td>6分</td><td>8分</td></tr>
+  <tr><td>综合题18</td><td>18</td><td>9分</td><td>7分</td><td>9分</td></tr>
+  <tr><td>综合题19</td><td>19</td><td>12分</td><td>8分</td><td>11分</td></tr>
+  <tr><td colspan="2"><strong>合计</strong></td><td><strong>70分</strong></td><td><strong>54分（77%）</strong></td><td><strong>67分（96%）</strong></td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">下一步建议</div>
+  <ul>
+    <li>是否需要我<strong>逐题讲解</strong>每道选择题的解题思路和干扰项分析？</li>
+    <li>是否需要针对<strong>开放论述题</strong>生成3-5道变式训练题？</li>
+    <li>后续拿到更多模拟卷后，可以做<strong>跨卷对比分析</strong>，找出各地命题的共同趋势</li>
+    <li>是否需要针对<strong>近代史"双线"</strong>生成一份专题复习资料？</li>
+  </ul>
+</div>
+
+<div class="footnote">
+  <p><strong>试卷来源：</strong>铁岭市2026年4月九年级历史模拟练习（二）<br>
+  <strong>分析方法：</strong>基于试卷原题+参考答案的五维解析法<br>
+  <strong>生成日期：</strong>2026年4月22日</p>
+</div>
+
+</div>
+</body>
+</html>

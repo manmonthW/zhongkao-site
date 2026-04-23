@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>和平一模历史试卷深度分析</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --primary: #8b2e2e;
+      --text: #1a1815;
+      --muted: #6b6257;
+      --card: #fbf8f1;
+      --line: #d9cfbf;
+      --good: #2f6b3b;
+      --warn: #9b6b00;
+      --bad: #8b2e2e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 12%, rgba(139, 46, 46, 0.08), transparent 28%),
+        radial-gradient(circle at 82% 90%, rgba(139, 46, 46, 0.06), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 28px auto 48px;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(139, 46, 46, 0.08), rgba(245, 241, 232, 0.9));
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--primary);
+      border-radius: 14px;
+      padding: 24px 26px;
+      box-shadow: 0 8px 24px rgba(26, 24, 21, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    nav {
+      margin: 18px 0 26px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    nav h2 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--primary);
+    }
+
+    .toc {
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .toc li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(139, 46, 46, 0.35);
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      background: rgba(251, 248, 241, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-top: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 6px 20px rgba(26, 24, 21, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.28rem;
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 46, 46, 0.2);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 1.06rem;
+      color: #5f1f1f;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 12px;
+    }
+
+    .kpi-title {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .kpi-value {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.94rem;
+      background: #fffef9;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f2ead9;
+      color: #4e2f2f;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .module-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      background: #fffdf7;
+      padding: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: #51493f;
+      background: #f8f3e8;
+    }
+
+    .level-high {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .level-mid {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .level-good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .toc {
+        columns: 1;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>和平一模历史试卷深度分析</h1>
+      <p class="subtitle">九年级历史 | 2026年4月 | 五维模型：结构-考点-能力-命题-提分</p>
+      <div class="meta">
+        <span class="chip">总题量：19题</span>
+        <span class="chip">总分：70分</span>
+        <span class="chip">材料题分布：Q16=10，Q17=9，Q18=9，Q19=12</span>
+        <span class="chip">论述题：Q19(4) 6分，二选一</span>
+      </div>
+    </header>
+
+    <nav>
+      <h2>目录</h2>
+      <ol class="toc">
+        <li><a href="#d1">维度一：试卷结构与分值画像</a></li>
+        <li><a href="#d2">维度二：核心内容与主线逻辑</a></li>
+        <li><a href="#d3">维度三：逐题映射与模块评估</a></li>
+        <li><a href="#d4">维度四：命题DNA与趋势研判</a></li>
+        <li><a href="#d5">维度五：提分优先级与落地方案</a></li>
+      </ol>
+    </nav>
+
+    <section id="d1">
+      <h2>维度一：试卷结构与分值画像</h2>
+      <p>本卷遵循“基础覆盖 + 主线整合 +现实关照”的中考命题框架：选择题横向扫面时空点位，综合题纵向检验主题建构与史料解释，论述题检验价值判断与历史表述。</p>
+      <div class="kpi">
+        <div class="kpi-card">
+          <div class="kpi-title">选择题（推定）</div>
+          <div class="kpi-value">30分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">综合题（Q16-19）</div>
+          <div class="kpi-value">40分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">中国史占比</div>
+          <div class="kpi-value">约70%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">世界史占比</div>
+          <div class="kpi-value">约30%</div>
+        </div>
+      </div>
+
+      <h3>结构特征</h3>
+      <ul>
+        <li>时序跨度完整：上古社会演进到当代中国科技与改革开放，覆盖古今中外关键节点。</li>
+        <li>主题线索清晰：中央集权、民族独立、改革创新、制度演进、信仰与精神等主线反复出现。</li>
+        <li>能力梯度明确：由识记辨析到材料整合，再到跨时空论证与价值表达，阶梯上升。</li>
+      </ul>
+    </section>
+
+    <section id="d2">
+      <h2>维度二：核心内容与主线逻辑</h2>
+      <h3>选择题考点要点聚焦</h3>
+      <p>试题覆盖了从“原始社会向奴隶社会过渡”到“现代社会保障制度”的完整知识链，体现“制度形成与社会发展”的宏观叙事。</p>
+      <div>
+        <span class="tag">原始社会→奴隶社会过渡</span>
+        <span class="tag">中央集权形成主线</span>
+        <span class="tag">唐代文物与社会风气</span>
+        <span class="tag">宋代文学巨匠</span>
+        <span class="tag">戊戌变法与新式学堂</span>
+        <span class="tag">历史解释辨析</span>
+        <span class="tag">武昌起义</span>
+        <span class="tag">1947挺进大别山</span>
+        <span class="tag">邓稼先与两弹</span>
+        <span class="tag">“中华信仰”主题</span>
+        <span class="tag">雅典民主</span>
+        <span class="tag">甘地与凯末尔</span>
+        <span class="tag">二战转折</span>
+        <span class="tag">冷战格局</span>
+        <span class="tag">社会保障制度</span>
+      </div>
+
+      <h3>综合题四大主题轴</h3>
+      <ul>
+        <li>Q16“读书行路守土”：将文化传统、科技成就、丝路交流与家国守土整合为“文明传承与国家认同”。</li>
+        <li>Q17“土安民安”：从土地制度主张到土地改革实践，再到农业产量数据，强调“制度设计与民生绩效”。</li>
+        <li>Q18“信仰力量”：中共一大、长征、两弹一星、改革开放，体现“精神引领与道路选择”的历史逻辑。</li>
+        <li>Q19“鉴往知来”：古代文明互动、工业革命、十月革命串联现代世界变迁，最终落脚现实议题论述。</li>
+      </ul>
+    </section>
+
+    <section id="d3">
+      <h2>维度三：逐题映射与模块评估</h2>
+      <h3>逐题映射表（知识维度 / 能力维度 / 教材定位）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>题号</th>
+            <th>分值</th>
+            <th>知识维度</th>
+            <th>能力维度</th>
+            <th>教材定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>选择题1-15</td>
+            <td>30</td>
+            <td>中国古代政治与文化、中国近现代革命与建设、世界古代文明、近现代国际关系</td>
+            <td>时序判断、概念辨析、史实匹配、历史解释甄别</td>
+            <td>七上至九下通史主干；古代史基础块 + 近现代转型块 + 世界史专题块</td>
+          </tr>
+          <tr>
+            <td>Q16</td>
+            <td>10</td>
+            <td>宋代重文轻武、明代医学、《本草纲目》、丝路人物（张骞/玄奘）、民族英雄（岳飞/戚继光/郑成功）</td>
+            <td>材料提取、跨朝代关联、主题归纳、价值表达</td>
+            <td>八上文化与科技、古代对外交流、中华民族精神专题</td>
+          </tr>
+          <tr>
+            <td>Q17</td>
+            <td>9</td>
+            <td>《天朝田亩制度》、同盟会纲领、解放区土改、渡江战役、农业产量数据对比</td>
+            <td>制度比较、因果解释、图表数据解读、史论结合</td>
+            <td>中国近代化探索与新民主主义革命、社会主义建设与改革章节</td>
+          </tr>
+          <tr>
+            <td>Q18</td>
+            <td>9</td>
+            <td>中共一大意义、长征事例、两弹一星、改革开放道路</td>
+            <td>主旨概括、证据链构建、历史阶段联系、政治认同表述</td>
+            <td>中国共产党百年奋斗主线（九上九下核心专题）</td>
+          </tr>
+          <tr>
+            <td>Q19(1)-(3)</td>
+            <td>6</td>
+            <td>两河流域/希腊殖民、工业革命、十月革命</td>
+            <td>跨文明比较、历史影响分析、概念迁移</td>
+            <td>世界古代文明起源与近现代社会变革专题</td>
+          </tr>
+          <tr>
+            <td>Q19(4)论述</td>
+            <td>6</td>
+            <td>主题A民族独立推动社会发展；主题B改革创新推动社会发展（二选一）</td>
+            <td>观点建构、史实论证、结构化写作、现实关联</td>
+            <td>中外近现代史纵向整合与中考论述表达专项</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>模块评估卡</h3>
+      <div class="grid-2">
+        <div class="module-card">
+          <h3>模块A：古代中国与文明根基</h3>
+          <p><strong>覆盖题位：</strong>选择题（原始社会转型、中央集权、唐风宋韵）、Q16部分。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>制度术语混淆、朝代定位不准、人物成就张冠李戴。</p>
+          <p><strong>提分抓手：</strong>“朝代-制度-人物-成就”四格卡片复盘。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块B：近代中国救亡与探索</h3>
+          <p><strong>覆盖题位：</strong>戊戌变法、武昌起义、同盟会纲领、Q17相关。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>改革目标与革命纲领边界不清，历史结论套话化。</p>
+          <p><strong>提分抓手：</strong>建立“事件背景-主张-效果-局限”四步模板。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块C：中共党史与新中国发展</h3>
+          <p><strong>覆盖题位：</strong>1947挺进大别山、两弹一星、Q18全题、Q17后半。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>长征精神泛化、两弹一星意义层次不足、改革开放论证单薄。</p>
+          <p><strong>提分抓手：</strong>每一主题至少准备“1定义+2史实+1现实意义”。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块D：世界史与现代化视角</h3>
+          <p><strong>覆盖题位：</strong>雅典民主、甘地凯末尔、二战转折、冷战、社会保障、Q19。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>世界史概念孤立记忆，缺乏与中国史的比较联系。</p>
+          <p><strong>提分抓手：</strong>按“制度-革命-国际格局-福利国家”构建专题图谱。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="d4">
+      <h2>维度四：命题DNA与趋势研判</h2>
+      <p>本卷命题逻辑呈现“主干稳、价值强、能力实、表达真”的特征，可提炼以下命题DNA：</p>
+      <ol>
+        <li><strong>DNA-1 主线统摄：</strong>以“国家发展与社会进步”为总线，散点考点围绕主线聚合。</li>
+        <li><strong>DNA-2 古今贯通：</strong>古代制度文明与近现代转型并置，强化历史连续性意识。</li>
+        <li><strong>DNA-3 中外对照：</strong>中国史与世界史双向参照，考查比较视野而非单线背诵。</li>
+        <li><strong>DNA-4 史料驱动：</strong>文字材料与数据材料并重，强调“证据支持结论”的学科表达。</li>
+        <li><strong>DNA-5 价值导向：</strong>民族独立、改革创新、信仰力量等主题凸显核心价值立意。</li>
+        <li><strong>DNA-6 能力递进：</strong>从识记辨析到论述建构，题序本身构成能力爬坡通道。</li>
+        <li><strong>DNA-7 现实关联：</strong>社会保障、科技创新、道路选择等议题与当代认知直接联结。</li>
+        <li><strong>DNA-8 论述开放：</strong>Q19(4)二选一，体现“同核多路”的开放论证命题方式。</li>
+      </ol>
+      <p><strong>趋势判断：</strong>后续训练中，单点记忆题会继续减少，“材料整合 + 主题论证 + 规范表达”类试题权重将进一步上升。</p>
+    </section>
+
+    <section id="d5">
+      <h2>维度五：提分优先级与落地方案</h2>
+      <h3>一、优先级建议（按提分效率排序）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>任务</th>
+            <th>目标</th>
+            <th>建议周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P1</td>
+            <td>Q19(4)论述专项（民族独立 / 改革创新双模板）</td>
+            <td>6分题稳定在4-5分</td>
+            <td>连续7天，每天1题</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>Q17数据+制度综合训练</td>
+            <td>9分题稳定在6-7分</td>
+            <td>5天，隔天1组材料</td>
+          </tr>
+          <tr>
+            <td>P3</td>
+            <td>Q18主题证据链训练</td>
+            <td>9分题稳定在7分+</td>
+            <td>5天，按“中共一大-长征-两弹一星-改革开放”循环</td>
+          </tr>
+          <tr>
+            <td>P4</td>
+            <td>选择题易混点清单复盘</td>
+            <td>选择题控制在错2题以内</td>
+            <td>每日20分钟</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>二、易错预警表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>高频易错点</th>
+            <th>典型表现</th>
+            <th>纠偏策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>“重文轻武”理解片面</td>
+            <td>只写“军事弱化”，忽略其对文化教育发展的推动</td>
+            <td>固定答题句：政策双效应（文化兴盛+国防隐忧）并列作答</td>
+          </tr>
+          <tr>
+            <td>土地制度题时序混乱</td>
+            <td>把《天朝田亩制度》与解放区土改、建国后政策混写</td>
+            <td>按“近代主张-革命实践-建设调整-改革优化”四阶段作图</td>
+          </tr>
+          <tr>
+            <td>“信仰力量”空泛抒情</td>
+            <td>只有口号，没有史实证据</td>
+            <td>每段必须出现“事件+作用+结果”三要素</td>
+          </tr>
+          <tr>
+            <td>世界史与中国史割裂</td>
+            <td>Q19只背国外史实，无法回扣现实中国发展</td>
+            <td>训练“世界经验-中国道路”对照句式</td>
+          </tr>
+          <tr>
+            <td>二选一论述选题失误</td>
+            <td>选不熟主题，导致证据不足</td>
+            <td>考前明确主攻主题；备选主题仅保底框架</td>
+          </tr>
+          <tr>
+            <td>概念辨析题误判</td>
+            <td>“历史解释”与“历史事实”混淆</td>
+            <td>先判断句子是否含“评价词/因果判断”，再作选择</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>三、目标分数规划表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>分数档</th>
+            <th>选择题目标</th>
+            <th>材料题目标（Q16-19）</th>
+            <th>关键策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>冲刺70+（现阶段高位）</td>
+            <td>27-30</td>
+            <td>31-35</td>
+            <td>论述题满结构训练，材料题“要点全覆盖+术语规范”</td>
+          </tr>
+          <tr>
+            <td>稳定60-69（主目标）</td>
+            <td>24-27</td>
+            <td>26-32</td>
+            <td>先保Q16/Q18，再突破Q17数据题与Q19论述</td>
+          </tr>
+          <tr>
+            <td>保底50-59</td>
+            <td>20-24</td>
+            <td>20-28</td>
+            <td>选择题错因清零，材料题按“抄材料关键词+短句作答”拿基础分</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>四、Q19(4)论述6分模板（考场可直接套用）</h3>
+      <p><strong>观点句：</strong>民族独立（或改革创新）是推动社会发展的关键动力。</p>
+      <p><strong>史实1：</strong>结合近代中国反侵略斗争或民族解放案例，说明独立是发展前提。</p>
+      <p><strong>史实2：</strong>结合改革开放或工业革命等案例，说明创新能释放生产力与制度活力。</p>
+      <p><strong>总结句：</strong>坚持独立自主并持续改革创新，国家才能在历史进程中实现长治久安与现代化发展。</p>
+    </section>
+
+    <footer>
+      报告生成日期：2026-04-22 | 适用场景：九年级历史一模复盘、二轮备考、专题化提分训练
+    </footer>
+  </div>
+</body>
+</html>

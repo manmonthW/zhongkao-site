@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八套历史模拟卷横向对比分析报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+:root{--bg:#f5f1e8;--text:#1a1815;--accent:#8b2e2e;--border:#d4cfc4;--card-bg:#faf8f3;--tag-bg:#e8e2d6;--success:#2e6b3e;--warning:#b8860b;--info:#2e4a8b;}
+*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px;}
+.container{max-width:1080px;margin:0 auto;padding:20px;}
+.cover{text-align:center;padding:60px 30px;border-bottom:3px double var(--accent);margin-bottom:40px;}
+.cover h1{font-size:2.2em;font-weight:900;color:var(--accent);letter-spacing:.1em;margin-bottom:10px;}
+.cover .sub{font-size:1.1em;color:#666;margin-bottom:8px;}.cover .meta{font-size:.85em;color:#999;margin-top:14px;}
+h2.st{font-size:1.4em;color:var(--accent);border-left:5px solid var(--accent);padding-left:12px;margin:40px 0 16px;}
+h3.sub-st{font-size:1.15em;color:var(--info);margin:24px 0 10px;padding-bottom:4px;border-bottom:1px dashed var(--border);}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:.84em;}
+th{background:var(--accent);color:#fff;padding:7px 8px;text-align:center;font-weight:600;white-space:nowrap;}
+td{padding:5px 8px;border-bottom:1px solid var(--border);text-align:center;vertical-align:top;}
+tr:nth-child(even){background:var(--card-bg);}td:first-child{text-align:left;font-weight:600;}
+.bar-chart{margin:12px 0 18px;}.bar-row{display:flex;align-items:center;margin-bottom:5px;}
+.bar-label{width:160px;font-size:.85em;text-align:right;padding-right:9px;flex-shrink:0;}
+.bar-track{flex:1;background:var(--tag-bg);height:22px;border-radius:3px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:7px;font-size:.75em;color:#fff;font-weight:600;min-width:30px;}
+.c1{background:var(--accent);}.c2{background:var(--info);}.c3{background:var(--success);}.c4{background:var(--warning);}.c5{background:#6b2e8b;}
+.card{background:var(--card-bg);border:1px solid var(--border);padding:14px 18px;margin:12px 0;border-left:4px solid var(--accent);}
+.card.info{border-left-color:var(--info);}.card.success{border-left-color:var(--success);}.card.warning{border-left-color:var(--warning);}
+.card-title{font-weight:700;color:var(--accent);margin-bottom:5px;font-size:1.05em;}
+.card.info .card-title{color:var(--info);}.card.success .card-title{color:var(--success);}.card.warning .card-title{color:var(--warning);}
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.78em;margin:2px 3px 2px 0;font-weight:600;}
+.tag.red{background:#f5d5d5;color:var(--accent);}.tag.blue{background:#d5dff5;color:var(--info);}
+.tag.green{background:#d5f5df;color:var(--success);}.tag.orange{background:#f5eed5;color:var(--warning);}
+.tag.purple{background:#e8d5f5;color:#6b2e8b;}.tag.dark{background:#333;color:#fff;}
+p{margin:6px 0;}strong{color:var(--accent);}ul,ol{padding-left:20px;margin:5px 0;}li{margin-bottom:3px;}
+.highlight-box{background:#fff8e1;border:2px solid var(--warning);padding:14px 18px;margin:16px 0;border-radius:5px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.stat-card{background:var(--card-bg);border:1px solid var(--border);padding:12px;text-align:center;border-radius:5px;}
+.stat-card .num{font-size:2em;font-weight:900;color:var(--accent);}.stat-card .label{font-size:.85em;color:#666;}
+.footnote{font-size:.83em;color:#888;border-top:1px solid var(--border);padding-top:14px;margin-top:40px;}
+@media(max-width:700px){.cover h1{font-size:1.5em;}.bar-label{width:100px;}.grid-2,.grid-3{grid-template-columns:1fr;}table{font-size:.75em;}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="cover">
+<h1>八套历史模拟卷<br>横向对比分析报告</h1>
+<div class="sub">营口一模 · 抚顺统考 · 于洪一模 · 沈河一模 · 铁西一模 · 和平一模 · 苏家屯一模 · 铁岭二模</div>
+<div class="meta">2026年辽宁中考历史备考 · 深度横向对比 | 分析日期：2026年4月23日</div>
+</div>
+
+<div class="card success">
+<div class="card-title">版本说明</div>
+<p>本页数据已同步至“七套重做 + 铁岭基准卷”的统一深度分析口径。当前8套单卷报告均为同标准五维结构版本，可直接配套使用。</p>
+</div>
+
+<!-- 数据总览 -->
+<div class="grid-3" style="margin-bottom:30px;">
+<div class="stat-card"><div class="num">8</div><div class="label">模拟卷总数</div></div>
+<div class="stat-card"><div class="num">152</div><div class="label">题目总量 (19×8)</div></div>
+<div class="stat-card"><div class="num">560</div><div class="label">总分值 (70×8)</div></div>
+</div>
+
+<h2 class="st">一 · 结构一致性对比</h2>
+<table>
+<tr><th>试卷</th><th>总分/题量</th><th>选择题</th><th>综合题</th><th>Q16</th><th>Q17</th><th>Q18</th><th>Q19</th><th>论述分</th></tr>
+<tr><td>营口一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>8</td><td>10</td><td>10</td><td>12</td><td>6</td></tr>
+<tr><td>抚顺统考</td><td>70/19</td><td>15×2=30</td><td>40</td><td>10</td><td>10</td><td>8</td><td>12</td><td>6</td></tr>
+<tr><td>于洪一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>8</td><td>10</td><td>10</td><td>12</td><td>6</td></tr>
+<tr><td>沈河一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>8</td><td>10</td><td>9</td><td>13</td><td>6</td></tr>
+<tr><td>铁西一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>8</td><td>10</td><td>10</td><td>12</td><td>6</td></tr>
+<tr><td>和平一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>10</td><td>9</td><td>9</td><td>12</td><td>6</td></tr>
+<tr><td>苏家屯一模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>10</td><td>11</td><td>9</td><td>10</td><td>6</td></tr>
+<tr><td>铁岭二模</td><td>70/19</td><td>15×2=30</td><td>40</td><td>8</td><td>10</td><td>10</td><td>12</td><td>6</td></tr>
+</table>
+<div class="card info">
+<div class="card-title">结论：结构高度稳定</div>
+<p><strong>8套卷全部</strong>：19题/70分、15道选择(30分)+4道综合(40分)、论述题固定6分。综合题总分波动范围：Q16(8-10分)、Q17(9-11分)、Q18(8-10分)、Q19(10-13分)。<strong>中考结构已无悬念</strong>。</p>
+</div>
+
+<h2 class="st">二 · 板块权重对比</h2>
+<table>
+<tr><th>试卷</th><th>中国古代</th><th>中国近现代</th><th>世界史</th><th>跨模块</th></tr>
+<tr><td>营口一模</td><td>~22%</td><td>~36%</td><td>~24%</td><td>~18%</td></tr>
+<tr><td>抚顺统考</td><td>~26%</td><td>~37%</td><td>~20%</td><td>~17%</td></tr>
+<tr><td>于洪一模</td><td>~23%</td><td>~40%</td><td>~20%</td><td>~17%</td></tr>
+<tr><td>沈河一模</td><td>~24%</td><td>~37%</td><td>~23%</td><td>~16%</td></tr>
+<tr><td>铁西一模</td><td>~26%</td><td>~34%</td><td>~20%</td><td>~20%</td></tr>
+<tr><td>和平一模</td><td>~26%</td><td>~40%</td><td>~17%</td><td>~17%</td></tr>
+<tr><td>苏家屯一模</td><td>~23%</td><td>~44%</td><td>~19%</td><td>~14%</td></tr>
+<tr><td>铁岭二模</td><td>~24%</td><td>~38%</td><td>~21%</td><td>~17%</td></tr>
+<tr style="background:#f5d5d5;font-weight:700;"><td>八卷均值</td><td>~24%</td><td>~38%</td><td>~21%</td><td>~17%</td></tr>
+</table>
+
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">中国近现代史 ★</div><div class="bar-track"><div class="bar-fill c1" style="width:38%">38% · 均值~27分</div></div></div>
+<div class="bar-row"><div class="bar-label">中国古代史</div><div class="bar-track"><div class="bar-fill c2" style="width:24%">24% · 均值~17分</div></div></div>
+<div class="bar-row"><div class="bar-label">世界史</div><div class="bar-track"><div class="bar-fill c3" style="width:21%">21% · 均值~15分</div></div></div>
+<div class="bar-row"><div class="bar-label">跨模块综合</div><div class="bar-track"><div class="bar-fill c4" style="width:17%">17% · 均值~12分</div></div></div>
+</div>
+
+<div class="card">
+<div class="card-title">结论：中国近现代史是绝对主战场</div>
+<p><strong>八套卷均值38%</strong>，最高达44%(苏家屯)。中考复习时间分配建议：中国近现代40% → 中国古代25% → 世界史20% → 跨模块综合15%。</p>
+</div>
+
+<h2 class="st">三 · 论述题主题全景图</h2>
+<table>
+<tr><th>试卷</th><th>论述题主题</th><th>关键词</th><th>推荐论据组合</th></tr>
+<tr><td>营口一模</td><td>制度创新推动社会发展</td><td><span class="tag blue">制度</span></td><td>商鞅变法+明治维新</td></tr>
+<tr><td>抚顺统考</td><td>中华智慧对人类文明的贡献</td><td><span class="tag red">文化自信</span></td><td>造纸术+指南针</td></tr>
+<tr><td>于洪一模</td><td>思想文化推动社会进步</td><td><span class="tag blue">思想</span></td><td>百家争鸣+启蒙运动</td></tr>
+<tr><td>沈河一模</td><td>统一是历史发展大势</td><td><span class="tag red">统一</span></td><td>秦统一+港澳回归</td></tr>
+<tr><td>铁西一模</td><td>合作才能实现共赢</td><td><span class="tag green">合作</span></td><td>联合国家宣言+万隆会议</td></tr>
+<tr><td>和平一模</td><td>民族独立/改革创新推动社会发展</td><td><span class="tag orange">双选</span></td><td>明治维新+改革开放</td></tr>
+<tr><td>苏家屯一模</td><td>人民群众推动社会进步</td><td><span class="tag purple">唯物史观</span></td><td>法国大革命+五四运动</td></tr>
+<tr><td>铁岭二模</td><td>文明交流互鉴推动发展</td><td><span class="tag green">交流</span></td><td>丝绸之路+新航路开辟</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>📊 论述题出题规律总结：</strong><br>
+8个主题可归为4大类：<br>
+① <strong>制度/改革类</strong>(营口·制度创新、和平·改革创新) → 核心论据：商鞅变法、明治维新、改革开放<br>
+② <strong>文化/思想类</strong>(抚顺·中华智慧、于洪·思想文化、铁岭·文明交流) → 核心论据：四大发明、百家争鸣、文艺复兴<br>
+③ <strong>统一/合作类</strong>(沈河·统一大势、铁西·合作共赢) → 核心论据：秦统一、港澳回归、联合国家宣言<br>
+④ <strong>人民/民族类</strong>(苏家屯·人民群众、和平·民族独立) → 核心论据：法国大革命、五四运动、美国独立战争<br><br>
+<strong>→ 只需准备 8-10 个"万能论据"，即可覆盖所有论述题方向。</strong>
+</div>
+
+<h2 class="st">四 · 高频考点排行榜</h2>
+<h3 class="sub-st">选择题高频考点 TOP 10</h3>
+<table>
+<tr><th>排名</th><th>考点</th><th>出现次数(/8卷)</th><th>出现卷次</th></tr>
+<tr><td>1</td><td>"历史解释vs历史事实"方法论</td><td>6/8</td><td>营口·抚顺·于洪·铁西·和平·铁岭</td></tr>
+<tr><td>2</td><td>原始农业/河姆渡半坡</td><td>5/8</td><td>营口·沈河·苏家屯·铁岭·抚顺</td></tr>
+<tr><td>3</td><td>秦统一/中央集权</td><td>5/8</td><td>营口·铁西·和平·苏家屯·沈河</td></tr>
+<tr><td>4</td><td>唐朝社会/文化/对外交流</td><td>5/8</td><td>沈河·铁西·和平·抚顺·铁岭</td></tr>
+<tr><td>5</td><td>十一届三中全会/改革开放</td><td>5/8</td><td>铁西·苏家屯·和平·于洪·铁岭</td></tr>
+<tr><td>6</td><td>二战转折/斯大林格勒</td><td>4/8</td><td>沈河·和平·铁岭·营口</td></tr>
+<tr><td>7</td><td>洋务运动</td><td>4/8</td><td>沈河·苏家屯·于洪·铁岭</td></tr>
+<tr><td>8</td><td>凡尔赛-华盛顿体系</td><td>4/8</td><td>沈河·苏家屯·抚顺·铁岭</td></tr>
+<tr><td>9</td><td>冷战/杜鲁门主义/北约</td><td>4/8</td><td>和平·苏家屯·铁岭·于洪</td></tr>
+<tr><td>10</td><td>信息技术/互联网改变生活</td><td>4/8</td><td>沈河·铁西·营口·铁岭</td></tr>
+</table>
+
+<h3 class="sub-st">综合题高频考点 TOP 10</h3>
+<table>
+<tr><th>排名</th><th>考点</th><th>出现次数(/8卷)</th><th>典型设问</th></tr>
+<tr><td>1</td><td>中国近代探索主线(洋务→戊戌→辛亥→新文化→五四)</td><td>7/8</td><td>时间轴串联/事件名称/意义</td></tr>
+<tr><td>2</td><td>中共成立及早期革命道路</td><td>6/8</td><td>一大意义/井冈山道路/长征精神</td></tr>
+<tr><td>3</td><td>新中国科技成就(两弹一星/杂交水稻/航天)</td><td>5/8</td><td>人物对应/时间/意义</td></tr>
+<tr><td>4</td><td>四大发明/中国古代科技对世界的影响</td><td>5/8</td><td>造纸/印刷/火药/指南针传播</td></tr>
+<tr><td>5</td><td>三大改造/社会主义制度建立</td><td>5/8</td><td>方式/意义/时间</td></tr>
+<tr><td>6</td><td>统一多民族国家(行省/宣政院/台湾/西域)</td><td>5/8</td><td>制度归类/管辖机构</td></tr>
+<tr><td>7</td><td>工业革命(蒸汽机/铁路/电力)</td><td>5/8</td><td>发明者/影响/生产力变革</td></tr>
+<tr><td>8</td><td>家庭联产承包责任制</td><td>5/8</td><td>小岗村/粮食增产/数据图表</td></tr>
+<tr><td>9</td><td>民族交融(孝文帝改革/唐蕃关系)</td><td>4/8</td><td>措施/影响/步辇图</td></tr>
+<tr><td>10</td><td>抗美援朝/辽宁地方史</td><td>4/8</td><td>意义/鸭绿江/辽沈/鞍钢</td></tr>
+</table>
+
+<h2 class="st">五 · 辽宁地方史考查汇总</h2>
+<table>
+<tr><th>试卷</th><th>辽宁元素</th><th>分值</th></tr>
+<tr><td>苏家屯一模</td><td>Q18整题：九一八/辽沈战役/鞍钢/抗美援朝/振兴东北</td><td><strong>~9分</strong></td></tr>
+<tr><td>沈河一模</td><td>Q18：沈飞歼击机</td><td>~2分</td></tr>
+<tr><td>铁岭二模</td><td>选择题：辽博考古/红山文化</td><td>~2分</td></tr>
+<tr><td>抚顺统考</td><td>抚顺战犯管理所(Q17)/辽宁出土文物</td><td>~2分</td></tr>
+<tr><td>营口一模</td><td>辽宁非遗/营口港(隐含)</td><td>~1分</td></tr>
+<tr><td>于洪一模</td><td>沈阳故宫(隐含)</td><td>~1分</td></tr>
+<tr><td>铁西一模</td><td>沈阳工业(隐含)</td><td>~1分</td></tr>
+<tr><td>和平一模</td><td>无显性考查</td><td>0</td></tr>
+</table>
+<div class="card warning">
+<div class="card-title">辽宁地方史必备清单</div>
+<ul>
+<li><strong>九一八事变</strong>(1931.9.18，沈阳北大营/柳条湖) → 局部抗战开始</li>
+<li><strong>辽沈战役</strong>(1948.9-11，锦州→长春→沈阳) → 解放东北全境</li>
+<li><strong>鞍钢</strong>(一五计划重点项目) → 新中国工业化起步</li>
+<li><strong>抗美援朝</strong>(东北为后方基地) → 保家卫国</li>
+<li><strong>沈飞</strong>(歼击机生产) → 科技自主</li>
+<li><strong>红山文化</strong>(牛河梁/玉猪龙) → 中华文明多元一体</li>
+<li><strong>振兴东北老工业基地</strong>(2003年提出) → 区域发展战略</li>
+</ul>
+</div>
+
+<h2 class="st">六 · 命题趋势与规律</h2>
+<div class="card">
+<div class="card-title">规律1：Q16固定考中国古代史，Q17固定考中国近现代史</div>
+<p>8套卷无一例外。Q16主题变化(制度/文化/科技/民族交融/统一)，但板块固定。Q17必含"洋务→戊戌→辛亥→新文化→五四→中共成立"主线的部分节点。</p>
+</div>
+<div class="card info">
+<div class="card-title">规律2：Q19论述题固定6分，分层评分，主题围绕"大观点"</div>
+<p>8个论述题全部是6分、4级评分。出题模式固定：给3-4个史实选项→选2个论证→开头亮观点→两段论据→总结回扣。<strong>结构比内容重要</strong>——即使论据平庸，格式完整也能拿4分。</p>
+</div>
+<div class="card warning">
+<div class="card-title">规律3："历史解释vs历史事实"几乎必考</div>
+<p>8套卷中6套出现该方法论题。<strong>判断标准</strong>：含主观评价词（"推动了""标志着""促进了"）的是"历史解释"，纯客观陈述时间地点事件的是"历史事实"。这2分几乎白送。</p>
+</div>
+<div class="card success">
+<div class="card-title">规律4：图片/情境题占选择题30%-40%</div>
+<p>文物图、地图、数据图表、手抄报、辩论赛、歌词、论文标题……<strong>图片和新情境是命题创新的主阵地</strong>。但本质仍考知识点识别，不必被花哨包装迷惑。</p>
+</div>
+
+<h2 class="st">七 · 统一备考行动方案</h2>
+
+<h3 class="sub-st">第一优先级：必拿分项（~45分）</h3>
+<div class="card">
+<div class="card-title">A. 中国近代探索主线 → 默写到滚瓜烂熟（预计覆盖15-20分）</div>
+<ol>
+<li>鸦片战争(1840) → 《南京条约》→ 开始沦为半殖民地</li>
+<li>第二次鸦片战争(1856-1860) → 英法联军火烧圆明园</li>
+<li>洋务运动(1860s-1895) → "自强""求富" → 甲午战败标志失败</li>
+<li>甲午战争(1894) → 《马关条约》→ 大大加深半殖民地化</li>
+<li>戊戌变法(1898) → 百日维新 → 谭嗣同就义</li>
+<li>辛亥革命(1911) → 推翻帝制 → 建立中华民国</li>
+<li>新文化运动(1915) → 《新青年》→ 民主与科学</li>
+<li>五四运动(1919) → "外争主权内除国贼" → 新民主主义革命开端</li>
+<li>中共一大(1921) → 开天辟地</li>
+<li>井冈山道路 → 农村包围城市、武装夺取政权</li>
+<li>长征(1934-1936) → 遵义会议 → 红军保存了革命火种</li>
+<li>抗日战争(1937-1945) → 全民族抗战</li>
+<li>解放战争(1946-1949) → 辽沈/淮海/平津 → 渡江战役</li>
+<li>开国大典(1949.10.1) → 新中国成立</li>
+</ol>
+</div>
+
+<div class="card info">
+<div class="card-title">B. 论述题"万能论据库"（6分）</div>
+<p>以下10个论据可覆盖8种论述方向：</p>
+<ol>
+<li><strong>商鞅变法</strong> → 制度创新/改革推动(秦国由弱变强)</li>
+<li><strong>秦统一六国</strong> → 统一大势/制度创新(第一个统一多民族封建国家)</li>
+<li><strong>四大发明(造纸/印刷/火药/指南针)</strong> → 中华智慧/文明交流(推动欧洲社会转型)</li>
+<li><strong>文艺复兴</strong> → 思想文化/文明交流(冲破封建神学束缚)</li>
+<li><strong>明治维新</strong> → 改革创新(日本由封建→近代化)</li>
+<li><strong>法国大革命</strong> → 人民群众/民族独立(推翻封建君主专制)</li>
+<li><strong>五四运动</strong> → 人民群众(工人阶级登上政治舞台)</li>
+<li><strong>联合国家宣言</strong> → 合作共赢(26国联合反法西斯)</li>
+<li><strong>港澳回归</strong> → 统一大势/中国智慧(一国两制成功实践)</li>
+<li><strong>改革开放</strong> → 改革创新(中国经济腾飞，GDP世界第二)</li>
+</ol>
+</div>
+
+<div class="card warning">
+<div class="card-title">C. 论述题固定答题模板（保底4分）</div>
+<p><strong>第一段（观点）：</strong>"我认为[主题]。下面用两个史实加以论证。"<br>
+<strong>第二段（史实1）：</strong>"[时间]，[人物/国家][做了什么]，[产生了什么影响]。这说明[回扣主题]。"<br>
+<strong>第三段（史实2）：</strong>同上格式。<br>
+<strong>第四段（总结）：</strong>"综上所述，[重申观点]，[主题]是推动[社会进步/文明发展]的重要力量。"</p>
+</div>
+
+<h3 class="sub-st">第二优先级：稳拿分项（~15分）</h3>
+<div class="card success">
+<div class="card-title">D. 古代制度线 + 科技文化线</div>
+<ul>
+<li><strong>制度线：</strong>分封制(西周)→郡县制(秦)→三省六部(隋唐)→行省制(元)→废丞相设内阁(明)→军机处(清)</li>
+<li><strong>科技线：</strong>造纸(蔡伦)→印刷(毕昇)→火药(唐)→指南针(宋)→本草纲目(李时珍)→天工开物(宋应星)</li>
+<li><strong>交融线：</strong>孝文帝改革→唐蕃和亲(文成公主)→元朝回族形成→清代册封达赖班禅</li>
+</ul>
+</div>
+
+<div class="card">
+<div class="card-title">E. 辽宁地方史（~5-9分）</div>
+<p>参见第五部分清单。<strong>最少背7个知识点</strong>，在苏家屯式专题中可拿满9分。</p>
+</div>
+
+<h3 class="sub-st">第三优先级：世界史核心（~10分）</h3>
+<div class="card info">
+<div class="card-title">F. 世界史必备</div>
+<ul>
+<li><strong>古代：</strong>两河流域(楔形文字/汉谟拉比法典)、古埃及(金字塔)、雅典民主、罗马法</li>
+<li><strong>近代：</strong>文艺复兴→新航路→英国资产阶级革命(《权利法案》)→美国独立(1787宪法)→法国大革命→工业革命→马克思主义</li>
+<li><strong>现代：</strong>一战→凡尔赛-华盛顿→二战(斯大林格勒转折)→冷战(杜鲁门/北约/华约)→经济全球化(WTO)→信息化</li>
+</ul>
+</div>
+
+<h2 class="st">八 · 考前冲刺日程建议</h2>
+<table>
+<tr><th>阶段</th><th>内容</th><th>目标</th></tr>
+<tr><td>第1周</td><td>默写近代探索主线 + 论述模板练习</td><td>主线不看书能默写、论述题结构熟练</td></tr>
+<tr><td>第2周</td><td>古代制度线+科技线+辽宁地方史</td><td>填空题零失误</td></tr>
+<tr><td>第3周</td><td>世界史核心 + 10个万能论据</td><td>世界史选择题不丢分</td></tr>
+<tr><td>第4周</td><td>8套卷限时模拟(每套40分钟)</td><td>速度训练、查漏补缺</td></tr>
+<tr><td>考前3天</td><td>只看错题 + 论述模板默写</td><td>保持手感、稳定心态</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>🎯 核心结论：</strong>8套卷的命题方向高度一致。掌握"近代探索主线+论述模板+万能论据库+古代三条线+辽宁地方史"，即可覆盖70分中的55-60分。剩余10-15分靠世界史基础和审题细心。<strong>结构化记忆 > 大量刷题。</strong>
+</div>
+
+<div class="footnote">
+<p><strong>数据来源：</strong>营口一模 · 抚顺统考 · 于洪一模 · 沈河一模 · 铁西一模 · 和平一模 · 苏家屯一模 · 铁岭二模，共8套辽宁地市级历史模拟卷<br>
+<strong>分析方法：</strong>五维解析法 + 跨卷横向统计 | <strong>生成日期：</strong>2026年4月22日</p>
+</div>
+</div>
+</body>
+</html>

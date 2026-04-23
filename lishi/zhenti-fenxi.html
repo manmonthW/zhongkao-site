@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>辽宁省中考历史学科深度分析报告</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+
+  :root {
+    --bg: #f5f1e8;
+    --text: #1a1815;
+    --accent: #8b2e2e;
+    --accent-light: #c44d4d;
+    --border: #d4cfc4;
+    --card-bg: #faf8f3;
+    --tag-bg: #e8e2d6;
+    --success: #2e6b3e;
+    --warning: #b8860b;
+    --info: #2e4a8b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+  /* 封面 */
+  .cover {
+    text-align: center;
+    padding: 80px 40px;
+    border-bottom: 3px double var(--accent);
+    margin-bottom: 60px;
+  }
+  .cover h1 {
+    font-size: 2.4em;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .cover .subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .cover .meta {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 24px;
+  }
+
+  /* 目录 */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px 40px;
+    margin-bottom: 50px;
+  }
+  .toc h2 {
+    font-size: 1.3em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--border);
+  }
+  .toc a:hover { color: var(--accent); }
+
+  /* 章节标题 */
+  h2.section-title {
+    font-size: 1.6em;
+    color: var(--accent);
+    border-left: 5px solid var(--accent);
+    padding-left: 16px;
+    margin: 50px 0 24px;
+  }
+  h3 {
+    font-size: 1.2em;
+    color: var(--text);
+    margin: 30px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  h4 {
+    font-size: 1.05em;
+    color: var(--accent);
+    margin: 20px 0 10px;
+  }
+
+  /* 表格 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 0.92em;
+  }
+  th {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:nth-child(even) { background: var(--card-bg); }
+  tr:hover { background: #ece8dc; }
+
+  /* 数据条 */
+  .bar-chart { margin: 16px 0 24px; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .bar-label {
+    width: 140px;
+    font-size: 0.9em;
+    text-align: right;
+    padding-right: 12px;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    background: var(--tag-bg);
+    height: 24px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: 600;
+    min-width: 30px;
+  }
+  .bar-fill.ancient { background: var(--accent); }
+  .bar-fill.modern { background: var(--info); }
+  .bar-fill.world { background: var(--success); }
+  .bar-fill.contemporary { background: var(--warning); }
+
+  /* 卡片 */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--accent);
+  }
+  .card.info { border-left-color: var(--info); }
+  .card.success { border-left-color: var(--success); }
+  .card.warning { border-left-color: var(--warning); }
+
+  .card-title {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 1.05em;
+  }
+  .card.info .card-title { color: var(--info); }
+  .card.success .card-title { color: var(--success); }
+  .card.warning .card-title { color: var(--warning); }
+
+  /* 标签 */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin: 2px 4px 2px 0;
+  }
+  .tag.red { background: #f5d5d5; color: var(--accent); }
+  .tag.blue { background: #d5dff5; color: var(--info); }
+  .tag.green { background: #d5f5df; color: var(--success); }
+  .tag.orange { background: #f5eed5; color: var(--warning); }
+
+  /* 列表 */
+  ul, ol { padding-left: 24px; margin: 8px 0; }
+  li { margin-bottom: 4px; }
+
+  p { margin: 10px 0; }
+
+  .highlight {
+    background: #fff3cd;
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  strong { color: var(--accent); }
+
+  /* 对比表 */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  /* 知识模块网格 */
+  .module-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .module-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 4px;
+  }
+  .module-card h5 {
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-size: 1em;
+  }
+  .module-card ul { padding-left: 16px; font-size: 0.92em; }
+
+  .footnote {
+    font-size: 0.85em;
+    color: #888;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    margin-top: 60px;
+  }
+
+  /* 优先级标记 */
+  .priority-high { color: var(--accent); font-weight: 700; }
+  .priority-mid { color: var(--warning); font-weight: 600; }
+  .priority-low { color: var(--success); }
+
+  @media (max-width: 700px) {
+    .cover h1 { font-size: 1.6em; }
+    .comparison, .module-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 100px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+  <h1>辽宁省中考历史学科<br>深度分析报告</h1>
+  <div class="subtitle">考试内容 · 命题趋势 · 核心知识点 · 备考策略</div>
+  <div class="subtitle" style="font-size:1em; color:#999;">基于 2024-2025 真题解读与 2026 新课标命题方向</div>
+  <div class="meta">报告生成日期：2026年4月22日</div>
+</div>
+
+<!-- ==================== 目录 ==================== -->
+<div class="toc">
+  <h2>目 录</h2>
+  <ol>
+    <li><a href="#ch1">考试基本参数与试卷结构</a></li>
+    <li><a href="#ch2">考试范围与内容板块分布</a></li>
+    <li><a href="#ch3">2024-2025 真题考点对比分析</a></li>
+    <li><a href="#ch4">六大命题趋势解码</a></li>
+    <li><a href="#ch5">核心知识点全景梳理</a></li>
+    <li><a href="#ch6">高频考点与能力层级分析</a></li>
+    <li><a href="#ch7">备考作战地图</a></li>
+  </ol>
+</div>
+
+<!-- ==================== 第一章 ==================== -->
+<h2 class="section-title" id="ch1">一、考试基本参数与试卷结构</h2>
+
+<table>
+  <tr><th>参数</th><th>说明</th></tr>
+  <tr><td>考试性质</td><td>辽宁省初中学业水平考试（中考），闭卷笔试</td></tr>
+  <tr><td>合卷方式</td><td>历史与道德与法治同场合卷</td></tr>
+  <tr><td>历史满分</td><td><strong>70 分</strong></td></tr>
+  <tr><td>合卷总时长</td><td>150 分钟（建议历史用时 60-70 分钟）</td></tr>
+  <tr><td>总题量</td><td>19 题</td></tr>
+  <tr><td>命题依据</td><td>《义务教育历史课程标准》（2022版，2025修订）</td></tr>
+  <tr><td>考试时间</td><td>通常为6月21日-23日期间</td></tr>
+</table>
+
+<h3>试卷结构</h3>
+<table>
+  <tr><th>部分</th><th>题型</th><th>题量</th><th>分值</th><th>占比</th><th>建议用时</th></tr>
+  <tr><td>第一部分</td><td>选择题（单选）</td><td>15 题</td><td>30 分（每题2分）</td><td>42.9%</td><td>15-20 分钟</td></tr>
+  <tr><td>第二部分</td><td>综合题（材料分析/简答/论述）</td><td>4 题</td><td>40 分</td><td>57.1%</td><td>40-50 分钟</td></tr>
+  <tr><td colspan="2"><strong>合计</strong></td><td><strong>19 题</strong></td><td><strong>70 分</strong></td><td><strong>100%</strong></td><td><strong>60-70 分钟</strong></td></tr>
+</table>
+
+<div class="card info">
+  <div class="card-title">结构解读</div>
+  <p>非选择题（综合题）占比高达 <strong>57.1%</strong>，分值远超选择题。这意味着仅靠刷选择题远远不够——综合分析能力、材料解读能力、文字表达能力是拉开分差的关键。</p>
+</div>
+
+<h3>难度分布（参考值）</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">基础题（~60%）</div>
+    <div class="bar-track"><div class="bar-fill ancient" style="width:60%">约 42 分</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">中等题（~30%）</div>
+    <div class="bar-track"><div class="bar-fill modern" style="width:30%">约 21 分</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">难题（~10%）</div>
+    <div class="bar-track"><div class="bar-fill contemporary" style="width:10%">约 7 分</div></div>
+  </div>
+</div>
+
+<!-- ==================== 第二章 ==================== -->
+<h2 class="section-title" id="ch2">二、考试范围与内容板块分布</h2>
+
+<p>辽宁中考历史覆盖初中三年六册教材的完整内容，按三大模块划分：</p>
+
+<table>
+  <tr><th>模块</th><th>对应教材</th><th>估算分值占比</th><th>考查重点</th></tr>
+  <tr><td><strong>中国古代史</strong></td><td>七年级上、下册</td><td>约 25-30%</td><td>文明起源、制度演变、民族交融、科技文化、辽宁地方史</td></tr>
+  <tr><td><strong>中国近现代史</strong></td><td>八年级上、下册</td><td>约 35-40%</td><td>侵略与反抗、近代化探索、新民主主义革命、社会主义建设、改革开放</td></tr>
+  <tr><td><strong>世界史</strong></td><td>九年级上、下册</td><td>约 30-35%</td><td>古代文明、资本主义兴起、两次世界大战、冷战与全球化</td></tr>
+</table>
+
+<h3>内容板块分值占比图</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">中国近现代史</div>
+    <div class="bar-track"><div class="bar-fill modern" style="width:38%">~35-40%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">世界史</div>
+    <div class="bar-track"><div class="bar-fill world" style="width:32%">~30-35%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">中国古代史</div>
+    <div class="bar-track"><div class="bar-fill ancient" style="width:28%">~25-30%</div></div>
+  </div>
+</div>
+
+<div class="card warning">
+  <div class="card-title">关键发现：中国近现代史是第一重镇</div>
+  <p>中国近现代史长期占据最高分值比例（35-40%），且综合题通常有 1-2 道大题直接考查此板块。世界史虽然教材在九年级才学习，但分值占比稳定在 30% 以上，不可轻视。</p>
+</div>
+
+<!-- ==================== 第三章 ==================== -->
+<h2 class="section-title" id="ch3">三、2024-2025 真题考点对比分析</h2>
+
+<p>通过对比辽宁省 2024-2025 两年中考真题的选择题考点，可以清晰看到命题规律的延续性与变化：</p>
+
+<table>
+  <tr><th>题号</th><th>2025 年考点</th><th>2024 年考点</th><th>板块</th></tr>
+  <tr><td>1</td><td>文明起源——辽宁海城小孤山遗址（爱美意识）</td><td>区分河姆渡人和半坡人（原始农耕）</td><td><span class="tag red">中国古代史</span></td></tr>
+  <tr><td>2</td><td>政治制度——分封制、中央集权</td><td>汉武帝推恩令</td><td><span class="tag red">中国古代史</span></td></tr>
+  <tr><td>3</td><td>民族关系——民族交融</td><td>贞观之治</td><td><span class="tag red">中国古代史</span></td></tr>
+  <tr><td>4</td><td>科技文化——艺术、科技、工程</td><td>—</td><td><span class="tag red">中国古代史</span></td></tr>
+  <tr><td>5</td><td>边疆治理——台湾</td><td>—</td><td><span class="tag red">中国古代史</span></td></tr>
+  <tr><td>6-9</td><td>中国近现代史相关考点</td><td>中国近现代史相关考点</td><td><span class="tag blue">中国近现代史</span></td></tr>
+  <tr><td>10</td><td>亚历山大东征积极作用</td><td>古希腊罗马——帕特农神庙（史料实证）</td><td><span class="tag green">世界古代史</span></td></tr>
+  <tr><td>11</td><td>中世纪欧洲</td><td>拜占庭帝国</td><td><span class="tag green">世界古代史</span></td></tr>
+  <tr><td>12</td><td>文艺复兴——核心思想（人文主义）</td><td>法国大革命</td><td><span class="tag green">世界近代史</span></td></tr>
+  <tr><td>13</td><td>世界近现代史</td><td>十月革命、罗斯福新政（历史解释）</td><td><span class="tag green">世界现代史</span></td></tr>
+  <tr><td>14-15</td><td>世界现代史/综合</td><td>世界现代史/综合</td><td><span class="tag green">世界史</span></td></tr>
+  <tr><td>16-19</td><td>综合题（跨时段、跨模块材料分析）</td><td>综合题</td><td><span class="tag orange">综合</span></td></tr>
+</table>
+
+<div class="card">
+  <div class="card-title">对比分析小结</div>
+  <ul>
+    <li><strong>选择题 1-5 题固定考中国古代史</strong>，且第 1 题连续两年考"文明起源"——2024 考河姆渡/半坡，2025 考辽宁小孤山</li>
+    <li><strong>选择题 10-15 题固定考世界史</strong>，古代→近代→现代依次排列，时序清晰</li>
+    <li>中国古代史的考点在<strong>政治制度、民族关系、边疆治理、科技文化</strong>四大主题中轮转</li>
+    <li>世界史命题从"知识识记"升级到"史料实证""历史解释"等高阶能力</li>
+    <li><strong>辽宁地方史</strong>从 2025 年开始明确出现（小孤山遗址），预计 2026 将延续</li>
+  </ul>
+</div>
+
+<!-- ==================== 第四章 ==================== -->
+<h2 class="section-title" id="ch4">四、六大命题趋势解码</h2>
+
+<div class="card">
+  <div class="card-title">趋势一 · 从"知识立意"转向"素养立意"</div>
+  <p><strong>具体表现：</strong>2026 年是 2022 版（2025 修订）新课标全面落地后的首次大考。命题遵循"四无四不"原则：<span class="highlight">无应用不学习、无情境不命题、无思维不课堂、无价值不教学</span>。</p>
+  <p><strong>例证：</strong>2024 年第 13 题将列宁领导十月革命与罗斯福新政纳入"历史解释"方法论考查，而非简单问"罗斯福新政的内容是什么"。</p>
+  <p><strong>备考含义：</strong>单纯背诵知识点已不够。需要训练用历史概念解释现象、用史料支撑论证的能力。</p>
+</div>
+
+<div class="card info">
+  <div class="card-title">趋势二 · 情境化命题成为标配</div>
+  <p><strong>具体表现：</strong>几乎每道题都嵌入真实或仿真情境——图片、文物照片、地图、统计表、历史文献摘录。试卷"图文并茂，资料丰富，情境活泼"。</p>
+  <p><strong>例证：</strong>2025 年第 1 题直接展示小孤山遗址出土文物图片，要求判断"说明小孤山人有什么"；第 4 题用三幅历史图片设问"判断汇报题目"。</p>
+  <p><strong>备考含义：</strong>平时复习要注重看图、读图能力，熟悉教材中的插图、地图、文物图。不能只记文字不看图。</p>
+</div>
+
+<div class="card success">
+  <div class="card-title">趋势三 · 核心素养五维考查全面渗透</div>
+  <p>五大核心素养在命题中的体现：</p>
+  <table>
+    <tr><th>核心素养</th><th>含义</th><th>命题体现</th></tr>
+    <tr><td><strong>唯物史观</strong></td><td>用历史唯物主义分析问题</td><td>分析历史事件的经济基础、阶级关系</td></tr>
+    <tr><td><strong>时空观念</strong></td><td>在特定时空框架下理解历史</td><td>时间轴排序、地图定位、朝代对应</td></tr>
+    <tr><td><strong>史料实证</strong></td><td>基于可靠史料得出结论</td><td>文物图片判断、文献材料解读</td></tr>
+    <tr><td><strong>历史解释</strong></td><td>以史料为依据合理解释</td><td>阐述原因、分析影响、评价人物</td></tr>
+    <tr><td><strong>家国情怀</strong></td><td>对国家民族的认同感</td><td>民族交融、统一多民族国家、文化自信</td></tr>
+  </table>
+</div>
+
+<div class="card warning">
+  <div class="card-title">趋势四 · 辽宁地方史成为必考板块</div>
+  <p><strong>具体表现：</strong>2025 年第 1 题考查辽宁省海城市小孤山遗址，这是辽宁地方史首次以如此醒目的方式出现在选择题第一题的位置。</p>
+  <p><strong>备考含义：</strong>必须重点掌握辽宁本地重要历史遗址和事件：</p>
+  <ul>
+    <li>小孤山遗址（海城，旧石器时代，距今约3万年）</li>
+    <li>红山文化（朝阳/赤峰，新石器时代，玉龙）</li>
+    <li>牛河梁遗址（朝阳，红山文化核心区）</li>
+    <li>辽沈战役（锦州、沈阳，解放战争三大战役之首）</li>
+    <li>九一八事变（沈阳，抗日战争起点）</li>
+    <li>甲午战争相关（旅顺、大连）</li>
+    <li>张学良与东北易帜</li>
+  </ul>
+</div>
+
+<div class="card">
+  <div class="card-title">趋势五 · 开放性试题出现，评价创造层级提升</div>
+  <p><strong>具体表现：</strong>综合题中出现允许多种合理答案的开放性设问，如"你的看法是什么""请设计一个统计方案"等。</p>
+  <p><strong>备考含义：</strong>训练"给出观点 → 引用史实 → 分析论证 → 得出结论"的完整答题逻辑链。观点不唯一，但论证必须有理有据。</p>
+</div>
+
+<div class="card info">
+  <div class="card-title">趋势六 · 跨时段、跨模块综合题权重加大</div>
+  <p><strong>具体表现：</strong>综合题（第 16-19 题）不再局限于单一朝代或单一板块，而是跨越中国古代史→近现代史→世界史，要求学生建立纵向和横向的历史联系。</p>
+  <p><strong>例证：</strong>2025 年第 16 题涉及政治制度（分封制）、科技文化、中央集权等多个古代史考点的综合分析。</p>
+  <p><strong>备考含义：</strong>复习时要建立"通史思维"，善用时间轴把中外历史事件对照排列。</p>
+</div>
+
+<!-- ==================== 第五章 ==================== -->
+<h2 class="section-title" id="ch5">五、核心知识点全景梳理</h2>
+
+<h3>A. 中国古代史（七年级上、下册）</h3>
+
+<h4>A1. 史前文明与早期国家</h4>
+<div class="module-grid">
+  <div class="module-card">
+    <h5>原始人类</h5>
+    <ul>
+      <li>元谋人——最早已确认古人类（~170万年前）</li>
+      <li>北京人——使用天然火、打制石器</li>
+      <li>山顶洞人——人工取火、磨制石器</li>
+      <li><strong>小孤山人</strong>——辽宁海城，爱美意识（地方史高频）</li>
+    </ul>
+  </div>
+  <div class="module-card">
+    <h5>原始农耕</h5>
+    <ul>
+      <li>河姆渡人——长江流域、水稻、干栏式房屋</li>
+      <li>半坡人——黄河流域、粟、半地穴式房屋</li>
+      <li><strong>红山文化</strong>——辽宁朝阳，玉龙（地方史）</li>
+      <li>良渚文化——实证中华五千年文明</li>
+    </ul>
+  </div>
+</div>
+
+<h4>A2. 夏商周</h4>
+<ul>
+  <li>夏朝建立——"家天下"取代"公天下"，世袭制</li>
+  <li>商朝——甲骨文、青铜器（司母戊鼎）</li>
+  <li><strong>西周分封制</strong>——封建亲戚以藩屏周（高频考点）</li>
+  <li>春秋战国——百家争鸣（儒道法墨）、商鞅变法</li>
+</ul>
+
+<h4>A3. 秦汉</h4>
+<ul>
+  <li><strong>秦统一与中央集权</strong>——郡县制、统一度量衡/文字/货币（高频考点）</li>
+  <li><strong>汉武帝巩固统一</strong>——推恩令、独尊儒术、张骞出使西域（高频考点）</li>
+  <li>丝绸之路——东西方文化交流</li>
+  <li>造纸术改进——蔡伦</li>
+</ul>
+
+<h4>A4. 三国两晋南北朝</h4>
+<ul>
+  <li><strong>民族交融</strong>——北魏孝文帝改革（迁都洛阳、汉化政策）（高频考点）</li>
+  <li>江南经济开发</li>
+</ul>
+
+<h4>A5. 隋唐</h4>
+<ul>
+  <li>隋朝——大运河、科举制创立</li>
+  <li><strong>贞观之治</strong>——唐太宗治国（高频考点）</li>
+  <li>开元盛世、民族关系（文成公主入藏）</li>
+</ul>
+
+<h4>A6. 宋元</h4>
+<ul>
+  <li>经济重心南移</li>
+  <li>宋代科技——活字印刷术、指南针、火药</li>
+  <li>元朝——行省制度、统一多民族国家</li>
+</ul>
+
+<h4>A7. 明清</h4>
+<ul>
+  <li><strong>边疆治理</strong>——郑成功收复台湾、清朝对台湾的管辖（高频考点）</li>
+  <li>郑和下西洋</li>
+  <li>明清君主专制加强</li>
+  <li>闭关锁国</li>
+</ul>
+
+<h3>B. 中国近现代史（八年级上、下册）</h3>
+
+<h4>B1. 列强侵略与中国人民的反抗</h4>
+<ul>
+  <li><strong>鸦片战争</strong>——《南京条约》，中国开始沦为半殖民地半封建社会</li>
+  <li>第二次鸦片战争、太平天国运动</li>
+  <li><strong>甲午中日战争</strong>——《马关条约》（辽宁旅顺大屠杀相关）</li>
+  <li><strong>八国联军侵华</strong>——《辛丑条约》</li>
+  <li><strong>九一八事变</strong>——沈阳，抗战开始（辽宁地方史重点）</li>
+</ul>
+
+<h4>B2. 近代化探索</h4>
+<ul>
+  <li><strong>洋务运动</strong>——"师夷长技以自强"，学技术</li>
+  <li><strong>戊戌变法</strong>——学制度（维新派）</li>
+  <li><strong>辛亥革命</strong>——推翻帝制，建立民国</li>
+  <li><strong>新文化运动</strong>——学思想，民主与科学</li>
+</ul>
+
+<h4>B3. 新民主主义革命</h4>
+<ul>
+  <li>五四运动——新民主主义革命开端</li>
+  <li>中共成立（1921）</li>
+  <li>国共合作与北伐战争</li>
+  <li>井冈山道路——农村包围城市</li>
+  <li>红军长征——遵义会议</li>
+  <li><strong>抗日战争</strong>——全民族抗战、重要战役</li>
+  <li><strong>辽沈战役</strong>——解放战争三大战役之首（辽宁地方史重点）</li>
+</ul>
+
+<h4>B4. 社会主义建设</h4>
+<ul>
+  <li>新中国成立、土地改革</li>
+  <li>抗美援朝</li>
+  <li>三大改造——社会主义制度确立</li>
+  <li><strong>改革开放</strong>——十一届三中全会、经济特区、家庭联产承包责任制</li>
+  <li>一国两制——港澳回归</li>
+  <li>科技成就——两弹一星、杂交水稻</li>
+</ul>
+
+<h3>C. 世界史（九年级上、下册）</h3>
+
+<h4>C1. 古代文明</h4>
+<ul>
+  <li>古埃及（金字塔）、古巴比伦（《汉谟拉比法典》）、古印度（种姓制度）</li>
+  <li><strong>古希腊</strong>——雅典民主政治（伯里克利时代）、帕特农神庙</li>
+  <li><strong>古罗马</strong>——共和国→帝国</li>
+  <li><strong>亚历山大东征</strong>——东西方文化交流（2025 年考点）</li>
+  <li><strong>拜占庭帝国</strong>（2024 年考点）</li>
+</ul>
+
+<h4>C2. 中世纪欧洲与伊斯兰</h4>
+<ul>
+  <li>封建庄园、城市兴起、大学出现</li>
+  <li>阿拉伯帝国与伊斯兰文明</li>
+  <li>日本大化改新</li>
+</ul>
+
+<h4>C3. 近代史</h4>
+<ul>
+  <li><strong>文艺复兴</strong>——人文主义核心思想（2025 年考点）</li>
+  <li>新航路开辟——地理大发现</li>
+  <li>英国资产阶级革命、《权利法案》</li>
+  <li>美国独立战争、《独立宣言》</li>
+  <li><strong>法国大革命</strong>——《人权宣言》（2024 年考点）</li>
+  <li>工业革命——蒸汽机、铁路</li>
+  <li>美国南北战争——林肯</li>
+  <li>日本明治维新、俄国农奴制改革</li>
+</ul>
+
+<h4>C4. 现代史</h4>
+<ul>
+  <li>第一次世界大战</li>
+  <li><strong>十月革命</strong>——列宁，第一个社会主义国家（2024 年考点）</li>
+  <li><strong>罗斯福新政</strong>——国家干预经济（2024 年考点）</li>
+  <li>第二次世界大战——法西斯侵略与反法西斯联盟</li>
+  <li>冷战——美苏对抗、两极格局</li>
+  <li>殖民体系瓦解、第三世界兴起</li>
+  <li>经济全球化、多极化趋势</li>
+</ul>
+
+<!-- ==================== 第六章 ==================== -->
+<h2 class="section-title" id="ch6">六、高频考点与能力层级分析</h2>
+
+<h3>2024-2025 高频考点 TOP 15</h3>
+<table>
+  <tr><th>排名</th><th>考点</th><th>出现频次</th><th>能力层级</th><th>板块</th></tr>
+  <tr><td class="priority-high">1</td><td>文明起源与原始社会</td><td>连续2年</td><td>识记 + 史料实证</td><td>中国古代史</td></tr>
+  <tr><td class="priority-high">2</td><td>政治制度演变（分封制→郡县制→推恩令）</td><td>连续2年</td><td>识记 + 理解</td><td>中国古代史</td></tr>
+  <tr><td class="priority-high">3</td><td>民族交融与统一多民族国家</td><td>连续2年</td><td>理解 + 分析</td><td>中国古代史</td></tr>
+  <tr><td class="priority-high">4</td><td>古希腊罗马文明</td><td>连续2年</td><td>史料实证</td><td>世界古代史</td></tr>
+  <tr><td class="priority-high">5</td><td>近代欧洲思想解放运动</td><td>连续2年</td><td>理解 + 分析</td><td>世界近代史</td></tr>
+  <tr><td class="priority-mid">6</td><td>边疆治理（台湾/西藏/新疆）</td><td>2025</td><td>识记</td><td>中国古代史</td></tr>
+  <tr><td class="priority-mid">7</td><td>科技文化成就</td><td>2025</td><td>识记 + 理解</td><td>中国古代史</td></tr>
+  <tr><td class="priority-mid">8</td><td>中世纪欧洲 / 拜占庭帝国</td><td>连续2年</td><td>理解</td><td>世界古代史</td></tr>
+  <tr><td class="priority-mid">9</td><td>辽宁地方史</td><td>2025 新增</td><td>识记 + 史料实证</td><td>中国古代史</td></tr>
+  <tr><td class="priority-mid">10</td><td>抗日战争/九一八事变</td><td>常考</td><td>理解 + 家国情怀</td><td>中国近现代史</td></tr>
+  <tr><td>11</td><td>改革开放</td><td>常考</td><td>理解 + 分析</td><td>中国现代史</td></tr>
+  <tr><td>12</td><td>工业革命</td><td>常考</td><td>理解 + 分析</td><td>世界近代史</td></tr>
+  <tr><td>13</td><td>十月革命与罗斯福新政</td><td>2024</td><td>历史解释</td><td>世界现代史</td></tr>
+  <tr><td>14</td><td>近代化探索四部曲</td><td>常考</td><td>理解 + 综合</td><td>中国近代史</td></tr>
+  <tr><td>15</td><td>二战与冷战</td><td>常考</td><td>分析 + 评价</td><td>世界现代史</td></tr>
+</table>
+
+<h3>能力层级分布</h3>
+<div class="bar-chart">
+  <div class="bar-row">
+    <div class="bar-label">识记</div>
+    <div class="bar-track"><div class="bar-fill world" style="width:25%">~25%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">理解</div>
+    <div class="bar-track"><div class="bar-fill modern" style="width:35%">~35%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">分析综合</div>
+    <div class="bar-track"><div class="bar-fill ancient" style="width:25%">~25%</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label">评价创造</div>
+    <div class="bar-track"><div class="bar-fill contemporary" style="width:15%">~15%</div></div>
+  </div>
+</div>
+
+<div class="card info">
+  <div class="card-title">能力层级解读</div>
+  <p>纯识记（背就能拿分）仅占约 25%。<strong>理解 + 分析综合</strong>合计占 60%，这是决定成绩的核心层级。评价创造层级（开放性论述）约 15%，是拉开优秀与良好差距的"天花板题"。</p>
+  <p>→ 这意味着<strong>死记硬背最多拿 50 分左右</strong>，要冲 60+ 必须训练分析和论述能力。</p>
+</div>
+
+<!-- ==================== 第七章 ==================== -->
+<h2 class="section-title" id="ch7">七、备考作战地图</h2>
+
+<div class="card">
+  <div class="card-title">🎯 最高优先级（投入 40% 精力）</div>
+  <h4>行动 1：建立三大模块时间轴</h4>
+  <p>制作中国古代史、中国近现代史、世界史三条时间轴，标注重大事件及年代。横向对比同一时期中外历史事件。</p>
+  <p><strong>具体做法：</strong>每周花 30 分钟更新一条时间轴，到考前形成三张完整的大图，贴在书桌前。</p>
+
+  <h4>行动 2：重点突破辽宁地方史</h4>
+  <p>整理辽宁本地历史事件和遗址专题笔记：小孤山→红山文化→牛河梁遗址→九一八事变→辽沈战役。每个事件记住：时间、地点、关键人物、历史意义。</p>
+
+  <h4>行动 3：材料分析题专项训练</h4>
+  <p>每周精做 2-3 道综合题，训练"读材料→提取信息→结合所学→组织答案"的完整流程。重点练习：</p>
+  <ul>
+    <li>如何从材料中找出关键词句</li>
+    <li>如何用"教材语言"而非"大白话"作答</li>
+    <li>如何做到"论从史出"——先引材料，再给结论</li>
+  </ul>
+</div>
+
+<div class="card warning">
+  <div class="card-title">⚡ 高优先级（投入 30% 精力）</div>
+  <h4>行动 4：核心素养答题模板化</h4>
+  <p>针对五种核心素养建立标准答题模板：</p>
+  <ul>
+    <li><strong>时空观念题：</strong>"X 世纪（朝代）+ 地点 + 事件 + 意义"</li>
+    <li><strong>史料实证题：</strong>"材料中提到……→ 这说明……→ 结合所学可知……"</li>
+    <li><strong>历史解释题：</strong>"原因 + 过程 + 影响"三段式</li>
+    <li><strong>评价类题：</strong>"一分为二"辩证评价法（进步性 + 局限性）</li>
+  </ul>
+
+  <h4>行动 5：中国近现代史主线串联</h4>
+  <p>按四条主线复习：① 侵略史线（鸦片→甲午→八国联军→日本侵华）；② 探索线（洋务→戊戌→辛亥→新文化）；③ 革命线（五四→建党→长征→抗战→解放）；④ 建设线（新中国→三大改造→改革开放→新时代）。</p>
+</div>
+
+<div class="card success">
+  <div class="card-title">📌 中等优先级（投入 20% 精力）</div>
+  <h4>行动 6：世界史按"文明交流与碰撞"专题复习</h4>
+  <p>世界史不要死记国家和事件，而是按专题组织：</p>
+  <ul>
+    <li><strong>思想解放：</strong>文艺复兴 → 启蒙运动 → 马克思主义</li>
+    <li><strong>制度创新：</strong>英国君主立宪 → 美国联邦制 → 法国共和制</li>
+    <li><strong>经济变革：</strong>工业革命 → 罗斯福新政 → 全球化</li>
+    <li><strong>国际秩序：</strong>一战后凡尔赛体系 → 二战后雅尔塔体系 → 冷战后多极化</li>
+  </ul>
+
+  <h4>行动 7：教材图片和地图专项记忆</h4>
+  <p>把教材中的关键图片、地图列成清单，每天看 10 分钟。情境题必然从图片出发，看图就能锁定考点是核心竞争力。</p>
+</div>
+
+<div class="card">
+  <div class="card-title">📋 常规优先级（投入 10% 精力）</div>
+  <h4>行动 8：选择题技巧训练</h4>
+  <p>选择题 30 分是"保底分"，每周做 1-2 套模拟卷的选择题部分，训练：排除法、时空定位法、关键词抓取法。目标：选择题正确率稳定在 85% 以上（丢分不超过 2 道）。</p>
+</div>
+
+<h3>模拟卷使用建议</h3>
+<div class="card info">
+  <div class="card-title">辽宁各地模拟卷的价值排序</div>
+  <ul>
+    <li><strong>最高价值：</strong>沈阳、大连的一模/二模卷——这两个城市教研水平最高，命题风格最接近省卷</li>
+    <li><strong>高价值：</strong>鞍山、抚顺、丹东的模拟卷——地方特色与省卷兼顾</li>
+    <li><strong>参考价值：</strong>其他地市模拟卷——用于查漏补缺和扩大题型视野</li>
+    <li><strong>必做：</strong>2024、2025 辽宁省真题——近两年真题是最精准的风向标</li>
+  </ul>
+  <p>建议做卷顺序：<strong>真题（2024-2025）→ 沈阳/大连一二模 → 各地模拟卷</strong></p>
+</div>
+
+<h3>考前冲刺时间表（最后 60 天）</h3>
+<table>
+  <tr><th>阶段</th><th>时间</th><th>任务</th><th>每日用时</th></tr>
+  <tr><td><strong>基础巩固</strong></td><td>第 1-3 周</td><td>按三大模块过教材，完成时间轴，整理地方史专题</td><td>45 分钟</td></tr>
+  <tr><td><strong>专题突破</strong></td><td>第 4-5 周</td><td>高频考点专题练习，材料分析题模板训练</td><td>45 分钟</td></tr>
+  <tr><td><strong>模拟实战</strong></td><td>第 6-7 周</td><td>整套模拟卷限时练习（每套 65 分钟），逐题精批</td><td>每周 2 套</td></tr>
+  <tr><td><strong>查漏冲刺</strong></td><td>第 8 周</td><td>回顾错题本，重看时间轴和地方史笔记，调整状态</td><td>30 分钟</td></tr>
+</table>
+
+<div class="footnote">
+  <p><strong>数据来源：</strong>本报告基于 2024-2025 辽宁省中考历史真题、学科网试题解读、百度文库及原创力文档公开资料综合分析。2026 年考试说明尚未正式发布（截至 2026 年 4 月 22 日），趋势预测基于 2022 版新课标及近年命题规律推演。</p>
+  <p><strong>声明：</strong>分值占比和难度比例为基于真题统计的估算值，具体以官方发布为准。</p>
+</div>
+
+</div>
+</body>
+</html>
