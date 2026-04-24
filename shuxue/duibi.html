@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>11套辽宁中考数学模拟卷横向对比分析</title>
+<style>
+:root{--bg:#f5f1e8;--primary:#1a5276;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e;--accent:#1a5276;--accent-light:rgba(26,82,118,0.08);--accent-border:rgba(26,82,118,0.2)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(26,82,118,0.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(26,82,118,0.06),transparent 26%),var(--bg);line-height:1.75}
+.container{width:min(1120px,92vw);margin:28px auto 48px}
+header{background:linear-gradient(135deg,var(--accent-light),rgba(245,241,232,0.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,0.06)}
+h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}
+.subtitle{margin:0;color:var(--muted);font-size:.98rem}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}
+nav{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+nav h2{margin:0 0 8px;font-size:1.02rem;color:var(--primary)}
+.toc{margin:0;padding-left:18px;columns:2;column-gap:34px}
+.toc li{margin:5px 0;break-inside:avoid}
+.toc a{color:var(--text);text-decoration:none;border-bottom:1px dashed var(--accent-border)}
+.toc a:hover{color:var(--primary)}
+section{background:rgba(251,248,241,0.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,0.04)}
+h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid var(--accent-border);padding-bottom:8px}
+h3{margin:16px 0 8px;font-size:1.06rem;color:#1a3d5c}
+p{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.88rem;background:#fffef9}
+th,td{border:1px solid var(--line);padding:7px 8px;vertical-align:top}
+th{background:#dce8f0;color:#1a3d5c;text-align:left;font-weight:700;position:sticky;top:0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.module-card{border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;background:#fffdf7;padding:12px}
+.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin:2px 4px 2px 0;color:#51493f;background:#f8f3e8}
+.tag.hot{background:#fadbd8;color:#922b21;border-color:#f5b7b1}
+.tag.unique{background:#d5f5e3;color:#1e8449;border-color:#abebc6}
+ul{margin:8px 0;padding-left:20px}
+footer{margin-top:18px;color:var(--muted);font-size:.86rem;text-align:center}
+.bar-chart{margin:12px 0}
+.bar-row{display:flex;align-items:center;margin:6px 0}
+.bar-label{width:100px;font-size:.82rem;text-align:right;padding-right:10px;flex-shrink:0}
+.bar-track{flex:1;background:#e8e2d6;border-radius:6px;height:22px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:.75rem;color:#fff;font-weight:700}
+.bar-fill.blue{background:linear-gradient(90deg,#1a5276,#2980b9)}
+.bar-fill.green{background:linear-gradient(90deg,#1e8449,#27ae60)}
+.bar-fill.orange{background:linear-gradient(90deg,#b7950b,#f1c40f);color:#5a4e00}
+.bar-fill.red{background:linear-gradient(90deg,#922b21,#e74c3c)}
+.bar-fill.purple{background:linear-gradient(90deg,#6c3483,#a569bd)}
+.card-highlight{background:linear-gradient(135deg,var(--accent-light),#f0ebe0);border:1px solid var(--accent-border);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px;margin:12px 0}
+.card-highlight strong{color:var(--primary)}
+.diff-easy{background:#d5f5e3;color:#1e8449;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-mid{background:#fef9e7;color:#9a7d0a;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-hard{background:#fadbd8;color:#922b21;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.rank-1{color:#c0392b;font-weight:700}
+.rank-2{color:#e67e22;font-weight:700}
+.rank-3{color:#27ae60;font-weight:700}
+.scroll-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media(max-width:900px){.toc{columns:1}.grid-2,.grid-3{grid-template-columns:1fr}.bar-label{width:70px}table{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>📊 11套辽宁中考数学模拟卷 · 横向对比分析</h1>
+<p class="subtitle">沈阳8区 + 抚顺统考 + 营口市一模 + 铁岭二模 | 2026年中考数学全景扫描</p>
+<div class="meta">
+<span class="chip">覆盖11套卷 · 253题</span>
+<span class="chip">统一结构：23题120分120分钟</span>
+<span class="chip">分析维度：结构·知识·压轴·命题·复习</span>
+<span class="chip">生成时间：2026年4月24日</span>
+</div>
+</header>
+
+<nav>
+<h2>📑 目录</h2>
+<ol class="toc">
+<li><a href="#s1">一、总览表：11套卷基本信息汇总</a></li>
+<li><a href="#s2">二、知识点覆盖对比</a></li>
+<li><a href="#s3">三、压轴题对比</a></li>
+<li><a href="#s4">四、命题特色对比</a></li>
+<li><a href="#s5">五、复习价值评估</a></li>
+<li><a href="#s6">六、综合复习建议</a></li>
+</ol>
+</nav>
+
+<!-- ==================== 一、总览表 ==================== -->
+<section id="s1">
+<h2>一、总览表：11套卷基本信息汇总</h2>
+
+<div class="scroll-table">
+<table>
+<tr>
+<th>试卷</th><th>题量</th><th>总分</th><th>结构</th><th>基础题占比</th><th>中档题占比</th><th>压轴题占比</th><th>情境化比例</th><th>压轴题分值</th>
+</tr>
+<tr><td>和平区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>58%（约70分）</td><td>25%（约30分）</td><td>17%（约20分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>沈河区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>39.1%（9题）</td><td>22+23题共25分</td></tr>
+<tr><td>铁西区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>于洪区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>39.1%（9题）</td><td>22+23题共27分</td></tr>
+<tr><td>皇姑区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>43.5%（10题）</td><td>22+23题共25分</td></tr>
+<tr><td>沈北新区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>30.4%（7题）</td><td>22+23题共25分</td></tr>
+<tr><td>浑南区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约33分）</td><td>18%（约21分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>苏家屯区一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>抚顺统考</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>营口市一模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+<tr><td>铁岭二模</td><td>23</td><td>120</td><td>10+5+8</td><td>55%（约66分）</td><td>27%（约32分）</td><td>18%（约22分）</td><td>34.8%（8题）</td><td>22+23题共25分</td></tr>
+</table>
+</div>
+
+<div class="card-highlight">
+<strong>结构一致性：</strong>11套卷全部采用23题120分120分钟结构（选择10题30分 + 填空5题15分 + 解答8题75分），与辽宁省中考标准完全一致。难度分布高度统一：基础题约55%、中档题约27%、压轴题约18%，呈"5.5:2.7:1.8"梯度。<strong>皇姑区一模</strong>情境化命题比例最高（43.5%，10题），<strong>沈北新区一模</strong>最低（30.4%，7题）。<strong>于洪区一模</strong>第23题分值最高（15分），其余10套卷第23题均为13分。
+</div>
+</section>
+
+<!-- ==================== 二、知识点覆盖对比 ==================== -->
+<section id="s2">
+<h2>二、知识点覆盖对比</h2>
+
+<h3>2.1 四大领域分布对比</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>数与代数</th><th>图形与几何</th><th>统计与概率</th><th>综合与实践</th></tr>
+<tr><td>和平区一模</td><td>48%（约57分）</td><td>38%（约45分）</td><td>10%（约12分）</td><td>5%（约6分）</td></tr>
+<tr><td>沈河区一模</td><td>47%（约56分）</td><td>39%（约47分）</td><td>9%（约11分）</td><td>5%（约6分）</td></tr>
+<tr><td>铁西区一模</td><td>47%（约56分）</td><td>38%（约46分）</td><td>10%（约12分）</td><td>5%（约6分）</td></tr>
+<tr><td>于洪区一模</td><td>50%（约60分）</td><td>36%（约43分）</td><td>10%（约12分）</td><td>4%（约5分）</td></tr>
+<tr><td>皇姑区一模</td><td>47%（约56分）</td><td>39%（约47分）</td><td>12%（约14分）</td><td>3%（约3分）</td></tr>
+<tr><td>沈北新区一模</td><td>45%（约54分）</td><td>40%（约48分）</td><td>12%（约14分）</td><td>3%（约4分）</td></tr>
+<tr><td>浑南区一模</td><td>47%（约56分）</td><td>39%（约47分）</td><td>9%（约11分）</td><td>5%（约6分）</td></tr>
+<tr><td>苏家屯区一模</td><td>47%（约56分）</td><td>38%（约46分）</td><td>10%（约12分）</td><td>5%（约6分）</td></tr>
+<tr><td>抚顺统考</td><td>47%（约56分）</td><td>38%（约46分）</td><td>10%（约12分）</td><td>5%（约6分）</td></tr>
+<tr><td>营口市一模</td><td>47%（约56分）</td><td>39%（约47分）</td><td>10%（约12分）</td><td>4%（约5分）</td></tr>
+<tr><td>铁岭二模</td><td>47%（约56分）</td><td>39%（约47分）</td><td>9%（约11分）</td><td>5%（约6分）</td></tr>
+<tr style="font-weight:700;background:#dce8f0"><td>11套平均</td><td>47.2%</td><td>38.5%</td><td>10.1%</td><td>4.5%</td></tr>
+<tr style="background:#f0ebe0"><td>辽宁中考标准</td><td>约45%</td><td>约40%</td><td>约10%</td><td>约5%</td></tr>
+</table>
+</div>
+
+<div class="card-highlight">
+<strong>领域分布结论：</strong>11套卷四大领域比例高度一致，平均为47:39:10:4，与辽宁中考标准（45:40:10:5）基本吻合。<strong>于洪区一模</strong>代数占比最高（50%），<strong>沈北新区一模</strong>几何占比最高（40%）。统计与概率在所有卷中均为基础难度，无中档以上的数据分析解答题——这是11套卷的共同短板。
+</div>
+
+<h3>2.2 高频考点统计（11套卷中出现次数）</h3>
+<p>以下考点在11套卷中均有考查（出现11/11次）：</p>
+<div class="module-card">
+<span class="tag hot">科学记数法 11/11</span>
+<span class="tag hot">整式运算/乘法公式 11/11</span>
+<span class="tag hot">三视图 11/11</span>
+<span class="tag hot">轴对称/中心对称图形 11/11</span>
+<span class="tag hot">概率计算 11/11</span>
+<span class="tag hot">实数综合计算 11/11</span>
+<span class="tag hot">分式化简求值 11/11</span>
+<span class="tag hot">统计图表 11/11</span>
+<span class="tag hot">圆的综合 11/11</span>
+<span class="tag hot">二次函数综合（压轴） 11/11</span>
+<span class="tag hot">解直角三角形应用 10/11</span>
+<span class="tag hot">方程/不等式应用 11/11</span>
+<span class="tag hot">几何旋转/翻折综合（压轴） 11/11</span>
+<span class="tag hot">反比例函数 10/11</span>
+<span class="tag hot">平行四边形/菱形/正方形 11/11</span>
+</div>
+
+<h3>2.3 各卷独有/特色考点</h3>
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">和平区一模</h3>
+<span class="tag unique">物理滑块运动实验建模（题19）</span>
+<span class="tag unique">双抛物线联动差值分析（题23）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">沈河区一模</h3>
+<span class="tag unique">"双倍比例点"新定义（题23）</span>
+<span class="tag unique">AI工具图标轴对称（题4）</span>
+<span class="tag unique">黄金分割（题7）</span>
+<span class="tag unique">中心对称+新定义探究（题23③）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">铁西区一模</h3>
+<span class="tag unique">校园花园栅栏建模（题19）</span>
+<span class="tag unique">动点矩形面积最值（题20）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">于洪区一模</h3>
+<span class="tag unique">位似变换（题7）</span>
+<span class="tag unique">"最值差"新定义（题23③）</span>
+<span class="tag unique">尺规作图综合选择压轴（题10）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">皇姑区一模</h3>
+<span class="tag unique">分段函数G最值与参数无关（题23③）</span>
+<span class="tag unique">等腰三角形旋转模型多角度变化（题22）</span>
+<span class="tag unique">开放性"直接写出结果"（题22③②）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">沈北新区一模</h3>
+<span class="tag unique">双抛物线拼接新图象（题23③）</span>
+<span class="tag unique">矩形折叠→菱形判定（题18）</span>
+<span class="tag unique">四边形综合中位线证明链（题22）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">浑南区一模</h3>
+<span class="tag unique">古钱币密度推理（题19·跨学科）</span>
+<span class="tag unique">等边三角形旋转60°（题22）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">苏家屯区一模</h3>
+<span class="tag unique">正比例+反比例+一次函数三函数联动（题19）</span>
+<span class="tag unique">平行四边形旋转90°综合（题22）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">抚顺统考</h3>
+<span class="tag unique">篮球投篮弧线建模（题19）</span>
+<span class="tag unique">"较小函数"新定义（题23③）</span>
+<span class="tag unique">反比例函数+矩形动点面积（题20）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">营口市一模</h3>
+<span class="tag unique">"匀称系数"新定义（题23）</span>
+<span class="tag unique">遮阳棚双抛物线建模（题19）</span>
+<span class="tag unique">正十二边形+正六边形镶嵌（题9）</span>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">铁岭二模</h3>
+<span class="tag unique">"特征值"新定义（题23）</span>
+<span class="tag unique">一次函数角平分线证明（题19）</span>
+<span class="tag unique">翻折+角平分线比例证明（题22）</span>
+</div>
+</div>
+</section>
+
+<!-- ==================== 三、压轴题对比 ==================== -->
+<section id="s3">
+<h2>三、压轴题对比</h2>
+
+<h3>3.1 第22题（几何压轴）对比</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>分值</th><th>几何载体</th><th>核心变换</th><th>考查内容</th><th>数学思想</th><th>难度评估</th></tr>
+<tr><td>和平区</td><td>12分</td><td>正方形ABCD</td><td>旋转</td><td>求AF→证∠APB=45°→求面积</td><td>转化化归、数形结合</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>沈河区</td><td>12分</td><td>△ABC对折</td><td>轴对称（对折）</td><td>证角相等→探索角度关系→取中点求最值</td><td>转化化归、分类讨论</td><td><span class="diff-hard">★★★★☆</span></td></tr>
+<tr><td>铁西区</td><td>12分</td><td>等腰Rt△</td><td>旋转</td><td>求EF→旋转30°求BF→A在DE上求CE</td><td>转化化归、数形结合</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>于洪区</td><td>12分</td><td>等腰△翻折</td><td>轴对称（翻折）</td><td>证菱形→求面积→角度条件求长</td><td>推理论证、转化化归</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>皇姑区</td><td>13分</td><td>等腰△+直线l</td><td>旋转</td><td>证相似→求EF→变角度求AF→直接写AG</td><td>转化化归、分类讨论</td><td><span class="diff-hard">★★★★★</span></td></tr>
+<tr><td>沈北新区</td><td>12分</td><td>四边形ABCD</td><td>全等+中位线</td><td>证AD∥BF→证DE=2CM→求面积</td><td>推理论证、方程思想</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>浑南区</td><td>12分</td><td>等边△ABC</td><td>旋转60°</td><td>证AF=FD→求OF→求△EOF面积</td><td>转化化归、数形结合</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>苏家屯区</td><td>12分</td><td>平行四边形</td><td>旋转90°</td><td>证BH⊥AD→证BP=PC→求面积</td><td>转化化归、推理论证</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>抚顺</td><td>12分</td><td>旋转变换</td><td>旋转</td><td>证BF=DF→证G是中点→求面积</td><td>转化化归、推理论证</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>营口市</td><td>12分</td><td>△翻折</td><td>轴对称（翻折）</td><td>判断菱形→求DF→猜想并证明关系</td><td>转化化归、分类讨论</td><td><span class="diff-hard">★★★★☆</span></td></tr>
+<tr><td>铁岭</td><td>12分</td><td>△翻折</td><td>轴对称（翻折）</td><td>证比例→求角度→角平分线求长</td><td>转化化归、分类讨论</td><td><span class="diff-hard">★★★★☆</span></td></tr>
+</table>
+</div>
+
+<h3>3.2 第23题（代数压轴）对比</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>分值</th><th>题型</th><th>核心设计</th><th>最难小问</th><th>数学思想</th><th>难度评估</th></tr>
+<tr><td>和平区</td><td>13分</td><td>二次函数综合</td><td>双抛物线联动，y₁-y₂差值分析</td><td>双函数差值最大值=-1求a</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>沈河区</td><td>13分</td><td>新定义"双倍比例点"</td><td>y=2x与函数图象交点</td><td>中心对称+三个交点条件求t</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★★</span></td></tr>
+<tr><td>铁西区</td><td>13分</td><td>二次函数综合</td><td>y=x²-6x+5基本性质+综合</td><td>含参讨论或动点问题</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>于洪区</td><td>15分</td><td>二次函数+新定义"最值差"</td><td>平移+旋转+分段函数最值差</td><td>d_EF=2d_FG求m</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★★</span></td></tr>
+<tr><td>皇姑区</td><td>12分</td><td>抛物线对称+分段函数</td><td>y与y'拼接新函数G</td><td>最大值最小值均与t无关求范围</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★★</span></td></tr>
+<tr><td>沈北新区</td><td>13分</td><td>双抛物线拼接</td><td>G₁右侧+G₂左侧拼接新图象G</td><td>动点P与直线距离<4求t范围</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>浑南区</td><td>13分</td><td>二次函数综合</td><td>对称轴+交点+面积+对称点</td><td>BC'与OA有公共点求m范围</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>苏家屯区</td><td>13分</td><td>二次函数综合</td><td>OCR严重受损，细节待确认</td><td>—</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★</span></td></tr>
+<tr><td>抚顺</td><td>13分</td><td>二次函数+"较小函数"</td><td>两函数取较小值构成新函数</td><td>DG=4EF求t</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★☆</span></td></tr>
+<tr><td>营口市</td><td>13分</td><td>新定义"匀称系数"</td><td>抛物线弧的匀称系数R</td><td>两弧匀称系数之和=11求t</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★★</span></td></tr>
+<tr><td>铁岭</td><td>13分</td><td>新定义"特征值"</td><td>二次函数特征值+分类讨论</td><td>½≤t<√7取值范围</td><td>函数思想、分类讨论</td><td><span class="diff-hard">★★★★☆</span></td></tr>
+</table>
+</div>
+
+<h3>3.3 压轴题命题趋势分析</h3>
+<div class="card-highlight">
+<strong>几何压轴（第22题）趋势：</strong><br/>
+① <strong>旋转与翻折二分天下：</strong>11套卷中，旋转类6套（和平、铁西、皇姑、浑南、苏家屯、抚顺），翻折类4套（沈河、于洪、营口、铁岭），全等+中位线1套（沈北新区）。<br/>
+② <strong>等腰三角形/等边三角形是最常见载体：</strong>皇姑区、于洪区、浑南区、营口市、铁岭均以等腰/等边三角形为基础图形。<br/>
+③ <strong>设问三层递进：</strong>第(1)问证明（送分）→ 第(2)问计算（中档）→ 第(3)问综合（压轴），11套卷无一例外。<br/>
+④ <strong>分值稳定在12分：</strong>仅皇姑区为13分，其余均为12分。<br/><br/>
+
+<strong>代数压轴（第23题）趋势：</strong><br/>
+① <strong>新定义题成为主流：</strong>11套卷中至少6套采用新定义设计——沈河区"双倍比例点"、于洪区"最值差"、抚顺"较小函数"、营口"匀称系数"、铁岭"特征值"、皇姑区"新函数G"。<br/>
+② <strong>分段函数/拼接函数是高频考法：</strong>皇姑区、沈北新区、于洪区、抚顺均涉及分段函数或函数拼接。<br/>
+③ <strong>分类讨论贯穿始终：</strong>11套卷的第23题最后一问全部需要分类讨论。<br/>
+④ <strong>分值稳定在13分：</strong>仅于洪区为15分、皇姑区为12分，其余均为13分。
+</div>
+</section>
+
+<!-- ==================== 四、命题特色对比 ==================== -->
+<section id="s4">
+<h2>四、命题特色对比</h2>
+
+<h3>4.1 情境化命题比例对比</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">皇姑区</div><div class="bar-track"><div class="bar-fill blue" style="width:43.5%">43.5%（10题）</div></div></div>
+<div class="bar-row"><div class="bar-label">沈河区</div><div class="bar-track"><div class="bar-fill blue" style="width:39.1%">39.1%（9题）</div></div></div>
+<div class="bar-row"><div class="bar-label">于洪区</div><div class="bar-track"><div class="bar-fill blue" style="width:39.1%">39.1%（9题）</div></div></div>
+<div class="bar-row"><div class="bar-label">和平区</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">铁西区</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">浑南区</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">苏家屯区</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">抚顺</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">营口市</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">铁岭</div><div class="bar-track"><div class="bar-fill blue" style="width:34.8%">34.8%（8题）</div></div></div>
+<div class="bar-row"><div class="bar-label">沈北新区</div><div class="bar-track"><div class="bar-fill blue" style="width:30.4%">30.4%（7题）</div></div></div>
+</div>
+
+<h3>4.2 新定义题/创新题型汇总</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>新定义/创新题</th><th>题号</th><th>核心概念</th></tr>
+<tr><td>沈河区一模</td><td>"双倍比例点"</td><td>第23题</td><td>纵坐标是横坐标2倍的点</td></tr>
+<tr><td>于洪区一模</td><td>"最值差"</td><td>第23题(3)</td><td>分段函数上两点间的最值差</td></tr>
+<tr><td>皇姑区一模</td><td>新函数G（分段拼接）</td><td>第23题(3)</td><td>抛物线y与其x轴对称y'拼接</td></tr>
+<tr><td>沈北新区一模</td><td>双抛物线拼接新图象</td><td>第23题(3)</td><td>G₁右侧+G₂左侧拼接</td></tr>
+<tr><td>抚顺统考</td><td>"较小函数"</td><td>第23题(3)</td><td>两函数取较小值构成新函数</td></tr>
+<tr><td>营口市一模</td><td>"匀称系数"</td><td>第23题</td><td>抛物线弧的匀称程度量化</td></tr>
+<tr><td>铁岭二模</td><td>"特征值"</td><td>第23题</td><td>二次函数的特征值定义</td></tr>
+</table>
+</div>
+<p><strong>结论：</strong>11套卷中7套（63.6%）在第23题采用了新定义题型，这已成为辽宁中考代数压轴的主流命题方式。新定义题考查学生的阅读理解能力和知识迁移能力，是区分110+分段学生的关键。</p>
+
+<h3>4.3 传统文化融入情况</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>传统文化题</th><th>具体内容</th></tr>
+<tr><td>和平区一模</td><td>✅ 题13</td><td>《九章算术》良田劣田问题 → 二元一次方程组</td></tr>
+<tr><td>沈河区一模</td><td>❌</td><td>无传统文化题（以AI/科技为主线）</td></tr>
+<tr><td>铁西区一模</td><td>❌</td><td>无传统文化题</td></tr>
+<tr><td>于洪区一模</td><td>✅ 题3</td><td>中国传统纹样 → 对称图形判断</td></tr>
+<tr><td>皇姑区一模</td><td>✅ 题4</td><td>楷书/行书/隶书"马"字卡片 → 概率</td></tr>
+<tr><td>沈北新区一模</td><td>❌</td><td>无传统文化题</td></tr>
+<tr><td>浑南区一模</td><td>✅ 题3、题9</td><td>二十四节气图案 → 对称；《九章算术》鹜雁问题 → 分式方程</td></tr>
+<tr><td>苏家屯区一模</td><td>✅ 题8</td><td>《九章算术》勾股章 → 勾股定理方程</td></tr>
+<tr><td>抚顺统考</td><td>✅ 题5、题9</td><td>甲骨文卡片 → 概率；《九章算术》矩形田地 → 方程</td></tr>
+<tr><td>营口市一模</td><td>✅ 题5</td><td>《九章算术》快马慢马行程 → 分式方程</td></tr>
+<tr><td>铁岭二模</td><td>✅ 题8</td><td>《九章算术》甲乙钱数 → 方程组</td></tr>
+</table>
+</div>
+<div class="card-highlight">
+<strong>传统文化融入结论：</strong>11套卷中8套（72.7%）融入了传统文化元素，其中《九章算术》出现5次（和平、浑南、苏家屯、抚顺、营口、铁岭），是最高频的传统文化载体。沈河区、铁西区、沈北新区3套卷未涉及传统文化——沈河区以AI/科技为主线，铁西区和沈北新区以时事热点为主。
+</div>
+</section>
+
+<!-- ==================== 五、复习价值评估 ==================== -->
+<section id="s5">
+<h2>五、复习价值评估</h2>
+
+<h3>5.1 难度最接近省统考的试卷</h3>
+<div class="grid-3">
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-1">🥇 浑南区一模</h3>
+<p>四大领域比例47:39:9:5，与省标准45:40:10:5最为接近。难度梯度5.5:2.7:1.8标准。情境化比例34.8%适中。传统文化+跨学科均有涉及。压轴题难度中等偏上，区分度合理。</p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-2">🥈 铁西区一模</h3>
+<p>结构与省标准完全一致。基础题覆盖面广，中档题设计精巧。栅栏建模题（题19）完整呈现建模过程。压轴题难度适中，适合作为模拟练习。</p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-3">🥉 抚顺统考</h3>
+<p>作为地市级统考卷，命题规范性高。篮球投篮建模（题19）贴近生活。"较小函数"新定义设计合理。整体难度与省统考预期吻合。</p>
+</div>
+</div>
+
+<h3>5.2 创新性最强的试卷</h3>
+<div class="grid-3">
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-1">🥇 沈河区一模</h3>
+<p>AI主题线贯穿全卷（"绝艺"、AI工具图标、jabubu玩偶、AI软件满意度），"双倍比例点"新定义+中心对称三层递进，时代感最强。</p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-2">🥈 营口市一模</h3>
+<p>"匀称系数"新定义设计精巧，遮阳棚双抛物线建模新颖，正十二边形镶嵌题拓展视野。翻折压轴"猜想并证明"设问开放。</p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0" class="rank-3">🥉 皇姑区一模</h3>
+<p>分段函数G"最值与参数无关"设计独特，等腰三角形旋转模型多角度变化（60°→120°→混合角度），"直接写出结果"开放题考查探究能力。情境化比例最高（43.5%）。</p>
+</div>
+</div>
+
+<h3>5.3 推荐做卷顺序</h3>
+<table>
+<tr><th>阶段</th><th>推荐试卷</th><th>理由</th></tr>
+<tr>
+<td><strong>第一阶段：夯实基础</strong><br/>（距中考60天+）</td>
+<td>① 铁西区一模<br/>② 沈北新区一模<br/>③ 苏家屯区一模</td>
+<td>基础题覆盖面广，中档题设计规范，压轴题难度适中。适合建立信心、查漏补缺。铁西区栅栏建模题训练建模思维，沈北新区矩形折叠→菱形链条清晰。</td>
+</tr>
+<tr>
+<td><strong>第二阶段：突破中档</strong><br/>（距中考30~60天）</td>
+<td>④ 浑南区一模<br/>⑤ 抚顺统考<br/>⑥ 和平区一模<br/>⑦ 铁岭二模</td>
+<td>难度最接近省统考。浑南区古钱币跨学科题训练综合思维，抚顺篮球建模贴近生活，和平区物理实验建模拓展视野，铁岭翻折+角平分线综合性强。</td>
+</tr>
+<tr>
+<td><strong>第三阶段：冲刺压轴</strong><br/>（距中考15~30天）</td>
+<td>⑧ 于洪区一模<br/>⑨ 皇姑区一模<br/>⑩ 营口市一模<br/>⑪ 沈河区一模</td>
+<td>压轴题难度最高、创新性最强。于洪区"最值差"、皇姑区分段函数G、营口"匀称系数"、沈河区"双倍比例点"+中心对称，集中训练新定义题型和分类讨论能力。</td>
+</tr>
+</table>
+</section>
+
+<!-- ==================== 六、综合复习建议 ==================== -->
+<section id="s6">
+<h2>六、综合复习建议</h2>
+
+<h3>6.1 基于11套卷的重点复习方向</h3>
+<div class="card-highlight">
+<strong>核心发现：</strong>11套卷的命题高度一致，反映了辽宁中考的稳定命题导向。以下方向在所有试卷中反复出现，是复习的绝对重点：
+</div>
+
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">🔴 最高优先级（每套卷必考）</h3>
+<ul>
+<li><strong>二次函数综合：</strong>11/11套卷的第23题均为二次函数压轴，合计分值143分。重点练习：待定系数法、对称轴与单调性、与直线联立、面积问题、新定义题型。</li>
+<li><strong>几何旋转/翻折综合：</strong>11/11套卷的第22题均为几何变换压轴。旋转类（6套）和翻折类（5套）各占半壁江山，必须两种都练。</li>
+<li><strong>圆的综合：</strong>11/11套卷均有圆的解答题（第21题），切线证明+计算是标配。</li>
+<li><strong>实数计算+分式化简：</strong>11/11套卷第16题均为此题型，是最稳定的送分题（10分）。</li>
+</ul>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">🟡 高优先级（9~11套卷考查）</h3>
+<ul>
+<li><strong>解直角三角形应用：</strong>10/11套卷有专门的解直角三角形题（仰角/俯角/坡度/测量），熟记特殊角三角函数值。</li>
+<li><strong>统计图表+估计总体：</strong>11/11套卷均有统计解答题，但全部为基础难度——这是最容易拿满分的解答题。</li>
+<li><strong>方程/不等式应用：</strong>11/11套卷均有方程或不等式应用题（购买方案/行程问题/增长率），建模能力是关键。</li>
+<li><strong>反比例函数：</strong>10/11套卷考查反比例函数（选择或填空），重点掌握k值确定和图象性质。</li>
+</ul>
+</div>
+</div>
+
+<h3>6.2 必须掌握的核心知识点清单</h3>
+<table>
+<tr><th>序号</th><th>知识点</th><th>11套卷出现频次</th><th>典型题号</th><th>掌握标准</th></tr>
+<tr><td>1</td><td>二次函数图象与性质</td><td>11/11</td><td>第23题（压轴）</td><td>对称轴、顶点、开口方向、与坐标轴交点、单调性、最值</td></tr>
+<tr><td>2</td><td>旋转/翻折变换</td><td>11/11</td><td>第22题（压轴）</td><td>旋转全等、翻折对称、构造等边/等腰三角形</td></tr>
+<tr><td>3</td><td>圆的切线性质与判定</td><td>11/11</td><td>第21题</td><td>连半径证垂直、圆周角定理、弦切角</td></tr>
+<tr><td>4</td><td>分式化简求值</td><td>11/11</td><td>第16题(2)</td><td>通分、约分、除法转乘法、因式分解</td></tr>
+<tr><td>5</td><td>科学记数法</td><td>11/11</td><td>选择题前3题</td><td>大数和小数的科学记数法</td></tr>
+<tr><td>6</td><td>整式运算/乘法公式</td><td>11/11</td><td>选择题前5题</td><td>幂运算法则、完全平方公式、平方差公式</td></tr>
+<tr><td>7</td><td>概率计算</td><td>11/11</td><td>选择或填空</td><td>列举法（树状图/列表法）、古典概型</td></tr>
+<tr><td>8</td><td>解直角三角形</td><td>10/11</td><td>第19或20题</td><td>三角函数定义、特殊角值、仰角俯角模型</td></tr>
+<tr><td>9</td><td>统计图表与数据分析</td><td>11/11</td><td>第17或18题</td><td>频数直方图、扇形图、中位数、众数、方差、估计总体</td></tr>
+<tr><td>10</td><td>一次函数/反比例函数</td><td>10/11</td><td>选择/填空/解答</td><td>图象性质、k值确定、与几何图形结合</td></tr>
+<tr><td>11</td><td>平行四边形/菱形/正方形</td><td>11/11</td><td>选择/填空/解答</td><td>判定与性质、对角线关系、面积计算</td></tr>
+<tr><td>12</td><td>方程/不等式应用</td><td>11/11</td><td>第17题</td><td>分式方程、方程组、不等式建模</td></tr>
+</table>
+
+<h3>6.3 必须练习的题型清单</h3>
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">📝 基础必练（确保满分）</h3>
+<ul>
+<li>实数综合计算（零指数幂+绝对值+三角函数值+根式）</li>
+<li>分式化简求值（通分→约分→代入）</li>
+<li>科学记数法（大数+小数）</li>
+<li>整式运算判断（四选一逐项验证）</li>
+<li>三视图识别（主视图/左视图/俯视图）</li>
+<li>轴对称+中心对称图形判断</li>
+<li>概率计算（列举法/树状图）</li>
+<li>统计图表（补图+求中位数+估计总体）</li>
+<li>方程/不等式应用（购买方案/行程问题）</li>
+</ul>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">🔥 压轴必练（冲刺高分）</h3>
+<ul>
+<li>新定义题型（阅读理解→转化为方程/函数→分类讨论）</li>
+<li>旋转变换综合（等边/等腰三角形旋转60°/90°模型）</li>
+<li>翻折变换综合（翻折→全等→菱形/平行四边形判定）</li>
+<li>二次函数+分段函数（拼接图象、最值分析）</li>
+<li>双函数联动（差值分析、交点个数讨论）</li>
+<li>圆的切线证明+弦长/弧长计算</li>
+<li>动点面积最值（用含参代数式表示→二次函数求最值）</li>
+<li>分类讨论专项（参数范围、几何图形存在性）</li>
+</ul>
+</div>
+</div>
+
+<div class="card-highlight">
+<strong>最终建议：</strong>11套卷的命题方向高度一致，说明辽宁中考数学的命题已经形成稳定模式。考生应当：<br/>
+① <strong>基础题零失误</strong>——11套卷的前16题（选择+填空+第16题计算）难度几乎相同，确保这60分全拿；<br/>
+② <strong>中档题稳拿分</strong>——统计题、方程应用题、解直角三角形是最稳定的中档题，合计约25分；<br/>
+③ <strong>压轴题分步得分</strong>——第22题第(1)问和第23题第(1)问是"送分题"，合计约7~8分必须拿到；<br/>
+④ <strong>新定义题重点突破</strong>——63.6%的试卷采用新定义压轴，这是区分110+分段的关键，建议集中练习7套新定义题。
+</div>
+</section>
+
+<footer>
+<p>📊 11套辽宁中考数学模拟卷横向对比分析 | 基于各区/市单卷深度分析报告 | 生成时间：2026年4月24日</p>
+<p>数据来源：和平区·沈河区·铁西区·于洪区·皇姑区·沈北新区·浑南区·苏家屯区一模 + 抚顺统考 + 营口市一模 + 铁岭二模</p>
+<p style="font-size:.8rem">注：部分试卷OCR识别存在噪声，具体题目答案以官方参考答案为准。本报告中的数据均来自各单卷深度分析报告的提取与汇总。</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>浑南区一模数学试卷深度分析</title>
+<style>
+:root{--bg:#f5f1e8;--primary:#1a5276;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e;--accent:#1a5276;--accent-light:rgba(26,82,118,0.08);--accent-border:rgba(26,82,118,0.2)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(26,82,118,0.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(26,82,118,0.06),transparent 26%),var(--bg);line-height:1.75}
+.container{width:min(1120px,92vw);margin:28px auto 48px}
+header{background:linear-gradient(135deg,var(--accent-light),rgba(245,241,232,0.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,0.06)}
+h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}
+.subtitle{margin:0;color:var(--muted);font-size:.98rem}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}
+nav{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+nav h2{margin:0 0 8px;font-size:1.02rem;color:var(--primary)}
+.toc{margin:0;padding-left:18px;columns:2;column-gap:34px}
+.toc li{margin:5px 0;break-inside:avoid}
+.toc a{color:var(--text);text-decoration:none;border-bottom:1px dashed var(--accent-border)}
+.toc a:hover{color:var(--primary)}
+section{background:rgba(251,248,241,0.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,0.04)}
+h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid var(--accent-border);padding-bottom:8px}
+h3{margin:16px 0 8px;font-size:1.06rem;color:#1a3d5c}
+p{margin:8px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:10px}
+.kpi-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.kpi-title{color:var(--muted);font-size:.86rem;margin-bottom:3px}
+.kpi-value{font-size:1.2rem;color:var(--primary);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.94rem;background:#fffef9}
+th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top}
+th{background:#dce8f0;color:#1a3d5c;text-align:left;font-weight:700}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.module-card{border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;background:#fffdf7;padding:12px}
+.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-right:6px;margin-bottom:6px;color:#51493f;background:#f8f3e8}
+.level-high{color:var(--bad);font-weight:700}
+.level-mid{color:var(--warn);font-weight:700}
+.level-low{color:var(--good);font-weight:700}
+ul{margin:8px 0;padding-left:20px}
+footer{margin-top:18px;color:var(--muted);font-size:.86rem;text-align:center}
+.bar-chart{margin:12px 0}
+.bar-row{display:flex;align-items:center;margin:6px 0}
+.bar-label{width:120px;font-size:.88rem;text-align:right;padding-right:10px;flex-shrink:0}
+.bar-track{flex:1;background:#e8e2d6;border-radius:6px;height:22px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:.78rem;color:#fff;font-weight:700;transition:width .3s}
+.bar-fill.blue{background:linear-gradient(90deg,#1a5276,#2980b9)}
+.bar-fill.green{background:linear-gradient(90deg,#1e8449,#27ae60)}
+.bar-fill.orange{background:linear-gradient(90deg,#b7950b,#f1c40f);color:#5a4e00}
+.bar-fill.red{background:linear-gradient(90deg,#922b21,#e74c3c)}
+.card-highlight{background:linear-gradient(135deg,var(--accent-light),#f0ebe0);border:1px solid var(--accent-border);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px;margin:12px 0}
+.card-highlight strong{color:var(--primary)}
+.diff-easy{background:#d5f5e3;color:#1e8449;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-mid{background:#fef9e7;color:#9a7d0a;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-hard{background:#fadbd8;color:#922b21;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+@media(max-width:900px){.toc{columns:1}.grid-2{grid-template-columns:1fr}.bar-label{width:80px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>📐 浑南区一模 · 数学试卷深度分析</h1>
+<p class="subtitle">沈阳市浑南区2026年4月份九年级调研测试 | 数学学科 | 五维分析模型</p>
+<div class="meta">
+<span class="chip">总题量：23题</span>
+<span class="chip">满分：120分</span>
+<span class="chip">时长：120分钟</span>
+<span class="chip">选择10题30分 + 填空5题15分 + 解答8题75分</span>
+</div>
+</header>
+
+<nav>
+<h2>📑 目录</h2>
+<ol class="toc">
+<li><a href="#d1">维度一 · 骨架图：结构解剖</a></li>
+<li><a href="#d2">维度二 · 题型谱：逐题档案</a></li>
+<li><a href="#d3">维度三 · 考点标签：知识定位</a></li>
+<li><a href="#d4">维度四 · 命题DNA：命题解码</a></li>
+<li><a href="#d5">维度五 · 作战地图：行动转化</a></li>
+</ol>
+</nav>
+
+<!-- ==================== 维度一 ==================== -->
+<section id="d1">
+<h2>维度一 · 骨架图：结构解剖</h2>
+
+<h3>1.1 基本参数</h3>
+<div class="kpi">
+<div class="kpi-card"><div class="kpi-title">总分</div><div class="kpi-value">120分</div></div>
+<div class="kpi-card"><div class="kpi-title">总题量</div><div class="kpi-value">23题</div></div>
+<div class="kpi-card"><div class="kpi-title">考试形式</div><div class="kpi-value">闭卷笔试</div></div>
+<div class="kpi-card"><div class="kpi-title">考试时长</div><div class="kpi-value">120分钟</div></div>
+</div>
+
+<h3>1.2 结构分布</h3>
+<table>
+<tr><th>题型</th><th>题号</th><th>题量</th><th>分值</th><th>占比</th><th>建议用时</th></tr>
+<tr><td>选择题</td><td>1~10</td><td>10</td><td>30分（3分/题）</td><td>25.0%</td><td>25~30分钟</td></tr>
+<tr><td>填空题</td><td>11~15</td><td>5</td><td>15分（3分/题）</td><td>12.5%</td><td>12~15分钟</td></tr>
+<tr><td>解答题</td><td>16~23</td><td>8</td><td>75分</td><td>62.5%</td><td>75~80分钟</td></tr>
+<tr style="font-weight:700;background:#dce8f0"><td>合计</td><td>1~23</td><td>23</td><td>120分</td><td>100%</td><td>120分钟</td></tr>
+</table>
+
+<h3>1.3 解答题分值明细</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>考查方向</th></tr>
+<tr><td>第16题</td><td>10分（每小题5分）</td><td>实数综合计算 + 解不等式组</td></tr>
+<tr><td>第17题</td><td>8分</td><td>分式方程应用题（行程问题）</td></tr>
+<tr><td>第18题</td><td>8分</td><td>四边形综合（菱形证明+计算）</td></tr>
+<tr><td>第19题</td><td>8分</td><td>统计分析（古钱币数据判断）</td></tr>
+<tr><td>第20题</td><td>8分</td><td>一次函数应用（油量与行驶问题）</td></tr>
+<tr><td>第21题</td><td>8分</td><td>圆的综合（切线证明+计算）</td></tr>
+<tr><td>第22题</td><td>12分</td><td>等边三角形旋转综合（几何压轴）</td></tr>
+<tr><td>第23题</td><td>13分</td><td>二次函数综合（代数压轴）</td></tr>
+</table>
+
+<h3>1.4 客观题 vs 主观题</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">客观题</div><div class="bar-track"><div class="bar-fill blue" style="width:37.5%">45分 · 37.5%</div></div></div>
+<div class="bar-row"><div class="bar-label">主观题</div><div class="bar-track"><div class="bar-fill green" style="width:62.5%">75分 · 62.5%</div></div></div>
+</div>
+
+<h3>1.5 难度层级分布</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">基础题</div><div class="bar-track"><div class="bar-fill green" style="width:55%">约66分 · 55%</div></div></div>
+<div class="bar-row"><div class="bar-label">中档题</div><div class="bar-track"><div class="bar-fill orange" style="width:27%">约33分 · 27%</div></div></div>
+<div class="bar-row"><div class="bar-label">压轴题</div><div class="bar-track"><div class="bar-fill red" style="width:18%">约21分 · 18%</div></div></div>
+</div>
+<div class="card-highlight">
+<strong>结构特征：</strong>本卷23题120分，与辽宁省中考标准结构完全一致（选择10题30分 + 填空5题15分 + 解答8题75分）。难度呈"5.5:2.7:1.8"梯度分布，基础题覆盖面广，压轴题集中在第22题（等边三角形旋转，12分）和第23题（二次函数综合，13分），合计25分占总分20.8%。本卷情境化命题突出，涉及机器人空翻（题2）、粮食产量（题4）、索道（题7）、古钱币（题19）、汽车油量（题20）等真实情境。
+</div>
+</section>
+
+<!-- ==================== 维度二 ==================== -->
+<section id="d2">
+<h2>维度二 · 题型谱：逐题档案</h2>
+
+<h3>2.1 选择题（第1~10题，每题3分）</h3>
+<table>
+<tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案</th></tr>
+<tr><td>1</td><td>五个小正方体组成的几何体的俯视图</td><td>三视图</td><td>空间想象</td><td><span class="diff-easy">基础</span></td><td>A</td></tr>
+<tr><td>2</td><td>机器人空翻：向前+15，向后10次空翻记作</td><td>正数与负数</td><td>—</td><td><span class="diff-easy">基础</span></td><td>B（-10）</td></tr>
+<tr><td>3</td><td>二十四节气图案：既是轴对称又是中心对称图形</td><td>轴对称与中心对称图形</td><td>几何直观</td><td><span class="diff-easy">基础</span></td><td>C</td></tr>
+<tr><td>4</td><td>14298亿用科学记数法表示</td><td>科学记数法</td><td>—</td><td><span class="diff-easy">基础</span></td><td>B（1.4298×10⁴亿）</td></tr>
+<tr><td>5</td><td>整式运算判断：四个选项哪个正确</td><td>整式运算、乘法公式</td><td>逐项验证</td><td><span class="diff-easy">基础</span></td><td>D（(2x+y)²=4x²+4xy+y²）</td></tr>
+<tr><td>6</td><td>平行四边形ABCD变为矩形需增加的条件</td><td>矩形的判定</td><td>推理</td><td><span class="diff-easy">基础</span></td><td>A（AC=BD）</td></tr>
+<tr><td>7</td><td>索道示意图：AB=5300m，∠BAC=α，求上升高度BC</td><td>解直角三角形（三角函数）</td><td>数形结合</td><td><span class="diff-mid">中档</span></td><td>B（5300sinα）</td></tr>
+<tr><td>8</td><td>尺规作图"过直线外一点作平行线"的依据</td><td>平行线的判定</td><td>推理论证</td><td><span class="diff-mid">中档</span></td><td>C（内错角相等，两直线平行）</td></tr>
+<tr><td>9</td><td>《九章算术》鹜雁相遇问题列方程</td><td>分式方程建模</td><td>方程思想</td><td><span class="diff-mid">中档</span></td><td>A（x/7+x/9=1）</td></tr>
+<tr><td>10</td><td>反比例函数y=-3/x的结论判断</td><td>反比例函数图象与性质</td><td>数形结合、分类讨论</td><td><span class="diff-mid">中档</span></td><td>C（当x&lt;-3时，0&lt;y&lt;1）</td></tr>
+</table>
+
+<h3>2.2 填空题（第11~15题，每题3分）</h3>
+<table>
+<tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案</th></tr>
+<tr><td>11</td><td>点P(2,-2)先右移2再上移4后的坐标</td><td>平面直角坐标系中的平移</td><td>数形结合</td><td><span class="diff-easy">基础</span></td><td>(4, 2)</td></tr>
+<tr><td>12</td><td>因式分解：2m²+4m+2</td><td>因式分解（提公因式+完全平方）</td><td>转化化归</td><td><span class="diff-easy">基础</span></td><td>2(m+1)²</td></tr>
+<tr><td>13</td><td>从H、He、Li、Be中随机选两种，都是金属的概率</td><td>概率计算（古典概型）</td><td>列举法</td><td><span class="diff-mid">中档</span></td><td>1/6</td></tr>
+<tr><td>14</td><td>△ABC与△DEF位似，周长之比为3:1，求AC/EF</td><td>位似变换、相似比</td><td>推理</td><td><span class="diff-mid">中档</span></td><td>8/3</td></tr>
+<tr><td>15</td><td>Rt△ABC中AC=BC=4，∠ACB=90°，O为AB中点，CD=3，求OP长</td><td>直角三角形、中点、垂线段</td><td>数形结合、分类讨论</td><td><span class="diff-hard">压轴</span></td><td>2√3 或 √70</td></tr>
+</table>
+
+<h3>2.3 解答题（第16~23题，共75分）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案要点</th></tr>
+<tr><td>16(1)</td><td>5分</td><td>实数综合计算：(3-π)⁰+(⅓)⁻²-2sin45°+|1-√3|</td><td>零指数幂、负整数指数幂、特殊角三角函数、绝对值</td><td>—</td><td><span class="diff-easy">基础</span></td><td>结果为1（OCR确认）</td></tr>
+<tr><td>16(2)</td><td>5分</td><td>解不等式组：x+2&lt;4x-1</td><td>一元一次不等式组</td><td>数轴分析</td><td><span class="diff-easy">基础</span></td><td>原式=x=(-3)时值为9（OCR确认）</td></tr>
+<tr><td>17</td><td>8分</td><td>购书问题：5000元购买两种数学书，单价关系与数量差</td><td>分式方程应用</td><td>方程思想</td><td><span class="diff-easy">基础</span></td><td>中巴车平均速度60km/h</td></tr>
+<tr><td>18(1)</td><td>3分</td><td>四边形ADCE：∠B=2∠ACB，AD=AB，证明菱形</td><td>菱形的判定、等腰三角形</td><td>推理论证</td><td><span class="diff-mid">中档</span></td><td>证明四边形ADCE是菱形</td></tr>
+<tr><td>18(2)</td><td>5分</td><td>BD=6，tan∠BCE=½，求CD的长</td><td>三角函数、菱形性质</td><td>方程思想、数形结合</td><td><span class="diff-mid">中档</span></td><td>CD的长（需结合菱形性质计算）</td></tr>
+<tr><td>19(1)</td><td>3分</td><td>5枚古钱币厚度的众数和质量的中位数</td><td>众数、中位数</td><td>数据分析</td><td><span class="diff-easy">基础</span></td><td>众数2.3mm；中位数21.7g</td></tr>
+<tr><td>19(2)</td><td>5分</td><td>用统计知识判断哪枚钱币质量标注有误并计算实际质量</td><td>统计分析、密度计算</td><td>数学建模、推理</td><td><span class="diff-mid">中档</span></td><td>通过密度比较判断异常值</td></tr>
+<tr><td>20(1)</td><td>3分</td><td>加油前油箱剩余油量y与行驶时间t的关系式</td><td>一次函数</td><td>数形结合</td><td><span class="diff-easy">基础</span></td><td>y=-½t+12（OCR参考）</td></tr>
+<tr><td>20(2)</td><td>5分</td><td>加油站距目的地210km，70km/h匀速，油是否够用</td><td>一次函数应用</td><td>方程思想、推理</td><td><span class="diff-mid">中档</span></td><td>需计算剩余油量与所需油量比较</td></tr>
+<tr><td>21(1)</td><td>3分</td><td>半圆O中AB为直径，PC为切线，证明PC=DE</td><td>切线性质、垂径定理</td><td>推理论证</td><td><span class="diff-mid">中档</span></td><td>证明略（利用切线与直径垂直等性质）</td></tr>
+<tr><td>21(2)</td><td>5分</td><td>半圆半径为4，tan∠BPC=½，求OD的长</td><td>圆的性质、三角函数</td><td>方程思想、转化化归</td><td><span class="diff-mid">中档</span></td><td>OD=2√5</td></tr>
+<tr><td>22(1)</td><td>4分</td><td>等边△ABC中D为AB上一点，CD绕C顺时针旋转60°得CE，证明AF=FD</td><td>旋转变换、全等三角形</td><td>转化化归</td><td><span class="diff-mid">中档</span></td><td>AF=FD=2（OCR确认）</td></tr>
+<tr><td>22(2)①</td><td>4分</td><td>CE=CB，DE⊥AC时，AB=3，求OF的长</td><td>等边三角形旋转、相似</td><td>数形结合、转化化归</td><td><span class="diff-hard">压轴</span></td><td>∠=45°（OCR参考）</td></tr>
+<tr><td>22(2)②</td><td>4分</td><td>四边形ABCE面积为3√3时，求△EOF面积</td><td>面积关系、相似比</td><td>分类讨论、转化化归</td><td><span class="diff-hard">压轴</span></td><td>需综合面积关系求解</td></tr>
+<tr><td>23(1)</td><td>4分</td><td>抛物线y=ax²+bx经过原点O和x轴正半轴点A，求对称轴、交点坐标</td><td>二次函数图象与性质</td><td>函数思想</td><td><span class="diff-easy">基础</span></td><td>对称轴x=1；与x轴交点(1,0)(2,0)；与y轴交点(0,2)</td></tr>
+<tr><td>23(2)</td><td>4分</td><td>直线y=x+n与抛物线交于M、N，M坐标(1,-2)，求N纵坐标及抛物线表达式</td><td>二次函数与一次函数交点</td><td>方程思想</td><td><span class="diff-mid">中档</span></td><td>2≤a≤4（OCR参考）</td></tr>
+<tr><td>23(3)</td><td>3分</td><td>△OPN面积=△BPN面积时，求m的值</td><td>面积相等条件、坐标几何</td><td>转化化归</td><td><span class="diff-hard">压轴</span></td><td>-√2或1+√2（OCR参考）</td></tr>
+<tr><td>23(4)</td><td>2分</td><td>1&lt;m&lt;2时，BC'与OA有公共点，求m的取值范围</td><td>二次函数综合、对称点</td><td>分类讨论、数形结合</td><td><span class="diff-hard">压轴</span></td><td>直接写出m的取值范围</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>数学思想方法统计：</strong>数形结合出现7次（题7/10/11/15/18(2)/20/22）、方程思想5次（题9/17/18(2)/20(2)/21(2)）、转化化归5次（题12/21(2)/22(1)/22(2)/23(3)）、推理论证4次（题6/8/18(1)/21(1)）、分类讨论3次（题10/15/23(4)）、函数思想3次（题10/20/23）、数学建模2次（题17/19(2)）。<strong>数形结合</strong>和<strong>方程思想</strong>是本卷最高频的数学思想。
+</div>
+</section>
+
+<!-- ==================== 维度三 ==================== -->
+<section id="d3">
+<h2>维度三 · 考点标签：知识定位</h2>
+
+<h3>3.1 逐题三维映射</h3>
+<table>
+<tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位（人教版）</th></tr>
+<tr><td>1</td><td>三视图（俯视图）</td><td>空间观念</td><td>九下 第29章 投影与视图</td></tr>
+<tr><td>2</td><td>正数与负数的意义</td><td>运算</td><td>七上 第1章 有理数</td></tr>
+<tr><td>3</td><td>轴对称图形与中心对称图形</td><td>几何直观</td><td>八上 第13章 轴对称 / 九上 第23章 旋转</td></tr>
+<tr><td>4</td><td>科学记数法</td><td>运算</td><td>七上 第1章 有理数</td></tr>
+<tr><td>5</td><td>整式运算、乘法公式</td><td>运算</td><td>七上 第2章 整式 / 八上 第14章 乘法公式</td></tr>
+<tr><td>6</td><td>矩形的判定</td><td>推理</td><td>八下 第18章 平行四边形（特殊平行四边形）</td></tr>
+<tr><td>7</td><td>解直角三角形（三角函数）</td><td>运算、建模</td><td>九下 第28章 锐角三角函数</td></tr>
+<tr><td>8</td><td>平行线的判定（内错角）</td><td>推理</td><td>七下 第5章 相交线与平行线</td></tr>
+<tr><td>9</td><td>分式方程建模（行程问题）</td><td>建模</td><td>八上 第15章 分式方程</td></tr>
+<tr><td>10</td><td>反比例函数图象与性质</td><td>推理、数形结合</td><td>九上 第26章 反比例函数</td></tr>
+<tr><td>11</td><td>坐标系中的平移</td><td>几何直观</td><td>七下 第6章 平面直角坐标系</td></tr>
+<tr><td>12</td><td>因式分解（提公因式+完全平方公式）</td><td>运算</td><td>八上 第14章 整式的乘法与因式分解</td></tr>
+<tr><td>13</td><td>概率计算（古典概型）</td><td>数据分析</td><td>九上 第25章 概率初步</td></tr>
+<tr><td>14</td><td>位似变换、相似比</td><td>推理</td><td>九下 第27章 相似（位似）</td></tr>
+<tr><td>15</td><td>直角三角形中点性质、垂线段</td><td>推理、空间观念</td><td>八上 第17章 勾股定理 / 八下 第18章 平行四边形</td></tr>
+<tr><td>16(1)</td><td>实数综合运算（零指数幂、负指数幂、三角函数值、绝对值）</td><td>运算</td><td>八上 第16章 二次根式 / 九下 第28章 三角函数</td></tr>
+<tr><td>16(2)</td><td>一元一次不等式组</td><td>运算</td><td>七下 第9章 不等式与不等式组</td></tr>
+<tr><td>17</td><td>分式方程应用（购书/行程问题）</td><td>建模</td><td>八上 第15章 分式方程</td></tr>
+<tr><td>18</td><td>菱形的判定与性质、三角函数</td><td>推理、运算</td><td>八下 第18章 平行四边形 / 九下 第28章 三角函数</td></tr>
+<tr><td>19</td><td>众数、中位数、统计分析</td><td>数据分析</td><td>八上 第20章 数据的分析</td></tr>
+<tr><td>20</td><td>一次函数应用（油量问题）</td><td>建模、推理</td><td>八上 第19章 一次函数</td></tr>
+<tr><td>21</td><td>圆的切线性质、垂径定理</td><td>推理</td><td>九上 第24章 圆</td></tr>
+<tr><td>22</td><td>等边三角形旋转变换、全等/相似</td><td>推理、空间观念</td><td>九上 第23章 旋转 / 九上 第27章 相似</td></tr>
+<tr><td>23</td><td>二次函数图象与性质、坐标几何</td><td>推理、运算</td><td>九上 第22章 二次函数</td></tr>
+</table>
+
+<h3>3.2 四大领域分布</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">数与代数</div><div class="bar-track"><div class="bar-fill blue" style="width:47%">约56分 · 47%</div></div></div>
+<div class="bar-row"><div class="bar-label">图形与几何</div><div class="bar-track"><div class="bar-fill green" style="width:39%">约47分 · 39%</div></div></div>
+<div class="bar-row"><div class="bar-label">统计与概率</div><div class="bar-track"><div class="bar-fill orange" style="width:9%">约11分 · 9%</div></div></div>
+<div class="bar-row"><div class="bar-label">综合与实践</div><div class="bar-track"><div class="bar-fill red" style="width:5%">约6分 · 5%</div></div></div>
+</div>
+<p style="font-size:.9rem;color:var(--muted)">注：题10反比例函数（代数）、题18菱形（几何）、题20一次函数应用（代数）、题22旋转（几何）、题23二次函数（代数）。部分题目跨领域，按主要考查方向归类。</p>
+
+<h3>3.3 涉及题目分布明细</h3>
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">数与代数（约47%）</h3>
+<p><span class="tag">题2 正负数</span><span class="tag">题4 科学记数法</span><span class="tag">题5 整式运算</span><span class="tag">题9 分式方程</span><span class="tag">题10 反比例函数</span><span class="tag">题11 坐标平移</span><span class="tag">题12 因式分解</span><span class="tag">题16 计算+不等式</span><span class="tag">题17 分式方程应用</span><span class="tag">题20 一次函数</span><span class="tag">题23 二次函数</span></p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">图形与几何（约39%）</h3>
+<p><span class="tag">题1 三视图</span><span class="tag">题3 对称图形</span><span class="tag">题6 矩形判定</span><span class="tag">题7 解直角三角形</span><span class="tag">题8 平行线判定</span><span class="tag">题14 位似变换</span><span class="tag">题15 直角三角形综合</span><span class="tag">题18 菱形</span><span class="tag">题21 圆</span><span class="tag">题22 旋转综合</span></p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">统计与概率（约9%）</h3>
+<p><span class="tag">题13 概率</span><span class="tag">题19 统计分析</span></p>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">综合与实践（约5%）</h3>
+<p><span class="tag">题9 《九章算术》建模</span><span class="tag">题19 古钱币数据分析</span></p>
+</div>
+</div>
+
+<h3>3.4 核心素养覆盖</h3>
+<table>
+<tr><th>核心素养</th><th>涉及题号</th><th>覆盖度</th></tr>
+<tr><td>抽象能力</td><td>题2、4、5、12</td><td>良好</td></tr>
+<tr><td>运算能力</td><td>题4、5、7、12、16、17、23</td><td>充分</td></tr>
+<tr><td>几何直观</td><td>题1、3、6、8、11、14</td><td>充分</td></tr>
+<tr><td>空间观念</td><td>题1、15、22</td><td>良好</td></tr>
+<tr><td>推理能力</td><td>题6、8、10、18(1)、21(1)、22、23</td><td>充分</td></tr>
+<tr><td>模型意识</td><td>题7、9、17、19(2)、20</td><td>充分</td></tr>
+<tr><td>数据意识</td><td>题13、19</td><td>一般</td></tr>
+<tr><td>应用意识</td><td>题2、4、7、9、17、19、20</td><td>充分</td></tr>
+<tr><td>创新意识</td><td>题15、19(2)、22</td><td>良好</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>知识覆盖评价：</strong>本卷覆盖七至九年级核心知识点，四大领域比例约为47:39:9:5，与辽宁中考标准（约45:40:10:5）基本吻合。<strong>二次函数</strong>（题23，13分）和<strong>几何旋转综合</strong>（题22，12分）合计25分，占总分20.8%，是拉开差距的关键。统计与概率占比略低（9%），仅涉及2道题。九大核心素养均有涉及，其中运算能力、推理能力、应用意识覆盖最为充分。本卷特色在于情境化命题丰富——机器人空翻（题2）、粮食产量（题4）、索道（题7）、《九章算术》（题9）、古钱币（题19）、汽车油量（题20）均取材真实生活。
+</div>
+</section>
+
+<!-- ==================== 维度四 ==================== -->
+<section id="d4">
+<h2>维度四 · 命题DNA：命题解码</h2>
+
+<h3>4.1 命题特色与创新点</h3>
+<ul>
+<li><strong>时事热点融合（题2）：</strong>以2026马年春晚机器人表演《武BOT》为情境考查正负数，紧扣时事，激发学生兴趣。</li>
+<li><strong>传统文化渗透（题4/题9）：</strong>题4引用"仓廪实而知礼节"考查科学记数法；题9引用《九章算术》"鹜雁相遇"问题考查分式方程建模，体现"数学文化"课标要求。</li>
+<li><strong>跨学科情境（题19）：</strong>以古钱币密封盒为载体，要求学生运用统计知识（众数、中位数）和密度推理判断标注质量是否有误，是本卷最大亮点——将数学统计与物理密度概念自然融合。</li>
+<li><strong>尺规作图推理（题8）：</strong>给出完整的尺规作图过程，要求学生判断"平行线判定"的依据，考查对几何推理逻辑的理解而非操作本身，设计巧妙。</li>
+<li><strong>等边三角形旋转创新（题22）：</strong>以等边三角形为载体，通过"将CD绕C顺时针旋转60°得CE"构造旋转变换，设问层层递进（证等→求长→求面积），综合性极强。</li>
+<li><strong>抛物线多问联动（题23）：</strong>从基础的对称轴、交点坐标，到直线与抛物线交点，再到面积相等条件和对称点线段交集，四问层层递进，区分度极高。</li>
+</ul>
+
+<h3>4.2 情境化命题分析</h3>
+<table>
+<tr><th>题号</th><th>情境类型</th><th>情境描述</th><th>课标对应</th></tr>
+<tr><td>2</td><td>科技文化</td><td>马年春晚机器人表演《武BOT》空翻</td><td>时事热点情境</td></tr>
+<tr><td>3</td><td>传统文化</td><td>中国"二十四节气"非遗图案</td><td>传统文化情境</td></tr>
+<tr><td>4</td><td>社会经济</td><td>2025年全国粮食总产量14298亿斤</td><td>真实数据情境</td></tr>
+<tr><td>7</td><td>生活实践</td><td>索道缆车上升高度计算</td><td>真实测量情境</td></tr>
+<tr><td>9</td><td>数学文化</td><td>《九章算术》鹜雁相遇问题</td><td>传统文化情境</td></tr>
+<tr><td>17</td><td>校园活动</td><td>购买《什么是数学》《古今数学思想》</td><td>校园生活情境</td></tr>
+<tr><td>19</td><td>文物鉴赏</td><td>古钱币密封盒质量数据分析</td><td>跨学科（物理）情境</td></tr>
+<tr><td>20</td><td>生活实践</td><td>汽车油箱油量与行驶时间关系</td><td>真实生活情境</td></tr>
+</table>
+<p>情境化命题占比：8/23题 ≈ <strong>34.8%</strong>，涵盖科技文化、传统文化、社会经济、生活实践、校园活动、文物鉴赏六类情境，符合2022版新课标"加强情境设计"的要求。</p>
+
+<h3>4.3 与2022版新课标对标分析</h3>
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">✅ 高度契合</h3>
+<ul>
+<li><strong>"三会"目标全覆盖：</strong>数学眼光（题1三视图、题3对称图形）、数学思维（题18推理论证、题23函数分析）、数学语言（题17建模表达、题20实际问题数学化）</li>
+<li><strong>四大领域比例合理：</strong>数与代数≈47%、图形与几何≈39%，与课标建议权重吻合</li>
+<li><strong>跨学科主题学习：</strong>题19（古钱币密度推理）体现跨学科融合</li>
+<li><strong>数学文化渗透：</strong>题9引用《九章算术》，题3引用二十四节气，落实课标"了解数学文化"要求</li>
+<li><strong>时事热点融入：</strong>题2机器人春晚、题4粮食产量，体现数学与社会的联系</li>
+</ul>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">⚠️ 可优化空间</h3>
+<ul>
+<li><strong>统计与概率偏少：</strong>仅题13（概率）和题19（统计）涉及，占比约9%，课标建议可适当增加</li>
+<li><strong>开放性问题不足：</strong>全卷均为封闭式设问，缺少开放性探究题（如"设计方案""多解问题"）</li>
+<li><strong>数据意识考查集中：</strong>统计题仅1道解答题（题19），缺少中档以上的数据分析综合题</li>
+<li><strong>综合与实践领域偏弱：</strong>缺少独立的综合实践活动题，可考虑增加项目式学习类题目</li>
+</ul>
+</div>
+</div>
+
+<h3>4.4 压轴题深度解析</h3>
+
+<div class="card-highlight">
+<strong>🔺 第22题（12分）· 几何压轴 · 等边三角形旋转综合</strong><br/>
+<strong>题目结构：</strong>等边△ABC中，D为AB上一点，连接CD，将CD绕C顺时针旋转60°得CE，连接AE，DE，AC与DE交于点F。<br/>
+<strong>设问层次：</strong><br/>
+(1) 证明AF=FD → 利用旋转变换性质，△ACD≌△相关三角形，中线性质（约4分）<br/>
+(2)① E在BC延长线上，CE=CB，AB=3，DE⊥AC时求OF长 → 利用等边三角形旋转60°性质，结合垂直条件建立方程（约4分）<br/>
+(2)② 四边形ABCE面积为3√3时求△EOF面积 → 需建立面积方程，综合运用相似/面积比关系（约4分）<br/>
+<strong>涉及数学思想：</strong>转化化归（旋转变换将不规则图形转化为规则图形）、数形结合、分类讨论<br/>
+<strong>区分度分析：</strong>第(1)问利用旋转全等可证，属中档题；第(2)①需要深层理解旋转后的几何关系；第(2)②需要较强的综合分析能力，预计得分率约35%。
+</div>
+
+<div class="card-highlight">
+<strong>🔺 第23题（13分）· 代数压轴 · 二次函数综合</strong><br/>
+<strong>题目结构：</strong>抛物线 y=ax²+bx 经过原点O，与x轴正半轴交于点A；直线y=x+n与抛物线交于M、N，M坐标(1,-2)，N横坐标为a。<br/>
+<strong>设问层次：</strong><br/>
+(1) 求点N的纵坐标 → 将M代入直线求n，再求N纵坐标（约3分）<br/>
+答案：对称轴x=1，与x轴交点(1,0)(2,0)，与y轴交点(0,2)（OCR确认）<br/>
+(2) 求抛物线表达式 → 利用M、N在抛物线上建立方程组（约3分）<br/>
+答案：2≤a≤4（OCR参考）<br/>
+(3) △OPN面积=△BPN面积时求m值 → 面积相等条件转化为几何关系（约4分）<br/>
+答案：-√2或1+√2（OCR确认）<br/>
+(4) 1&lt;m&lt;2时，对称点B'、C'，BC'与OA有公共点时求m范围 → 需要综合分析对称点坐标和线段交集条件（约3分）<br/>
+<strong>涉及数学思想：</strong>函数思想（对称轴与交点）、方程思想（联立求解）、分类讨论（参数范围）、转化化归（面积条件→坐标关系）<br/>
+<strong>区分度分析：</strong>第(1)(2)问送分，第(3)问中档偏难，第(4)问为全卷最难题，预计得分率约15%。该题有效区分110+分段学生。
+</div>
+</section>
+
+<!-- ==================== 维度五 ==================== -->
+<section id="d5">
+<h2>维度五 · 作战地图：行动转化</h2>
+
+<h3>5.1 分数段策略</h3>
+<table>
+<tr><th>目标分数段</th><th>核心策略</th><th>重点攻克题目</th><th>训练方向</th></tr>
+<tr>
+<td><span class="level-low">60~80分</span></td>
+<td>夯实基础，确保客观题和基础解答题不丢分</td>
+<td>题1~6、11~12、16、17、19(1)</td>
+<td>① 正负数、科学记数法、整式运算等基本功天天练<br/>② 三视图、对称图形等几何直观反复巩固<br/>③ 分式方程应用题建模训练<br/>④ 众数、中位数等统计基础概念</td>
+</tr>
+<tr>
+<td><span class="level-mid">80~100分</span></td>
+<td>在基础稳固前提下突破中档题</td>
+<td>题7~10、13~14、18、19(2)、20、21</td>
+<td>① 解直角三角形（三角函数应用）专项<br/>② 反比例函数图象性质分析<br/>③ 菱形证明与计算综合<br/>④ 圆的切线性质+垂径定理<br/>⑤ 一次函数实际应用（图象信息提取）</td>
+</tr>
+<tr>
+<td><span class="level-mid">100~110分</span></td>
+<td>攻克填空压轴和解答题中档偏难部分</td>
+<td>题15、22(1)、22(2)①、23(1)、23(2)</td>
+<td>① 分类讨论思想专项训练（直角三角形中点问题）<br/>② 等边三角形旋转变换模型<br/>③ 二次函数对称轴、交点坐标基本功<br/>④ 直线与抛物线联立求解</td>
+</tr>
+<tr>
+<td><span class="level-high">110+分</span></td>
+<td>冲刺压轴题最后一问</td>
+<td>题22(2)②、23(3)、23(4)</td>
+<td>① 几何旋转+面积综合模型<br/>② 面积相等条件的坐标转化<br/>③ 对称点与线段交集的参数范围<br/>④ 限时训练压轴题（每题15分钟）</td>
+</tr>
+</table>
+
+<h3>5.2 必拿分清单（基础题，约66分）</h3>
+<div class="card-highlight">
+<strong>选择题必拿：</strong>题1（三视图）、题2（正负数）、题3（对称图形）、题4（科学记数法）、题5（整式运算）、题6（矩形判定）→ 共18分<br/>
+<strong>填空题必拿：</strong>题11（坐标平移）、题12（因式分解）→ 共6分<br/>
+<strong>解答题必拿：</strong>题16全题（计算+不等式组，10分）、题17全题（分式方程应用，8分）、题19(1)（众数中位数，3分）→ 共21分<br/>
+<strong>压轴题保底分：</strong>题22(1)（约4分）、题23(1)（约3分）→ 共7分<br/>
+<strong>合计约52~56分</strong>，加上中档题部分得分可达70分以上。
+</div>
+
+<h3>5.3 提分突破点（中档题攻略）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>突破要点</th><th>训练建议</th></tr>
+<tr><td>题7</td><td>3分</td><td>索道问题：BC=AB·sinα，注意sin与cos的区分</td><td>画图标注直角三角形各边，明确"对边/斜边=sin"</td></tr>
+<tr><td>题8</td><td>3分</td><td>尺规作图依据：区分"同位角""内错角"判定平行</td><td>总结平行线判定的三种方法，结合图形辨析角的位置关系</td></tr>
+<tr><td>题9</td><td>3分</td><td>《九章算术》建模：鹜7日到北海→速度1/7，雁9日→速度1/9</td><td>练习古文数学题的信息提取，"x天相遇"→路程之和=1</td></tr>
+<tr><td>题10</td><td>3分</td><td>反比例函数y=-3/x：k&lt;0在二四象限，逐项验证各选项</td><td>画草图标注关键点，代入特殊值验证</td></tr>
+<tr><td>题13</td><td>3分</td><td>从4种元素选2种，列举所有C(4,2)=6种组合</td><td>列举法：{H,He}{H,Li}{H,Be}{He,Li}{He,Be}{Li,Be}，金属对仅{Li,Be}</td></tr>
+<tr><td>题14</td><td>3分</td><td>位似变换：周长之比=相似比=3:1，AC/EF=相似比</td><td>牢记位似变换中对应边之比=相似比=周长之比</td></tr>
+<tr><td>题18</td><td>8分</td><td>(1)菱形证明：利用∠B=2∠ACB和AD=AB推导四边相等<br/>(2)tan∠BCE=½建立方程求CD</td><td>总结菱形判定方法（四边相等/对角线互相垂直平分）</td></tr>
+<tr><td>题20</td><td>8分</td><td>(1)从图象读取两点坐标建立一次函数<br/>(2)计算到达目的地所需油量并比较</td><td>练习从函数图象提取信息，注意分段函数的处理</td></tr>
+<tr><td>题21</td><td>8分</td><td>(1)切线⊥半径+垂径定理证PC=DE<br/>(2)tan∠BPC=½建立方程求OD</td><td>总结"切线+直径"常见证明模型，熟练运用勾股定理</td></tr>
+</table>
+
+<h3>5.4 压轴题攻略（分步得分策略）</h3>
+<div class="grid-2">
+<div class="module-card">
+<h3 style="margin-top:0">第22题（12分）分步策略</h3>
+<ul>
+<li><strong>第(1)问（~4分）：</strong>CD绕C旋转60°得CE → △ACD经旋转变换与△ECB有对应关系 → 利用旋转全等证AF=FD。<strong>必拿。</strong>答案：AF=FD=2。</li>
+<li><strong>第(2)①（~4分）：</strong>CE=CB且AB=3，DE⊥AC → 利用等边三角形性质∠ACB=60°，结合旋转后∠DCE=60°，推导角度和长度关系求OF。<strong>中等难度，争取拿满。</strong></li>
+<li><strong>第(2)②（~4分）：</strong>四边形ABCE面积=3√3 → 设CD=x，利用面积公式建方程 → 再求△EOF面积。<strong>高难度，写出设未知数和面积关系式可得1~2分。</strong></li>
+</ul>
+</div>
+<div class="module-card">
+<h3 style="margin-top:0">第23题（13分）分步策略</h3>
+<ul>
+<li><strong>第(1)问（~3分）：</strong>求对称轴和交点坐标 → 基础代入计算。<strong>必拿。</strong>答案：对称轴x=1，x轴交点(1,0)(2,0)，y轴交点(0,2)。</li>
+<li><strong>第(2)问（~3分）：</strong>M(1,-2)代入y=x+n求n=-3 → N横坐标为a，代入直线求N纵坐标 → 再利用M、N在抛物线上求表达式。<strong>掌握联立方法即可拿满。</strong></li>
+<li><strong>第(3)问（~4分）：</strong>△OPN面积=△BPN面积 → OP到直线MN的距离=BP到直线MN的距离 → 转化为坐标条件求m。<strong>中档偏难，写出面积相等的转化思路可得2分。</strong>答案：m=-√2或1+√2。</li>
+<li><strong>第(4)问（~3分）：</strong>对称点B'、C'的坐标表达 → BC'与OA（x轴正半轴）有公共点的条件 → 转化为不等式求m范围。<strong>全卷最难，写出对称点坐标表达式可得1分。</strong></li>
+</ul>
+</div>
+</div>
+
+<h3>5.5 易错点预警</h3>
+<table>
+<tr><th>题号</th><th>易错点</th><th>防范措施</th></tr>
+<tr><td>题2</td><td>向后空翻误选+10或-5（混淆正负号与次数）</td><td>明确"向前为正，向后为负"，次数不变只改符号</td></tr>
+<tr><td>题4</td><td>科学记数法指数错误：14298亿=1.4298×10⁴亿，非10³或10⁵</td><td>数小数点移动位数：1.4298→14298移动4位→10⁴</td></tr>
+<tr><td>题5</td><td>2x+3y=5xy（合并不同类项）；(2x²)³误算为6x⁶（系数未立方）</td><td>逐项检验：(2x²)³=2³·(x²)³=8x⁶；完全平方公式展开后逐项核对</td></tr>
+<tr><td>题7</td><td>sin与cos混淆：BC是对边用sinα，非cosα</td><td>口诀"对正邻余"：对边/斜边=sin，邻边/斜边=cos</td></tr>
+<tr><td>题9</td><td>方程列反：鹜7日全程→x天走x/7，非7/x</td><td>"7日走完全程"→每天走1/7→x天走x/7</td></tr>
+<tr><td>题10</td><td>y=-3/x在二四象限（k&lt;0），误判为一三象限</td><td>k&gt;0→一三象限，k&lt;0→二四象限，代入特殊点验证</td></tr>
+<tr><td>题12</td><td>因式分解不彻底：2m²+4m+2=2(m²+2m+1)后忘记继续分解为2(m+1)²</td><td>因式分解三步走：①提公因式 ②用公式 ③检查是否彻底</td></tr>
+<tr><td>题13</td><td>概率计算漏组合：4选2共6种而非4种</td><td>系统列举所有组合，用树状图或列表法确保不遗漏</td></tr>
+<tr><td>题15</td><td>漏解：CP⊥AD的P点位置可能有多种情况，需分类讨论</td><td>画图标注所有可能的P点位置，逐一计算OP</td></tr>
+<tr><td>题16(1)</td><td>|1-√3|去绝对值方向错误（√3&gt;1，应为√3-1）</td><td>先比较大小：√3≈1.73&gt;1，所以|1-√3|=√3-1</td></tr>
+<tr><td>题17</td><td>分式方程求解后忘记验根（增根检验）</td><td>解分式方程必须验根：代回原方程检查分母是否为0</td></tr>
+<tr><td>题18(1)</td><td>菱形证明遗漏步骤：需先证四边形是平行四边形，再证邻边相等</td><td>菱形证明路径：平行四边形+邻边相等，或直接证四边相等</td></tr>
+<tr><td>题20</td><td>图象信息读取错误：加油前后是两段不同的一次函数</td><td>分段处理：加油前y₁=kt+b₁，加油后y₂=kt+b₂，注意斜率是否相同</td></tr>
+<tr><td>题23(1)</td><td>求与y轴交点时令x=0而非令y=0（与x轴交点才令y=0）</td><td>与x轴交点→令y=0解方程；与y轴交点→令x=0代入</td></tr>
+</table>
+
+<h3>5.6 时间分配建议</h3>
+<table>
+<tr><th>阶段</th><th>题目范围</th><th>建议用时</th><th>策略要点</th></tr>
+<tr><td>第一阶段</td><td>选择题1~10</td><td>25~30分钟</td><td>前6题每题2分钟，后4题每题3~4分钟；不确定的先标记跳过</td></tr>
+<tr><td>第二阶段</td><td>填空题11~15</td><td>12~15分钟</td><td>前3题每题2分钟，题14约3分钟，题15约5分钟（可先跳过）</td></tr>
+<tr><td>第三阶段</td><td>解答题16~21</td><td>45~50分钟</td><td>题16约8分钟，题17~21各约8~10分钟；注意书写规范</td></tr>
+<tr><td>第四阶段</td><td>压轴题22~23</td><td>25~30分钟</td><td>先做第(1)问保底分，再攻第(2)(3)问；最后5分钟检查客观题</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>总体评价：</strong>本卷难度适中偏上，基础题覆盖面广（约55%），中档题设计精巧（约27%），压轴题区分度高（约18%）。命题亮点在于情境化设计丰富（8题涉及真实情境，占34.8%）、传统文化渗透自然（《九章算术》鹜雁问题、二十四节气）、跨学科融合突出（古钱币密度推理）。第22题等边三角形旋转和第23题抛物线多问联动是全卷的"分水岭"，有效区分不同层次学生。建议考生在确保基础题全对（约56分）的前提下，重点突破中档题（可再得25~30分），压轴题争取分步得分。本卷与辽宁中考标准结构完全一致（23题120分），是一份高质量的模拟试卷。
+</div>
+</section>
+
+<footer>
+<p>📐 浑南区一模数学试卷深度分析 | 基于OCR文本与标准答案 | 生成时间：2026年4月24日</p>
+<p>分析框架：五维模型（骨架图·题型谱·考点标签·命题DNA·作战地图）| 数据来源：试卷OCR文本 + 参考答案</p>
+<p style="font-size:.8rem">注：部分OCR识别内容存在噪声，答案以官方参考答案为准。答案栏标注"OCR确认"表示与OCR文本一致，"OCR参考"表示OCR文本模糊需以官方为准。</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数学考前速查卡 · 王笑の备考站</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.qk { max-width: 760px; margin: 0 auto; padding: 16px; }
+.qk h1 { text-align:center; font-size:1.6em; color:var(--accent); margin:20px 0 6px; }
+.qk .lead { text-align:center; font-size:.88em; color:#888; margin-bottom:20px; }
+.qk h2 { font-size:1.15em; color:#fff; background:var(--accent); padding:6px 14px; margin:24px 0 10px; border-radius:3px; }
+.qk h3 { font-size:1em; color:var(--accent); margin:14px 0 6px; padding:0; border:none; }
+.qk table { width:100%; border-collapse:collapse; font-size:.85em; margin:6px 0 12px; }
+.qk th { background:var(--tag-bg); color:var(--text); padding:5px 8px; text-align:left; font-weight:600; font-size:.82em; }
+.qk td { padding:4px 8px; border-bottom:1px solid var(--border); }
+.qk .hi { background:#eef2ff; font-weight:700; color:var(--accent); }
+.qk ul { padding-left:18px; margin:4px 0 10px; }
+.qk li { margin-bottom:2px; font-size:.9em; }
+.qk .rule-box { background:#fff3cd; border:2px solid var(--warning); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .rule-box strong { color:var(--warning); }
+.qk .free-box { background:#d5f5df; border:2px solid var(--success); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .free-box strong { color:var(--success); }
+.qk .trap-box { background:#eef2ff; border:2px solid var(--accent); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .trap-box strong { color:var(--accent); }
+.qk .formula-box { background:#f0f4ff; border:1px solid var(--accent); padding:10px 14px; border-radius:8px; margin:8px 0 14px; font-size:.9em; }
+.qk .formula-box .f { font-weight:700; color:var(--accent); }
+.qk .tpl-box { background:var(--card-bg); border:1px solid var(--border); padding:10px 14px; border-radius:8px; margin:8px 0 14px; font-size:.88em; }
+.qk .tpl-box .step { color:var(--accent); font-weight:700; }
+.qk .mini { font-size:.82em; color:#888; text-align:center; margin-top:20px; }
+@media print {
+  .site-header, .breadcrumb, .site-footer, .no-print { display:none!important; }
+  body { background:#fff; font-size:13px; }
+  .qk { max-width:100%; padding:0; }
+  .qk h1 { font-size:1.4em; margin:10px 0 4px; }
+  .qk h2 { font-size:1em; padding:4px 10px; margin:14px 0 6px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .qk table { font-size:.78em; }
+  .qk .rule-box, .qk .free-box, .qk .trap-box, .qk .formula-box { padding:6px 10px; }
+  @page { margin: 1cm; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <nav>
+      <a href="index.html">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../shuxue/index.html">数学</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb no-print"><a href="../index.html">首页</a> / <a href="index.html">冲刺加油站</a> / 数学速查卡</div>
+
+<div class="qk">
+
+<h1>数学 · 考前速查卡</h1>
+<div class="lead">考前10分钟过一遍 · 基于11套辽宁模拟卷数据提炼 · 闭卷120分120分钟</div>
+
+<!-- ===== 1 ===== -->
+<h2>一、考场时间分配（先刻进脑子）</h2>
+<table>
+<tr><th>阶段</th><th>题号</th><th>时间</th><th>策略</th></tr>
+<tr><td>选择题</td><td>Q1-Q10（30分）</td><td>20分钟</td><td>前8题秒杀，Q9-Q10可跳过回头做</td></tr>
+<tr><td>填空题</td><td>Q11-Q15（15分）</td><td>15分钟</td><td>Q14-Q15难度高，不会就跳</td></tr>
+<tr><td>解答题</td><td>Q16-Q23（75分）</td><td>80分钟</td><td>Q16-Q20必须全拿，Q21-Q23分步得分</td></tr>
+<tr><td>检查</td><td>全卷</td><td>5分钟</td><td>优先检查计算题和分式方程验根</td></tr>
+</table>
+<div class="rule-box">
+<strong>铁律：</strong>遇到卡壳的题，超过3分钟立刻跳过，做完全卷再回来。基础题的分丢了补不回来！
+</div>
+
+<!-- ===== 2 ===== -->
+<h2>二、必拿分清单（约70分基础题）</h2>
+
+<div class="free-box">
+<strong>这些题型11套卷全部出现，送分题必须零失误：</strong><br>
+· 科学记数法（选择前3题）→ 大数：小数点移到个位数后面，指数=移动位数<br>
+· 整式运算/乘法公式（选择前5题）→ 逐项验证，别心算<br>
+· 三视图（选择题）→ 主视图=正面看，俯视图=上面看<br>
+· 轴对称/中心对称判断（选择题）→ 轴对称=折叠重合，中心对称=旋转180°重合<br>
+· 概率计算（选择/填空）→ 列举法不要漏<br>
+· 实数综合计算（Q16第1题，5分）→ 零指数幂=1，负数幂先算幂再加负号<br>
+· 分式化简求值（Q16第2题，5分）→ 先因式分解再约分，最后代入<br>
+· 统计图表（Q17/Q18，6-8分）→ 补图+中位数+估计总体，最容易拿满分的解答题
+</div>
+
+<h3>实数运算常见陷阱</h3>
+<div class="trap-box">
+<strong>考前默念三遍：</strong><br>
+· (-2)² = 4 &nbsp;但&nbsp; -2² = -4 &nbsp;→ <strong>括号决定一切</strong><br>
+· (-3)⁰ = 1 &nbsp;但&nbsp; 0⁰ 无意义 → <strong>零指数幂底数≠0</strong><br>
+· |−5| = 5 → <strong>绝对值出来一定是非负数</strong><br>
+· √4 = 2（不是±2）→ <strong>算术平方根只取正值</strong>
+</div>
+
+<h3>因式分解两大方法</h3>
+<ul>
+<li><strong>提公因式法：</strong>ma + mb = m(a+b) → 先提再看</li>
+<li><strong>公式法：</strong>a²−b² = (a+b)(a−b)；a²±2ab+b² = (a±b)²</li>
+</ul>
+
+<div class="rule-box">
+<strong>分式方程必须检验增根！</strong>把解代回<strong>原方程的分母</strong>，分母=0则为增根，必须舍去。11套卷中分式方程题全部需要检验。
+</div>
+
+<!-- ===== 3 ===== -->
+<h2>三、公式速记卡</h2>
+
+<h3>一元二次方程</h3>
+<div class="formula-box">
+<span class="f">求根公式：</span>x = (−b ± √(b²−4ac)) / 2a<br>
+<span class="f">判别式 Δ = b²−4ac：</span>Δ>0 两个不等实根 · Δ=0 两个相等实根 · Δ<0 无实根<br>
+<span class="f">韦达定理：</span>x₁+x₂ = −b/a，x₁·x₂ = c/a
+</div>
+
+<h3>二次函数（11套卷第23题全考）</h3>
+<div class="formula-box">
+<span class="f">一般式：</span>y = ax² + bx + c（a≠0）<br>
+<span class="f">顶点式：</span>y = a(x−h)² + k，顶点(h, k)<br>
+<span class="f">对称轴：</span>x = −b/(2a)<br>
+<span class="f">开口方向：</span>a>0 开口向上（有最小值）· a<0 开口向下（有最大值）<br>
+<span class="f">与x轴交点：</span>令y=0解方程 · 交点距离 = √(Δ)/|a|
+</div>
+
+<h3>圆的公式</h3>
+<div class="formula-box">
+<span class="f">弧长：</span>l = nπr/180（n为圆心角度数）<br>
+<span class="f">扇形面积：</span>S = nπr²/360 = ½lr<br>
+<span class="f">圆周角定理：</span>同弧上的圆周角 = 圆心角的一半<br>
+<span class="f">切线判定：</span>经过半径外端且垂直于半径 → 是切线<br>
+<span class="f">切线性质：</span>切线⊥过切点的半径
+</div>
+
+<h3>勾股定理 + 特殊三角形</h3>
+<div class="formula-box">
+<span class="f">勾股定理：</span>a² + b² = c²（c为斜边）<br>
+<span class="f">常用勾股数：</span>3-4-5、5-12-13、8-15-17 及其倍数（6-8-10等）<br>
+<span class="f">30°-60°-90°：</span>边比 = 1 : √3 : 2（30°对的边最短）<br>
+<span class="f">45°-45°-90°：</span>边比 = 1 : 1 : √2
+</div>
+
+<h3>特殊角三角函数值（解直角三角形必用，10/11卷考）</h3>
+<table>
+<tr><th>角度</th><th>sin</th><th>cos</th><th>tan</th></tr>
+<tr><td>30°</td><td>1/2</td><td>√3/2</td><td>√3/3</td></tr>
+<tr><td>45°</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+<tr><td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+</table>
+
+<h3>相似三角形</h3>
+<div class="formula-box">
+<span class="f">对应边成比例：</span>a₁/a₂ = b₁/b₂ = c₁/c₂ = k（相似比）<br>
+<span class="f">面积比 = 相似比的平方：</span>S₁/S₂ = k²<br>
+<span class="f">周长比 = 相似比：</span>C₁/C₂ = k
+</div>
+
+<!-- ===== 4 ===== -->
+<h2>四、压轴题应急策略</h2>
+
+<h3>第22题 · 几何压轴（12分，旋转/翻折二分天下）</h3>
+<div class="tpl-box">
+<p><span class="step">第(1)问（4分）· 必拿：</span>证明全等或相等 → 找对应边对应角，写清SAS/ASA/AAS</p>
+<p><span class="step">第(2)问（4分）· 尽力：</span>求线段或面积 → 利用第(1)问结论，构造直角三角形或用勾股定理</p>
+<p><span class="step">第(3)问（4分）· 量力：</span>综合探究 → 如果没思路，把第(1)(2)问的结论写上去，尝试建系或特殊值</p>
+</div>
+<div class="rule-box">
+<strong>旋转题口诀：</strong>旋转中心不动，对应线段相等，对应角相等，旋转角=对应点连线夹角<br>
+<strong>翻折题口诀：</strong>折叠前后全等，对应点到折痕距离相等
+</div>
+
+<h3>第23题 · 代数压轴（13分，63%为新定义题）</h3>
+<div class="tpl-box">
+<p><span class="step">第(1)问（3-4分）· 必拿：</span>求解析式或基本性质 → 待定系数法，送分题</p>
+<p><span class="step">第(2)问（4-5分）· 尽力：</span>利用函数性质解题 → 画图辅助理解</p>
+<p><span class="step">第(3)问（4-5分）· 新定义核心：</span>先读懂定义（读3遍！），把新概念翻译成方程或不等式，再分类讨论</p>
+</div>
+<div class="rule-box">
+<strong>新定义题三步法：</strong><br>
+① <strong>读定义</strong>：把文字翻译成数学语言（等式/不等式）<br>
+② <strong>套定义</strong>：代入具体函数，列方程<br>
+③ <strong>分类讨论</strong>：按参数范围或图象位置分情况，<strong>不要漏情况！</strong>
+</div>
+
+<!-- ===== 5 ===== -->
+<h2>五、易错点 TOP10（基于11套卷数据）</h2>
+<table>
+<tr><th>#</th><th>易错点</th><th>正确做法</th></tr>
+<tr><td>1</td><td>(-2)² 和 -2² 搞混</td><td>有括号=底数是-2，结果4；无括号=先算2²再加负号，结果-4</td></tr>
+<tr><td>2</td><td>分式方程忘记检验增根</td><td>解出来<strong>必须</strong>代回原分母，分母=0就舍去</td></tr>
+<tr><td>3</td><td>二次函数实际问题不写取值范围</td><td>自变量x的范围由实际意义决定（长度>0、数量为整数等）</td></tr>
+<tr><td>4</td><td>切线证明条件不全</td><td>必须同时满足：① 过半径外端 ② 垂直于半径，<strong>缺一不可</strong></td></tr>
+<tr><td>5</td><td>动点问题分类讨论漏情况</td><td>画图标出动点所有可能位置，逐一讨论</td></tr>
+<tr><td>6</td><td>科学记数法指数写错</td><td>大数：2.5×10⁸（小数点移8位）· 小数：3×10⁻⁴（小数点移4位）</td></tr>
+<tr><td>7</td><td>√ 里面出负数没发现</td><td>二次根式被开方数≥0，分母≠0，做完检查一遍</td></tr>
+<tr><td>8</td><td>统计题中位数找错</td><td>先排序！奇数个取中间，偶数个取中间两个的平均值</td></tr>
+<tr><td>9</td><td>解直角三角形选错三角函数</td><td>对边/斜边=sin · 邻边/斜边=cos · 对边/邻边=tan</td></tr>
+<tr><td>10</td><td>几何证明跳步</td><td>每一步都要写理由（定理名称），不能"显然可得"</td></tr>
+</table>
+
+<!-- ===== 6 ===== -->
+<h2>六、考场救命锦囊</h2>
+
+<div class="free-box">
+<strong>选择题实在不会？试试这些：</strong><br>
+· <strong>特殊值法：</strong>代入简单数字（0、1、-1）排除选项<br>
+· <strong>排除法：</strong>先排掉明显错误的，剩2个再细看<br>
+· <strong>画图法：</strong>函数题画草图，几何题画辅助线<br>
+· <strong>量力而行：</strong>Q9-Q10是选择压轴，不确定就选最可能的，不要死磕
+</div>
+
+<div class="free-box">
+<strong>解答题拿分技巧：</strong><br>
+· <strong>写"解"和"证明"：</strong>格式分不能丢<br>
+· <strong>压轴题第(1)问一定要做：</strong>第22题和第23题的第(1)问合计7-8分，是送分题<br>
+· <strong>不会做也要写：</strong>写出已知条件、画出图形、列出相关公式，阅卷老师会给过程分<br>
+· <strong>分类讨论写"综上所述"：</strong>最后汇总所有情况的答案
+</div>
+
+<div class="rule-box">
+<strong>最后5分钟检查清单：</strong><br>
+□ 科学记数法的指数对不对？<br>
+□ 分式方程写了"经检验"没有？<br>
+□ 二次函数实际问题写了取值范围没有？<br>
+□ 概率题列举法有没有漏？<br>
+□ 答案有没有写在答题卡上？
+</div>
+
+<div class="mini">数据来源：11套辽宁模拟卷交叉验证 · 2026-04-24</div>
+
+</div>
+
+<footer class="site-footer no-print">
+  2026辽宁王笑の备考站 · 冲刺加油站
+</footer>
+
+</body>
+</html>
