@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>150分钟作战时钟 · 中考备考站</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.qk { max-width: 760px; margin: 0 auto; padding: 16px; }
+.qk h1 { text-align:center; font-size:1.6em; color:var(--accent); margin:20px 0 6px; letter-spacing:.06em; }
+.qk .lead { text-align:center; font-size:.88em; color:#888; margin-bottom:20px; }
+.qk h2 { font-size:1.15em; color:#fff; background:var(--accent); padding:6px 14px; margin:24px 0 10px; border-radius:3px; }
+.qk h3 { font-size:1em; color:var(--accent); margin:14px 0 6px; padding:0; border:none; }
+.qk table { width:100%; border-collapse:collapse; font-size:.85em; margin:6px 0 12px; }
+.qk th { background:var(--tag-bg); color:var(--text); padding:5px 8px; text-align:left; font-weight:600; font-size:.82em; }
+.qk td { padding:4px 8px; border-bottom:1px solid var(--border); }
+.qk .hi { background:#f5d5d5; font-weight:700; color:var(--accent); }
+.qk ul { padding-left:18px; margin:4px 0 10px; }
+.qk li { margin-bottom:2px; font-size:.9em; }
+.qk .rule-box { background:#fff3cd; border:2px solid var(--warning); padding:10px 14px; border-radius:4px; margin:8px 0 14px; }
+.qk .rule-box strong { color:var(--warning); }
+.qk .free-box { background:#d5f5df; border:2px solid var(--success); padding:10px 14px; border-radius:4px; margin:8px 0 14px; }
+.qk .free-box strong { color:var(--success); }
+.qk .danger-box { background:#f5d5d5; border:2px solid var(--accent); padding:10px 14px; border-radius:4px; margin:8px 0 14px; }
+.qk .danger-box strong { color:var(--accent); }
+
+/* 时间轴 */
+.timeline { position:relative; padding-left:32px; margin:10px 0 20px; }
+.timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:3px; background:var(--accent); border-radius:2px; }
+.tl-item { position:relative; margin-bottom:14px; }
+.tl-item::before { content:''; position:absolute; left:-26px; top:6px; width:12px; height:12px; border-radius:50%; border:3px solid var(--accent); background:#fff; }
+.tl-item.active::before { background:var(--accent); }
+.tl-time { font-weight:900; color:var(--accent); font-size:.95em; }
+.tl-label { font-weight:600; font-size:.92em; }
+.tl-detail { font-size:.82em; color:#666; }
+
+.qk .mini { font-size:.82em; color:#888; text-align:center; margin-top:20px; }
+@media print {
+  .site-header, .breadcrumb, .site-footer, .no-print { display:none!important; }
+  body { background:#fff; font-size:13px; }
+  .qk { max-width:100%; padding:0; }
+  .qk h1 { font-size:1.4em; margin:10px 0 4px; }
+  .qk h2 { font-size:1em; padding:4px 10px; margin:14px 0 6px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .timeline::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .tl-item::before { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @page { margin: 1cm; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">中考备考站</a>
+    <nav>
+      <a href="index.html">考前急救包</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb no-print"><a href="../index.html">首页</a> / <a href="index.html">考前急救包</a> / 作战时钟</div>
+
+<div class="qk">
+
+<h1>150分钟 · 作战时钟</h1>
+<div class="lead">道法 + 历史合卷 · 开卷笔试 · 满分140分</div>
+
+<!-- ===== 总览 ===== -->
+<h2>一、时间总分配</h2>
+<table>
+<tr><th>科目</th><th>建议用时</th><th>分值</th><th>策略</th></tr>
+<tr><td class="hi">道德与法治</td><td class="hi">65分钟</td><td>70分</td><td>先做道法（翻书查核心概念时头脑清醒）</td></tr>
+<tr><td>历史</td><td>65分钟</td><td>70分</td><td>后做历史（翻书对照材料更从容）</td></tr>
+<tr><td>机动检查</td><td>20分钟</td><td>—</td><td>回查选择题 + 补写遗漏要点</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>150分钟</strong></td><td><strong>140分</strong></td><td></td></tr>
+</table>
+
+<div class="rule-box">
+<strong>先做哪科？</strong>建议<strong>先道法后历史</strong>。理由：道法选择题需要精准判断（决定权/立法权/监督权这类容易翻车），开场头脑最清醒时做；历史综合题对材料依赖更大，翻书查找对时间不那么敏感。<br>
+当然，如果你历史更弱，也可以先做历史——<strong>关键是保持固定顺序，不要临场换</strong>。
+</div>
+
+<!-- ===== 道法时间轴 ===== -->
+<h2>二、道法 65 分钟节奏</h2>
+
+<div class="timeline">
+  <div class="tl-item active">
+    <div class="tl-time">0:00 - 0:16</div>
+    <div class="tl-label">Q1-Q15 选择题（16分钟）</div>
+    <div class="tl-detail">每题约1分钟 · 不确定的识记题快速翻书(用标签) · 组合题先排除绝对化选项</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">0:16 - 0:28</div>
+    <div class="tl-label">Q16 综合题（12分钟）</div>
+    <div class="tl-detail">通常9分 · 青春成长/基础法律类 · 可翻书的翻书确认</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">0:28 - 0:40</div>
+    <div class="tl-label">Q17 综合题（12分钟）</div>
+    <div class="tl-detail">通常8-10分 · 两会/法治/民族类 · 注意区分决定权vs立法权</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">0:40 - 0:52</div>
+    <div class="tl-label">Q18 综合题（12分钟）</div>
+    <div class="tl-detail">通常9-13分 · 文化/科技类 · 材料提取题答案在材料中不在课本里</div>
+  </div>
+  <div class="tl-item active">
+    <div class="tl-time">0:52 - 1:05</div>
+    <div class="tl-label">Q19 综合题（13分钟）</div>
+    <div class="tl-detail">最重要！通常10-14分 · 最后一问常为4分开放写作 · 套模板写满4条</div>
+  </div>
+</div>
+
+<!-- ===== 历史时间轴 ===== -->
+<h2>三、历史 65 分钟节奏</h2>
+
+<div class="timeline">
+  <div class="tl-item active">
+    <div class="tl-time">1:05 - 1:20</div>
+    <div class="tl-label">Q1-Q15 选择题（15分钟）</div>
+    <div class="tl-detail">每题1分钟 · 图片题看材料出处 · "历史解释vs历史事实"白送分不要丢</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">1:20 - 1:32</div>
+    <div class="tl-label">Q16 中国古代史（12分钟）</div>
+    <div class="tl-detail">通常8-10分 · 制度/文化/科技/民族交融 · 翻书确认朝代和制度名称</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">1:32 - 1:44</div>
+    <div class="tl-label">Q17 中国近现代（12分钟）</div>
+    <div class="tl-detail">通常9-11分 · 必含近代探索主线(洋务→戊戌→辛亥→新文化→五四) · 注意时间顺序</div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-time">1:44 - 1:56</div>
+    <div class="tl-label">Q18 世界史/跨模块（12分钟）</div>
+    <div class="tl-detail">通常8-10分 · 工业革命/冷战/全球化 · 翻书核对关键年份</div>
+  </div>
+  <div class="tl-item active">
+    <div class="tl-time">1:56 - 2:10</div>
+    <div class="tl-label">Q19 论述题（14分钟）</div>
+    <div class="tl-detail">固定6分论述 · 观点→论据1→论据2→总结 · 格式完整就能拿4分</div>
+  </div>
+</div>
+
+<!-- ===== 检查 ===== -->
+<h2>四、机动检查 20 分钟</h2>
+<div class="free-box">
+<strong>检查优先级：</strong><br>
+① <strong>选择题回扫</strong>（5分钟）：重点检查涂卡是否对齐 · 犹豫的题不要改（第一直觉通常对）<br>
+② <strong>综合题补充</strong>（10分钟）：检查每道综合题是否有遗漏小问 · 开放写作题是否写满了要求的条数<br>
+③ <strong>翻书确认</strong>（5分钟）：对不确定的1-2个关键知识点快速翻书确认
+</div>
+
+<!-- ===== 应急 ===== -->
+<h2>五、应急策略</h2>
+
+<div class="danger-box">
+<strong>如果时间不够了：</strong><br>
+· <strong>选择题没写完</strong> → 组合题选B或C蒙（统计上最安全），绝不空着<br>
+· <strong>综合题没时间写</strong> → 写关键词而非完整句子，阅卷老师看到关键词也给分<br>
+· <strong>论述题来不及</strong> → 至少写一句观点 + 一段论据 = 保底2-3分（不写=0分）<br>
+· <strong>整体来不及</strong> → 放弃检查时间，保证每题都有内容
+</div>
+
+<div class="rule-box">
+<strong>开卷翻书的黄金原则：</strong><br>
+· 翻书确认（每次30秒以内）✓ → 快速定位标签页<br>
+· 翻书找答案（每次超2分钟）✗ → 说明这个知识点你不熟，先跳过写别的<br>
+· <strong>永远不要在一道题上翻书超过3分钟</strong>
+</div>
+
+<div class="mini">基于14套辽宁模拟卷结构分析 · 2026-04-24</div>
+
+</div>
+
+<footer class="site-footer no-print">
+  2026辽宁中考备考站 · 考前急救包
+</footer>
+
+</body>
+</html>

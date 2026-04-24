@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>考前急救包 · 打印版</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.pk { max-width: 780px; margin: 0 auto; padding: 16px; font-size: 14px; line-height: 1.6; }
+.pk h1 { text-align:center; font-size:1.5em; color:var(--accent); margin:14px 0 4px; letter-spacing:.06em; }
+.pk .lead { text-align:center; font-size:.82em; color:#888; margin-bottom:10px; border-bottom:2px solid var(--accent); padding-bottom:10px; }
+.pk h2 { font-size:1.05em; color:#fff; background:var(--accent); padding:4px 12px; margin:16px 0 6px; border-radius:2px; }
+.pk h3 { font-size:.95em; color:var(--accent); margin:10px 0 4px; padding:0; border:none; }
+.pk table { width:100%; border-collapse:collapse; font-size:.82em; margin:4px 0 8px; }
+.pk th { background:var(--tag-bg); color:var(--text); padding:3px 6px; text-align:left; font-weight:600; font-size:.8em; }
+.pk td { padding:3px 6px; border-bottom:1px solid var(--border); }
+.pk .hi { background:#f5d5d5; font-weight:700; color:var(--accent); }
+.pk ul { padding-left:16px; margin:3px 0 6px; }
+.pk li { margin-bottom:1px; font-size:.86em; }
+.pk .rule-box { background:#fff3cd; border:1.5px solid var(--warning); padding:6px 10px; border-radius:3px; margin:4px 0 8px; font-size:.86em; }
+.pk .rule-box strong { color:var(--warning); }
+.pk .free-box { background:#d5f5df; border:1.5px solid var(--success); padding:6px 10px; border-radius:3px; margin:4px 0 8px; font-size:.86em; }
+.pk .free-box strong { color:var(--success); }
+.pk .trap-box { background:#f5d5d5; border:1.5px solid var(--accent); padding:6px 10px; border-radius:3px; margin:4px 0 8px; font-size:.86em; }
+.pk .trap-box strong { color:var(--accent); }
+.pk .danger-box { background:#f5d5d5; border:1.5px solid var(--accent); padding:6px 10px; border-radius:3px; margin:4px 0 8px; font-size:.86em; }
+.pk .danger-box strong { color:var(--accent); }
+.pk .tpl-box { background:var(--card-bg); border:1px solid var(--border); padding:6px 10px; border-radius:3px; margin:4px 0 8px; font-size:.84em; }
+.pk .tpl-box .step { color:var(--accent); font-weight:700; }
+.pk .tpl-box p { margin:2px 0; }
+.pk .divider { border:none; border-top:3px double var(--accent); margin:20px 0 12px; }
+.pk .mini { font-size:.78em; color:#888; text-align:center; margin-top:6px; }
+
+/* 时间轴精简版 */
+.pk .tl { font-size:.84em; margin:4px 0 8px; }
+.pk .tl-row { display:flex; gap:6px; margin-bottom:3px; }
+.pk .tl-t { font-weight:900; color:var(--accent); min-width:82px; flex-shrink:0; }
+.pk .tl-c { flex:1; }
+.pk .tl-d { color:#888; font-size:.9em; }
+
+/* 打印按钮 */
+.print-bar { text-align:center; padding:16px; }
+.print-bar button {
+  background:var(--accent); color:#fff; border:none; padding:12px 36px;
+  font-size:1.1em; font-weight:700; border-radius:4px; cursor:pointer;
+  font-family:inherit; letter-spacing:.04em;
+}
+.print-bar button:hover { background:#6b1e1e; }
+
+@media print {
+  .site-header, .breadcrumb, .site-footer, .print-bar, .no-print { display:none!important; }
+  body { background:#fff; font-size:12px; line-height:1.5; }
+  .pk { max-width:100%; padding:0; font-size:12px; }
+  .pk h1 { font-size:1.3em; margin:6px 0 2px; }
+  .pk .lead { margin-bottom:6px; padding-bottom:6px; }
+  .pk h2 { font-size:.95em; padding:3px 8px; margin:10px 0 4px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .pk table { font-size:.75em; }
+  .pk .rule-box, .pk .free-box, .pk .trap-box, .pk .danger-box { padding:4px 8px; font-size:.8em; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .pk .divider { margin:12px 0 8px; }
+  .pk .tl { font-size:.78em; }
+  @page { margin: 0.8cm; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">中考备考站</a>
+    <nav>
+      <a href="index.html">考前急救包</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb no-print"><a href="../index.html">首页</a> / <a href="index.html">考前急救包</a> / 打印版</div>
+
+<div class="print-bar no-print">
+  <button onclick="window.print()">🖨️ 打印此页（Ctrl+P）</button>
+</div>
+
+<div class="pk">
+
+<h1>考前急救包 · 三合一打印版</h1>
+<div class="lead">历史 + 道法 + 作战时钟 · 基于14套辽宁模拟卷 · 2026-04-24</div>
+
+<!-- ============================================================ -->
+<!--                          历 史                                -->
+<!-- ============================================================ -->
+
+<h2>【历史】一、考试结构</h2>
+<table>
+<tr><th>项目</th><th>数据</th></tr>
+<tr><td>总分/题量</td><td>70分/19题（选择15×2=30 + 综合4题=40）</td></tr>
+<tr><td>论述题</td><td>Q19末问，固定6分</td></tr>
+<tr><td>形式</td><td>开卷，与道法合卷150分钟</td></tr>
+</table>
+<div class="rule-box"><strong>铁律：</strong>Q16=古代 · Q17=近现代 · Q18=世界/跨模块 · Q19=论述题</div>
+
+<h2>【历史】二、白送分</h2>
+<div class="free-box">
+<strong>历史解释 vs 历史事实（6/8卷出现）</strong> — 有"推动了""标志着""促进了"等评价词=<strong>历史解释</strong>；纯客观=<strong>历史事实</strong>
+</div>
+
+<h2>【历史】三、选择TOP10</h2>
+<table>
+<tr><th>考点</th><th>频率</th><th>一句话</th></tr>
+<tr><td>历史解释vs事实</td><td class="hi">6/8</td><td>白送分</td></tr>
+<tr><td>原始农业/半坡河姆渡</td><td>5/8</td><td>河姆渡=水稻 半坡=粟</td></tr>
+<tr><td>秦统一/中央集权</td><td>5/8</td><td>郡县制</td></tr>
+<tr><td>唐朝对外交流</td><td>5/8</td><td>鉴真/玄奘</td></tr>
+<tr><td>十一届三中全会</td><td>5/8</td><td>1978/改革开放</td></tr>
+<tr><td>斯大林格勒战役</td><td>4/8</td><td>欧洲转折</td></tr>
+<tr><td>洋务运动</td><td>4/8</td><td>自强/求富</td></tr>
+<tr><td>凡尔赛-华盛顿</td><td>4/8</td><td>一战后秩序</td></tr>
+<tr><td>冷战/杜鲁门主义</td><td>4/8</td><td>1947冷战起</td></tr>
+<tr><td>互联网/信息技术</td><td>4/8</td><td>第三次科技革命</td></tr>
+</table>
+
+<h2>【历史】四、综合TOP5</h2>
+<table>
+<tr><th>考点</th><th>频率</th><th>关键词</th></tr>
+<tr><td>近代探索主线</td><td class="hi">7/8</td><td>洋务→戊戌→辛亥→新文化→五四</td></tr>
+<tr><td>中共/革命道路</td><td>6/8</td><td>一大/井冈山/长征/遵义</td></tr>
+<tr><td>新中国科技</td><td>5/8</td><td>两弹一星/杂交水稻</td></tr>
+<tr><td>四大发明</td><td>5/8</td><td>纸/印/火/磁</td></tr>
+<tr><td>三大改造</td><td>5/8</td><td>1953-1956社会主义制度</td></tr>
+</table>
+
+<h2>【历史】五、论述题模板（6分）</h2>
+<div class="tpl-box">
+<p><span class="step">①亮观点：</span>我认为「主题」推动了社会发展。</p>
+<p><span class="step">②论据1：</span>事件+时间+做了什么+影响→呼应主题</p>
+<p><span class="step">③论据2：</span>同上结构</p>
+<p><span class="step">④总结：</span>综上，「主题」确实推动了……</p>
+</div>
+<table>
+<tr><th>类型</th><th>万能论据（选2）</th></tr>
+<tr><td>制度/改革</td><td>商鞅变法 · 明治维新 · 改革开放</td></tr>
+<tr><td>文化/思想</td><td>四大发明 · 百家争鸣 · 文艺复兴</td></tr>
+<tr><td>统一/合作</td><td>秦统一 · 港澳回归 · 联合国家宣言</td></tr>
+<tr><td>人民/民族</td><td>法国大革命 · 五四运动 · 美国独立</td></tr>
+</table>
+<div class="rule-box"><strong>结构比内容重要！</strong>格式完整（观点+两段论据+总结）即使论据平庸也拿4/6分。</div>
+
+<h2>【历史】六、辽宁地方史7件</h2>
+<table>
+<tr><td>九一八事变</td><td>1931沈阳→局部抗战</td><td>辽沈战役</td><td>1948→解放东北</td></tr>
+<tr><td>鞍钢</td><td>一五计划→工业化</td><td>抗美援朝</td><td>东北后方</td></tr>
+<tr><td>沈飞</td><td>歼击机→科技自主</td><td>红山文化</td><td>玉猪龙→多元一体</td></tr>
+<tr><td>振兴东北</td><td colspan="3">2003年→区域发展战略</td></tr>
+</table>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!--                          道 法                                -->
+<!-- ============================================================ -->
+
+<h2>【道法】一、考试结构</h2>
+<table>
+<tr><th>项目</th><th>数据</th></tr>
+<tr><td>总分/题量</td><td>70分/19题（选择15×2=30 + 综合4题=40）</td></tr>
+<tr><td>形式</td><td>开卷，与历史合卷150分钟</td></tr>
+<tr><td>分值核心</td><td class="hi">国情国策占50%（约35分）= 主战场</td></tr>
+</table>
+
+<h2>【道法】二、秒杀技巧</h2>
+<div class="free-box">
+<strong>绝对化排除法：</strong>选项含"只有""唯一""一定""完全""绝对"→ <strong>直接排除</strong>
+</div>
+<div class="trap-box">
+<strong>高频混淆：</strong>批准规划=<strong>决定权</strong>(≠立法权) · 制定法律=<strong>立法权</strong> · 听取报告=<strong>监督权</strong> · 全国人大=最高<strong>权力</strong>机关(≠行政) · 国有经济=<strong>主导</strong> · 公有制=<strong>主体</strong>
+</div>
+<div class="rule-box"><strong>审题陷阱：</strong>看到"搭配<strong>错误</strong>的是"→ 反选题！选错的那个。</div>
+
+<h2>【道法】三、时政热点5卡</h2>
+<table>
+<tr><th>热点</th><th>考查知识点</th><th>频</th></tr>
+<tr><td>金城龙</td><td>服兵役=基本义务·追授=荣誉权·社会责任</td><td class="hi">2/6</td></tr>
+<tr><td>两会/十五五</td><td>决定权·最高权力机关·协商民主·高质量发展</td><td class="hi">3/6</td></tr>
+<tr><td>中华文化</td><td>源远流长+博大精深·创造性转化创新性发展·文化自信</td><td class="hi">3/6</td></tr>
+<tr><td>科技创新</td><td>创新驱动+科教兴国+人才强国·综合国力=经济+科技</td><td class="hi">3/6</td></tr>
+<tr><td>生态环境</td><td>绿水青山·保护环境=基本国策·科学立法</td><td>3/6</td></tr>
+</table>
+
+<h2>【道法】四、国情核心链</h2>
+<ul>
+<li><strong>经济：</strong>改革开放=关键抉择 · 共同富裕=本质要求 · 国有经济=主导力量</li>
+<li><strong>政治：</strong>党的领导=最本质特征+最大优势 · 协商民主=特有形式和独特优势 · 民族=平等团结互助和谐</li>
+<li><strong>文化：</strong>中华文化=创造力+包容力 · 创造性转化创新性发展 · 文化自信</li>
+<li><strong>科技：</strong>三大战略=创新驱动+科教兴国+人才强国 · 人才=第一资源</li>
+<li><strong>生态：</strong>经济发展与生态保护关系 · 保护环境=基本国策</li>
+</ul>
+
+<h2>【道法】五、开放写作模板（4分题）</h2>
+<div class="tpl-box">
+<p>①学习……（学习层面）②培养……意识（意识层面）③参加……实践（行动层面）④从身边小事做起（日常层面）</p>
+</div>
+<table>
+<tr><th>类型</th><th>四步</th></tr>
+<tr><td>文化贡献</td><td>学经典→坚定文化自信→参加传承活动→讲好中国故事</td></tr>
+<tr><td>创新能力</td><td>学科学→培养好奇心→参加科创→敢于质疑</td></tr>
+<tr><td>绿色生活</td><td>学环保→增强环保意识→志愿活动→节水节电分类</td></tr>
+</table>
+
+<h2>【道法】六、翻书策略</h2>
+<div class="rule-box">
+<strong>贴6个标签：</strong>宪法·人大·国安·经济·文化·生态<br>
+识记题→翻书确认(30秒) · 理解题→靠理解不靠翻 · 材料题→答案在材料里不在课本里
+</div>
+
+<hr class="divider">
+
+<!-- ============================================================ -->
+<!--                       作 战 时 钟                             -->
+<!-- ============================================================ -->
+
+<h2>【作战时钟】150分钟总分配</h2>
+<table>
+<tr><th>科目</th><th>用时</th><th>策略</th></tr>
+<tr><td class="hi">道法（先做）</td><td class="hi">65分钟</td><td>头脑清醒做精准判断题</td></tr>
+<tr><td>历史（后做）</td><td>65分钟</td><td>翻书查材料更从容</td></tr>
+<tr><td>机动检查</td><td>20分钟</td><td>涂卡+补漏+翻书确认</td></tr>
+</table>
+
+<h2>【作战时钟】道法 65min 节奏</h2>
+<div class="tl">
+<div class="tl-row"><span class="tl-t">0:00-0:16</span><span class="tl-c">Q1-Q15选择（16min）<span class="tl-d"> · 不确定翻书标签 · 排除绝对化</span></span></div>
+<div class="tl-row"><span class="tl-t">0:16-0:28</span><span class="tl-c">Q16综合（12min）<span class="tl-d"> · 9分 · 青春/基础法律</span></span></div>
+<div class="tl-row"><span class="tl-t">0:28-0:40</span><span class="tl-c">Q17综合（12min）<span class="tl-d"> · 两会/法治/民族</span></span></div>
+<div class="tl-row"><span class="tl-t">0:40-0:52</span><span class="tl-c">Q18综合（12min）<span class="tl-d"> · 文化/科技</span></span></div>
+<div class="tl-row"><span class="tl-t">0:52-1:05</span><span class="tl-c"><strong>Q19综合（13min）</strong><span class="tl-d"> · 最后4分写作题套模板！</span></span></div>
+</div>
+
+<h2>【作战时钟】历史 65min 节奏</h2>
+<div class="tl">
+<div class="tl-row"><span class="tl-t">1:05-1:20</span><span class="tl-c">Q1-Q15选择（15min）<span class="tl-d"> · 解释vs事实不要丢</span></span></div>
+<div class="tl-row"><span class="tl-t">1:20-1:32</span><span class="tl-c">Q16古代史（12min）<span class="tl-d"> · 制度/文化/科技</span></span></div>
+<div class="tl-row"><span class="tl-t">1:32-1:44</span><span class="tl-c">Q17近现代（12min）<span class="tl-d"> · 近代探索主线</span></span></div>
+<div class="tl-row"><span class="tl-t">1:44-1:56</span><span class="tl-c">Q18世界史（12min）<span class="tl-d"> · 工业革命/冷战/全球化</span></span></div>
+<div class="tl-row"><span class="tl-t">1:56-2:10</span><span class="tl-c"><strong>Q19论述（14min）</strong><span class="tl-d"> · 观点+论据×2+总结=4分保底</span></span></div>
+</div>
+
+<h2>【作战时钟】应急策略</h2>
+<div class="danger-box">
+<strong>选择没写完</strong>→蒙B/C不空 · <strong>综合没时间</strong>→写关键词(阅卷看关键词给分) · <strong>论述来不及</strong>→至少写观点+1段论据=保底2-3分 · <strong>永远不要在一道题翻书超3分钟</strong>
+</div>
+
+<div class="mini">数据来源：8套历史+6套道法辽宁模拟卷交叉验证 · 2026-04-24</div>
+
+</div>
+
+<div class="print-bar no-print">
+  <button onclick="window.print()">🖨️ 打印此页（Ctrl+P）</button>
+</div>
+
+<footer class="site-footer no-print">
+  2026辽宁中考备考站 · 考前急救包
+</footer>
+
+</body>
+</html>
