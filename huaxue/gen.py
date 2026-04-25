@@ -61,6 +61,8 @@ def tag(text, color="blue"):
     return f'<span class="tag {color}">{text}</span>'
 
 def gen_page(d):
+    city = d.get("city", "沈阳")
+    exam_round = d.get("round", "一模")
     rows_q = ""
     for q in d["questions"]:
         tags = "".join(tag(t, c) for t, c in q.get("tags", []))
@@ -84,14 +86,14 @@ def gen_page(d):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{d["district"]}一模化学试卷深度分析</title>
+<title>{d["district"]}{exam_round}化学试卷深度分析</title>
 {CSS}
 </head>
 <body>
 <div class="container">
 {NAV}
 <div class="cover">
-<h1>沈阳{d["district"]}一模<br>化学试卷深度分析报告</h1>
+<h1>{city}{d["district"]}{exam_round}<br>化学试卷深度分析报告</h1>
 <div class="subtitle">{d["exam_name"]} · 化学</div>
 <div class="subtitle" style="font-size:.95em;color:#999;">骨架图 · 题型谱 · 考点标签 · 命题DNA · 作战地图</div>
 <div class="meta">数据来源：原始试卷PDF + OCR提取 + 原图校核<br>分析日期：2026年4月25日</div>
@@ -161,7 +163,7 @@ def gen_page(d):
 </table>
 
 <div class="footnote">
-<p><strong>试卷来源：</strong>沈阳市{d["district"]}2026年九年级学情调研·化学（PDF扫描版）<br>
+<p><strong>试卷来源：</strong>{city}{d["district"]}2026年九年级学情调研·化学（PDF扫描版）<br>
 <strong>分析方法：</strong>五维解析法（骨架图/题型谱/考点标签/命题DNA/作战地图）<br>
 <strong>生成日期：</strong>2026年4月25日</p>
 </div>
