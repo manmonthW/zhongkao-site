@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冲刺加油站 · 王笑の备考站</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.jijiu-hero {
+  text-align: center;
+  padding: 48px 20px 32px;
+}
+.jijiu-hero h1 {
+  font-size: 2.2em;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.jijiu-hero .sub {
+  font-size: 1em;
+  color: #64748b;
+}
+.kit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+.kit-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: all .25s cubic-bezier(.4,0,.2,1);
+}
+.kit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-light);
+}
+.kit-card .icon { font-size: 2.6em; margin-bottom: 10px; display: block; }
+.kit-card .name { font-size: 1.25em; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.kit-card .desc { font-size: .85em; color: var(--muted); line-height: 1.5; }
+.kit-card .time-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 3px 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: .78em;
+  font-weight: 700;
+}
+
+.print-section {
+  max-width: var(--max-w);
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+.print-btn {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-size: 1.05em;
+  font-weight: 700;
+  transition: all .25s;
+  box-shadow: 0 4px 16px rgba(99,102,241,.2);
+}
+.print-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99,102,241,.3);
+}
+
+/* 场次分组 */
+.session-block {
+  max-width: var(--max-w);
+  margin: 0 auto 28px;
+  padding: 0 20px;
+}
+.session-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.session-num {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #fff;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: .85em;
+  font-weight: 700;
+}
+.session-title {
+  font-size: 1.2em;
+  font-weight: 900;
+  color: var(--text);
+}
+.session-meta {
+  font-size: .82em;
+  color: var(--muted);
+  margin-left: auto;
+}
+.session-block .kit-grid {
+  padding: 0;
+}
+@media (max-width: 700px) {
+  .session-meta { margin-left: 0; width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <nav>
+      <a href="index.html" class="active">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb"><a href="../index.html">首页</a> / 冲刺加油站</div>
+
+<div class="jijiu-hero">
+  <h1>⚡ 冲刺加油站</h1>
+  <div class="sub">考前10分钟过一遍 · 基于37套辽宁模拟卷数据提炼<br>只留最高频、最易丢分的内容 · 按考试场次排列</div>
+</div>
+
+<!-- ====== 第一场 ====== -->
+<div class="session-block">
+  <div class="session-header">
+    <span class="session-num">第一场</span>
+    <span class="session-title">语文</span>
+    <span class="session-meta">闭卷 · 150分钟 · 120分</span>
+  </div>
+  <div class="kit-grid">
+    <a class="kit-card" href="yuwen.html">
+      <span class="icon">✏️</span>
+      <div class="name">语文速查卡</div>
+      <div class="desc">默写高频篇目 · 古诗对比三题型<br>记叙文五步法 · 作文思辨框架<br>文言文核心实词 · 名著速记</div>
+      <span class="time-tag">阅读 5 分钟</span>
+    </a>
+    <a class="kit-card" href="zuozhan.html#yuwen">
+      <span class="icon">⏱️</span>
+      <div class="name">语文作战时钟</div>
+      <div class="desc">150分钟节奏<br>积累15min → 古诗文20min<br>现代文55min → 作文50min</div>
+      <span class="time-tag">阅读 2 分钟</span>
+    </a>
+  </div>
+</div>
+
+<!-- ====== 第二场 ====== -->
+<div class="session-block">
+  <div class="session-header">
+    <span class="session-num">第二场</span>
+    <span class="session-title">道法 + 历史（合卷）</span>
+    <span class="session-meta">开卷 · 150分钟 · 140分</span>
+  </div>
+  <div class="kit-grid">
+    <a class="kit-card" href="daofa.html">
+      <span class="icon">⚖️</span>
+      <div class="name">道法速查卡</div>
+      <div class="desc">秒杀技巧 · 易混辨析<br>时政热点5卡 · 国情核心链<br>开放写作万能模板 · 翻书策略</div>
+      <span class="time-tag">阅读 5 分钟</span>
+    </a>
+    <a class="kit-card" href="lishi.html">
+      <span class="icon">📜</span>
+      <div class="name">历史速查卡</div>
+      <div class="desc">白送分题型 · TOP10选择<br>TOP5综合 · 论述题万能模板<br>辽宁地方史7件</div>
+      <span class="time-tag">阅读 5 分钟</span>
+    </a>
+    <a class="kit-card" href="zuozhan.html#hejuan">
+      <span class="icon">⏱️</span>
+      <div class="name">合卷作战时钟</div>
+      <div class="desc">150分钟节奏<br>道法65min + 历史65min + 机动20min<br>翻书节奏 · 应急策略</div>
+      <span class="time-tag">阅读 3 分钟</span>
+    </a>
+  </div>
+</div>
+
+<!-- ====== 第三场 ====== -->
+<div class="session-block">
+  <div class="session-header">
+    <span class="session-num">第三场</span>
+    <span class="session-title">数学</span>
+    <span class="session-meta">闭卷 · 120分钟 · 120分</span>
+  </div>
+  <div class="kit-grid">
+    <a class="kit-card" href="shuxue.html">
+      <span class="icon">📐</span>
+      <div class="name">数学速查卡</div>
+      <div class="desc">必拿分清单 · 公式速记卡<br>压轴题应急策略 · 易错点TOP10<br>考场救命锦囊</div>
+      <span class="time-tag">阅读 5 分钟</span>
+    </a>
+    <a class="kit-card" href="zuozhan.html#shuxue">
+      <span class="icon">⏱️</span>
+      <div class="name">数学作战时钟</div>
+      <div class="desc">120分钟节奏<br>选择20min → 填空15min<br>解答80min → 检查5min</div>
+      <span class="time-tag">阅读 2 分钟</span>
+    </a>
+  </div>
+</div>
+
+<div class="print-section">
+  <a class="print-btn" href="print.html">🖨️ 打印版（全科合一 A4 排版）</a>
+</div>
+
+<div class="container">
+  <div class="insight-card warn">
+    <h3>使用建议</h3>
+    <ul>
+      <li><strong>考前一周：</strong>通读全部速查卡，用红笔标出自己不确定的考点</li>
+      <li><strong>考前一天：</strong>只看标红的部分，不要临时学新东西</li>
+      <li><strong>语文考前：</strong>过一遍默写高频篇目 + 作文素材，作战时钟记住时间分配</li>
+      <li><strong>道法历史考前：</strong>过一遍道法易混点 + 历史白送分，翻书标签贴好</li>
+      <li><strong>数学考前：</strong>过一遍公式速记卡 + 易错点TOP10，压轴题应急策略记住分步得分</li>
+      <li><strong>打印版：</strong>打印全科合一页，道法历史部分放课本第一页（开卷可翻看）</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site-footer">
+  王笑の备考站 · 冲刺加油站
+</footer>
+
+</body>
+</html>

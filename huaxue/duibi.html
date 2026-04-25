@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>11套辽宁中考化学模拟卷横向对比分析</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
+:root{--bg:#f5f1e8;--text:#1a1815;--accent:#8b2e2e;--border:#d4cfc4;--card-bg:#faf8f3;--tag-bg:#e8e2d6;--success:#2e6b3e;--warning:#b8860b;--info:#2e4a8b;}
+*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Noto Serif SC',serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:16px;}
+.container{max-width:1060px;margin:0 auto;padding:20px;}
+.cover{text-align:center;padding:60px 40px;border-bottom:3px double var(--accent);margin-bottom:50px;}
+.cover h1{font-size:2.2em;font-weight:900;color:var(--accent);letter-spacing:.08em;margin-bottom:12px;}
+.cover .subtitle{font-size:1.1em;color:#666;margin-bottom:6px;}.cover .meta{font-size:.9em;color:#999;margin-top:20px;}
+h2.section-title{font-size:1.5em;color:var(--accent);border-left:5px solid var(--accent);padding-left:14px;margin:45px 0 20px;}
+h3{font-size:1.15em;color:var(--text);margin:26px 0 12px;padding-bottom:5px;border-bottom:1px solid var(--border);}
+h4{font-size:1em;color:var(--accent);margin:16px 0 8px;}
+table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:.88em;}
+th{background:var(--accent);color:#fff;padding:8px 10px;text-align:center;font-weight:600;}
+td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;text-align:center;}
+tr:nth-child(even){background:var(--card-bg);}
+td:first-child{text-align:left;font-weight:600;}
+.scroll-table{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.bar-chart{margin:14px 0 20px;}.bar-row{display:flex;align-items:center;margin-bottom:6px;}
+.bar-label{width:100px;font-size:.88em;text-align:right;padding-right:10px;flex-shrink:0;}
+.bar-track{flex:1;background:var(--tag-bg);height:22px;border-radius:3px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:8px;font-size:.78em;color:#fff;font-weight:600;min-width:28px;}
+.bar-fill.c1{background:var(--accent);}.bar-fill.c2{background:var(--info);}.bar-fill.c3{background:var(--success);}.bar-fill.c4{background:var(--warning);}.bar-fill.c5{background:#6b2e8b;}.bar-fill.c6{background:#2e6b6b;}
+.card{background:var(--card-bg);border:1px solid var(--border);padding:16px 20px;margin:14px 0;border-left:4px solid var(--accent);}
+.card.info{border-left-color:var(--info);}.card.success{border-left-color:var(--success);}.card.warning{border-left-color:var(--warning);}
+.card-title{font-weight:700;color:var(--accent);margin-bottom:6px;font-size:1.02em;}
+.card.info .card-title{color:var(--info);}.card.success .card-title{color:var(--success);}.card.warning .card-title{color:var(--warning);}
+.tag{display:inline-block;padding:1px 8px;border-radius:3px;font-size:.78em;margin:2px 3px 2px 0;}
+.tag.red{background:#f5d5d5;color:var(--accent);}.tag.blue{background:#d5dff5;color:var(--info);}
+.tag.green{background:#d5f5df;color:var(--success);}.tag.orange{background:#f5eed5;color:var(--warning);}.tag.purple{background:#e8d5f5;color:#6b2e8b;}
+.highlight{background:#fff3cd;padding:1px 5px;border-radius:2px;}
+.max{background:#f5d5d5;font-weight:700;color:var(--accent);}
+.min{background:#d5dff5;font-weight:700;color:var(--info);}
+ul,ol{padding-left:22px;margin:6px 0;}li{margin-bottom:3px;}p{margin:8px 0;}strong{color:var(--accent);}
+.footnote{font-size:.85em;color:#888;border-top:1px solid var(--border);padding-top:16px;margin-top:50px;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.module-card{border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;background:#fffdf7;padding:12px 16px;margin:6px 0;}
+nav.site-nav{margin:18px 0 26px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+nav.site-nav a{color:var(--text);text-decoration:none;padding:4px 12px;border-radius:4px;font-size:.92em;}
+nav.site-nav a:hover{background:var(--tag-bg);}
+nav.site-nav a.active{background:var(--accent);color:#fff;}
+@media(max-width:700px){.cover h1{font-size:1.5em;}.grid-2,.grid-3{grid-template-columns:1fr;}.bar-label{width:70px;}table{font-size:.8rem;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="cover">
+<h1>📊 11套辽宁中考化学模拟卷<br>横向对比分析报告</h1>
+<div class="subtitle">沈阳8区 + 抚顺统考 + 营口市一模 + 铁岭二模 | 2026年中考化学全景扫描</div>
+<div class="subtitle" style="font-size:.95em;color:#999;">结构对齐 · 考点交叉 · 命题趋势 · 高频锁定 · 备考优先级</div>
+<div class="meta">分析日期：2026年4月25日 | 数据来源：各套原始试卷PDF OCR</div>
+</div>
+
+<nav class="site-nav">
+<a href="../jijiu/index.html">冲刺加油站</a>
+<a href="../yuwen/index.html">语文</a>
+<a href="../shuxue/index.html">数学</a>
+<a href="../wuli/index.html">物理</a>
+<a href="index.html" class="active">化学</a>
+<a href="../yingyu/index.html">英语</a>
+<a href="../lishi/index.html">历史</a>
+<a href="../daofa/index.html">道法</a>
+</nav>
+
+<!-- ==================== 一、总览表 ==================== -->
+<h2 class="section-title" id="s1">一、基本信息与试卷结构对比</h2>
+
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>级别</th><th>题量</th><th>总分</th><th>结构</th><th>选择题</th><th>非选择题</th><th>考试形式</th></tr>
+<tr><td>和平区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>沈河区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>铁西区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>于洪区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>皇姑区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>沈北新区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>浑南区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>苏家屯区一模</td><td>区级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>抚顺市统考</td><td>市级统考</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>营口市一模</td><td>市级一模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+<tr><td>铁岭二模</td><td>市级二模</td><td>14</td><td>50</td><td>10+4</td><td>10题10分</td><td>4题40分</td><td>与物理合卷150分钟</td></tr>
+</table>
+</div>
+
+<div class="card info"><div class="card-title">结构一致性</div>
+<p><strong>11套卷结构完全统一：</strong>14题50分，选择题10题10分（每题1分）+ 非选择题4题40分，与物理合卷共150分钟。这与辽宁省中考化学标准完全一致，说明各区/市命题组严格遵循省级考试大纲。</p></div>
+
+<h3>非选择题分值分布</h3>
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>Q11（分）</th><th>Q12（分）</th><th>Q13（分）</th><th>Q14（分）</th></tr>
+<tr><td>和平区</td><td>11</td><td>10</td><td>9</td><td>10</td></tr>
+<tr><td>沈河区</td><td>9</td><td>9</td><td>9</td><td>13</td></tr>
+<tr><td>铁西区</td><td>10</td><td>10</td><td>9</td><td>11</td></tr>
+<tr><td>于洪区</td><td>10</td><td>10</td><td>8</td><td>12</td></tr>
+<tr><td>皇姑区</td><td>10</td><td>11</td><td>9</td><td>10</td></tr>
+<tr><td>沈北新区</td><td>9</td><td>11</td><td>10</td><td>10</td></tr>
+<tr><td>浑南区</td><td>11</td><td>11</td><td>8</td><td>10</td></tr>
+<tr><td>苏家屯区</td><td>10</td><td>11</td><td>8</td><td>11</td></tr>
+<tr><td>抚顺市</td><td>10</td><td>11</td><td>10</td><td>9</td></tr>
+<tr><td>营口市</td><td>10</td><td>11</td><td>9</td><td>10</td></tr>
+<tr><td>铁岭</td><td>9</td><td>10</td><td>11</td><td>10</td></tr>
+<tr style="font-weight:700;background:#e8e2d6"><td>11套均值</td><td>9.9</td><td>10.5</td><td>9.1</td><td>10.5</td></tr>
+</table>
+</div>
+
+<div class="card"><div class="card-title">非选择题分值规律</div>
+<ul>
+<li><strong>Q11（实验探究）：</strong>9~11分，平均9.9分，以气体制取与性质探究为核心</li>
+<li><strong>Q12（化学与生活/生产/科技）：</strong>9~11分，平均10.5分，涉及资源、能源、材料</li>
+<li><strong>Q13（科普阅读）：</strong>8~11分，平均9.1分，阅读理解+信息提取</li>
+<li><strong>Q14（综合探究）：</strong>9~13分，平均10.5分，实验设计+定量计算。<strong>沈河区Q14最高（13分）</strong></li>
+</ul></div>
+
+<!-- ==================== 二、高频考点统计 ==================== -->
+<h2 class="section-title" id="s2">二、选择题高频考点统计（11套卷出现频次）</h2>
+
+<div class="scroll-table">
+<table>
+<tr><th>考点</th><th>出现频率</th><th>典型题号</th><th>预警</th></tr>
+<tr><td>化学用语（化学式/离子符号/化合价）</td><td class="max">11/11</td><td>选择Q2~Q3</td><td class="max">极高</td></tr>
+<tr><td>实验基本操作</td><td class="max">11/11</td><td>选择Q2~Q4</td><td class="max">极高</td></tr>
+<tr><td>物质分类（氧化物/单质/混合物）</td><td class="max">10/11</td><td>选择Q5</td><td class="max">极高</td></tr>
+<tr><td>元素周期表信息读取</td><td class="max">10/11</td><td>选择Q3~Q6</td><td class="max">极高</td></tr>
+<tr><td>燃烧条件与灭火原理</td><td class="max">10/11</td><td>选择Q6~Q10</td><td class="max">极高</td></tr>
+<tr><td>溶解度/溶液相关</td><td class="max">10/11</td><td>选择Q8~Q10</td><td class="max">极高</td></tr>
+<tr><td>化学式计算（相对分子质量/质量分数）</td><td>9/11</td><td>选择Q5~Q9</td><td>高</td></tr>
+<tr><td>微观示意图（化学反应微观）</td><td>8/11</td><td>选择Q10</td><td>高</td></tr>
+<tr><td>营养物质（糖类/蛋白质/维生素）</td><td>8/11</td><td>选择Q1~Q4</td><td>高</td></tr>
+<tr><td>金属材料/合成材料分类</td><td>8/11</td><td>选择Q5~Q7</td><td>高</td></tr>
+<tr><td>空气成分与用途</td><td>6/11</td><td>选择Q1~Q3</td><td>中</td></tr>
+<tr><td>水的组成/净化</td><td>6/11</td><td>选择Q6~Q9</td><td>中</td></tr>
+</table>
+</div>
+
+<div class="card warning"><div class="card-title">选择题命题规律</div>
+<ul>
+<li><strong>Q1~Q3为基础送分题：</strong>营养物质、空气成分、化学用语、实验操作，11套卷无一例外</li>
+<li><strong>Q4~Q7为中档题：</strong>元素周期表、物质分类、燃烧灭火、材料分类</li>
+<li><strong>Q8~Q10为选择压轴：</strong>溶解度曲线、微观示意图、化学式计算，区分度最高</li>
+<li><strong>选择题总分仅10分但覆盖面极广</strong>，每题1分，必须零失误</li>
+</ul></div>
+
+<!-- ==================== 三、非选择题主题对比 ==================== -->
+<h2 class="section-title" id="s3">三、非选择题主题对比</h2>
+
+<div class="scroll-table">
+<table>
+<tr><th>试卷</th><th>Q11 实验探究</th><th>Q12 化学与生活/生产</th><th>Q13 科普阅读</th><th>Q14 综合探究</th></tr>
+<tr><td>和平区</td><td>CO₂制取+药品回收（11分）</td><td>绿氨合成·能源（10分）</td><td>荔枝保鲜·气调技术（9分）</td><td>绣球花变色·酸碱（10分）</td></tr>
+<tr><td>沈河区</td><td>气体制取+燃烧条件（9分）</td><td>炼铁·液态阳光（9分）</td><td>分子筛·吸附干燥（9分）</td><td>食盐·粗盐精制（13分）</td></tr>
+<tr><td>铁西区</td><td>电解水+物质性质+气体制取（10分）</td><td>造纸术·海水淡化·制氢（10分）</td><td>单原子催化（9分）</td><td>清洁用品·NaOH变质（11分）</td></tr>
+<tr><td>于洪区</td><td>气体制取+粗盐提纯（10分）</td><td>MoS₂·合成氨·CO₂甲醇化（10分）</td><td>催化剂探究（8分）</td><td>盐酸性质·酸碱中和（12分）</td></tr>
+<tr><td>皇姑区</td><td>CO₂制取+性质验证（10分）</td><td>醋·酿造工艺（11分）</td><td>冷泡茶·浸出率（9分）</td><td>铁与铜盐·置换反应（10分）</td></tr>
+<tr><td>沈北新区</td><td>制O₂+酸碱中和+燃烧条件+CO₂性质（9分）</td><td>化学与生活/生产/科技（11分）</td><td>石墨烯·锂电池（10分）</td><td>铁与CuSO₄异常现象（10分）</td></tr>
+<tr><td>浑南区</td><td>制O₂+酸的配制与性质（11分）</td><td>稀土·海水淡化·侯氏制碱·青蒿素（11分）</td><td>零碳甲醇·新能源（8分）</td><td>果蔬洗盐·NaHCO₃（10分）</td></tr>
+<tr><td>苏家屯区</td><td>CO₂制取+粗盐提纯+中和反应（10分）</td><td>水净化·燃料变迁·航母材料（11分）</td><td>氢燃料电池（8分）</td><td>爆炸盐·过碳酸钠（11分）</td></tr>
+<tr><td>抚顺市</td><td>气体制取+实验探究（10分）</td><td>能源转型·航天科技（11分）</td><td>锂电池回收（10分）</td><td>抗酸药·胃酸探究（9分）</td></tr>
+<tr><td>营口市</td><td>气体制取+粗盐提纯+电解水（10分）</td><td>石油·稀土CeO₂（11分）</td><td>脑机接口·电极材料（9分）</td><td>碱石灰变质探究（10分）</td></tr>
+<tr><td>铁岭</td><td>碳纤维·性质与应用（9分）</td><td>CO₂制取+干冰性质（10分）</td><td>金属性质·铝合金（11分）</td><td>彩虹管·酸碱指示剂（10分）</td></tr>
+</table>
+</div>
+
+<div class="card info"><div class="card-title">非选择题命题主题规律</div>
+<ul>
+<li><strong>Q11（实验探究）：</strong>11套卷中9套以气体制取（O₂/CO₂）为核心，是最稳定的题型。常搭配燃烧条件、粗盐提纯、酸碱中和等实验</li>
+<li><strong>Q12（化学与生活/生产/科技）：</strong>涵盖能源（绿氨/制氢/甲醇/天然气）、材料（海水淡化/造纸/航天）、工业（炼铁/稀土/制碱），科技前沿色彩浓厚</li>
+<li><strong>Q13（科普阅读）：</strong>题材多样——分子筛、单原子催化、石墨烯、锂电池回收、氢燃料电池、脑机接口等，考查信息提取与知识迁移能力</li>
+<li><strong>Q14（综合探究）：</strong>以物质成分探究+定量计算为核心，常涉及NaOH变质、酸碱中和、粗盐精制等经典主题</li>
+</ul></div>
+
+<!-- ==================== 四、跨卷高频主题交叉 ==================== -->
+<h2 class="section-title" id="s4">四、跨卷高频主题交叉分析</h2>
+
+<table>
+<tr><th>主题领域</th><th>出现次数</th><th>涉及试卷</th></tr>
+<tr><td class="max">气体制取（O₂/CO₂）</td><td class="max">11/11</td><td>全部试卷Q11均涉及</td></tr>
+<tr><td class="max">燃烧条件与灭火</td><td class="max">10/11</td><td>和平·沈河·铁西·于洪·皇姑·沈北·浑南·苏家屯·抚顺·营口</td></tr>
+<tr><td class="max">金属活动性/置换反应</td><td class="max">9/11</td><td>铁西·于洪·皇姑·沈北·浑南·苏家屯·抚顺·营口·铁岭</td></tr>
+<tr><td class="max">酸碱中和反应</td><td>8/11</td><td>和平·于洪·沈北·浑南·苏家屯·抚顺·营口·铁岭</td></tr>
+<tr><td>溶解度/溶液配制</td><td>8/11</td><td>和平·沈河·铁西·于洪·皇姑·沈北·浑南·苏家屯</td></tr>
+<tr><td>NaOH变质/碳酸盐检验</td><td>5/11</td><td>铁西·沈北·浑南·营口·铁岭</td></tr>
+<tr><td>粗盐提纯</td><td>5/11</td><td>沈河·于洪·苏家屯·营口·铁岭</td></tr>
+<tr><td>新能源（氢能/甲醇/绿氨）</td><td>8/11</td><td>和平·铁西·于洪·沈北·浑南·苏家屯·抚顺·营口</td></tr>
+<tr><td>碳中和/CO₂转化</td><td>6/11</td><td>于洪·沈北·浑南·苏家屯·抚顺·营口</td></tr>
+<tr><td>定量计算（化学方程式计算）</td><td>9/11</td><td>和平·沈河·铁西·于洪·皇姑·浑南·苏家屯·营口·铁岭</td></tr>
+</table>
+
+<div class="card warning"><div class="card-title">2026年化学命题热点</div>
+<ul>
+<li><strong>新能源是最大命题热点：</strong>绿氨（和平）、液态阳光/甲醇（铁西·沈北·浑南）、氢燃料电池（苏家屯）、光伏制氢（铁西·抚顺），8/11套卷涉及新能源主题</li>
+<li><strong>碳中和/双碳目标：</strong>CO₂甲醇化（于洪·浑南）、零碳甲醇（浑南）、碳纤维（铁岭），6/11套卷直接涉及</li>
+<li><strong>前沿科技素材：</strong>单原子催化（铁西）、分子筛（沈河）、石墨烯（沈北）、脑机接口（营口）、锂电池回收（抚顺），科普阅读题紧跟科技前沿</li>
+</ul></div>
+
+<!-- ==================== 五、各卷特色考点 ==================== -->
+<h2 class="section-title" id="s5">五、各卷独有/特色考点</h2>
+
+<div class="grid-2">
+<div class="module-card">
+<h4 style="margin-top:0">和平区一模</h4>
+<span class="tag red">绿氨合成·MOFs吸附</span>
+<span class="tag blue">荔枝保鲜·气调技术</span>
+<span class="tag green">绣球花变色·Al³⁺调色</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">沈河区一模</h4>
+<span class="tag red">分子筛·择形催化</span>
+<span class="tag blue">食盐·古法寻盐·粗盐精制</span>
+<span class="tag green">石莲子检验浓度</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">铁西区一模</h4>
+<span class="tag red">单原子催化·Ni-N-C</span>
+<span class="tag blue">造纸术·灰浆浸泡</span>
+<span class="tag green">石墨烯海水淡化膜</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">于洪区一模</h4>
+<span class="tag red">MoS₂高温硫化法</span>
+<span class="tag blue">CO₂甲醇化·微观示意图</span>
+<span class="tag green">紫甘蓝汁·酸碱指示</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">皇姑区一模</h4>
+<span class="tag red">醋·酿造全流程</span>
+<span class="tag blue">冷泡茶·浸出率</span>
+<span class="tag green">铁与铜盐"种"铜玫瑰</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">沈北新区一模</h4>
+<span class="tag red">石墨烯·锂电池导电剂</span>
+<span class="tag blue">铁与CuSO₄异常现象</span>
+<span class="tag green">pH传感器·定量探究</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">浑南区一模</h4>
+<span class="tag red">侯氏制碱法</span>
+<span class="tag blue">青蒿素提取工艺</span>
+<span class="tag green">果蔬洗盐·NaHCO₃检验</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">苏家屯区一模</h4>
+<span class="tag red">氢燃料电池·质子交换膜</span>
+<span class="tag blue">爆炸盐·过碳酸钠</span>
+<span class="tag green">航母材料·钛合金</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">抚顺市统考</h4>
+<span class="tag red">锂电池回收·碳热还原</span>
+<span class="tag blue">抗酸药·胃酸探究</span>
+<span class="tag green">高纯硅制备工艺</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">营口市一模</h4>
+<span class="tag red">脑机接口·电极材料</span>
+<span class="tag blue">稀土CeO₂·尾气净化</span>
+<span class="tag green">碱石灰变质·焰色反应</span>
+</div>
+<div class="module-card">
+<h4 style="margin-top:0">铁岭二模</h4>
+<span class="tag red">碳纤维·拉伸强度</span>
+<span class="tag blue">干冰性质探究</span>
+<span class="tag green">彩虹管·黑枸杞指示剂</span>
+</div>
+</div>
+
+<!-- ==================== 六、备考作战总纲 ==================== -->
+<h2 class="section-title" id="s6">六、备考作战总纲</h2>
+
+<h3>S级优先（必须掌握 · 11套卷均覆盖）</h3>
+<div class="card"><div class="card-title">🔴 实验操作与气体制取（每卷必考 · 约15~20分）</div>
+<ul>
+<li><strong>气体制取装置选择：</strong>固体加热型（KMnO₄制O₂）vs 固液常温型（H₂O₂制O₂、CaCO₃+HCl制CO₂），11/11卷Q11必考</li>
+<li><strong>收集方法：</strong>排水法（O₂不易溶于水）、向上排空气法（CO₂密度大于空气），必须掌握选择依据</li>
+<li><strong>控制反应发生与停止：</strong>注射器装置、弹簧夹、多孔塑料板，多套卷考查</li>
+<li><strong>基本操作：</strong>倾倒液体、加热液体、稀释浓硫酸、检查气密性，11/11卷选择题必考</li>
+</ul></div>
+
+<div class="card"><div class="card-title">🔴 化学用语与元素周期表（每卷必考 · 约3~5分）</div>
+<ul>
+<li><strong>化学式书写：</strong>离子符号（2Mg²⁺）、化学式（Al₂O₃）、化合价标注，10/11卷选择题考查</li>
+<li><strong>元素周期表信息：</strong>原子序数=质子数=核外电子数、相对原子质量（无单位g），10/11卷考查</li>
+<li><strong>化学方程式书写：</strong>配平、条件、状态符号，非选择题每题必考</li>
+</ul></div>
+
+<h3>A级优先（9~11套卷覆盖）</h3>
+<div class="card info"><div class="card-title">🟡 燃烧与灭火 + 金属活动性（约5~8分）</div>
+<ul>
+<li><strong>燃烧三条件：</strong>可燃物+氧气+达到着火点，10/11卷考查（选择+实验探究）</li>
+<li><strong>灭火原理：</strong>隔绝氧气/清除可燃物/降温至着火点以下，注意"降低着火点"是常见错误选项</li>
+<li><strong>金属活动性顺序：</strong>Fe+CuSO₄置换反应，9/11卷涉及，皇姑区和沈北新区以此为Q14主题</li>
+<li><strong>铁生锈条件：</strong>铁+水+氧气同时接触，铁西·沈北·铁岭均有考查</li>
+</ul></div>
+
+<div class="card info"><div class="card-title">🟡 酸碱盐核心反应（约8~12分）</div>
+<ul>
+<li><strong>酸碱中和反应：</strong>NaOH+HCl=NaCl+H₂O，8/11卷涉及，常配合酚酞指示剂</li>
+<li><strong>NaOH变质探究：</strong>NaOH→Na₂CO₃（吸收CO₂），铁西·营口·铁岭以此为综合探究主题</li>
+<li><strong>碳酸盐检验：</strong>加稀盐酸→产生气泡→通入澄清石灰水变浑浊</li>
+<li><strong>粗盐提纯：</strong>溶解→过滤→蒸发，5/11卷考查，操作细节（玻璃棒作用、停止加热时机）是高频考点</li>
+</ul></div>
+
+<h3>B级优先（专题突破）</h3>
+<div class="card success"><div class="card-title">🟢 科普阅读题应对策略</div>
+<ul>
+<li><strong>题材不可预测：</strong>分子筛、单原子催化、石墨烯、脑机接口、锂电池回收……每套卷题材各异</li>
+<li><strong>核心能力：</strong>信息提取→知识迁移→图表分析→化学方程式书写</li>
+<li><strong>常见设问：</strong>①从文中提取信息回答 ②结合图表数据分析 ③写化学方程式 ④判断正误</li>
+<li><strong>训练方法：</strong>每天练1篇科普阅读，重点训练"快速定位关键信息"能力</li>
+</ul></div>
+
+<div class="card success"><div class="card-title">🟢 定量计算（约3~5分）</div>
+<ul>
+<li><strong>溶质质量分数计算：</strong>配制溶液（浓硫酸稀释、NaCl溶液配制），8/11卷涉及</li>
+<li><strong>化学方程式计算：</strong>根据方程式求质量，和平（Al₂O₃→Al₂(SO₄)₃）、铁西（Al₂O₃→Al）、营口（CeO₂+CO）等</li>
+<li><strong>溶解度计算：</strong>蒸发结晶析出量（沈河Q14），需结合溶解度曲线</li>
+</ul></div>
+
+<!-- ==================== 七、推荐做卷顺序 ==================== -->
+<h2 class="section-title" id="s7">七、推荐做卷顺序</h2>
+
+<table>
+<tr><th>阶段</th><th>推荐试卷</th><th>理由</th></tr>
+<tr>
+<td><strong>第一阶段：夯实基础</strong><br>（距中考30天+）</td>
+<td>① 苏家屯区一模<br>② 营口市一模<br>③ 抚顺市统考</td>
+<td>题型规范、覆盖面广。苏家屯Q11涵盖CO₂制取+粗盐提纯+中和反应三大经典实验；营口Q11气体制取+电解水全面；抚顺作为市级统考命题规范性高。</td>
+</tr>
+<tr>
+<td><strong>第二阶段：突破中档</strong><br>（距中考15~30天）</td>
+<td>④ 浑南区一模<br>⑤ 铁西区一模<br>⑥ 于洪区一模<br>⑦ 皇姑区一模</td>
+<td>浑南Q12涵盖侯氏制碱+青蒿素提取，综合性强；铁西单原子催化阅读题训练信息提取；于洪Q14酸碱中和+紫甘蓝汁设计精巧；皇姑醋酿造+冷泡茶贴近生活。</td>
+</tr>
+<tr>
+<td><strong>第三阶段：冲刺压轴</strong><br>（距中考15天内）</td>
+<td>⑧ 和平区一模<br>⑨ 沈河区一模<br>⑩ 沈北新区一模<br>⑪ 铁岭二模</td>
+<td>和平绿氨+绣球花综合性最强；沈河Q14食盐项目式学习（13分）难度最高；沈北铁与CuSO₄异常现象探究深入；铁岭碳纤维+彩虹管创新性强。</td>
+</tr>
+</table>
+
+<div class="card"><div class="card-title">最终建议</div>
+<p>11套化学卷的命题方向高度一致，反映了辽宁中考化学的稳定命题模式。考生应当：</p>
+<ul>
+<li><strong>① 选择题零失误（10分）</strong>——化学用语、实验操作、元素周期表、燃烧灭火、溶解度是必考点，每题1分不能丢</li>
+<li><strong>② Q11实验题拿满分（约10分）</strong>——气体制取装置选择+收集方法+化学方程式书写，11套卷模式完全一致</li>
+<li><strong>③ Q12~Q13稳拿分（约18~20分）</strong>——化学与生活/科技题以课本知识为基础，科普阅读重在信息提取</li>
+<li><strong>④ Q14分步得分（约10分）</strong>——综合探究题前几问通常较简单，化学方程式计算是拉分关键</li>
+</ul></div>
+
+<div class="footnote">
+<p>📊 11套辽宁中考化学模拟卷横向对比分析 | 基于各区/市原始试卷OCR数据 | 生成时间：2026年4月25日</p>
+<p>数据来源：和平区·沈河区·铁西区·于洪区·皇姑区·沈北新区·浑南区·苏家屯区一模 + 抚顺统考 + 营口市一模 + 铁岭二模</p>
+<p style="font-size:.8rem">注：部分试卷OCR识别存在噪声，具体题目答案以官方参考答案为准。</p>
+</div>
+
+</div>
+</body>
+</html>

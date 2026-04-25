@@ -1,0 +1,8 @@
+# 大文件目录
+**/ocr_images/
+**/模拟卷/
+__pycache__/
+
+# 临时文件
+*.Zone.Identifier
+output_custom.txt
