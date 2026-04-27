@@ -2,7 +2,7 @@
 
 > **适用于**: 任何学科新增1-2套模拟卷的完整流程
 > **前提**: 该学科已有 index.html、duibi.html 和若干已完成的单卷分析页
-> **输入**: 用户提供的 OCR 文本（试卷 + 答案）
+> **输入**: 用户提供的 PDF 文件（试卷 + 答案），由 Agent 提取文本
 > **输出**: 新单卷分析页 + 更新后的 duibi.html + 更新后的 index.html + 全站计数同步
 
 ---
@@ -53,18 +53,107 @@ dalian → 大连市
 
 ⚠️ **铁律**: 同一区/市在所有学科中必须使用**完全相同的 slug**。
 
-### A2. 确认 OCR 文件就位
+### A2. 从 PDF 提取文本（最关键步骤）
+
+用户提供的输入是 PDF 文件（试卷 + 答案），存放于 `{学科中文}学科分析/` 目录。
+必须准确提取全部文字内容，**任何漏字、错字都会导致后续分析错误**。
+
+#### 工具优先级
+
+| 优先级 | 工具 | 适用场景 | 安装/依赖 |
+|--------|------|----------|-----------|
+| **首选** | pdfplumber (Python) | 文字型 PDF（Word/WPS 导出、电子排版） | `pip install --user --break-system-packages pdfplumber` |
+| **备选** | Tesseract OCR | 扫描型 PDF（扫描全能王、照片扫描件、图片型） | 系统已装 `/usr/bin/tesseract`，需 `chi_sim` 语言包 |
+
+#### 步骤 1：用 pdfplumber 尝试提取（首选）
+
+```python
+import pdfplumber
+
+pdf = pdfplumber.open("试卷.pdf")
+for i, page in enumerate(pdf.pages):
+    text = page.extract_text()
+    if text:
+        print(f"--- 第{i+1}页 ---")
+        print(text)
+    else:
+        print(f"⚠️ 第{i+1}页无文字（可能是扫描件）")
+pdf.close()
+```
+
+**判断标准**：
+- ✅ 每页都有文字输出 → **文字型 PDF**，提取成功，保存为 `{区名}_试卷_ocr.md`
+- ⚠️ 部分或全部页面输出为空/乱码 → **扫描型 PDF**，转步骤 2
+
+#### 步骤 2：Tesseract OCR 提取（扫描件备选）
+
+当 pdfplumber 提取为空时，说明 PDF 是扫描图片。流程：
+
+```bash
+# 2a. 用 pdfplumber 将每页转为 300dpi PNG
+python3 -c "
+import pdfplumber
+pdf = pdfplumber.open('试卷.pdf')
+for i, page in enumerate(pdf.pages):
+    img = page.to_image(resolution=300)
+    img.save(f'/tmp/{slug}_page_{i+1}.png')
+pdf.close()
+print(f'共导出 {len(pdf.pages)} 页')
+"
+
+# 2b. Tesseract 逐页 OCR
+cd /tmp
+text=""
+for i in $(seq 1 {总页数}); do
+    page_text=$(tesseract ${slug}_page_${i}.png stdout -l chi_sim 2>/dev/null)
+    text="$text\n--- 第${i}页 ---\n$page_text"
+done
+echo -e "$text" > {学科中文}学科分析/ocr_text/{区名}_试卷_ocr.md
+
+# 2c. 检查输出质量
+wc -l {学科中文}学科分析/ocr_text/{区名}_试卷_ocr.md
+head -50 {学科中文}学科分析/ocr_text/{区名}_试卷_ocr.md
+```
+
+#### 步骤 3：答案 PDF 单独提取
+
+答案 PDF 通常是文字型（排版清晰），优先用 pdfplumber：
+
+```python
+import pdfplumber
+pdf = pdfplumber.open("答案.pdf")
+text = "\n".join(page.extract_text() or "" for page in pdf.pages)
+with open("{学科中文}学科分析/ocr_text/{区名}_答案.md", "w") as f:
+    f.write(text)
+pdf.close()
+```
+
+⚠️ **注意**：部分试卷 PDF 内同时包含试卷和答案（如鞍山卷，前9页试卷+后5页答案），此时只需提取一个 PDF，但需标注分界点。
+
+#### OCR 质量校验（Gate A2）
+
+| 检查项 | 方法 |
+|--------|------|
+| 题号连续完整 | grep 搜索 `1\. 2\. 3\.` 或 `一、二、三` |
+| 分值标注可见 | grep `分` 确认各题分值可读 |
+| 关键内容无乱码 | 人工抽查古诗文/人名/专有名词 |
+| 答案与试卷可交叉验证 | 试卷题号数 = 答案题号数 |
+
+⚠️ **扫描件 OCR 常见问题**：
+- 繁体/异体字识别错误（如"闵萧著"→实为其他人名）→ 需结合答案 PDF 交叉验证
+- 表格/图片区域丢失文字 → 需人工补充或结合答案推断
+- 数学公式/化学方程式 OCR 不可靠 → 必须与答案 PDF 核对
+
+### A3. 确认 OCR 文件就位
 
 ```bash
 ls {学科中文}学科分析/ocr_text/
 # 需要存在：
-# {区名}_试卷_ocr.md  — 试卷 OCR 文本（必须）
+# {区名}_试卷_ocr.md  — 试卷文本（必须）
 # {区名}_答案.md      — 参考答案（强烈建议，无则标注）
 ```
 
-如果 OCR 文件不存在，需要用户提供原始文本后先创建。
-
-### A3. 读取学科 SKILL
+### A4. 读取学科 SKILL
 
 ```bash
 cat {学科中文}学科分析/SKILL_{学科中文}单卷分析.md
@@ -72,7 +161,7 @@ cat {学科中文}学科分析/SKILL_{学科中文}单卷分析.md
 
 这个文件定义了该学科五维（或六维）分析的完整框架、CSS 样式、输出格式。**必须读取后再开始分析**。
 
-### A4. 读取一份已有单卷作为模板
+### A5. 读取一份已有单卷作为模板
 
 ```bash
 # 选择该学科中最近完成的一份单卷分析页作为 HTML 结构参考
@@ -304,6 +393,8 @@ git push origin main
 ```
 Phase A · 准备
   □ slug 已确认（全局一致）
+  □ PDF 文本已提取（pdfplumber 首选 → Tesseract 备选）
+  □ OCR 质量已校验（题号连续 + 分值可读 + 与答案交叉验证）
   □ OCR 文件已就位（试卷 + 答案）
   □ 学科 SKILL 已读取
   □ 已有单卷模板已读取
@@ -370,6 +461,17 @@ Phase F · 提交部署
 ### 教训6: duibi.html 不可跳过或延迟
 - **现象**: "先加卷，duibi 下次再更新" → 永远不会更新 → 数据不一致
 - **对策**: 本 SKILL 将 duibi 更新设为 Phase C（强制），排在 Phase D 之前
+
+### 教训7: PDF 提取必须先判断类型再选工具
+- **现象**: 直接用 pdfplumber 提取扫描件 PDF → 返回空字符串 → 浪费时间尝试其他参数
+- **根因**: 扫描件 PDF（如"扫描全能王"生成）内容是图片而非文字层
+- **判断方法**: pdfplumber 的 `page.extract_text()` 返回空或极短 → 扫描件
+- **正确流程**: pdfplumber 试提取 → 空则 pdfplumber 转 PNG(300dpi) → Tesseract OCR(chi_sim)
+- **关键**: 不要跳过 pdfplumber 首选步骤，文字型 PDF 提取质量远优于 OCR
+
+### 教训8: 答案 PDF 可能与试卷合并在同一文件中
+- **现象**: 鞍山卷 PDF 前9页是试卷、后5页是答案，分开处理会遗漏
+- **对策**: 提取完文本后先通读，确认是否包含答案部分；如果包含，标注分界页码
 
 ---
 
