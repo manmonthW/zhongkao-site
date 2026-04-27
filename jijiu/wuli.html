@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物理考前速查卡 · 王笑の备考站</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.qk { max-width: 760px; margin: 0 auto; padding: 16px; }
+.qk h1 { text-align:center; font-size:1.6em; color:var(--accent); margin:20px 0 6px; }
+.qk .lead { text-align:center; font-size:.88em; color:#888; margin-bottom:20px; }
+.qk h2 { font-size:1.15em; color:#fff; background:var(--accent); padding:6px 14px; margin:24px 0 10px; border-radius:3px; }
+.qk h3 { font-size:1em; color:var(--accent); margin:14px 0 6px; padding:0; border:none; }
+.qk table { width:100%; border-collapse:collapse; font-size:.85em; margin:6px 0 12px; }
+.qk th { background:var(--tag-bg); color:var(--text); padding:5px 8px; text-align:left; font-weight:600; font-size:.82em; }
+.qk td { padding:4px 8px; border-bottom:1px solid var(--border); }
+.qk .hi { background:#eef2ff; font-weight:700; color:var(--accent); }
+.qk ul { padding-left:18px; margin:4px 0 10px; }
+.qk li { margin-bottom:2px; font-size:.9em; }
+.qk .rule-box { background:#fff3cd; border:2px solid var(--warning); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .rule-box strong { color:var(--warning); }
+.qk .free-box { background:#d5f5df; border:2px solid var(--success); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .free-box strong { color:var(--success); }
+.qk .trap-box { background:#eef2ff; border:2px solid var(--accent); padding:10px 14px; border-radius:8px; margin:8px 0 14px; }
+.qk .trap-box strong { color:var(--accent); }
+.qk .formula-box { background:#f0f4ff; border:1px solid var(--accent); padding:10px 14px; border-radius:8px; margin:8px 0 14px; font-size:.9em; }
+.qk .formula-box .f { font-weight:700; color:var(--accent); }
+.qk .mini { font-size:.82em; color:#888; text-align:center; margin-top:20px; }
+@media print {
+  .site-header, .breadcrumb, .site-footer, .no-print { display:none!important; }
+  body { background:#fff; font-size:13px; }
+  .qk { max-width:100%; padding:0; }
+  .qk h1 { font-size:1.4em; margin:10px 0 4px; }
+  .qk h2 { font-size:1em; padding:4px 10px; margin:14px 0 6px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .qk table { font-size:.78em; }
+  .qk .rule-box, .qk .free-box, .qk .trap-box, .qk .formula-box { padding:6px 10px; }
+  @page { margin: 1cm; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <nav>
+      <a href="index.html" class="active">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../shuxue/index.html">数学</a>
+      <a href="../wuli/index.html">物理</a>
+      <a href="../huaxue/index.html">化学</a>
+      <a href="../yingyu/index.html">英语</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+<div class="breadcrumb no-print"><a href="../index.html">首页</a> / <a href="index.html">冲刺加油站</a> / 物理速查卡</div>
+
+<div class="qk">
+
+<h1>物理 · 考前速查卡</h1>
+<div class="lead">考前10分钟过一遍 · 基于11套辽宁模拟卷数据提炼 · 物化合卷150分钟 · 物理80分24题</div>
+
+<!-- ===== 1 ===== -->
+<h2>一、考试结构与时间分配</h2>
+<table>
+<tr><th>项目</th><th>数据</th></tr>
+<tr><td>总分 / 题量</td><td>80分 / 24题</td></tr>
+<tr><td>选择题</td><td>Q1-Q6单选(12分) + Q7-Q9多选(6分) = 18分</td></tr>
+<tr><td>填空题</td><td>Q10-Q15，每空1分 = 12分</td></tr>
+<tr><td>作图题</td><td>Q16-Q17 = 4分</td></tr>
+<tr><td>实验题</td><td>Q18-Q21，4题约24分（最大板块！）</td></tr>
+<tr><td>综合题</td><td>Q22力学 + Q23电学 + Q24 STEM = 约22分</td></tr>
+<tr><td>合卷方式</td><td>与化学合卷150分钟，物理建议用<strong>85-90分钟</strong></td></tr>
+</table>
+<div class="rule-box">
+<strong>时间分配铁律：</strong>选择15min → 填空+作图10min → 实验30min → 综合30min → 机动5min<br>
+<strong>多选题策略：</strong>Q7-Q8不确定时只选最有把握的——漏选得1分，错选得0分！
+</div>
+
+<!-- ===== 2 ===== -->
+<h2>二、公式速记卡（必须烂熟于心）</h2>
+
+<h3>力学核心</h3>
+<div class="formula-box">
+<span class="f">G = mg</span>（g = 10 N/kg）<br>
+<span class="f">p = F/S</span>（固体压强，单位Pa）<br>
+<span class="f">p = ρgh</span>（液体压强，深度h从液面往下量）<br>
+<span class="f">F浮 = ρ<sub>液</sub>gV<sub>排</sub></span>（阿基米德原理）<br>
+<span class="f">F浮 = G</span>（漂浮/悬浮条件）<br>
+<span class="f">W = Fs</span>（做功，F和s方向必须一致）<br>
+<span class="f">P = W/t = Fv</span>（功率）<br>
+<span class="f">η = W<sub>有</sub>/W<sub>总</sub></span>（机械效率）
+</div>
+
+<h3>电学核心</h3>
+<div class="formula-box">
+<span class="f">U = IR</span>（欧姆定律）<br>
+<span class="f">P = UI = I²R = U²/R</span>（电功率三公式）<br>
+<span class="f">W = UIt = Pt</span>（电功）<br>
+<span class="f">Q = I²Rt</span>（焦耳定律，纯电阻Q=W）
+</div>
+
+<h3>热学核心</h3>
+<div class="formula-box">
+<span class="f">Q = cmΔt</span>（c<sub>水</sub> = 4.2×10³ J/(kg·℃)）<br>
+<span class="f">Q = mq</span>（q为热值，完全燃烧）<br>
+<span class="f">η = Q<sub>吸</sub>/Q<sub>放</sub></span>（热效率）
+</div>
+
+<div class="rule-box">
+<strong>三个必记常数：</strong>g = 10 N/kg　|　ρ<sub>水</sub> = 1.0×10³ kg/m³　|　c<sub>水</sub> = 4.2×10³ J/(kg·℃)
+</div>
+
+<!-- ===== 3 ===== -->
+<h2>三、必拿分清单（约50分基本盘）</h2>
+
+<div class="free-box">
+<strong>送分区（约40分）——闭眼拿到：</strong>
+<ul>
+<li><strong>Q1-Q6 单选</strong>（12分）：物态变化(91%) + 光学现象(82%) + 安全用电(82%) + 力学概念(82%) + 声学(73%)</li>
+<li><strong>Q10-Q14 填空</strong>（10分）：参照物/电磁波/比热容/惯性/安全用电，每空1分</li>
+<li><strong>Q16-Q17 作图</strong>（4分）：光路图 + 力的示意图/力臂</li>
+<li><strong>实验基本操作分</strong>（~10分）：组装顺序/读数/控制变量法</li>
+<li><strong>Q22第一问</strong>（~3分）：G=mg 或 p=F/S，几乎送分</li>
+<li><strong>Q23第一问</strong>（~2分）：U=IR 基本电学计算</li>
+</ul>
+</div>
+
+<div class="trap-box">
+<strong>争分区（约20分）——拼一拼：</strong>
+<ul>
+<li><strong>Q7-Q8 多选</strong>（4分）：不确定只选一个，漏选得1分</li>
+<li><strong>Q15 计算填空</strong>（2分）：浮力/压强/密度计算</li>
+<li><strong>实验深层问</strong>（~8分）：故障排查/图像分析/实验改进</li>
+<li><strong>Q22-Q23后续步骤</strong>（~8分）：η/P/W/Q完整计算</li>
+</ul>
+</div>
+
+<!-- ===== 4 ===== -->
+<h2>四、选择题高频考点（11套验证）</h2>
+
+<h3>单选 Q1-Q6（必须秒杀）</h3>
+<table>
+<tr><th>考点</th><th>出现率</th><th>秒杀技巧</th></tr>
+<tr class="hi"><td>物态变化六种辨析</td><td>91%</td><td>升华↔凝华跳过液态；汽化=蒸发+沸腾</td></tr>
+<tr class="hi"><td>光学现象分类</td><td>82%</td><td>镜子=反射；筷子弯折=折射；影子=直线传播</td></tr>
+<tr class="hi"><td>安全用电</td><td>82%</td><td>测电笔碰金属帽；三脚插头接地线；空气开关断火线</td></tr>
+<tr class="hi"><td>力学概念</td><td>82%</td><td>惯性只与质量有关；力不是维持运动的原因</td></tr>
+<tr><td>声学三特征</td><td>73%</td><td>响度=振幅；音调=频率；音色=材质</td></tr>
+</table>
+
+<h3>多选 Q7-Q9（谨慎作答）</h3>
+<table>
+<tr><th>考点</th><th>出现率</th><th>策略</th></tr>
+<tr class="hi"><td>Q9 欧姆定律+电功率</td><td><strong>100%</strong></td><td>画等效电路，逐选项代入公式验证</td></tr>
+<tr><td>Q7-Q8 力学综合</td><td>73%</td><td>惯性/做功/能量转化——概念辨析为主</td></tr>
+<tr><td>Q7-Q8 热学/电磁</td><td>45-55%</td><td>不确定只选最有把握的选项</td></tr>
+</table>
+
+<div class="rule-box">
+<strong>Q9铁律：</strong>11套卷100%是电学综合多选（欧姆定律+电功率+串并联/动态电路），全卷选择最难。<br>
+<strong>应急策略：</strong>画出等效电路图 → 标出U、I、R → 逐项用P=UI/P=I²R/P=U²/R验证。
+</div>
+
+<!-- ===== 5 ===== -->
+<h2>五、实验题高频类型（30%分值！）</h2>
+
+<table>
+<tr><th>实验类型</th><th>出现率</th><th>核心要点</th></tr>
+<tr class="hi"><td>密度测量</td><td>55%（最高频力学实验）</td><td>天平+量筒法；浮力法；漂浮法——三种方法都要会</td></tr>
+<tr><td>水沸腾实验</td><td>45%</td><td>沸腾时温度不变；气泡上升变大；98℃是气压低</td></tr>
+<tr><td>凸透镜成像</td><td>55%</td><td>u>2f实像缩小；f<u<2f实像放大；u<f虚像放大</td></tr>
+<tr><td>平面镜成像</td><td>36%</td><td>等大等距；薄玻璃板代替镜子；暗环境中做</td></tr>
+<tr class="hi"><td>伏安法/I-U关系</td><td>73%（最高频电学实验）</td><td>滑动变阻器接法；电流表外接/内接；多次测量</td></tr>
+<tr><td>液体压强</td><td>27%</td><td>同一深度各方向压强相等；深度越深压强越大</td></tr>
+<tr><td>滑动摩擦力</td><td>18%</td><td>匀速拉动；控制变量法；接触面粗糙程度</td></tr>
+</table>
+
+<div class="trap-box">
+<strong>重要修正（11套验证）：</strong>
+<ul>
+<li>水沸腾实验<strong>不再100%必考</strong>——仅5/11套考了。冰熔化3套，3套无热学实验</li>
+<li><strong>密度测量超越水沸腾</strong>，成为力学最高频实验（6/11套）</li>
+<li>必须掌握密度的<strong>三种测法</strong>：天平+量筒、浮力法、漂浮法</li>
+</ul>
+</div>
+
+<!-- ===== 6 ===== -->
+<h2>六、综合计算题分步得分模板</h2>
+
+<h3>Q22 力学计算（7-10分）</h3>
+<div class="formula-box">
+<strong>第一步（送分）：</strong>G = mg 或 p = F/S → 写公式+代数+单位 ≈ 3分<br>
+<strong>第二步：</strong>p = ρgh 或 F = pS → 液体压强/受力面积 ≈ 2-3分<br>
+<strong>第三步：</strong>W = Fs → P = W/t 或 η = W<sub>有</sub>/W<sub>总</sub> ≈ 2-3分<br>
+<strong>情境特点：</strong>7/11套用工程/科技情境（塔吊/滑轮组/洒水车/半潜船/深海空间站）
+</div>
+
+<h3>Q23 电学计算（6-8分）</h3>
+<div class="formula-box">
+<strong>第一步（送分）：</strong>U = IR 或 P = UI → 基本电学量 ≈ 2分<br>
+<strong>第二步：</strong>W = UIt 或 Q = cmΔt → 电功/热量 ≈ 2-3分<br>
+<strong>第三步：</strong>η = Q<sub>吸</sub>/W → 效率计算 ≈ 2分<br>
+<strong>情境特点：</strong>7/11套是家用电器（饮水机/电蒸锅/电水壶/加湿器），4套纯电路
+</div>
+
+<h3>Q24 STEM题（6-7分）</h3>
+<div class="free-box">
+<strong>不要放弃STEM！</strong>前几问是概念填空，通常3-4分可稳拿：
+<ul>
+<li>第一问通常是基础概念/物理量判断（送分）</li>
+<li>第二问通常是简单计算或现象分析</li>
+<li>最后一问才是综合设计题（可以战略放弃）</li>
+</ul>
+</div>
+
+<!-- ===== 7 ===== -->
+<h2>七、易错点TOP10（11套卷高频陷阱）</h2>
+
+<table>
+<tr><th>序号</th><th>易错点</th><th>正确说法</th></tr>
+<tr><td>1</td><td>惯性越大速度越大</td><td>❌ 惯性大小<strong>只与质量有关</strong>，与速度无关</td></tr>
+<tr><td>2</td><td>力是维持运动的原因</td><td>❌ 力是<strong>改变</strong>运动状态的原因</td></tr>
+<tr><td>3</td><td>液体压强与容器形状有关</td><td>❌ p=ρgh 只与<strong>深度和液体密度</strong>有关</td></tr>
+<tr><td>4</td><td>做功一定产生热量</td><td>❌ 做功可以改变内能，但不一定产生"热量"</td></tr>
+<tr><td>5</td><td>沸点是100℃</td><td>❌ 标准气压下才是100℃，气压低沸点低</td></tr>
+<tr><td>6</td><td>串联电路电压处处相等</td><td>❌ 串联<strong>电流</strong>处处相等，电压按电阻分配</td></tr>
+<tr><td>7</td><td>灯泡越亮电阻越大</td><td>❌ 亮度取决于<strong>实际功率P=UI</strong>，不是电阻</td></tr>
+<tr><td>8</td><td>物体下沉说明浮力=0</td><td>❌ 下沉是F浮<G，浮力仍然存在</td></tr>
+<tr><td>9</td><td>平面镜所成像大小可变</td><td>❌ 像与物<strong>等大</strong>，走近只是视角变大</td></tr>
+<tr><td>10</td><td>升华需要先变成液体</td><td>❌ 升华是固态<strong>直接</strong>变气态，跳过液态</td></tr>
+</table>
+
+<!-- ===== 8 ===== -->
+<h2>八、考场救命锦囊</h2>
+
+<div class="rule-box">
+<strong>物化合卷时间调控：</strong><br>
+· 先做物理（85-90min），再做化学（50-55min），留10min机动<br>
+· 物理做完标记不确定的题号，化学做完后回来检查<br>
+· <strong>绝对不能在Q9多选上卡超过5分钟！</strong>选最有把握的就走
+</div>
+
+<div class="free-box">
+<strong>计算题分步拿分：</strong><br>
+· 写出公式 = 1分<br>
+· 代入数据 = 1分<br>
+· 算出结果+写单位 = 1分<br>
+· <strong>即使最终答案算不对，公式+代入至少拿2分</strong>
+</div>
+
+<div class="trap-box">
+<strong>作图题规范：</strong><br>
+· 光路图：入射光线/反射光线/折射光线都要画箭头，法线用虚线<br>
+· 力的示意图：作用点画在物体受力点上，箭头方向+力的符号<br>
+· 力臂：从支点到力的作用线的<strong>垂直</strong>距离，画虚线标垂直符号
+</div>
+
+<div class="rule-box">
+<strong>最后5分钟检查清单：</strong><br>
+□ 多选题有没有漏选/错选？不确定的宁可少选<br>
+□ 计算题单位写了吗？（Pa / N / J / W）<br>
+□ p=ρgh的h用的是深度而不是高度？<br>
+□ 电学计算中串并联关系搞对了吗？<br>
+□ 答案有没有写在答题卡上？
+</div>
+
+<div class="mini">数据来源：11套辽宁模拟卷交叉验证 · 2026-04-27</div>
+
+</div>
+
+<footer class="site-footer no-print">
+  2026辽宁王笑の备考站 · 冲刺加油站
+</footer>
+
+</body>
+</html>
