@@ -5,6 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>王笑の备考站</title>
 <link rel="stylesheet" href="css/main.css">
+<style>
+.countdown-bar {
+  max-width: var(--max-w);
+  margin: 0 auto 20px;
+  padding: 0 20px;
+}
+.countdown-inner {
+  background: var(--card-bg);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.countdown-label {
+  font-size: .95em;
+  color: var(--text);
+  font-weight: 600;
+}
+.countdown-num {
+  font-size: 2.2em;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+}
+.countdown-unit {
+  font-size: .75em;
+  color: #888;
+  font-weight: 600;
+}
+.countdown-date {
+  font-size: .82em;
+  color: #888;
+}
+.exam-info {
+  max-width: var(--max-w);
+  margin: 0 auto 24px;
+  padding: 0 20px;
+}
+.exam-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.exam-info-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: .88em;
+}
+.exam-info-item .info-title {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.exam-info-item .info-detail {
+  color: var(--text);
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  .countdown-inner { padding: 14px 16px; gap: 16px; }
+  .countdown-num { font-size: 1.8em; }
+}
+</style>
 </head>
 <body>
 
@@ -27,8 +95,17 @@
 
 <div class="hero">
   <h1>王笑の备考站 🚀</h1>
-  <div class="tagline">37套模拟卷深度拆解 · 高频考点一网打尽 · 稳稳上岸</div>
+  <div class="tagline">69套模拟卷深度拆解 · 高频考点一网打尽 · 稳稳上岸</div>
   <div class="meta">持续更新中 · 数据来源：各区市原始模拟卷</div>
+</div>
+
+<div class="countdown-bar">
+  <div class="countdown-inner">
+    <span class="countdown-label">距离中考还有</span>
+    <span class="countdown-num" id="countdown-days">--</span>
+    <span class="countdown-unit">天</span>
+    <span class="countdown-date">（2026年6月21日开考）</span>
+  </div>
 </div>
 
 <style>
@@ -86,7 +163,7 @@
       <span class="banner-badge">NEW</span>
     </div>
     <div class="banner-desc">
-      语文速查卡 · 历史速查卡 · 道法速查卡 · 数学速查卡 · 作战时钟 · 可打印全科版<br>
+      7学科速查卡全部上线 · 作战时钟 · 可打印全科版<br>
       按考试场次排列 · 考前10分钟扫一遍 · 稳拿高频分
     </div>
   </a>
@@ -145,6 +222,41 @@
 
 </div>
 
+<div class="exam-info">
+  <div class="exam-info-grid">
+    <div class="exam-info-item">
+      <div class="info-title">📅 考试日程</div>
+      <div class="info-detail">
+        6月21日（周日）语文 · 道法+历史<br>
+        6月22日（周一）物化合卷 · 数学<br>
+        6月23日（周二）英语
+      </div>
+    </div>
+    <div class="exam-info-item">
+      <div class="info-title">📋 考试形式</div>
+      <div class="info-detail">
+        闭卷：语文 · 数学 · 英语 · 物化<br>
+        开卷：道法+历史（可带教材和笔记）
+      </div>
+    </div>
+    <div class="exam-info-item">
+      <div class="info-title">⏱️ 时长速览</div>
+      <div class="info-detail">
+        语文150min · 道法+历史150min<br>
+        物化150min · 数学120min · 英语120min
+      </div>
+    </div>
+    <div class="exam-info-item">
+      <div class="info-title">📊 分值总计</div>
+      <div class="info-detail">
+        总分750分（含体育60分）<br>
+        笔试690分 = 语150+数120+英120<br>
+        +物化150+道法历史140+地理生物10
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="insight-card info">
     <h3>关于这个站</h3>
@@ -159,6 +271,17 @@
 <footer class="site-footer">
   王笑の备考站 · 数据驱动 · 持续更新
 </footer>
+
+<script>
+(function(){
+  var exam = new Date(2026, 5, 21); // June 21, 2026
+  var now = new Date();
+  now.setHours(0,0,0,0);
+  var diff = Math.ceil((exam - now) / 86400000);
+  var el = document.getElementById('countdown-days');
+  if (el) el.textContent = diff > 0 ? diff : (diff === 0 ? '今天' : '已开考');
+})();
+</script>
 
 </body>
 </html>
