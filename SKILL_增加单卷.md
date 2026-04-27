@@ -240,6 +240,28 @@ duibi.html 的**每一个维度/section** 都需要检查并更新。以下是�
 | **备考策略** | 如果新卷引入新趋势，需要更新 | 检查是否有新考点 |
 | **footer** | 覆盖套数、城市列表、日期 | 搜索 `覆盖{N}套` |
 
+#### ⚠️ 新增行显示规则（必须遵守）
+
+**1. 置顶显示**：新增卷的数据行必须插入到**每个表格 `<tbody>` 之后的最前面**（紧跟表头），而不是追加到表格末尾。这样用户打开页面第一眼就能看到新增内容。
+
+**2. 高亮样式**：新增行必须使用以下标记：
+
+```html
+<!-- 新增行模板 -->
+<tr class="new-row"><td>{区名}一模 <span class="badge-new">新增</span></td><td>...</td></tr>
+```
+
+**3. CSS 定义**（duibi.html 内嵌 `<style>` 中需包含）：
+
+```css
+.new-row td{background:#f0faf3}
+.badge-new{display:inline-block;font-size:.72rem;padding:1px 7px;border-radius:999px;background:#16a34a;color:#fff;font-weight:700;margin-left:4px;vertical-align:middle}
+```
+
+如果 duibi.html 的 `<style>` 中已有这两条规则则无需重复添加。
+
+**4. 所有表格统一处理**：duibi.html 中的**每一个数据表**都要对新增卷做置顶+高亮，不可只改部分表格。
+
 ### C3. 语文 duibi 特有维度更新参考
 
 语文 duibi.html 有 8 个维度，增加新卷时每个都要更新：
@@ -264,6 +286,9 @@ duibi.html 的**每一个维度/section** 都需要检查并更新。以下是�
 | 检查项 | 方法 |
 |--------|------|
 | 所有表格行数 = 新套数 | 逐表检查 |
+| 新增行在每个表格顶部 | 新增行紧跟 `<tbody>` 之后 |
+| 新增行有高亮样式 | `class="new-row"` + `badge-new` 标签 |
+| CSS 规则存在 | `.new-row td` 和 `.badge-new` 在 `<style>` 中 |
 | 结论/发现已更新 | 频次描述是否反映新数据 |
 | header 套数正确 | `grep "{N+1}套" {subject}/duibi.html` |
 | footer 套数+城市+日期 | 底部信息更新 |
@@ -299,16 +324,20 @@ index.html 中的统计数据（如"十二卷均值"）需要更新文字说明�
 
 ### D4. 报告列表新增条目
 
-在 `<div class="report-list">` 中添加新卷链接：
+在 `<div class="report-list">` 中添加新卷链接，**插入到 featured（对比分析）之后、其他报告之前**（置顶显示）：
 
 ```html
+<!-- 新增卷报告条目模板 — 插入到 featured 条目之后 -->
 <a class="report-item" href="{slug}.html">
-  <div class="title">{区名}一模</div>
+  <div class="title">{区名}一模 <span class="tag green">新增</span></div>
   <div class="info">{题数}题 · 五维深度分析 · {关键内容描述}</div>
 </a>
 ```
 
-**插入位置**: 按照已有列表的排列逻辑（一般按区域/时间顺序）。
+**显示规则**：
+- `<span class="tag green">新增</span>` 标签加在标题文字后面（`.tag.green` 已在 main.css 中定义）
+- 新增卡片紧跟 featured 对比分析卡片之后，排在所有旧报告之前
+- 多张新卷按地市重要性排列（如大连在鞍山前面）
 
 ### D5. duibi 条目更新
 
@@ -320,7 +349,8 @@ index.html 中的统计数据（如"十二卷均值"）需要更新文字说明�
 |--------|------|
 | hero 套数正确 | `grep "套模拟卷" {subject}/index.html` |
 | stat-box 数字正确 | 模拟卷数/题目总量/总分值 |
-| 新卷链接存在 | `grep "{slug}" {subject}/index.html` |
+| 新卷链接存在且置顶 | 新卷在 featured 之后、旧报告之前 |
+| 新卷有"新增"标签 | `<span class="tag green">新增</span>` |
 | duibi featured 标题同步 | 与 duibi.html 标题一致 |
 
 ---
@@ -408,7 +438,8 @@ Phase B · 单卷分析
 
 Phase C · 横向对比更新
   □ duibi.html header 套数已更新
-  □ 每个维度的数据表已新增行
+  □ 每个维度的数据表已新增行（置顶 + new-row 高亮 + badge-new 标签）
+  □ duibi.html <style> 中包含 .new-row 和 .badge-new CSS 规则
   □ 关键发现/结论已重新审视
   □ 高频考点频次已重新统计
   □ footer 套数+城市+日期已更新
@@ -416,7 +447,7 @@ Phase C · 横向对比更新
 Phase D · 学科首页更新
   □ {subject}/index.html hero 套数已更新
   □ stat-box 数字已更新（模拟卷/题目总量/总分值）
-  □ 报告列表已新增条目
+  □ 报告列表已新增条目（置顶 + tag green "新增"标签）
   □ duibi featured 标题已同步
 
 Phase E · 全站计数同步
