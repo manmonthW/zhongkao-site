@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>鞍山一模 · 物理试卷深度分析</title>
+<style>
+:root{--bg:#f5f1e8;--primary:#1a5276;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e;--accent:#1a5276;--accent-light:rgba(26,82,118,0.08);--accent-border:rgba(26,82,118,0.2)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(26,82,118,0.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(26,82,118,0.06),transparent 26%),var(--bg);line-height:1.75}
+.container{width:min(1120px,92vw);margin:28px auto 48px}
+header{background:linear-gradient(135deg,var(--accent-light),rgba(245,241,232,0.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,0.06)}
+h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}
+.subtitle{margin:0;color:var(--muted);font-size:.98rem}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}
+nav{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;font-size:.88rem;padding:5px 14px;border-radius:8px;transition:all .2s;border:1px solid transparent}
+nav a:hover{color:var(--primary);background:var(--accent-light);border-color:var(--accent-border)}
+nav a.active{color:#fff;background:var(--primary);font-weight:700;border-color:var(--primary)}
+.toc{margin:0 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.toc h2{margin:0 0 8px;font-size:1.02rem;color:var(--primary);border:none;padding:0}
+.toc ol{margin:0;padding-left:18px;columns:2;column-gap:34px}
+.toc li{margin:5px 0;break-inside:avoid;font-size:.92rem}
+.toc a{color:var(--text);text-decoration:none;border-bottom:1px dashed var(--accent-border)}
+.toc a:hover{color:var(--primary)}
+section{background:rgba(251,248,241,0.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,0.04)}
+h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid var(--accent-border);padding-bottom:8px}
+h3{margin:16px 0 8px;font-size:1.06rem;color:#1a3d5c}
+p{margin:8px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-top:10px}
+.kpi-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.kpi-title{color:var(--muted);font-size:.84rem;margin-bottom:3px}
+.kpi-value{font-size:1.2rem;color:var(--primary);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.92rem;background:#fffef9}
+th,td{border:1px solid var(--line);padding:7px 9px;vertical-align:top}
+th{background:#dce8f0;color:#1a3d5c;text-align:left;font-weight:700}
+.tag{display:inline-block;font-size:.76rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-right:4px;margin-bottom:4px}
+.tag-lx{background:#dbeafe;color:#1e40af;border-color:#93c5fd}
+.tag-dx{background:#fee2e2;color:#991b1b;border-color:#fca5a5}
+.tag-gx{background:#ffedd5;color:#9a3412;border-color:#fdba74}
+.tag-rx{background:#d1fae5;color:#065f46;border-color:#6ee7b7}
+.tag-sx{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd}
+.tag-zh{background:#f1f5f9;color:#475569;border-color:#cbd5e1}
+.diff-easy{background:#d5f5e3;color:#1e8449;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-mid{background:#fef9e7;color:#9a7d0a;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-hard{background:#fadbd8;color:#922b21;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.bar-chart{margin:12px 0}
+.bar-row{display:flex;align-items:center;margin:6px 0}
+.bar-label{width:120px;font-size:.88rem;text-align:right;padding-right:10px;flex-shrink:0}
+.bar-track{flex:1;background:#e8e2d6;border-radius:6px;height:22px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:.78rem;color:#fff;font-weight:700;transition:width .3s}
+.bar-fill.blue{background:linear-gradient(90deg,#1a5276,#2980b9)}
+.bar-fill.green{background:linear-gradient(90deg,#1e8449,#27ae60)}
+.bar-fill.orange{background:linear-gradient(90deg,#b7950b,#f1c40f);color:#5a4e00}
+.bar-fill.red{background:linear-gradient(90deg,#922b21,#e74c3c)}
+.bar-fill.purple{background:linear-gradient(90deg,#6c3483,#a569bd)}
+.card-highlight{background:linear-gradient(135deg,var(--accent-light),#f0ebe0);border:1px solid var(--accent-border);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px;margin:12px 0}
+.card-highlight strong{color:var(--primary)}
+.card-highlight.warn{border-left-color:var(--warn)}
+.card-highlight.warn strong{color:var(--warn)}
+.module-card{border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;background:#fffdf7;padding:14px 16px;margin:10px 0}
+.module-card h4{margin:0 0 6px;color:var(--primary);font-size:1rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ul{margin:8px 0;padding-left:20px}
+li{margin:3px 0}
+footer{margin-top:18px;color:var(--muted);font-size:.86rem;text-align:center;padding:16px 0}
+.exp-card{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:16px;margin:12px 0;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.exp-card h4{margin:0 0 8px;color:var(--primary);font-size:1.02rem;border-bottom:1px dashed var(--accent-border);padding-bottom:6px}
+.formula-chain{background:#f0ebe0;border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin:10px 0;font-family:monospace;font-size:.9rem;line-height:2;color:#1a3d5c}
+@media(max-width:900px){.toc ol{columns:1}.grid-2{grid-template-columns:1fr}.bar-label{width:80px}.kpi{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+<h1>🔬 鞍山一模 · 物理试卷深度分析</h1>
+<p class="subtitle">鞍山市2026年全市初中九年级第一次质量调查 | 物理学科 | 六维分析模型</p>
+<div class="meta">
+<span class="chip">总题量：24题</span>
+<span class="chip">满分：80分（笔试）</span>
+<span class="chip">物化合卷150分钟</span>
+<span class="chip">选择9题18分 + 填空6题12分 + 作图2题4分 + 实验4题24分 + 综合3题22分</span>
+<span class="chip">✅ 含完整答案</span>
+</div>
+</header>
+
+<nav>
+<a href="../jijiu/index.html">冲刺加油站</a>
+<a href="../yuwen/index.html">语文</a>
+<a href="../shuxue/index.html">数学</a>
+<a href="index.html" class="active">物理</a>
+<a href="../huaxue/index.html">化学</a>
+<a href="../yingyu/index.html">英语</a>
+<a href="../lishi/index.html">历史</a>
+<a href="../daofa/index.html">道法</a>
+</nav>
+
+<div class="toc">
+<h2>📑 目录导航</h2>
+<ol>
+<li><a href="#d1">维度一 · 骨架图：结构解剖</a></li>
+<li><a href="#d2">维度二 · 逐题档案：考点定位</a></li>
+<li><a href="#d3">维度三 · 板块透视：知识地图</a></li>
+<li><a href="#d4">维度四 · 实验深剖：探究解码</a></li>
+<li><a href="#d5">维度五 · 命题DNA：趋势解读</a></li>
+<li><a href="#d6">维度六 · 作战地图：行动转化</a></li>
+</ol>
+</div>
+
+<!-- ==================== 维度一 ==================== -->
+<section id="d1">
+<h2>维度一 · 骨架图：结构解剖</h2>
+
+<h3>1.1 基本参数</h3>
+<div class="kpi">
+<div class="kpi-card"><div class="kpi-title">总分</div><div class="kpi-value">80分</div></div>
+<div class="kpi-card"><div class="kpi-title">总题量</div><div class="kpi-value">24题</div></div>
+<div class="kpi-card"><div class="kpi-title">考试形式</div><div class="kpi-value">闭卷笔试</div></div>
+<div class="kpi-card"><div class="kpi-title">合卷时长</div><div class="kpi-value">150分钟</div></div>
+<div class="kpi-card"><div class="kpi-title">建议物理用时</div><div class="kpi-value">70–80分钟</div></div>
+</div>
+
+<h3>1.2 题型结构表</h3>
+<table>
+<tr><th>大题</th><th>题号</th><th>题数</th><th>分值</th><th>占比</th><th>建议用时</th></tr>
+<tr><td>一、选择题（单选+多选）</td><td>Q1–Q9</td><td>9题</td><td>18分</td><td>22.5%</td><td>12–15分钟</td></tr>
+<tr><td>二、填空题</td><td>Q10–Q15</td><td>6题</td><td>12分</td><td>15.0%</td><td>8–10分钟</td></tr>
+<tr><td>三、作图题</td><td>Q16–Q17</td><td>2题</td><td>4分</td><td>5.0%</td><td>4–5分钟</td></tr>
+<tr><td>四、实验题</td><td>Q18–Q21</td><td>4题</td><td>24分</td><td>30.0%</td><td>20–25分钟</td></tr>
+<tr><td>五、综合应用题</td><td>Q22–Q24</td><td>3题</td><td>22分</td><td>27.5%</td><td>25–30分钟</td></tr>
+<tr style="font-weight:700;background:#dce8f0"><td>合计</td><td>Q1–Q24</td><td>24题</td><td>80分</td><td>100%</td><td>70–80分钟</td></tr>
+</table>
+
+<h3>1.3 选择题内部结构</h3>
+<table>
+<tr><th>类型</th><th>题号</th><th>题数</th><th>分值</th><th>评分规则</th></tr>
+<tr><td>单选</td><td>Q1–Q6</td><td>6题</td><td>12分</td><td>选对得2分</td></tr>
+<tr><td>多选</td><td>Q7–Q9</td><td>3题</td><td>6分</td><td>全对2分，漏选1分，错选0分</td></tr>
+</table>
+<p>Q7：冬奥会滑雪能量分析（多选） Q8：四个电学实验对比（多选） Q9：甲乙容器浮力压强综合（多选）</p>
+
+<h3>1.4 难度层级分布</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">基础题 ★☆☆</div><div class="bar-track"><div class="bar-fill green" style="width:55%">~44分 · 55%</div></div></div>
+<div class="bar-row"><div class="bar-label">中档题 ★★☆</div><div class="bar-track"><div class="bar-fill orange" style="width:30%">~24分 · 30%</div></div></div>
+<div class="bar-row"><div class="bar-label">压轴题 ★★★</div><div class="bar-track"><div class="bar-fill red" style="width:15%">~12分 · 15%</div></div></div>
+</div>
+
+<div class="card-highlight">
+<strong>结构特征：</strong>本卷24题80分，与辽宁省中考物理标准结构完全一致。实验题24分占比30%，综合题22分占比27.5%。Q9浮力压强综合多选为选择压轴，Q15电路综合计算为填空压轴，Q24智能温室STEM题为全卷最高难度。难度梯度适中，压轴题占比15%略低于均值，基础分充足。
+</div>
+</section>
+
+<!-- ==================== 维度二 ==================== -->
+<section id="d2">
+<h2>维度二 · 逐题档案：考点定位</h2>
+
+<h3>2.1 选择题（Q1–Q9，每题2分，共18分）</h3>
+<table>
+<tr><th>题号</th><th>单/多选</th><th>考查内容</th><th>知识板块</th><th>核心公式/概念</th><th>物理思想方法</th><th>难度</th><th>答案</th></tr>
+<tr><td>Q1</td><td>单选</td><td>记里车：声音产生（振动）/传播介质/音色辨别/信息传递</td><td><span class="tag tag-sx">声学</span></td><td>声音三特征；声音传播需要介质；声传递信息</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>C</td></tr>
+<tr><td>Q2</td><td>单选</td><td>物态变化：霜的形成（凝华）与哪个选项相同</td><td><span class="tag tag-rx">热学</span></td><td>凝华：气→固；液化/凝固/凝华辨析</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>B</td></tr>
+<tr><td>Q3</td><td>单选</td><td>智能手表：绝缘体/半导体/导体/超导材料</td><td><span class="tag tag-dx">电学</span></td><td>导体/绝缘体/半导体特性</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>D</td></tr>
+<tr><td>Q4</td><td>单选</td><td>人脸识别：凸透镜成像（照相机原理）</td><td><span class="tag tag-gx">光学</span></td><td>凸透镜成像规律：u>2f成倒立缩小实像</td><td>模型法</td><td><span class="diff-easy">★☆☆</span></td><td>B</td></tr>
+<tr><td>Q5</td><td>单选</td><td>安全用电：湿手/多插座/三孔接地/开关接线</td><td><span class="tag tag-dx">电学</span></td><td>安全用电原则；三孔插座接地线</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>C</td></tr>
+<tr><td>Q6</td><td>单选</td><td>泡茶：热传递改变内能/温度vs热量/内能不为零</td><td><span class="tag tag-rx">热学</span></td><td>热传递改变内能；温度≠热量；内能与温度关系</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>A</td></tr>
+<tr><td>Q7</td><td>多选</td><td>冬奥会滑雪：机械能减小/最高点速度/势能→动能/平衡力</td><td><span class="tag tag-lx">力学</span></td><td>机械能守恒与转化；重力势能与动能转化</td><td>过程分析法</td><td><span class="diff-mid">★★☆</span></td><td>ABC</td></tr>
+<tr><td>Q8</td><td>多选</td><td>四个电学实验对比：灯泡替代/变阻器作用/多次实验/控制变量法</td><td><span class="tag tag-dx">电学</span></td><td>控制变量法；转换法；实验方法辨析</td><td>控制变量法</td><td><span class="diff-mid">★★☆</span></td><td>CD</td></tr>
+<tr><td>Q9</td><td>多选</td><td>浮力+压强综合：两杯水中放入物体A(漂浮)和B(沉底用绳拴)→桌面压强/浮力/水压强/密度</td><td><span class="tag tag-lx">力学</span></td><td>F浮=ρ液gV排；p=ρgh；漂浮/沉底条件</td><td>过程分析法</td><td><span class="diff-hard">★★★</span></td><td>BCD</td></tr>
+</table>
+
+<h3>2.2 填空题（Q10–Q15，每空1分，共12分）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>考查内容</th><th>知识板块</th><th>核心公式/概念</th><th>难度</th><th>答案</th></tr>
+<tr><td>Q10</td><td>2分</td><td>纸杯船：力的相互作用 + 参照物</td><td><span class="tag tag-lx">力学</span></td><td>力的作用是相互的；参照物选择</td><td><span class="diff-easy">★☆☆</span></td><td>相互；静止</td></tr>
+<tr><td>Q11</td><td>2分</td><td>太空圆珠笔：墨水质量变化 + 氮气密度变化</td><td><span class="tag tag-lx">力学</span></td><td>质量=物质多少；ρ=m/V（V增大→ρ减小）</td><td><span class="diff-easy">★☆☆</span></td><td>变小；变小</td></tr>
+<tr><td>Q12</td><td>2分</td><td>创意玻璃杯连通器 + 预报瓶（大气压变化→液面变化）</td><td><span class="tag tag-lx">力学</span></td><td>连通器原理；大气压与液面关系</td><td><span class="diff-mid">★★☆</span></td><td>属于；上升</td></tr>
+<tr><td>Q13</td><td>2分</td><td>春晚武BOT：电磁波传播 + 电能是二次能源</td><td><span class="tag tag-zh">综合</span></td><td>电磁波传播信息；一次/二次能源分类</td><td><span class="diff-easy">★☆☆</span></td><td>电磁波；二次</td></tr>
+<tr><td>Q14</td><td>2分</td><td>加油站静电释放器：导体 + 电流方向</td><td><span class="tag tag-dx">电学</span></td><td>导体/绝缘体；电流方向=正电荷方向</td><td><span class="diff-easy">★☆☆</span></td><td>导体；大地流向人手</td></tr>
+<tr><td>Q15</td><td>2分</td><td>电路综合：滑动变阻器+I-R图+I-U图→求电源电压和最小电阻</td><td><span class="tag tag-dx">电学</span></td><td>U=IR；串并联电路分析；图像读数</td><td><span class="diff-hard">★★★</span></td><td>6V；2.5Ω</td></tr>
+</table>
+
+<h3>2.3 作图题（Q16–Q17，每题2分，共4分）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>作图类型</th><th>知识板块</th><th>评分要点</th><th>难度</th></tr>
+<tr><td>Q16</td><td>2分</td><td>光的反射+折射：一束光斜射水面，画反射光线和折射光线</td><td><span class="tag tag-gx">光学</span></td><td>法线垂直界面；反射角=入射角；折射角小于入射角（空气→水）</td><td><span class="diff-easy">★☆☆</span></td></tr>
+<tr><td>Q17</td><td>2分</td><td>桔槔（杠杆）：画最小动力F₁和阻力F₂的示意图</td><td><span class="tag tag-lx">力学</span></td><td>最小动力→最长动力臂（垂直OA连线）；阻力竖直向下</td><td><span class="diff-mid">★★☆</span></td></tr>
+</table>
+
+<h3>2.4 实验题（Q18–Q21，共24分）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>实验名称</th><th>知识板块</th><th>实验类型</th><th>关键能力点</th><th>难度</th></tr>
+<tr><td>Q18</td><td>6分</td><td>探究平面镜成像特点</td><td><span class="tag tag-gx">光学</span></td><td>探究性实验</td><td>玻璃板代替/像物重合/像位移/方案缺陷</td><td><span class="diff-mid">★★☆</span></td></tr>
+<tr><td>Q19</td><td>5分</td><td>探究水沸腾前后温度变化特点</td><td><span class="tag tag-rx">热学</span></td><td>探究性实验</td><td>组装顺序/读数/气泡判断/沸腾条件/加水量</td><td><span class="diff-mid">★★☆</span></td></tr>
+<tr><td>Q20</td><td>6分</td><td>探究滑动摩擦力大小与哪些因素有关</td><td><span class="tag tag-lx">力学</span></td><td>探究性实验</td><td>二力平衡/压力/接触面积/改进方案/表达式</td><td><span class="diff-mid">★★☆</span></td></tr>
+<tr><td>Q21</td><td>7分</td><td>测量小灯泡正常发光时电阻</td><td><span class="tag tag-dx">电学</span></td><td>测量型实验</td><td>改错/滑片方向/读数/功率判断/I-U图像/未知电阻</td><td><span class="diff-mid">★★☆</span>→<span class="diff-hard">★★★</span></td></tr>
+</table>
+
+<h3>2.5 综合应用题（Q22–Q24，共22分）</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>情境</th><th>知识板块</th><th>涉及公式链</th><th>子问数</th><th>难度梯度</th></tr>
+<tr><td>Q22</td><td>7分</td><td>千山免费游·汽车行驶（速度/压强/做功/燃油）</td><td><span class="tag tag-lx">力学</span><span class="tag tag-rx">热学</span></td><td>v=s/t → p=F/S → W=Fs → η=W/Q放 → m=Q/q</td><td>4问</td><td><span class="diff-easy">★☆☆</span>→<span class="diff-mid">★★☆</span></td></tr>
+<tr><td>Q23</td><td>9分</td><td>加热餐台（快速加热+保温双挡电路）</td><td><span class="tag tag-dx">电学</span><span class="tag tag-rx">热学</span></td><td>R=U²/P → Q=cmΔt → W=Pt</td><td>3问</td><td><span class="diff-mid">★★☆</span>→<span class="diff-hard">★★★</span></td></tr>
+<tr><td>Q24</td><td>6分</td><td>智能温室湿度调控系统（湿敏电阻+电磁铁+喷水模拟电路）</td><td><span class="tag tag-zh">综合</span></td><td>电磁铁极性判定 / I=U/R / 电子元件D特性 / 周期性电功率</td><td>3问</td><td><span class="diff-mid">★★☆</span>→<span class="diff-hard">★★★</span></td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>维度二总结：</strong>全卷24题覆盖力/电/光/热/声五大板块。物理思想方法以「概念辨析」（Q1-Q6）、「控制变量法」（Q8/Q20）、「过程分析法」（Q7/Q9）、「图像法」（Q15）为高频。核心公式覆盖：G=mg、p=F/S、F浮=ρgV排、U=IR、P=UI、Q=cmΔt。公式出现频次：U=IR（5次）> p=F/S（3次）> G=mg（3次）。
+</div>
+</section>
+
+<!-- ==================== 维度三 ==================== -->
+<section id="d3">
+<h2>维度三 · 板块透视：知识地图</h2>
+
+<h3>3.1 五大板块分值分布</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">力学</div><div class="bar-track"><div class="bar-fill blue" style="width:63%">~25分 · 31%</div></div></div>
+<div class="bar-row"><div class="bar-label">电学</div><div class="bar-track"><div class="bar-fill red" style="width:68%">~27分 · 34%</div></div></div>
+<div class="bar-row"><div class="bar-label">光学</div><div class="bar-track"><div class="bar-fill orange" style="width:25%">~10分 · 13%</div></div></div>
+<div class="bar-row"><div class="bar-label">热学</div><div class="bar-track"><div class="bar-fill green" style="width:25%">~10分 · 13%</div></div></div>
+<div class="bar-row"><div class="bar-label">声学</div><div class="bar-track"><div class="bar-fill purple" style="width:5%">~2分 · 3%</div></div></div>
+<div class="bar-row"><div class="bar-label">综合/跨领域</div><div class="bar-track"><div class="bar-fill blue" style="width:15%">~6分 · 8%</div></div></div>
+</div>
+
+<table>
+<tr><th>知识板块</th><th>涉及题号</th><th>估算分值</th><th>占比</th><th>vs 11卷均值</th></tr>
+<tr><td><span class="tag tag-lx">力学</span></td><td>Q7, Q9, Q10, Q11, Q12, Q17, Q20, Q22</td><td>~25分</td><td>31%</td><td>均值33%，略低</td></tr>
+<tr><td><span class="tag tag-dx">电学</span></td><td>Q3, Q5, Q8, Q14, Q15, Q21, Q23</td><td>~27分</td><td>34%</td><td>均值31%，略高</td></tr>
+<tr><td><span class="tag tag-gx">光学</span></td><td>Q4, Q16, Q18</td><td>~10分</td><td>13%</td><td>均值13%，持平</td></tr>
+<tr><td><span class="tag tag-rx">热学</span></td><td>Q2, Q6, Q19, Q22(部分)</td><td>~10分</td><td>13%</td><td>均值12%，略高</td></tr>
+<tr><td><span class="tag tag-sx">声学</span></td><td>Q1</td><td>~2分</td><td>3%</td><td>均值2%，略高</td></tr>
+<tr><td><span class="tag tag-zh">综合</span></td><td>Q13, Q24</td><td>~6分</td><td>8%</td><td>—</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>板块规律：</strong>本卷电学占比34%略高于均值31%（得益于Q21测灯泡电阻7分+Q23电热餐台9分=16分的电学综合分值），力学31%略低于均值33%。电学是本卷的绝对主战场。光热声分布正常。
+</div>
+
+<h3>3.2 教材章节映射表</h3>
+<table>
+<tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位（人教版）</th></tr>
+<tr><td>Q1</td><td>声音产生/传播/音色</td><td>识记</td><td>八上 第2章 声现象</td></tr>
+<tr><td>Q2</td><td>物态变化（凝华）</td><td>识记</td><td>八上 第3章 物态变化</td></tr>
+<tr><td>Q3</td><td>导体/半导体/超导体</td><td>理解</td><td>九全 第15章 电流和电路</td></tr>
+<tr><td>Q4</td><td>凸透镜成像</td><td>理解</td><td>八上 第5章 透镜及其应用</td></tr>
+<tr><td>Q5</td><td>安全用电</td><td>识记</td><td>九全 第19章 生活用电</td></tr>
+<tr><td>Q6</td><td>热传递/内能</td><td>理解</td><td>九全 第13章 内能</td></tr>
+<tr><td>Q7</td><td>机械能/能量转化</td><td>综合分析</td><td>八下 第11章 功和机械能</td></tr>
+<tr><td>Q8</td><td>电学实验方法</td><td>应用分析</td><td>九全 第17章 欧姆定律</td></tr>
+<tr><td>Q9</td><td>浮力/压强综合</td><td>综合计算</td><td>八下 第9-10章</td></tr>
+<tr><td>Q10</td><td>力的相互作用/参照物</td><td>识记</td><td>八下 第7-8章</td></tr>
+<tr><td>Q11</td><td>质量/密度</td><td>理解</td><td>八上 第6章 质量与密度</td></tr>
+<tr><td>Q12</td><td>连通器/大气压</td><td>理解</td><td>八下 第9章 压强</td></tr>
+<tr><td>Q13</td><td>电磁波/能源分类</td><td>识记</td><td>九全 第21-22章</td></tr>
+<tr><td>Q14</td><td>导体/电流方向</td><td>理解</td><td>九全 第15章</td></tr>
+<tr><td>Q15</td><td>欧姆定律综合</td><td>综合计算</td><td>九全 第17章</td></tr>
+<tr><td>Q16</td><td>光的反射和折射</td><td>作图</td><td>八上 第4章 光现象</td></tr>
+<tr><td>Q17</td><td>杠杆/力的示意图</td><td>作图</td><td>八下 第12章 简单机械</td></tr>
+<tr><td>Q18</td><td>平面镜成像</td><td>探究</td><td>八上 第4章 光现象</td></tr>
+<tr><td>Q19</td><td>水沸腾</td><td>探究</td><td>八上 第3章 物态变化</td></tr>
+<tr><td>Q20</td><td>滑动摩擦力</td><td>探究</td><td>八下 第8章 运动和力</td></tr>
+<tr><td>Q21</td><td>测灯泡电阻+I-U特性</td><td>测量+探究</td><td>九全 第17-18章</td></tr>
+<tr><td>Q22</td><td>速度/压强/功/热值</td><td>计算</td><td>八上第1章+八下第9章+九全第14章</td></tr>
+<tr><td>Q23</td><td>电功率/比热容</td><td>计算</td><td>九全 第18章+第13章</td></tr>
+<tr><td>Q24</td><td>电磁铁/湿敏电阻/电功率</td><td>STEM综合</td><td>跨章节综合</td></tr>
+</table>
+
+<h3>3.3 核心素养覆盖（2022版课标）</h3>
+<table>
+<tr><th>核心素养</th><th>涉及题号</th><th>覆盖度</th><th>说明</th></tr>
+<tr><td>物理观念</td><td>Q1-Q6, Q10-Q14</td><td>⭐⭐⭐⭐⭐</td><td>物质/运动/能量/相互作用全覆盖</td></tr>
+<tr><td>科学思维</td><td>Q8, Q9, Q15, Q22, Q23</td><td>⭐⭐⭐⭐</td><td>模型建构、科学推理、论证能力</td></tr>
+<tr><td>科学探究</td><td>Q18, Q19, Q20, Q21</td><td>⭐⭐⭐⭐⭐</td><td>四道实验覆盖完整探究链</td></tr>
+<tr><td>科学态度与责任</td><td>Q1, Q5, Q7, Q13, Q22, Q24</td><td>⭐⭐⭐⭐</td><td>安全用电、传统文化、科技应用</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>与13套卷均值对比：</strong>力学31% vs 均值33%（略低）| 电学34% vs 均值31%（偏高+3%）| 光学13% vs 均值13%（持平）| 热学13% vs 均值12%（持平）| 声学3% vs 均值2%（持平）。本卷为"电学偏重型"试卷。
+</div>
+</section>
+
+<!-- ==================== 维度四 ==================== -->
+<section id="d4">
+<h2>维度四 · 实验深剖：探究解码</h2>
+
+<h3>4.1 四板块覆盖检查</h3>
+<table>
+<tr><th>板块</th><th>是否覆盖</th><th>题号</th><th>实验名称</th></tr>
+<tr><td><span class="tag tag-gx">光学</span></td><td style="color:#1e8449;font-weight:700">✅</td><td>Q18</td><td>探究平面镜成像特点</td></tr>
+<tr><td><span class="tag tag-rx">热学</span></td><td style="color:#1e8449;font-weight:700">✅</td><td>Q19</td><td>探究水沸腾前后温度变化</td></tr>
+<tr><td><span class="tag tag-lx">力学</span></td><td style="color:#1e8449;font-weight:700">✅</td><td>Q20</td><td>探究滑动摩擦力</td></tr>
+<tr><td><span class="tag tag-dx">电学</span></td><td style="color:#1e8449;font-weight:700">✅</td><td>Q21</td><td>测量小灯泡正常发光时电阻</td></tr>
+</table>
+<div class="card-highlight">
+<strong>四板块全覆盖 ✅</strong> 光/热/力/电各一道。总分24分（6+5+6+7），占全卷30%。
+</div>
+
+<h3>4.2 逐题实验深度分析</h3>
+
+<div class="exp-card">
+<h4>Q18 · 探究平面镜成像特点（6分）<span class="tag tag-gx">光学</span></h4>
+<table>
+<tr><th style="width:120px">分析项</th><th>内容</th></tr>
+<tr><td>实验类型</td><td>探究性实验</td></tr>
+<tr><td>实验目的</td><td>探究平面镜成像的特点（像与物的大小/距离关系、虚实判断）</td></tr>
+<tr><td>核心器材</td><td>玻璃板M、两支相同蜡烛A和B、白纸、刻度尺</td></tr>
+<tr><td>实验方法</td><td>等效替代法（用蜡烛B替代像的位置）</td></tr>
+<tr><td>考查能力点</td><td>
+<ul>
+<li><strong>玻璃板目的：</strong>便于确定像的位置</li>
+<li><strong>观察位置：</strong>从不同位置看蜡烛B与A的像完全重合→像与物大小相等</li>
+<li><strong>平移玻璃板：</strong>沿CD方向平移M→蜡烛A的像相对桌面不发生移动（像与物关于镜面对称）</li>
+<li><strong>方案缺陷分析：</strong>①小明只做一次实验，具有偶然性；②小华三次蜡烛到玻璃板距离都相等，数据单一</li>
+</ul>
+</td></tr>
+<tr><td>答案要点</td><td>(1)便于确定像的位置 (2)不同；大小相等 (3)不发生 (4)①只做一次有偶然性 ②距离都相等数据单一</td></tr>
+<tr><td>易错点</td><td>方案缺陷分析需要分别针对小明和小华的实验具体指出问题</td></tr>
+</table>
+</div>
+
+<div class="exp-card">
+<h4>Q19 · 探究水沸腾前后温度变化（5分）<span class="tag tag-rx">热学</span></h4>
+<table>
+<tr><th style="width:120px">分析项</th><th>内容</th></tr>
+<tr><td>实验类型</td><td>探究性实验</td></tr>
+<tr><td>实验目的</td><td>探究水在沸腾前后温度变化的特点</td></tr>
+<tr><td>核心器材</td><td>酒精灯、烧杯、水、温度计、铁架台、石棉网、秒表</td></tr>
+<tr><td>实验方法</td><td>温度-时间图像法</td></tr>
+<tr><td>考查能力点</td><td>
+<ul>
+<li><strong>组装顺序：</strong>自下而上</li>
+<li><strong>温度计读数：</strong>第3min读数为94°C</li>
+<li><strong>气泡判断：</strong>第1.5min水未沸腾→气泡上升过程中变小（图丙）</li>
+<li><strong>沸腾条件：</strong>达到沸点 + 持续吸热</li>
+<li><strong>加水量影响：</strong>水量增加→加热时间变长→c图线</li>
+</ul>
+</td></tr>
+<tr><td>答案要点</td><td>(1)自下而上 (2)94 (3)丙 (4)持续吸热 (5)C</td></tr>
+<tr><td>易错点</td><td>气泡变大是沸腾时（不是沸腾前）；水量增加沸点不变但加热时间延长</td></tr>
+</table>
+</div>
+
+<div class="exp-card">
+<h4>Q20 · 探究滑动摩擦力大小与哪些因素有关（6分）<span class="tag tag-lx">力学</span></h4>
+<table>
+<tr><th style="width:120px">分析项</th><th>内容</th></tr>
+<tr><td>实验类型</td><td>探究性实验</td></tr>
+<tr><td>实验目的</td><td>探究滑动摩擦力大小与压力和接触面积的关系</td></tr>
+<tr><td>核心器材</td><td>弹簧测力计、两块相同木块A和B、长木板、电子秤</td></tr>
+<tr><td>实验方法</td><td>控制变量法</td></tr>
+<tr><td>考查能力点</td><td>
+<ul>
+<li><strong>实验原理：</strong>二力平衡</li>
+<li><strong>乙丙对比：</strong>滑动摩擦力与压力大小有关</li>
+<li><strong>丙丁对比：</strong>滑动摩擦力与接触面积大小无关</li>
+<li><strong>改进方案（图戊）：</strong>拉长木板而非拉物体→无需匀速
+  <ul>
+  <li>操作条件：BD（保持相对运动+绳子水平）</li>
+  <li>摩擦力表达式：f=(m₁-m₃)g</li>
+  <li>加砝码后电子秤示数变小</li>
+  </ul>
+</li>
+</ul>
+</td></tr>
+<tr><td>答案要点</td><td>(1)二力平衡 (2)压力大小 (3)接触面积大小 (4)BD；(m₁-m₃)g；变小</td></tr>
+<tr><td>易错点</td><td>改进方案中电子秤读数变化方向判断：加砝码→摩擦力增大→绳子拉力增大→甲受拉力增大→支持力减小→电子秤示数变小</td></tr>
+<tr><td>创新要素</td><td>⭐ 传统实验+改进方案（电子秤+定滑轮），考查实验改进能力和受力分析</td></tr>
+</table>
+</div>
+
+<div class="exp-card">
+<h4>Q21 · 测量小灯泡正常发光时电阻（7分）<span class="tag tag-dx">电学</span></h4>
+<table>
+<tr><th style="width:120px">分析项</th><th>内容</th></tr>
+<tr><td>实验类型</td><td>测量型实验 + 拓展探究</td></tr>
+<tr><td>实验目的</td><td>测量额定电压2.5V小灯泡正常发光时的电阻</td></tr>
+<tr><td>核心器材</td><td>电源(3V)、电流表(0-0.6A)、电压表、滑动变阻器、小灯泡(额定2.5V)、开关</td></tr>
+<tr><td>实验方法</td><td>伏安法（控制电压为额定值→测电流→算电阻）</td></tr>
+<tr><td>考查能力点</td><td>
+<ul>
+<li><strong>电路改错：</strong>电压表接法错误，需改接到灯泡两端</li>
+<li><strong>滑片方向：</strong>移到最右端（最大阻值）</li>
+<li><strong>电阻计算：</strong>I=0.3A，R=2.5/0.3≈8.3Ω</li>
+<li><strong>功率估算：</strong>电压3V时功率为1.0W（灯丝电阻随温度升高而增大）</li>
+<li><strong>I-U图像分析：</strong>曲线①为灯泡（电阻随温度变化），直线为定值电阻</li>
+<li><strong>电阻比较：</strong>R_A < R_B（同一电压下A电流大→电阻小）</li>
+<li><strong>拓展：测未知电阻R_x</strong>：滑片a端U=1.5V→b端U=4.5V→电源4.5V→R_x=10Ω</li>
+</ul>
+</td></tr>
+<tr><td>答案要点</td><td>(1)改错 (2)右；8.3Ω；1.0W (3)①；小于 (4)10Ω</td></tr>
+<tr><td>易错点</td><td>灯泡电阻随温度变化→3V时实际电阻>8.3Ω→功率<1.08W但>0.9W→选1.0W</td></tr>
+</table>
+</div>
+
+<h3>4.3 高频实验对照</h3>
+<table>
+<tr><th>实验</th><th>13套卷出现次数</th><th>本卷是否涉及</th></tr>
+<tr><td>平面镜成像</td><td>6/13</td><td style="color:#1e8449;font-weight:700">✅ Q18</td></tr>
+<tr><td>水沸腾/冰熔化</td><td>10/13</td><td style="color:#1e8449;font-weight:700">✅ Q19（水沸腾）</td></tr>
+<tr><td>滑动摩擦力</td><td>5/13</td><td style="color:#1e8449;font-weight:700">✅ Q20</td></tr>
+<tr><td>伏安法测电阻</td><td>5/13</td><td style="color:#1e8449;font-weight:700">✅ Q21</td></tr>
+<tr><td>凸透镜成像</td><td>7/13</td><td style="color:#8b2e2e">❌</td></tr>
+<tr><td>密度测量</td><td>7/13</td><td style="color:#8b2e2e">❌</td></tr>
+<tr><td>I与U/R关系</td><td>6/13</td><td style="color:#8b2e2e">❌</td></tr>
+</table>
+<div class="card-highlight">
+<strong>实验选题特征：</strong>本卷实验选题与多数沈阳卷有差异：光学选"平面镜成像"（而非凸透镜），力学选"滑动摩擦力"（而非密度测量），电学选"伏安法测电阻"（而非欧姆定律验证）。4道实验中2道中频实验（平面镜/摩擦力），体现了鞍山卷的独特命题取向。
+</div>
+</section>
+
+<!-- ==================== 维度五 ==================== -->
+<section id="d5">
+<h2>维度五 · 命题DNA：趋势解读</h2>
+
+<h3>5.1 命题特色与创新点</h3>
+<div class="module-card">
+<h4>① Q24 智能温室湿度调控——最具技术深度的STEM题</h4>
+<p>控制电路+工作电路双系统设计，湿敏电阻R-湿度图像分析，电子元件D的分段特性（U_AB≤8V时U_D=U_AB，U_AB>8V时U_D恒=8V），周期性电压下的喷水时间计算。涉及电磁铁极性判断、启动电流计算、湿度控制范围分析、周期性电功率计算。技术深度在13套卷STEM题中属于较高水平。</p>
+</div>
+<div class="module-card">
+<h4>② Q1 记里车——古代科技情境</h4>
+<p>以《古今注》中的记里车为情境，将古代发明与声学知识结合。鼓和镯发声（振动）、通过空气传播、根据声音判断距离（传递信息），古为今用、文理融通。</p>
+</div>
+<div class="module-card">
+<h4>③ Q20 滑动摩擦力改进方案——电子秤+定滑轮</h4>
+<p>在传统弹簧测力计匀速拉动的基础上，引入电子秤+定滑轮改进方案（图戊）。学生需理解：拉长木板无需匀速→甲静止在电子秤上→通过受力分析得出摩擦力表达式f=(m₁-m₃)g。考查实验改进能力和综合受力分析。</p>
+</div>
+<div class="module-card">
+<h4>④ Q21 灯泡电阻温度效应——功率估算思维</h4>
+<p>在常规伏安法测电阻基础上，追问：电压3V时功率是0.9W/1.0W/1.08W哪个？需要理解灯丝电阻随温度升高而增大→R>8.3Ω→P<1.08W，同时I>0.3A→P>0.9W，因此只能是1.0W。考查物理直觉和估算能力。</p>
+</div>
+
+<h3>5.2 情境化命题分析</h3>
+<table>
+<tr><th>题号</th><th>情境类型</th><th>情境描述</th><th>课标对应</th></tr>
+<tr><td>Q1</td><td>传统文化</td><td>《古今注》记里车（鼓/镯发声）</td><td>科学态度与责任</td></tr>
+<tr><td>Q3</td><td>科技前沿</td><td>智能手表（显示体温/心率）</td><td>物理观念</td></tr>
+<tr><td>Q4</td><td>科技应用</td><td>人脸识别系统（凸透镜成像）</td><td>科学思维</td></tr>
+<tr><td>Q7</td><td>体育赛事</td><td>2026米兰冬奥会苏翊鸣滑雪</td><td>物理观念</td></tr>
+<tr><td>Q11</td><td>航天科技</td><td>太空圆珠笔（氮气加压）</td><td>科学思维</td></tr>
+<tr><td>Q13</td><td>文化科技</td><td>春晚武BOT机器人（电磁波+电能）</td><td>科学态度与责任</td></tr>
+<tr><td>Q17</td><td>传统文化</td><td>桔槔汲水（古代杠杆应用）</td><td>科学态度与责任</td></tr>
+<tr><td>Q22</td><td>地方生活</td><td>鞍山千山免费游·汽车行驶</td><td>科学思维</td></tr>
+<tr><td>Q23</td><td>日常生活</td><td>食堂加热餐台</td><td>科学思维</td></tr>
+<tr><td>Q24</td><td>智慧农业</td><td>智能温室湿度自动调控系统</td><td>跨学科实践</td></tr>
+</table>
+<div class="card-highlight">
+<strong>情境化占比：</strong>全卷24题中10题（约42%）采用真实情境命题。鞍山卷特色鲜明：传统文化2题（Q1记里车+Q17桔槔）、地方特色1题（Q22千山免费游）、时事热点2题（Q7冬奥会+Q13春晚武BOT）。传统文化情境密度高于多数沈阳区卷。
+</div>
+
+<h3>5.3 Q24 STEM综合题深度拆解</h3>
+<div class="exp-card">
+<h4>主题：智能温室湿度调控系统——控制电路+工作电路+喷水模拟</h4>
+<p>涉及知识点：8+个 | 跨学科要素：自动控制、传感器技术、电磁学、函数图像</p>
+<table>
+<tr><th>子问</th><th>分值</th><th>考查内容</th><th>难度</th><th>答案</th></tr>
+<tr><td>(1) 系统工作+磁极</td><td>2分</td><td>衔铁吸引→喷雾系统工作；安培定则判断上端S极</td><td><span class="diff-mid">★★☆</span></td><td>喷雾；S</td></tr>
+<tr><td>(2) 启动电流+控制</td><td>2分</td><td>湿度<50%时R=150Ω→启动电流I=9/(150+150)=0.03A；电压降低→最高湿度上升</td><td><span class="diff-mid">★★☆</span></td><td>0.03A；上升</td></tr>
+<tr><td>(3) 电功率+喷水时间</td><td>2分</td><td>t=3s时U_AB=18V>8V→U_D=8V→U_R=10V→P=25W；P≥9W时喷水→U_AB≥14V→每周期4/3s→15min共200s</td><td><span class="diff-hard">★★★</span></td><td>25W；200s</td></tr>
+</table>
+<p><strong>跨学科要素：</strong>自动控制（湿度传感→电磁铁→衔铁切换）、传感器（湿敏电阻特性曲线）、电路分析（串联分压）、函数分析（周期性电压+分段函数）。</p>
+</div>
+
+<h3>5.4 压轴题解析</h3>
+<div class="grid-2">
+<div class="module-card">
+<h4>Q9 选择压轴（力学多选）</h4>
+<p><strong>结构：</strong>甲杯A漂浮，乙杯B沉底(绳拴)。水面相平，底面积和质量相同。</p>
+<p><strong>分析：</strong>A放入物体后桌面压强、B剪断绳子后浮力变化、放入后水底压强比较、绳子拉力为零时B密度。</p>
+<p><strong>答案：</strong>BCD（A桌面压强不等因容器形状不同→A错；剪断绳若B下沉→A浮力变小→B对；甲底压强<乙→C对；拉力为零→B悬浮→密度=水→D对）</p>
+</div>
+<div class="module-card">
+<h4>Q15 填空压轴（电路综合）</h4>
+<p><strong>结构：</strong>闭合S₁S₂→R₀与L₂并联，图像分析；断开S₁S₂→R₀与L₁串联+并联组合。</p>
+<p><strong>关键推导：</strong>从乙图R₀_max=20Ω→干路I=0.9A→L₁支路0.6A→安全限制→R≥2.5Ω。电源电压=L₂电压+I×R₀_max=1+0.25×20=6V。</p>
+<p><strong>答案：</strong>6V；2.5Ω</p>
+</div>
+</div>
+<div class="grid-2">
+<div class="module-card">
+<h4>Q22 力学综合（7分）</h4>
+<div class="formula-chain">v = s/t → t = 18km ÷ 60km/h = 0.3h = 18min<br>G = mg = 1.5×10³×10 = 1.5×10⁴ N<br>p = F/S = G/S = 1.5×10⁴/0.06 = 2.5×10⁵ Pa<br>W = Fs = 1500×18000 = 2.7×10⁷ J<br>Q放 = W/η = 2.7×10⁷/0.3 = 9×10⁷ J<br>m = Q放/q = 9×10⁷/(4.5×10⁷) = 2 kg</div>
+</div>
+<div class="module-card">
+<h4>Q23 电学综合（9分）</h4>
+<div class="formula-chain">R₁ = U²/P加热 = 220²/2000 = 24.2 Ω<br>R总 = U²/P保温 = 220²/400 = 121 Ω<br>R₂ = R总 - R₁ = 96.8 Ω<br>Q吸 = cmΔt = 4.2×10³×5×40 = 8.4×10⁵ J<br>W = Pt = 2000×600 = 1.2×10⁶ J</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== 维度六 ==================== -->
+<section id="d6">
+<h2>维度六 · 作战地图：行动转化</h2>
+
+<h3>6.1 分数段策略表</h3>
+<table>
+<tr><th>目标分数段</th><th>核心策略</th><th>重点题目</th><th>训练方向</th></tr>
+<tr><td>40–50分</td><td>保基础：单选Q1-Q6 + 填空Q10-Q14 + 作图 + 实验基本问 + Q22(1)</td><td>Q1-Q6, Q10-Q14, Q16-Q17, Q22(1)</td><td>基础概念+公式记忆</td></tr>
+<tr><td>50–60分</td><td>突破中档：多选漏选 + Q18-Q20全拿 + Q22完整 + Q23(1-2)</td><td>Q7-Q8漏选, Q18-Q20, Q22, Q23(1-2)</td><td>实验全题+力学计算</td></tr>
+<tr><td>60–70分</td><td>攻克难点：Q9全对 + Q15 + Q21全题 + Q23完整</td><td>Q9, Q15, Q21, Q23</td><td>综合计算+图像分析</td></tr>
+<tr><td>70+分</td><td>冲满分：Q24全题 + 零失误检查</td><td>Q24全题, 全卷复查</td><td>STEM阅读+跨学科</td></tr>
+</table>
+
+<h3>6.2 必拿分清单（基础题，约44分）</h3>
+<table>
+<tr><th>题型</th><th>题号</th><th>分值</th><th>得分要点</th></tr>
+<tr><td>单选题</td><td>Q1-Q6</td><td>12分</td><td>概念清晰即可满分</td></tr>
+<tr><td>填空基础</td><td>Q10-Q14</td><td>10分</td><td>声/力/热/电基础概念</td></tr>
+<tr><td>作图题</td><td>Q16-Q17</td><td>4分</td><td>反射折射作图+杠杆力的示意图</td></tr>
+<tr><td>实验基本分</td><td>Q18-Q21基础问</td><td>~10分</td><td>操作规范+基本读数+简单结论</td></tr>
+<tr><td>综合第一问</td><td>Q22(1), Q23(1)</td><td>~4分</td><td>v=s/t / R=U²/P 直接代入</td></tr>
+<tr style="font-weight:700;background:#dce8f0"><td colspan="2">合计</td><td>~40分</td><td>—</td></tr>
+</table>
+
+<h3>6.3 公式链速查</h3>
+<div class="grid-2">
+<div class="formula-chain">
+<strong>Q22 力学+热学公式链：</strong><br>
+v = s/t（速度公式）<br>↓<br>p = F/S = G/S（压强公式）<br>↓<br>W = Fs（做功公式）<br>↓<br>η = W/Q放（效率公式）<br>↓<br>m = Q放/q（热值公式）
+</div>
+<div class="formula-chain">
+<strong>Q23 电学公式链：</strong><br>
+R = U²/P（电阻公式）<br>↓<br>R串 = R₁ + R₂<br>↓<br>Q = cmΔt（吸热公式）<br>↓<br>W = Pt（电功公式）
+</div>
+</div>
+
+<h3>6.4 易错点预警表</h3>
+<table>
+<tr><th>题号</th><th>易错点</th><th>防范措施</th></tr>
+<tr><td>Q2</td><td>雾(液化)和雪(凝华)混淆</td><td>雾=气→液=液化；雪=气→固=凝华（和霜一样）</td></tr>
+<tr><td>Q7</td><td>最高点速度为零（错！水平速度不为零）</td><td>抛体运动最高点：竖直分速度=0，水平分速度≠0</td></tr>
+<tr><td>Q9</td><td>容器形状对桌面压强的影响</td><td>杯中加水后F=G杯+G水+G物，但S不同→p不一定相等</td></tr>
+<tr><td>Q15</td><td>并联和串联切换后电路分析</td><td>画出两种状态的等效电路图再计算</td></tr>
+<tr><td>Q17</td><td>最小动力方向判断（不是竖直向上）</td><td>最小动力→最长动力臂→力垂直于OA连线</td></tr>
+<tr><td>Q20</td><td>改进方案中f=(m₁-m₃)g推导错误</td><td>甲静止→G=F拉+F支→mg=(m₁-m₃)g+m₃g=分析</td></tr>
+<tr><td>Q21</td><td>灯泡3V时功率直接用P=U²/R算</td><td>灯泡电阻随温度变化！不能直接用额定态的R</td></tr>
+<tr><td>Q24</td><td>周期性喷水时间计算</td><td>先找单周期内U_AB≥14V的时间段→乘以周期数</td></tr>
+</table>
+
+<h3>6.5 实验操作要点速查</h3>
+<table>
+<tr><th>实验</th><th>操作规范要点</th></tr>
+<tr><td>平面镜成像</td><td>①玻璃板竖直放置 ②蜡烛A和B完全相同 ③从不同位置观察重合 ④多次实验改变距离</td></tr>
+<tr><td>水沸腾</td><td>①自下而上组装 ②温度计不碰壁和底 ③沸腾前气泡变小，沸腾时变大 ④沸腾需持续吸热</td></tr>
+<tr><td>滑动摩擦力</td><td>①匀速拉动 ②控制变量法 ③弹簧测力计水平 ④改进法不需匀速</td></tr>
+<tr><td>测灯泡电阻</td><td>①电压表并联灯泡 ②闭合前滑片到最大 ③灯泡电阻随温度变化→多次测量取平均无意义</td></tr>
+</table>
+</section>
+
+<footer>
+📊 鞍山一模物理六维深度分析 | 基于pdfplumber文本提取（含完整答案） | 生成时间：2026年4月28日
+</footer>
+
+</div>
+</body>
+</html>
