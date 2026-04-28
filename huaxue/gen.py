@@ -53,6 +53,7 @@ NAV = """<nav>
 
 # Import data module
 from gen_data import PAGES
+import gen_data_extra  # adds dalian/anshan to PAGES
 
 def bar(label, pct, cls="c1", val=""):
     return f'<div class="bar-row"><div class="bar-label">{label}</div><div class="bar-track"><div class="bar-fill {cls}" style="width:{pct}%">{val}</div></div></div>'
