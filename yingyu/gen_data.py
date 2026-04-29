@@ -425,3 +425,7 @@ PAGES["fushun"] = fushun()
 PAGES["yingkou"] = yingkou()
 PAGES["tieling"] = tieling()
 
+from gen_data_cities import dalian, anshan
+PAGES["dalian"] = dalian()
+PAGES["anshan"] = anshan()
+
