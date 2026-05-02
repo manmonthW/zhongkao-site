@@ -5,259 +5,791 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>作文题目审题分析 · 王笑の备考站</title>
   <style>
-    :root{--bg:#f5f1e8;--primary:#8b2e2e;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(139,46,46,.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(139,46,46,.06),transparent 26%),var(--bg);line-height:1.75}
-    .container{width:min(1120px,92vw);margin:28px auto 48px}
-    header{background:linear-gradient(135deg,rgba(139,46,46,.08),rgba(245,241,232,.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,.06)}
-    h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}
-    .subtitle{margin:0;color:var(--muted);font-size:.98rem}
-    nav{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
-    nav a{color:var(--text);text-decoration:none;margin-right:16px;font-size:.95rem}
-    nav a.active{color:var(--primary);font-weight:700;border-bottom:2px solid var(--primary)}
-    .essay-card{background:rgba(251,248,241,.88);border:1px solid var(--line);border-radius:14px;margin-top:20px;padding:24px 26px;box-shadow:0 6px 20px rgba(26,24,21,.04)}
-    .essay-card h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid rgba(139,46,46,.2);padding-bottom:8px}
-    .essay-card h3{margin:16px 0 8px;font-size:1.06rem;color:#5f1f1f}
-    .essay-card h4{margin:14px 0 6px;font-size:.98rem;color:#7a3a3a}
-    .topic-box{background:linear-gradient(135deg,#fffdf7,#f8f3e8);border:2px solid var(--primary);border-radius:12px;padding:18px 22px;margin:12px 0;font-size:1.02rem;line-height:1.9}
-    .topic-box .title-tag{display:inline-block;background:var(--primary);color:#fff;font-size:.82rem;padding:2px 10px;border-radius:999px;margin-bottom:8px}
-    table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.92rem;background:#fffef9}
-    th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
-    th{background:#f2ead9;color:#4e2f2f;text-align:left;font-weight:700}
-    .avoid{background:#fff0f0;border-left:3px solid var(--bad);border-radius:8px;padding:12px 16px;margin:10px 0}
-    .avoid strong{color:var(--bad)}
-    .recommend{background:#f0fff4;border-left:3px solid var(--good);border-radius:8px;padding:12px 16px;margin:10px 0}
-    .recommend strong{color:var(--good)}
-    .model-essay{background:#fffef9;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:14px 0;font-size:.96rem;line-height:2}
-    .model-essay .essay-title{text-align:center;font-size:1.18rem;font-weight:700;color:var(--primary);margin-bottom:14px}
-    .model-essay p{text-indent:2em;margin:6px 0}
-    .model-essay p.solo{text-indent:0;margin:12px 0;font-weight:500}
-    .analysis-box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:12px 0}
-    .analysis-box h4{margin:0 0 8px;color:var(--primary);font-size:.96rem}
-    .chip{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px 10px;font-size:.82rem;color:var(--muted);margin-right:6px;margin-bottom:4px}
-    .chip.red{border-color:rgba(139,46,46,.4);color:var(--bad);background:rgba(139,46,46,.06)}
-    .structure-flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0;font-size:.9rem}
-    .structure-flow .step{background:#f2ead9;border:1px solid var(--line);border-radius:8px;padding:6px 12px}
-    .structure-flow .arrow{color:var(--primary);font-weight:700}
-    ul,ol{margin:8px 0;padding-left:20px}
-    li{margin-bottom:4px}
-    footer{margin-top:28px;color:var(--muted);font-size:.86rem;text-align:center}
-    .toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:16px}
-    .toc h3{margin:0 0 10px;font-size:1rem;color:var(--primary)}
-    .toc a{display:block;color:var(--text);text-decoration:none;padding:4px 0;font-size:.94rem;border-bottom:1px dashed var(--line)}
-    .toc a:last-child{border-bottom:none}
-    .toc a:hover{color:var(--primary)}
-    @media(max-width:700px){.structure-flow{flex-direction:column;align-items:flex-start}}
+    :root {
+      --bg: #fafaf8;
+      --surface: #ffffff;
+      --surface-alt: #f4f3f0;
+      --primary: #2d5a3f;
+      --primary-light: #e8f2ec;
+      --primary-muted: #4a8c64;
+      --accent: #c9883a;
+      --accent-light: #fdf5eb;
+      --text: #1c1c1a;
+      --text-secondary: #5c5c56;
+      --text-muted: #8c8c82;
+      --border: #e6e4df;
+      --border-strong: #d4d1ca;
+      --danger: #b5413b;
+      --danger-light: #fef2f1;
+      --success: #2d7a4f;
+      --success-light: #edf8f1;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.04), 0 2px 8px rgba(0,0,0,.03);
+      --shadow-md: 0 4px 16px rgba(0,0,0,.05), 0 2px 6px rgba(0,0,0,.03);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", -apple-system, system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Navigation ===== */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    .site-nav .inner {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+    }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: .88rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: all .2s;
+    }
+    .site-nav a:hover { color: var(--primary); background: var(--primary-light) }
+    .site-nav a.active { color: var(--primary); background: var(--primary-light); font-weight: 700 }
+    .site-nav .logo {
+      font-weight: 800;
+      color: var(--text);
+      font-size: .92rem;
+      margin-right: 8px;
+      text-decoration: none;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+      padding: 56px 0 40px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .hero h1 span { color: var(--primary) }
+    .hero .desc {
+      margin-top: 12px;
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+    .hero .stats {
+      display: flex;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .hero .stat {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .hero .stat .num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .hero .stat .label {
+      font-size: .88rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Main Layout ===== */
+    .main-layout {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      padding-bottom: 80px;
+    }
+
+    /* ===== Sidebar ===== */
+    .sidebar {
+      position: sticky;
+      top: 72px;
+      align-self: start;
+      max-height: calc(100vh - 88px);
+      overflow-y: auto;
+    }
+    .sidebar-title {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      padding: 0 12px;
+      margin-bottom: 8px;
+    }
+    .sidebar-list {
+      list-style: none;
+    }
+    .sidebar-list li a {
+      display: block;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: .88rem;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+      transition: all .15s;
+      margin-bottom: 2px;
+      line-height: 1.5;
+    }
+    .sidebar-list li a:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+    .sidebar-list li a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-left-color: var(--primary);
+      font-weight: 600;
+    }
+    .sidebar-list .tag {
+      display: inline-block;
+      font-size: .68rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: var(--accent-light);
+      color: var(--accent);
+      margin-left: 4px;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+
+    /* ===== Content ===== */
+    .content { min-width: 0 }
+
+    /* ===== Essay Entry ===== */
+    .essay-entry {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+    .essay-entry:target {
+      animation: highlight .6s ease-out;
+    }
+    @keyframes highlight {
+      0% { box-shadow: 0 0 0 3px rgba(45,90,63,.25) }
+      100% { box-shadow: var(--shadow-sm) }
+    }
+
+    .entry-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .entry-number {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .entry-meta h2 {
+      font-size: 1.24rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .entry-meta .source {
+      font-size: .84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ===== Topic Box ===== */
+    .topic-box {
+      background: linear-gradient(135deg, var(--surface-alt), #f9f8f5);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin: 16px 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .topic-box::before {
+      content: "题";
+      position: absolute;
+      top: -8px;
+      right: -4px;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(45,90,63,.04);
+      line-height: 1;
+      font-family: "Noto Serif SC", serif;
+    }
+    .topic-box .label {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: .73rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .topic-box .text {
+      font-size: .96rem;
+      line-height: 1.9;
+      color: var(--text);
+    }
+    .topic-box .req {
+      margin-top: 10px;
+      font-size: .82rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== Section Toggle ===== */
+    .section-block {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+    .section-block summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      padding: 6px 0;
+      user-select: none;
+    }
+    .section-block summary::-webkit-details-marker { display: none }
+    .section-block summary::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid var(--primary);
+      border-bottom: 2px solid var(--primary);
+      transform: rotate(-45deg);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .section-block[open] summary::before {
+      transform: rotate(45deg);
+    }
+    .section-block .inner {
+      padding: 14px 0 4px 16px;
+    }
+
+    /* ===== Tables ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: .88rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .data-table th, .data-table td {
+      padding: 10px 14px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table th {
+      background: var(--surface-alt);
+      font-weight: 700;
+      color: var(--text-secondary);
+      font-size: .8rem;
+      letter-spacing: .3px;
+    }
+    .data-table tr:last-child td { border-bottom: none }
+
+    /* ===== Alert Boxes ===== */
+    .alert {
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: .88rem;
+    }
+    .alert ul, .alert ol { padding-left: 18px }
+    .alert li { margin-bottom: 4px }
+    .alert-danger {
+      background: var(--danger-light);
+      border: 1px solid rgba(181,65,59,.12);
+    }
+    .alert-danger .alert-title { color: var(--danger); font-weight: 700; margin-bottom: 6px; font-size: .84rem }
+    .alert-success {
+      background: var(--success-light);
+      border: 1px solid rgba(45,122,79,.12);
+    }
+    .alert-success .alert-title { color: var(--success); font-weight: 700; margin-bottom: 6px; font-size: .84rem }
+
+    /* ===== Flow Chart ===== */
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 4px;
+      margin: 14px 0;
+    }
+    .flow-step {
+      flex: 1;
+      min-width: 120px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 10px;
+      text-align: center;
+    }
+    .flow-step .num {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .flow-step .label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .flow-step .hint {
+      display: block;
+      font-size: .72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      color: var(--primary-muted);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* ===== Model Essay ===== */
+    .model-essay {
+      background: linear-gradient(180deg, #fdfcfa 0%, #f9f8f5 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin: 16px 0;
+      position: relative;
+    }
+    .model-essay::before {
+      content: "范文";
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--surface-alt);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .model-essay .title {
+      text-align: center;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+    }
+    .model-essay p {
+      text-indent: 2em;
+      margin: 8px 0;
+      font-size: .93rem;
+      line-height: 2;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    }
+    .model-essay p.solo {
+      text-indent: 2em;
+      margin: 14px 0;
+      font-weight: 500;
+    }
+
+    /* ===== Analysis Cards ===== */
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin: 14px 0;
+    }
+    .analysis-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .analysis-card h4 {
+      font-size: .84rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .analysis-card p {
+      font-size: .86rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .analysis-card ul {
+      padding-left: 16px;
+      font-size: .86rem;
+      color: var(--text-secondary);
+      list-style: none;
+    }
+    .analysis-card li {
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 12px;
+    }
+    .analysis-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary-muted);
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: .72rem;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--text-muted);
+      font-size: .82rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+        max-height: none;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+      .essay-entry { padding: 20px 18px }
+      .hero { padding: 36px 0 24px }
+      .flow { flex-direction: column; align-items: stretch }
+      .flow-arrow { justify-content: center; transform: rotate(90deg) }
+      .analysis-grid { grid-template-columns: 1fr }
+    }
+
+    /* ===== Scrollbar ===== */
+    .sidebar::-webkit-scrollbar { width: 3px }
+    .sidebar::-webkit-scrollbar-track { background: transparent }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px }
   </style>
 </head>
 <body>
-<div class="container">
 
-<header>
-  <h1>作文题目审题分析</h1>
-  <p class="subtitle">六步审题法 · 满分范文 · 逐题深度拆解 | 持续更新中</p>
-</header>
-
-<nav>
-  <a href="../jijiu/index.html">冲刺加油站</a>
-  <a href="index.html" class="active">语文</a>
-  <a href="../shuxue/index.html">数学</a>
-  <a href="../wuli/index.html">物理</a>
-  <a href="../huaxue/index.html">化学</a>
-  <a href="../yingyu/index.html">英语</a>
-  <a href="../lishi/index.html">历史</a>
-  <a href="../daofa/index.html">道法</a>
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <a href="../jijiu/index.html">冲刺加油站</a>
+    <a href="index.html" class="active">语文</a>
+    <a href="../shuxue/index.html">数学</a>
+    <a href="../wuli/index.html">物理</a>
+    <a href="../huaxue/index.html">化学</a>
+    <a href="../yingyu/index.html">英语</a>
+    <a href="../lishi/index.html">历史</a>
+    <a href="../daofa/index.html">道法</a>
+  </div>
 </nav>
 
-<!-- 目录 -->
-<div class="toc">
-  <h3>已分析题目</h3>
-  <a href="#dalian-1">大连一模 ·《好一场相遇》（景语即情语 · 风景触动型）</a>
+<!-- Hero -->
+<div class="hero">
+  <h1>作文<span>审题拆解</span>与满分范文</h1>
+  <p class="desc">每一道作文题都值得被认真对待。六步审题法深度拆解，帮你在考场上快速找到最优立意。</p>
+  <div class="stats">
+    <div class="stat"><span class="num">1</span><span class="label">题已分析</span></div>
+    <div class="stat"><span class="num">6</span><span class="label">步审题法</span></div>
+    <div class="stat"><span class="num">满分</span><span class="label">范文示范</span></div>
+  </div>
 </div>
 
-<!-- ==================== 大连一模 · 题目一 ==================== -->
-<div class="essay-card" id="dalian-1">
-  <h2>大连一模 · 第一题：《好一场相遇》</h2>
+<!-- Main Layout -->
+<div class="main-layout">
 
-  <!-- 原题 -->
-  <div class="topic-box">
-    <span class="title-tag">原题</span><br>
-    王国维曾说："一切景语皆情语。"自然风景常以无声的姿态，触动人心。你是否也曾在某一刻，与一处风景相遇，收获属于自己的情思与感悟？<br><br>
-    请以<strong>"好一场相遇"</strong>为题目，写一篇文章。<br>
-    <span style="color:var(--muted);font-size:.88rem">要求：①自选文体（诗歌、戏剧除外）；②不少于600字；③不出现真实人名校名。</span>
-  </div>
-
-  <!-- 一、题面拆解 -->
-  <h3>一、题面拆解</h3>
-  <table>
-    <tr><th style="width:120px">维度</th><th>分析</th></tr>
-    <tr><td>题目类型</td><td>全命题作文（标题不可改）</td></tr>
-    <tr><td>题眼</td><td><strong>"相遇"</strong>（动词）—— 核心动作，需呈现"遇见的过程"</td></tr>
-    <tr><td>情感定性</td><td><strong>"好一场"</strong>（感叹语气）—— 这场相遇令人赞叹/震撼/难忘，情感倾向积极</td></tr>
-    <tr><td>引导语限定</td><td>① 必须有<strong>自然风景</strong>作为触发物（"一切景语皆情语"）<br>② "某一刻"→聚焦<strong>具体瞬间</strong>，非旅行流水账<br>③ "收获情思与感悟"→不能只写景，必须有"悟"</td></tr>
-    <tr><td>材料暗示</td><td>王国维"景语即情语"→ 写景必须承载情感；"一处风景"→ 单一、具体的景致</td></tr>
-  </table>
-
-  <!-- 二、语义四层展开 -->
-  <h3>二、语义四层展开</h3>
-  <table>
-    <tr><th style="width:80px">层级</th><th>本题的具体含义</th></tr>
-    <tr><td>感官层</td><td>一处具体风景的视觉/听觉/触觉/嗅觉之美（山河湖海、花草树木、日出落霞……）</td></tr>
-    <tr><td>情感层</td><td>风景触发的情感体验——惊叹、宁静、感动、释然、思念</td></tr>
-    <tr><td>认知层</td><td>从这场相遇中领悟到的道理——关于生命、时间、坚韧、自由、渺小与辽阔</td></tr>
-    <tr><td>哲思层</td><td>人与自然的关系，"相遇"的本质：是风景在等我，还是我在寻找风景？</td></tr>
-  </table>
-
-  <!-- 三、立意方向 -->
-  <h3>三、立意方向（含反向排除）</h3>
-
-  <div class="avoid">
-    <strong>⚠ 80%考生会写（避开）：</strong>
-    <ul>
-      <li>旅游时看到美景感叹"大自然真美"</li>
-      <li>看日出/日落，感悟"人生要积极向上"</li>
-      <li>下雨天看彩虹，"风雨之后见彩虹"</li>
-      <li>春天看花开，"生命真美好"</li>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-title">题目索引</div>
+    <ul class="sidebar-list">
+      <li><a href="#dalian-1" class="active">大连一模 ·《好一场相遇》<span class="tag">景语即情</span></a></li>
+      <!-- 后续新增题目在此追加 li 即可 -->
     </ul>
-  </div>
+  </aside>
 
-  <div class="recommend">
-    <strong>✦ 推荐立意：</strong>
-    <ol>
-      <li><strong>困顿时与一处"小风景"的意外相遇</strong> —— 不是名山大川，而是一棵墙缝里的草、一片被夕阳照亮的旧墙、一条无名小巷的光影。越"小"的风景越有辨识度。</li>
-      <li><strong>★ 风景作为"镜子"——在风景中看到了自己</strong> —— 相遇的不仅是风景，更是某个状态下的自己。比如：看浪潮反复冲刷礁石时理解了"反复"的意义；在深秋枯树前接受了"放下"。<br><span class="chip red">推荐理由：实现"景→情→理"三层递进，有独特认知落差</span></li>
-      <li><strong>与同一处风景的"重逢式相遇"</strong> —— 小时候看到的一处风景，多年后重返，因自己的成长而"看到"了完全不同的东西。核心：不是风景变了，是我变了。</li>
-    </ol>
-  </div>
+  <!-- Content -->
+  <main class="content">
 
-  <!-- 四、选材建议 -->
-  <h3>四、选材与避坑</h3>
+    <!-- ==================== 大连一模 · 题目一 ==================== -->
+    <article class="essay-entry" id="dalian-1">
 
-  <div class="recommend">
-    <strong>✦ 推荐素材方向：</strong>
-    <ul>
-      <li><strong>日常"微风景"</strong>：放学路上小巷在黄昏时的光影、阳台上一盆植物某天突然开花、冬天窗玻璃上的霜花</li>
-      <li><strong>有"时间感"的风景</strong>：老树/旧河/石阶/古墙——承载岁月的自然物更容易升华</li>
-      <li><strong>带"意外性"的相遇</strong>：不是刻意去看，而是某个心情低落/迷茫的时刻偶然撞见</li>
-    </ul>
-  </div>
+      <div class="entry-header">
+        <div class="entry-number">01</div>
+        <div class="entry-meta">
+          <h2>好一场相遇</h2>
+          <div class="source">大连市一模 · 2026年4月 · 第23题（一）</div>
+        </div>
+      </div>
 
-  <div class="avoid">
-    <strong>⚠ 绝对避开：</strong>
-    <ul>
-      <li>名山大川旅游攻略式描写（"我们一家去了XX景区"）</li>
-      <li>纯写景无感悟（堆砌比喻排比但没有"我"的认知变化）</li>
-      <li>套用"坚持/努力/不放弃"的万能立意</li>
-    </ul>
-  </div>
+      <!-- 原题 -->
+      <div class="topic-box">
+        <span class="label">原题</span>
+        <div class="text">
+          王国维曾说："一切景语皆情语。"自然风景常以无声的姿态，触动人心。你是否也曾在某一刻，与一处风景相遇，收获属于自己的情思与感悟？<br><br>
+          请以<strong>"好一场相遇"</strong>为题目，写一篇文章。
+        </div>
+        <div class="req">要求：①自选文体（诗歌、戏剧除外）②不少于600字 ③不出现真实人名校名</div>
+      </div>
 
-  <!-- 五、结构设计 -->
-  <h3>五、结构设计</h3>
+      <!-- 一、题面拆解 -->
+      <details class="section-block" open>
+        <summary>一、题面拆解</summary>
+        <div class="inner">
+          <table class="data-table">
+            <tr><th style="width:100px">维度</th><th>分析</th></tr>
+            <tr><td>题目类型</td><td>全命题作文（标题不可改）</td></tr>
+            <tr><td>题眼</td><td><strong>"相遇"</strong>（动词）— 核心动作，需呈现遇见的过程与内心感受</td></tr>
+            <tr><td>情感定性</td><td><strong>"好一场"</strong>（感叹语气）— 令人赞叹/震撼/难忘，情感积极</td></tr>
+            <tr><td>引导语限定</td><td>① 必须有<strong>自然风景</strong>作触发物<br>② "某一刻" → 聚焦<strong>具体瞬间</strong><br>③ "收获情思与感悟" → 必须有"悟"</td></tr>
+            <tr><td>深层暗示</td><td>"景语即情语" → 写景必须承载情感；"一处" → 单一具体的景致</td></tr>
+          </table>
+        </div>
+      </details>
 
-  <h4>推荐模型：欲扬先抑型</h4>
-  <div class="structure-flow">
-    <div class="step">① 开头<br><small>感叹入题，设情感基调</small></div>
-    <span class="arrow">→</span>
-    <div class="step">② 铺垫<br><small>"相遇前"的低落状态</small></div>
-    <span class="arrow">→</span>
-    <div class="step">③ 相遇<br><small>核心段·风景细节（40%篇幅）</small></div>
-    <span class="arrow">→</span>
-    <div class="step">④ 触动<br><small>风景击中我的瞬间</small></div>
-    <span class="arrow">→</span>
-    <div class="step">⑤ 感悟<br><small>由景入理·认知升华</small></div>
-    <span class="arrow">→</span>
-    <div class="step">⑥ 结尾<br><small>回扣"好一场相遇"</small></div>
-  </div>
+      <!-- 二、语义四层 -->
+      <details class="section-block" open>
+        <summary>二、语义四层展开</summary>
+        <div class="inner">
+          <table class="data-table">
+            <tr><th style="width:72px">层级</th><th>本题具体含义</th></tr>
+            <tr><td>感官层</td><td>一处风景的视觉/听觉/触觉/嗅觉之美 — 山河湖海、花草树木、日出落霞</td></tr>
+            <tr><td>情感层</td><td>风景触发的情感 — 惊叹、宁静、感动、释然、思念</td></tr>
+            <tr><td>认知层</td><td>从相遇中领悟到的道理 — 关于生命、时间、坚韧、渺小与辽阔</td></tr>
+            <tr><td>哲思层</td><td>人与自然的关系 — "相遇"的本质：是风景在等我，还是我在寻找风景？</td></tr>
+          </table>
+        </div>
+      </details>
 
-  <h4>点题节奏设计</h4>
-  <ul>
-    <li><strong>第1次（开头）</strong>：直接出现"好一场相遇"或变体，明确方向</li>
-    <li><strong>第2次（③④之间）</strong>：在看到风景的震撼瞬间用"相遇"呼应</li>
-    <li><strong>第3次（结尾）</strong>：升华——这场相遇的意义已超越风景本身</li>
-  </ul>
+      <!-- 三、立意方向 -->
+      <details class="section-block" open>
+        <summary>三、立意方向</summary>
+        <div class="inner">
+          <div class="alert alert-danger">
+            <div class="alert-title">⚠ 80%考生会写 — 主动避开</div>
+            <ul>
+              <li>旅游看美景感叹"大自然真美"</li>
+              <li>看日出/日落 → "人生要积极向上"</li>
+              <li>下雨天看彩虹 → "风雨后见彩虹"</li>
+              <li>春天看花开 → "生命真美好"</li>
+            </ul>
+          </div>
 
-  <!-- 六、语言风格 -->
-  <h3>六、语言风格建议</h3>
-  <ul>
-    <li><strong>基调</strong>：含蓄蕴藉，不铺张不浓烈，有留白感</li>
-    <li><strong>写景段</strong>：用精准动词+通感，避免堆砌形容词；写2-3个精准画面胜过10个泛泛比喻</li>
-    <li><strong>关键技巧</strong>：独句成段（感悟转折处）、意象回环（开头结尾同一意象照应）</li>
-    <li><strong>忌</strong>：不用"啊！多么美丽的景色！"这类空洞感叹</li>
-  </ul>
+          <div class="alert alert-success">
+            <div class="alert-title">✦ 推荐立意</div>
+            <ol>
+              <li><strong>困顿时与"小风景"的意外相遇</strong> — 不是名山大川，而是墙缝里的草、被夕阳照亮的旧墙、无名小巷的光影。越"小"越有辨识度。</li>
+              <li><strong>★ 风景作为"镜子"</strong> — 在风景中看到了某个状态的自己。例如看浪潮冲刷礁石时理解"坚持"；在枯树前接受"放下"。<br><span class="chip">推荐理由：景→情→理三层递进，有认知落差</span></li>
+              <li><strong>与同一处风景的"重逢式相遇"</strong> — 多年后重返，因成长看到了完全不同的东西。核心：不是风景变了，是我变了。</li>
+            </ol>
+          </div>
+        </div>
+      </details>
 
-  <!-- 满分范文 -->
-  <h3>满分范文</h3>
+      <!-- 四、选材 -->
+      <details class="section-block" open>
+        <summary>四、选材与避坑</summary>
+        <div class="inner">
+          <div class="alert alert-success">
+            <div class="alert-title">✦ 推荐素材方向</div>
+            <ul>
+              <li><strong>日常微风景</strong>：放学路上小巷黄昏光影、阳台植物突然开花、窗玻璃上的霜花</li>
+              <li><strong>有时间感的风景</strong>：老树 / 旧河 / 石阶 / 古墙 — 承载岁月更容易升华</li>
+              <li><strong>意外性相遇</strong>：不是刻意去看，而是低落/迷茫时偶然撞见</li>
+            </ul>
+          </div>
+          <div class="alert alert-danger">
+            <div class="alert-title">⚠ 绝对避开</div>
+            <ul>
+              <li>名山大川旅游攻略式描写</li>
+              <li>纯写景无感悟（堆砌修辞但无认知变化）</li>
+              <li>套用"坚持/努力/不放弃"万能立意</li>
+            </ul>
+          </div>
+        </div>
+      </details>
 
-  <div class="model-essay">
-    <div class="essay-title">好一场相遇</div>
+      <!-- 五、结构设计 -->
+      <details class="section-block" open>
+        <summary>五、结构设计</summary>
+        <div class="inner">
+          <p style="font-size:.88rem;color:var(--text-secondary);margin-bottom:12px">推荐模型：<strong>欲扬先抑型</strong></p>
+          <div class="flow">
+            <div class="flow-step"><span class="num">①</span><span class="label">开头</span><span class="hint">感叹入题</span></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step"><span class="num">②</span><span class="label">铺垫</span><span class="hint">低落状态</span></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step"><span class="num">③</span><span class="label">相遇</span><span class="hint">核心段 40%</span></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step"><span class="num">④</span><span class="label">触动</span><span class="hint">风景击中我</span></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step"><span class="num">⑤</span><span class="label">感悟</span><span class="hint">由景入理</span></div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-step"><span class="num">⑥</span><span class="label">结尾</span><span class="hint">回扣题目</span></div>
+          </div>
 
-    <p class="solo" style="text-indent:2em">那年深秋，我在一条无名的巷子里，遇见了一面旧墙。</p>
+          <p style="font-size:.88rem;margin-top:16px;font-weight:600;color:var(--text)">点题节奏</p>
+          <ul style="font-size:.86rem;color:var(--text-secondary);padding-left:18px;margin-top:6px">
+            <li><strong>第1次（开头）</strong>：出现"相遇"或变体，明确方向</li>
+            <li><strong>第2次（③④交汇处）</strong>：震撼瞬间用"相遇"呼应</li>
+            <li><strong>第3次（结尾）</strong>：升华 — 相遇的意义超越风景本身</li>
+          </ul>
+        </div>
+      </details>
 
-    <p>初三的十月，模考成绩像一记闷拳。放学后我没有走大路，拐进了学校后面那条从未走过的窄巷。巷子很深，两侧的墙壁斑驳，长着深浅不一的青苔。我漫无目的地走着，脑子里翻来覆去只有一个念头：我是不是不行了。</p>
+      <!-- 六、语言风格 -->
+      <details class="section-block">
+        <summary>六、语言风格建议</summary>
+        <div class="inner">
+          <ul style="font-size:.88rem;color:var(--text-secondary);padding-left:18px">
+            <li><strong>基调</strong>：含蓄蕴藉，不铺张不浓烈，有留白感</li>
+            <li><strong>写景段</strong>：精准动词 + 通感，2-3个精准画面胜过10个泛泛比喻</li>
+            <li><strong>关键技巧</strong>：独句成段（转折处）、意象回环（开头结尾同一意象）</li>
+            <li><strong>忌</strong>："啊！多么美丽的景色！"类空洞感叹</li>
+          </ul>
+        </div>
+      </details>
 
-    <p class="solo" style="text-indent:2em">巷子尽头，一面老墙拦住了去路。</p>
+      <!-- 满分范文 -->
+      <details class="section-block" open>
+        <summary>满分范文</summary>
+        <div class="inner">
+          <div class="model-essay">
+            <div class="title">好一场相遇</div>
+            <p class="solo">那年深秋，我在一条无名的巷子里，遇见了一面旧墙。</p>
+            <p>初三的十月，模考成绩像一记闷拳。放学后我没有走大路，拐进了学校后面那条从未走过的窄巷。巷子很深，两侧的墙壁斑驳，长着深浅不一的青苔。我漫无目的地走着，脑子里翻来覆去只有一个念头：我是不是不行了。</p>
+            <p class="solo">巷子尽头，一面老墙拦住了去路。</p>
+            <p class="solo">我抬起头，愣住了。</p>
+            <p>那面墙大约三米高，红砖裸露，水泥剥落，看得出年代久远。可就在墙面中央偏上的位置，一棵榕树的根系从砖缝中探出来，沿着墙面向下蔓延了将近一米，根须紧紧扒住砖面，像无数只手指抓住悬崖。而墙头上方，那棵榕树正张开浓密的枝叶，在夕阳中泛着深沉的绿光。</p>
+            <p class="solo">我站在那里，仰着头，看了很久。</p>
+            <p>夕阳正把整条巷子染成暖橘色，光线斜斜打在那些裸露的根须上，每一条纹路都清晰可见。那些根系并不粗壮，甚至显得瘦弱，但它们牢牢嵌入砖缝之中，纹丝不动。我伸出手触碰了一下——粗糙、干燥、坚硬，像老人手背上的筋脉。</p>
+            <p>不知道这棵树用了多少年，才把根扎进这面没有土壤的墙。没有人浇水，没有人施肥，甚至没有人知道它在这里。它只是安静地、一寸一寸地，把自己活成了一道风景。</p>
+            <p class="solo">那一刻，我心里某个紧绷的东西突然松开了。</p>
+            <p>我想起这些天的焦虑——分数、排名、别人的目光——那些压得我喘不过气的东西，在这面旧墙前突然变得很轻。我一直以为"行不行"是由一次考试定义的，可这棵树告诉我，生长从来不是一蹴而就的事。它不急，不慌，不向任何人证明自己。它只是把根往缝隙里再探深一寸。</p>
+            <p class="solo">好一场相遇。</p>
+            <p>我后来常常想起那条巷子尽头的光。不是什么壮阔的山河，不是什么名胜古迹，只是一面旧墙、一棵树、一束夕阳。可它让我在十五岁的那个秋天，学会了一件事：</p>
+            <p class="solo">不必急着证明什么。把根扎深，光自然会来。</p>
+          </div>
+        </div>
+      </details>
 
-    <p class="solo" style="text-indent:2em">我抬起头，愣住了。</p>
+      <!-- 范文解析 -->
+      <details class="section-block" open>
+        <summary>范文解析</summary>
+        <div class="inner">
+          <div class="analysis-grid">
+            <div class="analysis-card">
+              <h4>立意说明</h4>
+              <p>采用立意②"风景作为镜子"——在旧墙榕树根系中看到"不急不慌的生长"，对应模考后焦虑，实现认知转变。</p>
+            </div>
+            <div class="analysis-card">
+              <h4>结构分析</h4>
+              <p>欲扬先抑：低落(模考) → 偶遇(窄巷) → 震撼(旧墙榕树) → 领悟(生长哲理) → 余韵(把根扎深)</p>
+            </div>
+          </div>
 
-    <p>那面墙大约三米高，红砖裸露，水泥剥落，看得出年代久远。可就在墙面中央偏上的位置，一棵榕树的根系从砖缝中探出来，沿着墙面向下蔓延了将近一米，根须紧紧扒住砖面，像无数只手指抓住悬崖。而墙头上方，那棵榕树正张开浓密的枝叶，在夕阳中泛着深沉的绿光。</p>
+          <div class="analysis-card" style="margin-top:12px">
+            <h4>亮点技巧</h4>
+            <ul>
+              <li><span class="chip">独句成段×4</span>制造节奏停顿，在转折处强制"慢下来"</li>
+              <li><span class="chip">触觉细节</span>"粗糙、干燥、坚硬，像老人手背上的筋脉"</li>
+              <li><span class="chip">视觉细节</span>"根须紧紧扒住砖面，像无数只手指抓住悬崖"</li>
+              <li><span class="chip">情感克制</span>不说"我感动了"，而是"某个紧绷的东西突然松开了"</li>
+              <li><span class="chip">意象统一</span>旧墙→根系→夕阳光 贯穿全文</li>
+            </ul>
+          </div>
 
-    <p class="solo" style="text-indent:2em">我站在那里，仰着头，看了很久。</p>
+          <div class="analysis-card" style="margin-top:12px">
+            <h4>点题位置</h4>
+            <ul>
+              <li><strong>第1次</strong>：开头"遇见了一面旧墙"（相遇动作）</li>
+              <li><strong>第2次</strong>：倒数第3段"好一场相遇"（独句成段直接点题）</li>
+              <li><strong>第3次</strong>：结尾"把根扎深，光自然会来"（升华式回扣）</li>
+            </ul>
+          </div>
+        </div>
+      </details>
 
-    <p>夕阳正把整条巷子染成暖橘色，光线斜斜打在那些裸露的根须上，每一条纹路都清晰可见。那些根系并不粗壮，甚至显得瘦弱，但它们牢牢嵌入砖缝之中，纹丝不动。我伸出手触碰了一下——粗糙、干燥、坚硬，像老人手背上的筋脉。</p>
+    </article>
+    <!-- /大连一模·题目一 -->
 
-    <p>不知道这棵树用了多少年，才把根扎进这面没有土壤的墙。没有人浇水，没有人施肥，甚至没有人知道它在这里。它只是安静地、一寸一寸地，把自己活成了一道风景。</p>
-
-    <p class="solo" style="text-indent:2em">那一刻，我心里某个紧绷的东西突然松开了。</p>
-
-    <p>我想起这些天的焦虑——分数、排名、别人的目光——那些压得我喘不过气的东西，在这面旧墙前突然变得很轻。我一直以为"行不行"是由一次考试定义的，可这棵树告诉我，生长从来不是一蹴而就的事。它不急，不慌，不向任何人证明自己。它只是把根往缝隙里再探深一寸。</p>
-
-    <p class="solo" style="text-indent:2em">好一场相遇。</p>
-
-    <p>我后来常常想起那条巷子尽头的光。不是什么壮阔的山河，不是什么名胜古迹，只是一面旧墙、一棵树、一束夕阳。可它让我在十五岁的那个秋天，学会了一件事：</p>
-
-    <p class="solo" style="text-indent:2em">不必急着证明什么。把根扎深，光自然会来。</p>
-  </div>
-
-  <!-- 范文解析 -->
-  <h3>范文解析</h3>
-
-  <div class="analysis-box">
-    <h4>立意说明</h4>
-    <p>采用立意方向②"风景作为镜子"——在旧墙上的榕树根系中看到了"不急不慌的生长"，对应自己模考后的焦虑状态，实现认知转变："生长不是一蹴而就的事"。</p>
-  </div>
-
-  <div class="analysis-box">
-    <h4>结构分析</h4>
-    <p>标准欲扬先抑型：低落铺垫(模考失利) → 偶遇(拐入窄巷) → 震撼(旧墙榕树) → 领悟(生长的哲理) → 余韵(把根扎深，光自然会来)</p>
-  </div>
-
-  <div class="analysis-box">
-    <h4>亮点技巧标注</h4>
-    <ul>
-      <li><span class="chip">独句成段×4</span> 制造节奏停顿，在转折/震撼处强制读者"慢下来"</li>
-      <li><span class="chip">触觉细节</span> "粗糙、干燥、坚硬，像老人手背上的筋脉"——精准通感</li>
-      <li><span class="chip">视觉细节</span> "根须紧紧扒住砖面，像无数只手指抓住悬崖"——画面感极强</li>
-      <li><span class="chip">情感克制</span> 没有"我感动了/我流泪了"，而是"某个紧绷的东西突然松开了"含蓄表达</li>
-      <li><span class="chip">意象统一</span> 旧墙→根系→夕阳光，三者贯穿全文形成视觉系统</li>
-    </ul>
-  </div>
-
-  <div class="analysis-box">
-    <h4>点题位置</h4>
-    <ul>
-      <li><strong>第1次</strong>：开头"遇见了一面旧墙"（相遇动作）</li>
-      <li><strong>第2次</strong>：倒数第3段"好一场相遇"（独句成段，直接点题）</li>
-      <li><strong>第3次</strong>：结尾"把根扎深，光自然会来"（升华式回扣，相遇带来的领悟）</li>
-    </ul>
-  </div>
-
+  </main>
 </div>
-<!-- /大连一模·题目一 -->
 
-</div>
-
-<footer>
-  王笑の备考站 · 作文审题分析 · 持续更新
+<footer class="site-footer">
+  王笑の备考站 · 作文审题分析 · 持续更新中
 </footer>
+
 </body>
 </html>
