@@ -574,7 +574,7 @@
   <aside class="sidebar">
     <div class="sidebar-title">题目索引</div>
     <ul class="sidebar-list">
-      <li><a href="#dalian-1" class="active">大连一模 ·《好一场相遇》<span class="tag">景语即情</span></a></li>
+      <li><a href="#dalian-1">大连一模 ·《好一场相遇》<span class="tag">景语即情</span></a></li>
       <li><a href="#dalian-2">大连一模 ·《深处有声》<span class="tag">思辨对立</span></a></li>
       <!-- 后续新增题目在此追加 li 即可 -->
     </ul>
@@ -994,6 +994,27 @@
 <footer class="site-footer">
   王笑の备考站 · 作文审题分析 · 持续更新中
 </footer>
+
+<script>
+(function() {
+  const links = document.querySelectorAll('.sidebar-list a');
+  const entries = document.querySelectorAll('.essay-entry');
+
+  // Intersection Observer: highlight sidebar link when section is in view
+  const observer = new IntersectionObserver(function(items) {
+    items.forEach(function(item) {
+      if (item.isIntersecting) {
+        const id = item.target.id;
+        links.forEach(function(a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+
+  entries.forEach(function(entry) { observer.observe(entry); });
+})();
+</script>
 
 </body>
 </html>
