@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>大连一模历史试卷深度分析</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --primary: #8b2e2e;
+      --text: #1a1815;
+      --muted: #6b6257;
+      --card: #fbf8f1;
+      --line: #d9cfbf;
+      --good: #2f6b3b;
+      --warn: #9b6b00;
+      --bad: #8b2e2e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 12%, rgba(139, 46, 46, 0.08), transparent 28%),
+        radial-gradient(circle at 82% 90%, rgba(139, 46, 46, 0.06), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 28px auto 48px;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(139, 46, 46, 0.08), rgba(245, 241, 232, 0.9));
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--primary);
+      border-radius: 14px;
+      padding: 24px 26px;
+      box-shadow: 0 8px 24px rgba(26, 24, 21, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    nav {
+      margin: 18px 0 26px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    nav h2 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--primary);
+    }
+
+    .toc {
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .toc li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(139, 46, 46, 0.35);
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      background: rgba(251, 248, 241, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-top: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 6px 20px rgba(26, 24, 21, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.28rem;
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 46, 46, 0.2);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 1.06rem;
+      color: #5f1f1f;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 12px;
+    }
+
+    .kpi-title {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .kpi-value {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.94rem;
+      background: #fffef9;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f2ead9;
+      color: #4e2f2f;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .module-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      background: #fffdf7;
+      padding: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: #51493f;
+      background: #f8f3e8;
+    }
+
+    .level-high {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .level-mid {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .level-good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .toc {
+        columns: 1;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>大连一模历史试卷深度分析</h1>
+      <p class="subtitle">九年级历史 | 2026年大连市初中学业水平考试模拟考试(一) | 五维模型：结构-考点-能力-命题-提分</p>
+      <div class="meta">
+        <span class="chip">总题量：19题</span>
+        <span class="chip">总分：70分</span>
+        <span class="chip">材料题分布：Q16=8，Q17=9，Q18=10，Q19=13</span>
+        <span class="chip">论述题：Q19(4) 6分，四选二</span>
+      </div>
+    </header>
+
+    <nav>
+      <a href="../jijiu/index.html">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../shuxue/index.html">数学</a>
+      <a href="../wuli/index.html">物理</a>
+      <a href="../huaxue/index.html">化学</a>
+      <a href="../yingyu/index.html">英语</a>
+      <a href="index.html" class="active">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    
+    </nav>
+
+    <section id="d1">
+      <h2>维度一：试卷结构与分值画像</h2>
+      <p>本卷遵循"地方关照 + 主线贯通 + 开放表达"的命题框架：选择题横向扫面时空点位（含大连地方史），综合题以主题统摄古今中外，论述题以四选二开放论证检验历史思维与价值表达。</p>
+      <div class="kpi">
+        <div class="kpi-card">
+          <div class="kpi-title">选择题（Q1-15）</div>
+          <div class="kpi-value">30分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">综合题（Q16-19）</div>
+          <div class="kpi-value">40分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">中国史占比</div>
+          <div class="kpi-value">约70%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">世界史占比</div>
+          <div class="kpi-value">约30%</div>
+        </div>
+      </div>
+
+      <h3>结构特征</h3>
+      <ul>
+        <li>地方史嵌入突出：Q1以大连出土新石器时代文物切入，Q18以大连近代革命人物傅立鱼、辽宁"共和国工业长子"及大连沿海开放为主线，地方史贯穿首尾。</li>
+        <li>综合题分值高且梯度大：Q19总分13分为全卷最高，含6分开放论述（四选二），对史论结合能力要求极高。</li>
+        <li>中外对照视野明确：选择题世界史覆盖城市自治、罗马法、马克思主义、农奴制改革、工业革命、联合国等，综合题Q19纵贯中外古今。</li>
+        <li>能力梯度清晰：从识记辨析（选择题）→材料整合（Q16-Q18）→跨时空论证与开放表达（Q19），逐级上升。</li>
+      </ul>
+    </section>
+
+    <section id="d2">
+      <h2>维度二：核心内容与主线逻辑</h2>
+      <h3>选择题考点要点聚焦</h3>
+      <p>选择题覆盖从原始农耕生活到当代联合国维和的完整知识链，体现"文明演进与制度变革"的宏观叙事，特别注重大连地方史与全局史的衔接。</p>
+      <div>
+        <span class="tag">大连新石器文物·原始农耕</span>
+        <span class="tag">秦朝郡县制·中央集权</span>
+        <span class="tag">北方民族交融</span>
+        <span class="tag">唐宋明手工技艺</span>
+        <span class="tag">元朝宣政院·西藏管辖</span>
+        <span class="tag">反抗侵略·捍卫疆土</span>
+        <span class="tag">维新变法·思想启蒙</span>
+        <span class="tag">万里长征</span>
+        <span class="tag">中国加入世贸组织</span>
+        <span class="tag">中世纪西欧城市自治</span>
+        <span class="tag">罗马民法大全</span>
+        <span class="tag">马克思主义诞生</span>
+        <span class="tag">俄国农奴制改革</span>
+        <span class="tag">工业革命得与失</span>
+        <span class="tag">联合国维护和平</span>
+      </div>
+
+      <h3>综合题四大主题轴</h3>
+      <ul>
+        <li>Q16"千年智慧 生生不息"：将中医药成就、儒家民本思想、民族交融与对外交往整合为"文明传承与治国智慧"。</li>
+        <li>Q17"担当·行稳致远"：从古田会议到遵义会议、从全民族抗战到澳门回归、从土地改革到脱贫攻坚，体现"中共使命担当与民族复兴"。</li>
+        <li>Q18"奋发·锐意进取"：以大连革命人物傅立鱼为切入、辽宁工业建设为纽带、十一届三中全会为转折，串联"大连-辽宁-全国"的奋进之路。</li>
+        <li>Q19"鉴古知今"：都江堰与古埃及、美国独立战争、印度民族大起义、文艺复兴与法国大革命，最终落脚"人民群众是历史发展的推动力"开放论述。</li>
+      </ul>
+    </section>
+
+    <section id="d3">
+      <h2>维度三：逐题映射与模块评估</h2>
+      <h3>逐题映射表（知识维度 / 能力维度 / 教材定位）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>题号</th>
+            <th>分值</th>
+            <th>知识维度</th>
+            <th>能力维度</th>
+            <th>教材定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1</td>
+            <td>2</td>
+            <td>原始农耕生活（大连出土石磨盘、鱼网纹陶罐、炭化粟）</td>
+            <td>文物判读、时代推断</td>
+            <td>七上第2课 原始农耕生活</td>
+          </tr>
+          <tr>
+            <td>Q2</td>
+            <td>2</td>
+            <td>秦朝郡县制与中央集权</td>
+            <td>制度功能辨析</td>
+            <td>七上第9课 秦统一中国</td>
+          </tr>
+          <tr>
+            <td>Q3</td>
+            <td>2</td>
+            <td>北方民族交融（匈奴入居、北魏孝文帝改革）</td>
+            <td>史料信息提取与归纳</td>
+            <td>七上第19课 北魏政治和北方民族大交融</td>
+          </tr>
+          <tr>
+            <td>Q4</td>
+            <td>2</td>
+            <td>唐宋明手工技艺（越窑青釉/钧窑/青花扁壶）</td>
+            <td>朝代定位与文物匹配</td>
+            <td>七下手工业与商业发展相关课节</td>
+          </tr>
+          <tr>
+            <td>Q5</td>
+            <td>2</td>
+            <td>元朝宣政院管辖西藏</td>
+            <td>机构职能判断</td>
+            <td>七下第10课 蒙古族的兴起与元朝的建立</td>
+          </tr>
+          <tr>
+            <td>Q6</td>
+            <td>2</td>
+            <td>反抗侵略·捍卫疆土（林则徐/三元里/戚继光/致远舰等）</td>
+            <td>主题归纳与事件分类</td>
+            <td>八上近代反侵略专题</td>
+          </tr>
+          <tr>
+            <td>Q7</td>
+            <td>2</td>
+            <td>维新变法的思想启蒙作用（学会87所/学堂131所/报馆91所）</td>
+            <td>数据材料解读、历史影响判断</td>
+            <td>八上第6课 戊戌变法</td>
+          </tr>
+          <tr>
+            <td>Q8</td>
+            <td>2</td>
+            <td>万里长征（瑞金→强渡乌江→转折→会宁会师）</td>
+            <td>时序排列与关键节点识别</td>
+            <td>八上第17课 中国工农红军长征</td>
+          </tr>
+          <tr>
+            <td>Q9</td>
+            <td>2</td>
+            <td>中国加入世贸组织推动对外开放</td>
+            <td>因果关系判断（影响）</td>
+            <td>八下第9课 对外开放</td>
+          </tr>
+          <tr>
+            <td>Q10</td>
+            <td>2</td>
+            <td>中世纪西欧城市争取自治（康布雷起义/琅城起义）</td>
+            <td>斗争方式归纳</td>
+            <td>九上第9课 中世纪城市和大学的兴起</td>
+          </tr>
+          <tr>
+            <td>Q11</td>
+            <td>2</td>
+            <td>《罗马民法大全》及其对后世立法的影响</td>
+            <td>法律文献辨识</td>
+            <td>九上第10课 拜占庭帝国和查士丁尼法典</td>
+          </tr>
+          <tr>
+            <td>Q12</td>
+            <td>2</td>
+            <td>马克思主义诞生（空想→理论→实践→成功）</td>
+            <td>发展脉络梳理</td>
+            <td>九上第18课 马克思主义的诞生和国际工人运动</td>
+          </tr>
+          <tr>
+            <td>Q13</td>
+            <td>2</td>
+            <td>俄国1861年农奴制改革（获自由但无政治权利、交赎金）</td>
+            <td>改革内容与局限性辨析</td>
+            <td>九上第21课 马克思主义的诞生和国际工人运动</td>
+          </tr>
+          <tr>
+            <td>Q14</td>
+            <td>2</td>
+            <td>工业革命的得与失（生产力vs环境/贫富分化）</td>
+            <td>辩证分析能力</td>
+            <td>九上第20课 第一次工业革命</td>
+          </tr>
+          <tr>
+            <td>Q15</td>
+            <td>2</td>
+            <td>联合国维护世界和平与安全（2024年数据）</td>
+            <td>时政材料与机构职能匹配</td>
+            <td>九下第19课 联合国与世界贸易组织</td>
+          </tr>
+          <tr>
+            <td>Q16</td>
+            <td>8</td>
+            <td>中医药成就（张仲景/李时珍/贾思勰）、儒家民本思想、唐太宗治国、文成公主入藏/郑和下西洋</td>
+            <td>表格填写、材料提取、事件意义概述</td>
+            <td>七上至七下古代科技文化、民族关系、对外交流专题</td>
+          </tr>
+          <tr>
+            <td>Q17</td>
+            <td>9</td>
+            <td>古田会议、遵义会议、全民族抗战、澳门回归、土地改革、脱贫攻坚</td>
+            <td>会议意义概括、图片信息解读、政策效果分析</td>
+            <td>八上八下中共党史与新中国建设主线</td>
+          </tr>
+          <tr>
+            <td>Q18</td>
+            <td>10</td>
+            <td>辛亥革命与马克思主义传播（傅立鱼）、一五计划与重工业、航天精神（戚发轫）、十一届三中全会与大连开放</td>
+            <td>人物事迹梳理、运动影响分析、精神品质提炼、改革措施归纳</td>
+            <td>八上八下近现代革命与建设专题，辽宁地方史</td>
+          </tr>
+          <tr>
+            <td>Q19(1)-(3)</td>
+            <td>7</td>
+            <td>都江堰与古埃及文明、美国独立战争性质、印度民族大起义</td>
+            <td>工程功能分析、战争性质判断、起义影响评价</td>
+            <td>七上水利工程、九上古代文明、九上近代革命专题</td>
+          </tr>
+          <tr>
+            <td>Q19(4)论述</td>
+            <td>6</td>
+            <td>"人民群众是历史发展的推动力"——从文艺复兴、法国大革命、都江堰、印度大起义中任选二</td>
+            <td>观点建构、史实论证、结构化写作、四级评分</td>
+            <td>中外通史纵向整合与中考论述表达专项</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>模块评估卡</h3>
+      <div class="grid-2">
+        <div class="module-card">
+          <h3>模块A：古代中国与文明根基</h3>
+          <p><strong>覆盖题位：</strong>Q1大连文物、Q2郡县制、Q3民族交融、Q4手工技艺、Q5宣政院、Q16全题。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>文物年代误判、机构职能混淆、古代科技人物与著作张冠李戴。</p>
+          <p><strong>提分抓手：</strong>"朝代-制度-人物-成就"四格卡片复盘，强化文物→时代推断训练。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块B：近代中国抗争与探索</h3>
+          <p><strong>覆盖题位：</strong>Q6反抗侵略、Q7维新变法、Q8长征、Q18前半（傅立鱼与辛亥革命/马克思主义传播）。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>反侵略事件时序混乱、维新变法性质与影响区分不清、新文化运动与中共成立的逻辑链薄弱。</p>
+          <p><strong>提分抓手：</strong>"事件背景-主张-效果-局限"四步模板，强化近代探索主线。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块C：中共党史与新中国发展</h3>
+          <p><strong>覆盖题位：</strong>Q9入世、Q17全题（古田/遵义/抗战/回归/土改/脱贫）、Q18后半（一五计划/航天/改革开放）。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>会议意义套话化、土地改革与脱贫攻坚的历史逻辑链断裂、航天精神概括空泛。</p>
+          <p><strong>提分抓手：</strong>每一会议/政策准备"1定义+2史实+1现实意义"，Q18地方史结合全国史作答。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块D：世界史与文明比较</h3>
+          <p><strong>覆盖题位：</strong>Q10城市自治、Q11罗马法、Q12马克思主义、Q13农奴制改革、Q14工业革命、Q15联合国、Q19全题。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>改革局限性辨析不足、工业革命辩证分析单一化、Q19论述史实选择不当。</p>
+          <p><strong>提分抓手：</strong>按"文明起源-制度变革-革命浪潮-全球治理"构建专题图谱。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="d4">
+      <h2>维度四：命题DNA与趋势研判</h2>
+      <p>本卷命题逻辑呈现"地方嵌入、主线贯通、辩证思维、开放表达"的特征，可提炼以下命题DNA：</p>
+      <ol>
+        <li><strong>DNA-1 地方史嵌入：</strong>以大连出土文物（Q1）、大连革命人物傅立鱼（Q18）、辽宁工业长子（Q18）、大连沿海开放（Q18）为锚点，将地方史自然融入通史主线。</li>
+        <li><strong>DNA-2 主题统摄：</strong>四道综合题分别以"智慧传承""使命担当""锐意进取""鉴古知今"为主题，考点围绕主题聚合而非零散罗列。</li>
+        <li><strong>DNA-3 古今贯通：</strong>Q16从古代中医药到民族交融，Q17从古田会议到脱贫攻坚，每题内部均有时间纵深。</li>
+        <li><strong>DNA-4 中外对照：</strong>Q19将都江堰与古埃及、美国独立战争、印度大起义并置，考查跨文明比较视野。</li>
+        <li><strong>DNA-5 辩证思维：</strong>Q14工业革命"得与失"、Q13农奴制改革"自由但无政治权利"，强调历史评价的多面性。</li>
+        <li><strong>DNA-6 数据驱动：</strong>Q7维新变法用具体数字（87所学会/131所学堂/91所报馆）、Q15联合国用2024年统计，强调"证据支持结论"。</li>
+        <li><strong>DNA-7 能力递进：</strong>从选择题识记→综合题材料整合→Q19论述建构，题序构成能力爬坡通道。</li>
+        <li><strong>DNA-8 论述开放：</strong>Q19(4)四选二，围绕"人民群众是历史发展的推动力"展开，四级评分体现"同核多路"命题方式。</li>
+      </ol>
+      <p><strong>趋势判断：</strong>大连卷地方史权重高于其他区卷，后续训练中需特别关注辽宁地方史与通史的结合；Q19(4)四选二较二选一更灵活但也更考验史实储备。</p>
+    </section>
+
+    <section id="d5">
+      <h2>维度五：提分优先级与落地方案</h2>
+      <h3>一、优先级建议（按提分效率排序）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>任务</th>
+            <th>目标</th>
+            <th>建议周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P1</td>
+            <td>Q19(4)论述专项（"人民群众推动历史"四选二模板）</td>
+            <td>6分题稳定在4-5分</td>
+            <td>连续7天，每天1题</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>Q18大连地方史+全国史结合训练</td>
+            <td>10分题稳定在7-8分</td>
+            <td>5天，按"傅立鱼-一五计划-航天-改革开放"循环</td>
+          </tr>
+          <tr>
+            <td>P3</td>
+            <td>Q17中共党史主题证据链训练</td>
+            <td>9分题稳定在6-7分</td>
+            <td>5天，隔天1组会议/政策材料</td>
+          </tr>
+          <tr>
+            <td>P4</td>
+            <td>选择题易混点清单复盘</td>
+            <td>选择题控制在错2题以内</td>
+            <td>每日20分钟</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>二、易错预警表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>高频易错点</th>
+            <th>典型表现</th>
+            <th>纠偏策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>文物年代与文明阶段误判</td>
+            <td>将石磨盘、炭化粟等新石器文物错判为旧石器时代或青铜时代</td>
+            <td>建立"文物特征→生产方式→文明阶段"三步推断法</td>
+          </tr>
+          <tr>
+            <td>反侵略事件时序混乱</td>
+            <td>林则徐销烟、三元里、戚继光抗倭的先后顺序搞错</td>
+            <td>按"明（抗倭）→清（禁烟/三元里/收复新疆）→甲午"时序排列并反复默写</td>
+          </tr>
+          <tr>
+            <td>会议意义套话化</td>
+            <td>古田会议与遵义会议意义混用，缺乏精准区分</td>
+            <td>古田＝"思想建党政治建军"，遵义＝"生死攸关转折点"，一句话定位法</td>
+          </tr>
+          <tr>
+            <td>改革局限性辨析不足</td>
+            <td>Q13农奴制改革只写"获得自由"，忽略"无政治权利+赎金"</td>
+            <td>改革类选择题固定检查"进步性+局限性"双维度</td>
+          </tr>
+          <tr>
+            <td>地方史与通史脱节</td>
+            <td>Q18傅立鱼、一五计划、大连开放三段材料各自作答，缺乏主线串联</td>
+            <td>训练"个人→地方→国家"递进式答题框架</td>
+          </tr>
+          <tr>
+            <td>论述题选材失误</td>
+            <td>四选二时选了不熟悉的史实，导致论证薄弱</td>
+            <td>考前锁定2个最熟史实主攻，另外2个仅备保底框架</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>三、目标分数规划表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>分数档</th>
+            <th>选择题目标</th>
+            <th>材料题目标（Q16-19）</th>
+            <th>关键策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>冲刺65+（现阶段高位）</td>
+            <td>27-30</td>
+            <td>33-38</td>
+            <td>论述题满结构训练，Q18地方史答题模板化，Q19论述6分冲满分</td>
+          </tr>
+          <tr>
+            <td>稳定55-64（主目标）</td>
+            <td>24-27</td>
+            <td>26-33</td>
+            <td>先保Q16/Q17基础分，再突破Q18地方史与Q19论述</td>
+          </tr>
+          <tr>
+            <td>保底45-54</td>
+            <td>20-24</td>
+            <td>20-28</td>
+            <td>选择题错因清零，材料题按"抄材料关键词+短句作答"拿基础分</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>四、Q19(4)论述6分模板（考场可直接套用）</h3>
+      <p><strong>观点句：</strong>人民群众是历史发展的推动力。</p>
+      <p><strong>史实1（示例·文艺复兴）：</strong>14-17世纪，欧洲新兴资产阶级和知识分子发起文艺复兴运动，以人文主义为旗帜，推动了思想解放和科学文化的繁荣，为资本主义发展奠定了思想基础。</p>
+      <p><strong>史实2（示例·法国大革命）：</strong>1789年法国人民攻占巴士底狱，推翻封建专制统治，颁布《人权宣言》，传播了自由平等思想，推动了欧洲乃至世界的政治变革。</p>
+      <p><strong>总结句：</strong>综上，从文艺复兴到法国大革命，人民群众始终是推动历史进步的根本力量，社会的每一次重大变革都离不开人民群众的参与和推动。</p>
+    </section>
+
+    <footer>
+      报告生成日期：2026-05-02 | 适用场景：九年级历史一模复盘、二轮备考、专题化提分训练 | 大连市初中学业水平考试模拟考试(一)
+    </footer>
+  </div>
+</body>
+</html>

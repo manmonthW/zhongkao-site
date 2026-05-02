@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鞍山一模历史试卷深度分析</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --primary: #8b2e2e;
+      --text: #1a1815;
+      --muted: #6b6257;
+      --card: #fbf8f1;
+      --line: #d9cfbf;
+      --good: #2f6b3b;
+      --warn: #9b6b00;
+      --bad: #8b2e2e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 12%, rgba(139, 46, 46, 0.08), transparent 28%),
+        radial-gradient(circle at 82% 90%, rgba(139, 46, 46, 0.06), transparent 26%),
+        var(--bg);
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 28px auto 48px;
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(139, 46, 46, 0.08), rgba(245, 241, 232, 0.9));
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--primary);
+      border-radius: 14px;
+      padding: 24px 26px;
+      box-shadow: 0 8px 24px rgba(26, 24, 21, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    nav {
+      margin: 18px 0 26px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    nav h2 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--primary);
+    }
+
+    .toc {
+      margin: 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 34px;
+    }
+
+    .toc li {
+      margin: 5px 0;
+      break-inside: avoid;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(139, 46, 46, 0.35);
+    }
+
+    .toc a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      background: rgba(251, 248, 241, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-top: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 6px 20px rgba(26, 24, 21, 0.04);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.28rem;
+      color: var(--primary);
+      border-bottom: 1px solid rgba(139, 46, 46, 0.2);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 1.06rem;
+      color: #5f1f1f;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .kpi-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 12px;
+    }
+
+    .kpi-title {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 3px;
+    }
+
+    .kpi-value {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.94rem;
+      background: #fffef9;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f2ead9;
+      color: #4e2f2f;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .module-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      background: #fffdf7;
+      padding: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: #51493f;
+      background: #f8f3e8;
+    }
+
+    .level-high {
+      color: var(--bad);
+      font-weight: 700;
+    }
+
+    .level-mid {
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .level-good {
+      color: var(--good);
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .toc {
+        columns: 1;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>鞍山一模历史试卷深度分析</h1>
+      <p class="subtitle">2026年全市初中九年级第一次质量调查 | 五维模型：结构-考点-能力-命题-提分</p>
+      <div class="meta">
+        <span class="chip">总题量：19题</span>
+        <span class="chip">总分：70分</span>
+        <span class="chip">与道法合卷150分钟</span>
+        <span class="chip">综合题分布：Q16-Q19 共40分</span>
+        <span class="chip">论述题：Q19(3) 6分</span>
+      </div>
+    </header>
+
+    <nav>
+      <a href="../jijiu/index.html">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../shuxue/index.html">数学</a>
+      <a href="../wuli/index.html">物理</a>
+      <a href="../huaxue/index.html">化学</a>
+      <a href="../yingyu/index.html">英语</a>
+      <a href="index.html" class="active">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+
+    <section id="d1">
+      <h2>维度一：试卷结构与分值画像</h2>
+      <p>本卷遵循"唯物史观立意 + 时空主线贯穿 + 史料实证驱动"的中考命题框架：选择题横向覆盖古今中外关键节点，综合题纵向检验主题建构与材料解读能力，论述题检验"合作共赢"价值判断与历史表述。</p>
+      <div class="kpi">
+        <div class="kpi-card">
+          <div class="kpi-title">选择题（15×2）</div>
+          <div class="kpi-value">30分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">综合题（Q16-19）</div>
+          <div class="kpi-value">40分</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">中国史占比</div>
+          <div class="kpi-value">约70%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">世界史占比</div>
+          <div class="kpi-value">约30%</div>
+        </div>
+      </div>
+
+      <h3>结构特征</h3>
+      <ul>
+        <li>唯物史观突出：Q4直接考查唯物史观角度分析战国变法根本原因，强调生产力决定生产关系。</li>
+        <li>史料实证强调：Q6以致远舰出水文物切入，考查实物史料的价值与历史真相的探求。</li>
+        <li>近代屈辱史完整线索：Q17三个不平等条约贯穿从鸦片战争到辛丑条约的近代史主线。</li>
+        <li>中共百年史全覆盖：Q18从革命征程到建设发展，覆盖完整的中共百年奋斗历程。</li>
+        <li>能力梯度清晰：由选择辨析到材料整合，再到6分开放论述，阶梯上升。</li>
+      </ul>
+    </section>
+
+    <section id="d2">
+      <h2>维度二：核心内容与主线逻辑</h2>
+      <h3>选择题考点要点聚焦</h3>
+      <p>15道选择题覆盖从商周青铜文明到经济全球化的完整知识链，体现"唯物史观+史料实证+时空观念"的核心素养考查。</p>
+      <div>
+        <span class="tag">商周青铜器与博物馆</span>
+        <span class="tag">秦焚书汉尊儒·思想控制</span>
+        <span class="tag">丝绸之路物种交流</span>
+        <span class="tag">唯物史观·战国变法</span>
+        <span class="tag">元朝统一过程</span>
+        <span class="tag">史料实证·致远舰</span>
+        <span class="tag">维新变法·政治制度</span>
+        <span class="tag">抗美援朝/土地改革</span>
+        <span class="tag">中共指导思想演进</span>
+        <span class="tag">雅典民主政治</span>
+        <span class="tag">罗马《十二铜表法》</span>
+        <span class="tag">民族解放运动</span>
+        <span class="tag">新航路·物种交换</span>
+        <span class="tag">明治维新·社会转型</span>
+        <span class="tag">经济全球化·WTO</span>
+      </div>
+
+      <h3>综合题四大主题轴</h3>
+      <ul>
+        <li>Q16"统一多民族国家的形成与发展"：以展板形式整合图片匹配、民族交融方式、制度创新（科举制/中央集权），构建"时代缩影-交融共生-制度创新"的递进逻辑。</li>
+        <li>Q17"近代屈辱与抗争"：三个不平等条约贯穿近代史主线，从虎门销烟到五四运动，强调"屈辱-抗争-觉醒"的历史逻辑。</li>
+        <li>Q18"中共百年奋斗历程"：回望革命征程、追忆峥嵘岁月、铸就时代辉煌三层递进，体现"革命精神-建设成就-历史经验"。</li>
+        <li>Q19"革故鼎新·和合共进"：从生产工具进步到国家变革新生，再到"合作共赢"开放论述，体现"器物-制度-价值"的认知升级。</li>
+      </ul>
+    </section>
+
+    <section id="d3">
+      <h2>维度三：逐题映射与模块评估</h2>
+      <h3>选择题逐题答案与考点映射</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>题号</th>
+            <th>答案</th>
+            <th>知识维度</th>
+            <th>能力维度</th>
+            <th>教材定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>B</td><td>商周青铜器·博物馆特展</td><td>史料类型判断</td><td>七上·青铜文明</td></tr>
+          <tr><td>2</td><td>C</td><td>秦焚书汉尊儒·加强思想控制</td><td>目的归纳比较</td><td>七上·秦汉统一</td></tr>
+          <tr><td>3</td><td>A</td><td>葡萄经丝绸之路传入中原</td><td>时空定位·物产溯源</td><td>七上·丝绸之路</td></tr>
+          <tr><td>4</td><td>D</td><td>铁器牛耕推广→战国变法根本原因</td><td>唯物史观·生产力分析</td><td>七上·战国变法</td></tr>
+          <tr><td>5</td><td>C</td><td>忽必烈→元统一过程排序</td><td>时序排列</td><td>七下·元朝统一</td></tr>
+          <tr><td>6</td><td>A</td><td>致远舰出水文物·实物史料</td><td>史料实证</td><td>八上·甲午战争</td></tr>
+          <tr><td>7</td><td>C</td><td>维新变法·学习西方政治制度</td><td>核心差异辨析</td><td>八上·维新变法</td></tr>
+          <tr><td>8</td><td>B</td><td>抗美援朝/土地改革</td><td>事件意义匹配</td><td>八下·新中国巩固</td></tr>
+          <tr><td>9</td><td>D</td><td>习近平新时代中国特色社会主义思想</td><td>指导思想演进</td><td>八下·新时代</td></tr>
+          <tr><td>10</td><td>B</td><td>雅典民主政治（抽签/公民大会）</td><td>特征归纳</td><td>九上·古希腊</td></tr>
+          <tr><td>11</td><td>B</td><td>《十二铜表法》=罗马法制第一步</td><td>概念辨析</td><td>九上·古罗马</td></tr>
+          <tr><td>12</td><td>D</td><td>华盛顿/玻利瓦尔/孙中山/甘地→民族解放</td><td>主题归纳</td><td>九上九下·民族解放</td></tr>
+          <tr><td>13</td><td>A</td><td>新航路开辟→全球物种交换</td><td>因果关联</td><td>九上·新航路开辟</td></tr>
+          <tr><td>14</td><td>C</td><td>明治维新·从封建到资本主义</td><td>社会转型判断</td><td>九上·明治维新</td></tr>
+          <tr><td>15</td><td>D</td><td>WTO成立→经济全球化</td><td>趋势判断</td><td>九下·经济全球化</td></tr>
+        </tbody>
+      </table>
+
+      <h3>综合题逐题映射表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>题号</th>
+            <th>分值</th>
+            <th>知识维度</th>
+            <th>能力维度</th>
+            <th>教材定位</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q16</td>
+            <td>综合</td>
+            <td>统一多民族国家：唐三彩、清明上河图、金奔巴瓶；文成公主入藏、澶渊之盟、榷场贸易；科举制、中央集权</td>
+            <td>图片匹配、民族交融方式归纳、制度创新分析</td>
+            <td>七上七下·多民族国家形成与发展专题</td>
+          </tr>
+          <tr>
+            <td>Q17</td>
+            <td>综合</td>
+            <td>鸦片战争（割香港）、《马关条约》（2亿两+口岸工厂）、《辛丑条约》（使馆界）；虎门销烟、左宗棠收复新疆；五四运动</td>
+            <td>条约内容辨析、爱国精神提炼、转折意义阐释</td>
+            <td>八上·近代屈辱与抗争主线</td>
+          </tr>
+          <tr>
+            <td>Q18</td>
+            <td>综合</td>
+            <td>遵义会议/抗日战争、井冈山/长征精神、一五计划；坚持党的领导/实事求是/群众路线</td>
+            <td>时间轴补充、革命精神概括、历史经验总结</td>
+            <td>八上八下·中共百年奋斗主线</td>
+          </tr>
+          <tr>
+            <td>Q19(1)(2)</td>
+            <td>综合</td>
+            <td>曲辕犁、蒸汽机；改革开放/中国特色社会主义；君主立宪制、工业革命</td>
+            <td>生产工具比较、国家道路分析、中外对照</td>
+            <td>古代农业+九上工业革命+八下改革开放</td>
+          </tr>
+          <tr>
+            <td>Q19(3)论述</td>
+            <td>6</td>
+            <td>"合作才能互利共赢"主题，任选两项史实论证</td>
+            <td>观点建构、史实论证、结构化写作</td>
+            <td>中外近现代史纵向整合与中考论述表达专项</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>模块评估卡</h3>
+      <div class="grid-2">
+        <div class="module-card">
+          <h3>模块A：古代中国·制度与文明</h3>
+          <p><strong>覆盖题位：</strong>Q1-Q5选择题、Q16全题。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>青铜器时代定位不准、丝路物产张冠李戴、科举制起源混淆、唯物史观答题模式不熟。</p>
+          <p><strong>提分抓手：</strong>"朝代-制度-人物-成就"四格卡片复盘；唯物史观答题公式化训练。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块B：近代屈辱与抗争</h3>
+          <p><strong>覆盖题位：</strong>Q6-Q7选择题、Q17全题。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>三个不平等条约内容混淆、维新变法与洋务运动核心差异不清、五四运动意义表述不完整。</p>
+          <p><strong>提分抓手：</strong>建立"条约名称-战争背景-核心内容-历史影响"四步对照表。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块C：中共党史与新中国发展</h3>
+          <p><strong>覆盖题位：</strong>Q8-Q9选择题、Q18全题。</p>
+          <p><strong>风险等级：</strong><span class="level-high">高</span></p>
+          <p><strong>失分点：</strong>革命精神泛化无具体史实支撑、一五计划成就张冠李戴、历史经验总结套话化。</p>
+          <p><strong>提分抓手：</strong>每个主题至少准备"1定义+2史实+1现实意义"的标准答题包。</p>
+        </div>
+        <div class="module-card">
+          <h3>模块D：世界史与全球视野</h3>
+          <p><strong>覆盖题位：</strong>Q10-Q15选择题、Q19全题。</p>
+          <p><strong>风险等级：</strong><span class="level-mid">中</span></p>
+          <p><strong>失分点：</strong>雅典民主与罗马法制概念混淆、民族解放运动人物错配、明治维新性质判断失误、论述题史实不足。</p>
+          <p><strong>提分抓手：</strong>按"古代文明-社会转型-全球化"三条线构建世界史图谱；论述题备好"合作共赢"双史实模板。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="d4">
+      <h2>维度四：命题DNA与趋势研判</h2>
+      <p>本卷命题逻辑呈现"唯物史观立意、史料实证驱动、核心素养全覆盖"的特征，可提炼以下命题DNA：</p>
+      <ol>
+        <li><strong>DNA-1 唯物史观突出：</strong>Q4直接以"唯物史观角度"设问，考查生产力决定生产关系的核心方法论，这在选择题中极为鲜明。</li>
+        <li><strong>DNA-2 史料实证强化：</strong>Q6以致远舰出水文物为载体，直接考查"实物史料有助于探求历史真相"的史料观。</li>
+        <li><strong>DNA-3 近代屈辱完整链条：</strong>Q17以三个条约串联近代史，从鸦片战争到辛丑条约，形成"屈辱-抗争-觉醒"的完整叙事。</li>
+        <li><strong>DNA-4 中共百年史全景：</strong>Q18从革命征程到时代辉煌，覆盖中共百年奋斗的完整历程。</li>
+        <li><strong>DNA-5 中外对照贯穿：</strong>Q19将曲辕犁与蒸汽机、中国模式与英国道路并置比较，强化比较视野。</li>
+        <li><strong>DNA-6 能力梯度递进：</strong>从选择辨析到材料整合，再到6分开放论述，题序构成能力爬坡通道。</li>
+        <li><strong>DNA-7 价值导向鲜明：</strong>"合作共赢"论述题直指当代中国外交理念，凸显时代价值立意。</li>
+        <li><strong>DNA-8 器物-制度-价值：</strong>Q19三个任务从生产工具到国家变革再到合作理念，构成认知升级路径。</li>
+      </ol>
+      <p><strong>趋势判断：</strong>唯物史观与史料实证的直接考查趋势明显，后续训练应加强方法论类选择题的专项突破；"材料整合 + 主题论证 + 开放论述"类试题权重将继续上升。</p>
+    </section>
+
+    <section id="d5">
+      <h2>维度五：提分优先级与落地方案</h2>
+      <h3>一、优先级建议（按提分效率排序）</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>任务</th>
+            <th>目标</th>
+            <th>建议周期</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P1</td>
+            <td>Q19(3)"合作共赢"论述专项（6分模板训练）</td>
+            <td>6分题稳定在4-5分</td>
+            <td>连续7天，每天1题</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>Q17近代屈辱条约链+抗争精神综合训练</td>
+            <td>条约辨析零失误，抗争精神表述完整</td>
+            <td>5天，隔天1组材料</td>
+          </tr>
+          <tr>
+            <td>P3</td>
+            <td>Q18中共百年史证据链训练</td>
+            <td>时间轴补全准确，精神概括+经验总结分层得分</td>
+            <td>5天，按"革命-建设-改革"循环</td>
+          </tr>
+          <tr>
+            <td>P4</td>
+            <td>选择题唯物史观+史料实证方法论专练</td>
+            <td>方法论类选择题零失误</td>
+            <td>每日20分钟</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>二、易错预警表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>高频易错点</th>
+            <th>典型表现</th>
+            <th>纠偏策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>三个不平等条约混淆</td>
+            <td>割香港/赔2亿两/使馆界等条款张冠李戴</td>
+            <td>制作"战争-条约-核心条款-影响"四列对照表，反复默写</td>
+          </tr>
+          <tr>
+            <td>唯物史观答题模式不熟</td>
+            <td>Q4类题目答非所问，不能从生产力角度切入</td>
+            <td>固定答题句："从唯物史观看，XX的根本原因是生产力的发展（具体表现）"</td>
+          </tr>
+          <tr>
+            <td>史料类型辨析失误</td>
+            <td>实物史料与文献史料混淆，不理解实物史料的实证价值</td>
+            <td>按"实物/文献/口述/图像"四类建立分类卡，每类附2个典型例子</td>
+          </tr>
+          <tr>
+            <td>民族交融方式单一化</td>
+            <td>Q16只写"和亲"，忽略"盟约""榷场贸易"等多种方式</td>
+            <td>建立"和亲-盟约-互市-册封-通婚"民族交融方式清单</td>
+          </tr>
+          <tr>
+            <td>"合作共赢"论述空泛</td>
+            <td>只有观点无史实支撑，或史实与观点脱节</td>
+            <td>每段必须出现"史实+分析+回扣观点"三要素；考前备好3组可用史实</td>
+          </tr>
+          <tr>
+            <td>中外对照题割裂回答</td>
+            <td>Q19中国道路和英国道路分开回答，缺乏比较句</td>
+            <td>训练"与此同时/相较而言"对照句式，中外必须出现在同一段落</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>三、目标分数规划表</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>分数档</th>
+            <th>选择题目标</th>
+            <th>材料题目标（Q16-19）</th>
+            <th>关键策略</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>冲刺70（满分）</td>
+            <td>28-30</td>
+            <td>34-40</td>
+            <td>论述题满结构训练，材料题"要点全覆盖+术语规范+回扣材料"</td>
+          </tr>
+          <tr>
+            <td>稳定60-69（主目标）</td>
+            <td>24-28</td>
+            <td>28-34</td>
+            <td>先保Q16图片匹配/Q18时间轴，再突破Q17条约辨析与Q19论述</td>
+          </tr>
+          <tr>
+            <td>保底50-59</td>
+            <td>20-24</td>
+            <td>22-28</td>
+            <td>选择题错因清零，材料题按"抄材料关键词+短句作答"拿基础分</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>四、Q19(3)"合作共赢"论述6分模板（考场可直接套用）</h3>
+      <p><strong>观点句：</strong>合作才能互利共赢，合作是推动人类社会进步的重要动力。</p>
+      <p><strong>史实1：</strong>从给定史实中选取一项（如丝绸之路/万隆会议/中国加入WTO等），说明合作促进了经济文化交流与共同发展。</p>
+      <p><strong>史实2：</strong>选取另一项史实（如反法西斯同盟/联合国成立等），说明合作在维护和平、解决全球性问题方面的关键作用。</p>
+      <p><strong>总结句：</strong>综上所述，历史反复证明合作才能互利共赢。在当今全球化时代，各国更应加强合作，推动构建人类命运共同体，实现共同发展与繁荣。</p>
+    </section>
+
+    <footer>
+      报告生成日期：2026-05-02 | 适用场景：九年级历史一模复盘、二轮备考、专题化提分训练
+    </footer>
+  </div>
+</body>
+</html>
