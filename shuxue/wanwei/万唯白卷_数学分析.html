@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>万唯白卷·数学试卷深度分析</title>
+<style>
+:root{--bg:#f5f1e8;--primary:#1a5276;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e;--accent:#1a5276;--accent-light:rgba(26,82,118,0.08);--accent-border:rgba(26,82,118,0.2)}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(26,82,118,0.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(26,82,118,0.06),transparent 26%),var(--bg);line-height:1.75}.container{width:min(1120px,92vw);margin:28px auto 48px}header{background:linear-gradient(135deg,var(--accent-light),rgba(245,241,232,0.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,0.06)}h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}.subtitle{margin:0;color:var(--muted);font-size:.98rem}.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}nav{margin:18px 0 26px;display:flex;flex-wrap:wrap;gap:8px}nav a{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.88rem;background:var(--card);transition:all .2s}nav a:hover,nav a.active{background:var(--primary);color:#fff;border-color:var(--primary)}section{background:rgba(251,248,241,.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,.04)}h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid var(--accent-border);padding-bottom:8px}h3{margin:16px 0 8px;font-size:1.06rem;color:#1a3d5c}p{margin:8px 0}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.88rem;background:#fffef9}th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}th{background:#dce8f0;color:#1a3d5c;text-align:left;font-weight:700}.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-right:6px;margin-bottom:6px;color:#51493f;background:#f8f3e8}.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:10px}.kpi-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}.kpi-title{color:var(--muted);font-size:.86rem;margin-bottom:3px}.kpi-value{font-size:1.2rem;color:var(--primary);font-weight:700}.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;margin-top:12px}.module-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px}.module-card h4{margin:0 0 8px;color:var(--primary);font-size:1rem}.card-highlight{background:linear-gradient(135deg,var(--accent-light),#f0ebe0);border:1px solid var(--accent-border);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px;margin:12px 0}.card-highlight strong{color:var(--primary)}.diff-easy{background:#d5f5e3;color:#1e8449;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}.diff-mid{background:#fef9e7;color:#9a7d0a;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}.diff-hard{background:#fadbd8;color:#922b21;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}.bar-chart{margin:12px 0}.bar-row{display:flex;align-items:center;margin:6px 0}.bar-label{width:120px;font-size:.88rem;text-align:right;padding-right:10px;flex-shrink:0}.bar-track{flex:1;background:#e8e2d6;border-radius:6px;height:22px;position:relative;overflow:hidden}.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:.78rem;color:#fff;font-weight:700}.bar-fill.blue{background:linear-gradient(90deg,#1a5276,#2980b9)}.bar-fill.green{background:linear-gradient(90deg,#1e8449,#27ae60)}.bar-fill.orange{background:linear-gradient(90deg,#b7950b,#f1c40f);color:#5a4e00}.bar-fill.red{background:linear-gradient(90deg,#922b21,#e74c3c)}ul,ol{margin:8px 0;padding-left:20px}footer{margin-top:24px;color:var(--muted);font-size:.86rem;text-align:center}.level-high{color:var(--bad);font-weight:700}.level-mid{color:var(--warn);font-weight:700}.level-low{color:var(--good);font-weight:700}@media(max-width:900px){.grid-2{grid-template-columns:1fr}table{font-size:.82rem}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📐 万唯白卷·数学试卷深度分析</h1>
+  <p class="subtitle">2026辽宁中考考前密卷 | 五维模型：骨架图·题型谱·考点标签·命题DNA·作战地图</p>
+  <div class="meta">
+    <span class="chip">总题量 23题</span>
+    <span class="chip">满分 120分</span>
+    <span class="chip">考试时长 120分钟</span>
+    <span class="chip">结构 10+5+8</span>
+    <span class="chip">压轴：等腰对称+翻折函数(新定义)</span>
+  </div>
+</header>
+
+<nav>
+  <a href="万唯黑卷_数学分析.html">黑卷分析</a>
+  <a href="万唯白卷_数学分析.html" class="active">白卷分析</a>
+  <a href="万唯黑白卷_数学交叉分析.html">交叉分析</a>
+</nav>
+
+<!-- 维度一：骨架图 -->
+<section id="d1">
+<h2>维度一·骨架图·结构解剖</h2>
+<div class="kpi">
+  <div class="kpi-card"><div class="kpi-title">总分</div><div class="kpi-value">120分</div></div>
+  <div class="kpi-card"><div class="kpi-title">总题量</div><div class="kpi-value">23题</div></div>
+  <div class="kpi-card"><div class="kpi-title">考试时长</div><div class="kpi-value">120分钟</div></div>
+  <div class="kpi-card"><div class="kpi-title">难度比</div><div class="kpi-value">6:2.5:1.5</div></div>
+</div>
+
+<h3>题型结构</h3>
+<table>
+<tr><th>题型</th><th>题号</th><th>题量</th><th>分值</th><th>占比</th><th>建议用时</th></tr>
+<tr><td>选择题</td><td>1~10</td><td>10题</td><td>30分(3分/题)</td><td>25.0%</td><td>25分钟</td></tr>
+<tr><td>填空题</td><td>11~15</td><td>5题</td><td>15分(3分/题)</td><td>12.5%</td><td>12分钟</td></tr>
+<tr><td>解答题</td><td>16~23</td><td>8题</td><td>75分</td><td>62.5%</td><td>83分钟</td></tr>
+</table>
+
+<h3>解答题分值明细</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>考查方向</th></tr>
+<tr><td>16</td><td>10分</td><td>实数计算 + 分式化简</td></tr>
+<tr><td>17</td><td>8分</td><td>分式方程应用(中国结编制) + 不等式</td></tr>
+<tr><td>18</td><td>8分</td><td>统计(智慧农业·玉米产量对比)</td></tr>
+<tr><td>19</td><td>8分</td><td>直线旋转·坐标几何(面积比)</td></tr>
+<tr><td>20</td><td>8分</td><td>一次函数应用(电商利润最大值)</td></tr>
+<tr><td>21</td><td>8分</td><td>圆的综合(直径·切线·弦)</td></tr>
+<tr><td>22</td><td>12分</td><td>几何压轴·等腰三角形对称(全等+对称+面积)</td></tr>
+<tr><td>23</td><td>13分</td><td>代数压轴·新定义"翻折函数"</td></tr>
+</table>
+
+<h3>难度分布</h3>
+<div class="bar-chart">
+  <div class="bar-row"><div class="bar-label">基础题(~70分)</div><div class="bar-track"><div class="bar-fill green" style="width:58%">58%</div></div></div>
+  <div class="bar-row"><div class="bar-label">中档题(~30分)</div><div class="bar-track"><div class="bar-fill orange" style="width:25%">25%</div></div></div>
+  <div class="bar-row"><div class="bar-label">压轴题(~20分)</div><div class="bar-track"><div class="bar-fill red" style="width:17%">17%</div></div></div>
+</div>
+
+<div class="card-highlight">
+<strong>结构特征：</strong>标准辽宁中考结构(23题·10+5+8)，第19题为坐标几何(非综合实践)，第23题为新定义"翻折函数"，是辽宁主流压轴模式(7/11套为新定义)。
+</div>
+</section>
+
+<!-- 维度二：题型谱 -->
+<section id="d2">
+<h2>维度二·题型谱·逐题档案</h2>
+
+<h3>选择题(1~10，共30分)</h3>
+<table>
+<tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案</th></tr>
+<tr><td>1</td><td>"方斗杯"俯视图</td><td>三视图</td><td>空间想象</td><td><span class="diff-easy">基础</span></td><td>D</td></tr>
+<tr><td>2</td><td>辽宁人才引进·科学记数法</td><td>科学记数法</td><td>数感</td><td><span class="diff-easy">基础</span></td><td>C</td></tr>
+<tr><td>3</td><td>辽宁百强企业·轴对称+中心对称</td><td>图形对称性判断</td><td>对称变换</td><td><span class="diff-easy">基础</span></td><td>C</td></tr>
+<tr><td>4</td><td>乒乓球弹性标准</td><td>不等式(区间判断)</td><td>数据意识</td><td><span class="diff-easy">基础</span></td><td>B</td></tr>
+<tr><td>5</td><td>幂运算正误判断</td><td>幂的运算法则</td><td>运算推理</td><td><span class="diff-easy">基础</span></td><td>A</td></tr>
+<tr><td>6</td><td>试鞋镜·入射角计算</td><td>平行线/互余角</td><td>转化化归(跨学科物理)</td><td><span class="diff-mid">中档</span></td><td>B</td></tr>
+<tr><td>7</td><td>铜线短路概率</td><td>列表法/古典概型</td><td>分类枚举</td><td><span class="diff-mid">中档</span></td><td>C</td></tr>
+<tr><td>8</td><td>尺规作图·相似求BD</td><td>尺规作图/相似三角形</td><td>转化化归</td><td><span class="diff-mid">中档</span></td><td>B</td></tr>
+<tr><td>9</td><td>《九章算术》猎犬逐兔·列方程</td><td>分式方程建模</td><td>数学建模</td><td><span class="diff-mid">中档</span></td><td>D</td></tr>
+<tr><td>10</td><td>菱形中线段长</td><td>菱形性质/勾股定理/中位线</td><td>数形结合</td><td><span class="diff-hard">压轴</span></td><td>A</td></tr>
+</table>
+
+<h3>填空题(11~15，共15分)</h3>
+<table>
+<tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案</th></tr>
+<tr><td>11</td><td>因式分解</td><td>提公因式+平方差</td><td>运算能力</td><td><span class="diff-easy">基础</span></td><td>9(x+2)(x-2)</td></tr>
+<tr><td>12</td><td>平移后坐标</td><td>坐标平移</td><td>运算推理</td><td><span class="diff-easy">基础</span></td><td>0</td></tr>
+<tr><td>13</td><td>反比例函数值大小比较</td><td>反比例函数增减性</td><td>数形结合</td><td><span class="diff-mid">中档</span></td><td>y₁&gt;y₃&gt;y₂</td></tr>
+<tr><td>14</td><td>教学楼高度(三角函数)</td><td>解直角三角形/tan</td><td>数学建模</td><td><span class="diff-mid">中档</span></td><td>≈17m</td></tr>
+<tr><td>15</td><td>等腰三角形+角平分线求长</td><td>等腰三角形/角平分线/勾股定理</td><td>转化化归/方程思想</td><td><span class="diff-hard">压轴</span></td><td>5√13/3</td></tr>
+</table>
+
+<h3>解答题(16~23，共75分)</h3>
+<table>
+<tr><th>题号</th><th>分值</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案要点</th></tr>
+<tr><td>16(1)</td><td>5分</td><td>实数混合运算</td><td>零指数/绝对值/cos30°</td><td>运算能力</td><td><span class="diff-easy">基础</span></td><td>原式=2√3+1+2-√3-√3=3</td></tr>
+<tr><td>16(2)</td><td>5分</td><td>分式化简</td><td>分式运算/因式分解</td><td>转化化归</td><td><span class="diff-easy">基础</span></td><td>化简得1/(x-1)</td></tr>
+<tr><td>17(1)</td><td>4分</td><td>中国结编制人员安排</td><td>分式方程建模</td><td>方程思想</td><td><span class="diff-easy">基础</span></td><td>12人编A种,6人编B种</td></tr>
+<tr><td>17(2)</td><td>4分</td><td>老师参与(不等式)</td><td>一元一次不等式</td><td>数学建模</td><td><span class="diff-mid">中档</span></td><td>至少5位老师</td></tr>
+<tr><td>18(1)</td><td>2分</td><td>频率+圆心角</td><td>频率/扇形统计图</td><td>数据分析</td><td><span class="diff-easy">基础</span></td><td>0.25; 144°</td></tr>
+<tr><td>18(2)</td><td>2分</td><td>中位数所在组</td><td>中位数</td><td>数据分析</td><td><span class="diff-easy">基础</span></td><td>0.40&lt;x&lt;0.45</td></tr>
+<tr><td>18(3)</td><td>2分</td><td>样本估计总体</td><td>统计推断</td><td>数据意识</td><td><span class="diff-easy">基础</span></td><td>1,100,000株</td></tr>
+<tr><td>18(4)</td><td>2分</td><td>说明推广理由</td><td>统计分析综合</td><td>应用意识</td><td><span class="diff-easy">基础</span></td><td>产量高+方差小=更稳定</td></tr>
+<tr><td>19(1)</td><td>4分</td><td>求∠ACB度数</td><td>等腰直角三角形判定</td><td>逻辑推理</td><td><span class="diff-mid">中档</span></td><td>∠ACB=90°</td></tr>
+<tr><td>19(2)</td><td>4分</td><td>面积比求点坐标</td><td>坐标几何/面积比</td><td>数形结合</td><td><span class="diff-mid">中档</span></td><td>D(1,4)</td></tr>
+<tr><td>20(1)</td><td>4分</td><td>求一次函数关系式</td><td>一次函数/待定系数法</td><td>方程思想</td><td><span class="diff-easy">基础</span></td><td>y=-10x+820</td></tr>
+<tr><td>20(2)</td><td>4分</td><td>利润最大值</td><td>二次函数最值</td><td>函数思想</td><td><span class="diff-mid">中档</span></td><td>x=72时最大利润1000元</td></tr>
+<tr><td>21(1)</td><td>4分</td><td>求∠AEF度数</td><td>圆周角/直径性质</td><td>逻辑推理</td><td><span class="diff-mid">中档</span></td><td>∠AEF=∠DEF=45°</td></tr>
+<tr><td>21(2)</td><td>4分</td><td>求圆半径</td><td>切线/相似/勾股定理</td><td>转化化归</td><td><span class="diff-mid">中档</span></td><td>延长BC交AD→△相似→r</td></tr>
+<tr><td>22(1)</td><td>3分</td><td>证明△CAE≅△ABD</td><td>全等三角形(SAS)</td><td>逻辑推理</td><td><span class="diff-easy">基础</span></td><td>AE=BD,AC=AB,夹角相等</td></tr>
+<tr><td>22(2)</td><td>3分</td><td>证明BC=CH</td><td>对称/全等/等角推理</td><td>转化化归</td><td><span class="diff-mid">中档</span></td><td>利用(1)全等+对称性质</td></tr>
+<tr><td>22(3)</td><td>6分</td><td>求AH长+△ACM面积</td><td>相似/勾股定理/面积</td><td>转化化归/方程思想</td><td><span class="diff-hard">压轴</span></td><td>AH=6√2; S=4√2</td></tr>
+<tr><td>23(1)</td><td>3分</td><td>求二次函数表达式</td><td>待定系数法</td><td>方程思想</td><td><span class="diff-easy">基础</span></td><td>y=x²-2x-3</td></tr>
+<tr><td>23(2)</td><td>6分</td><td>"下翻折函数"表达式+面积最值</td><td>函数图象变换/面积</td><td>分类讨论/函数思想</td><td><span class="diff-hard">压轴</span></td><td>三段分段函数; S最大=361/128</td></tr>
+<tr><td>23(3)</td><td>4分</td><td>直线与"上翻折函数"交2个点求k范围</td><td>函数图象交点/判别式</td><td>分类讨论/数形结合</td><td><span class="diff-hard">压轴</span></td><td>-3&lt;k&lt;-1 或 k=-7/4</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>数学思想方法频次统计：</strong>转化化归 7次 | 方程思想 4次 | 数学建模 4次 | 分类讨论 3次 | 函数思想 3次 | 数形结合 3次 | 逻辑推理 4次 | 数据分析 3次
+</div>
+</section>
+
+<!-- 维度三：考点标签 -->
+<section id="d3">
+<h2>维度三·考点标签·知识定位</h2>
+
+<h3>四大领域分值分布</h3>
+<div class="bar-chart">
+  <div class="bar-row"><div class="bar-label">数与代数</div><div class="bar-track"><div class="bar-fill blue" style="width:47%">56分(47%)</div></div></div>
+  <div class="bar-row"><div class="bar-label">图形与几何</div><div class="bar-track"><div class="bar-fill green" style="width:38%">46分(38%)</div></div></div>
+  <div class="bar-row"><div class="bar-label">统计与概率</div><div class="bar-track"><div class="bar-fill orange" style="width:12%">14分(12%)</div></div></div>
+  <div class="bar-row"><div class="bar-label">综合与实践</div><div class="bar-track"><div class="bar-fill red" style="width:3%">4分(3%)</div></div></div>
+</div>
+
+<h3>各领域涉及题目</h3>
+<div class="grid-2">
+  <div class="module-card">
+    <h4>数与代数 (56分)</h4>
+    <span class="tag">Q2 科学记数法</span><span class="tag">Q4 不等式(区间)</span><span class="tag">Q5 幂运算</span><span class="tag">Q9 方程建模</span><span class="tag">Q11 因式分解</span><span class="tag">Q12 坐标平移</span><span class="tag">Q13 反比例函数</span><span class="tag">Q16 实数+分式</span><span class="tag">Q17 方程+不等式</span><span class="tag">Q20 一次函数利润</span><span class="tag">Q23 二次函数翻折</span>
+  </div>
+  <div class="module-card">
+    <h4>图形与几何 (46分)</h4>
+    <span class="tag">Q1 三视图</span><span class="tag">Q3 对称图形</span><span class="tag">Q6 角度计算</span><span class="tag">Q8 尺规作图</span><span class="tag">Q10 菱形</span><span class="tag">Q14 三角函数</span><span class="tag">Q15 等腰三角形</span><span class="tag">Q19 坐标几何</span><span class="tag">Q21 圆</span><span class="tag">Q22 几何压轴</span>
+  </div>
+  <div class="module-card">
+    <h4>统计与概率 (14分)</h4>
+    <span class="tag">Q7 概率(列表法)</span><span class="tag">Q18 统计图表(8分)</span>
+  </div>
+  <div class="module-card">
+    <h4>综合与实践 (4分)</h4>
+    <span class="tag">Q18(4) 数据分析与决策</span>
+  </div>
+</div>
+
+<h3>教材章节映射(人教版)</h3>
+<table>
+<tr><th>教材</th><th>涉及题号</th><th>估算分值</th></tr>
+<tr><td>七上 有理数/整式</td><td>Q2, Q5, Q11</td><td>9分</td></tr>
+<tr><td>七下 坐标系/不等式</td><td>Q4, Q12, Q17(2)</td><td>7分</td></tr>
+<tr><td>八上 全等/轴对称/分式</td><td>Q3, Q8, Q16(2), Q22(1)</td><td>14分</td></tr>
+<tr><td>八下 勾股定理/平行四边形/一次函数</td><td>Q6, Q10, Q15, Q20</td><td>14分</td></tr>
+<tr><td>九上 一元二次方程/二次函数/旋转/圆</td><td>Q9, Q17(1), Q19, Q21, Q22(2)(3), Q23</td><td>46分</td></tr>
+<tr><td>九下 反比例函数/相似/三角函数</td><td>Q13, Q14</td><td>6分</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>知识覆盖评价：</strong>四大领域比 47:38:12:3，接近11套卷均值(47:39:10:4.5)。统计占比略高(+2%)——第18题8分智慧农业大题且含4小问；综合与实践偏低——无项目式大题。九上内容占比38%为核心。
+</div>
+</section>
+
+<!-- 维度四：命题DNA -->
+<section id="d4">
+<h2>维度四·命题DNA·命题解码</h2>
+
+<h3>命题特色与创新点</h3>
+<div class="grid-2">
+  <div class="module-card">
+    <h4>① 新定义题·"翻折函数"(Q23)</h4>
+    <p>自创"翻折函数"概念：将二次函数图象关于y=m作对称翻折，上方保留下方翻折(或反之)。需阅读新概念→分段写表达式→求面积/交点。完全契合辽宁主流(7/11套)。</p>
+  </div>
+  <div class="module-card">
+    <h4>② 跨学科·物理光学情境(Q6)</h4>
+    <p>平面镜反射中的入射角计算。需理解"法线垂直于镜面""入射角=反射角"等物理概念，用平行线角度关系求解。体现数学+物理融合。</p>
+  </div>
+  <div class="module-card">
+    <h4>③ 智慧农业·数据决策(Q18)</h4>
+    <p>"北斗+智慧农业"背景，频数表+扇形图双图表对比传统种植vs智慧模式。最终要求学生用统计数据论证"为何推广智慧农业"，体现数据决策能力。</p>
+  </div>
+  <div class="module-card">
+    <h4>④ 传统文化·《九章算术》猎犬逐兔(Q9)</h4>
+    <p>经典追及问题的文言文表述，需提取"先走100步""追250步不及30步"等数据建立比例方程。考查信息提取+方程建模。</p>
+  </div>
+  <div class="module-card">
+    <h4>⑤ 几何压轴·等腰对称+全等(Q22)</h4>
+    <p>非旋转非翻折，以等腰三角形+轴对称为核心，层层递进：全等证明→对称性质→面积计算。第(3)问需过C作垂线构造直角三角形，计算量较大。</p>
+  </div>
+</div>
+
+<h3>情境化命题分析</h3>
+<table>
+<tr><th>题号</th><th>情境类型</th><th>情境描述</th><th>占比</th></tr>
+<tr><td>Q1</td><td>传统文化</td><td>方斗杯(古代品茗器具)</td><td rowspan="8">情境化题目8道<br>占比34.8%<br>(11套卷范围26%-43.5%)</td></tr>
+<tr><td>Q2</td><td>时事政策</td><td>辽宁人才引进</td></tr>
+<tr><td>Q3</td><td>时事政策</td><td>辽宁百强企业</td></tr>
+<tr><td>Q6</td><td>跨学科(物理)</td><td>平面镜·入射角</td></tr>
+<tr><td>Q7</td><td>跨学科(物理)</td><td>铜线短路概率</td></tr>
+<tr><td>Q9</td><td>数学文化</td><td>《九章算术》猎犬逐兔</td></tr>
+<tr><td>Q17</td><td>传统文化</td><td>中国结编制</td></tr>
+<tr><td>Q18</td><td>科技农业</td><td>北斗+智慧农业</td></tr>
+</table>
+
+<h3>压轴题深度解析</h3>
+<div class="grid-2">
+  <div class="module-card">
+    <h4>第22题·几何压轴(12分)·等腰对称</h4>
+    <p><strong>载体：</strong>等腰△ABC(AB=AC),点F在BC上,点E在AF上(∠BEF=∠BAC)</p>
+    <p><strong>核心模型：</strong>等腰三角形+角等量代换+对称翻折→全等→面积</p>
+    <p><strong>设问层次：</strong></p>
+    <ul>
+      <li>(1) 证△CAE≅△ABD(SAS) → 3分送分</li>
+      <li>(2) 轴对称后BC=CH → 利用(1)结论+对称性质</li>
+      <li>(3) 求AH=6√2 + △ACM面积=4√2 → 作CK⊥AM构造勾股</li>
+    </ul>
+    <p><strong>得分预估：</strong>(1)送分3分，(2)中档3分，(3)需多步推理+计算6分</p>
+  </div>
+  <div class="module-card">
+    <h4>第23题·代数压轴(13分)·新定义"翻折函数"</h4>
+    <p><strong>函数：</strong>y=x²-2x-3(过A(-1,0),B(3,0),C(0,-3),顶点(1,-4))</p>
+    <p><strong>新定义：</strong>关于y=m翻折，分"上翻折""下翻折"两种情况</p>
+    <p><strong>设问层次：</strong></p>
+    <ul>
+      <li>(1) 求表达式 → 待定系数法，3分送分</li>
+      <li>(2) m=0时"下翻折函数"表达式 + 面积最值 → 分3段写分段函数+坐标化面积</li>
+      <li>(3) m=-3时"上翻折函数"与y=-x+k交2点 → 画图+切线/过定点分类</li>
+    </ul>
+    <p><strong>难点突破：</strong>(2)需分3段(-∞,-1)∪(-1,3)∪(3,+∞)翻折；(3)需找切线k值和过特殊点k值</p>
+  </div>
+</div>
+</section>
+
+<!-- 维度五：作战地图 -->
+<section id="d5">
+<h2>维度五·作战地图·行动转化</h2>
+
+<h3>分数段策略</h3>
+<table>
+<tr><th>目标</th><th>核心策略</th><th>重点题目</th><th>训练方向</th></tr>
+<tr><td class="level-low">60~80分</td><td>夯实基础</td><td>Q1-5, Q11-12, Q16, Q17(1), Q18(1)(2)</td><td>因式分解/幂运算天天练；分式方程建模3步法</td></tr>
+<tr><td class="level-mid">80~100分</td><td>突破中档</td><td>Q6-9, Q13-14, Q17(2), Q19, Q20</td><td>反比例函数增减性；坐标几何面积比；一次函数利润建模</td></tr>
+<tr><td class="level-mid">100~110分</td><td>攻克前两问</td><td>Q10, Q15, Q21, Q22(1)(2), Q23(1)(2)</td><td>等腰三角形性质链；分段函数表达式；圆切线+相似</td></tr>
+<tr><td class="level-high">110+分</td><td>冲刺压轴</td><td>Q22(3), Q23(2)面积+(3)</td><td>新定义"翻折函数"分段讨论；几何面积综合(限时15min/题)</td></tr>
+</table>
+
+<h3>必拿分清单(基础65分)</h3>
+<div class="grid-2">
+  <div class="module-card">
+    <h4>选择必拿(21分)</h4>
+    <ul>
+      <li>Q1 三视图(3分)</li>
+      <li>Q2 科学记数法(3分)</li>
+      <li>Q3 对称图形(3分)</li>
+      <li>Q4 不等式区间(3分)</li>
+      <li>Q5 幂运算(3分)</li>
+      <li>Q6 角度计算(3分) ← 跨学科审题</li>
+      <li>Q8 尺规作图相似(3分)</li>
+    </ul>
+  </div>
+  <div class="module-card">
+    <h4>填空+解答必拿(44分)</h4>
+    <ul>
+      <li>Q11-12 填空基础(6分)</li>
+      <li>Q16 全题(10分) ← 最稳拿分点</li>
+      <li>Q17 全题(8分)</li>
+      <li>Q18 全题(8分)</li>
+      <li>Q22(1) 全等证明(3分)</li>
+      <li>Q23(1) 求表达式(3分)</li>
+      <li>合计保底约65分+</li>
+    </ul>
+  </div>
+</div>
+
+<h3>易错点预警</h3>
+<table>
+<tr><th>题号</th><th>易错点</th><th>防范措施</th></tr>
+<tr><td>Q5</td><td>(x²)³=x⁶(非x⁵);同底数幂相乘才加指数</td><td>明确"幂的幂"是乘指数,"同底相乘"才加</td></tr>
+<tr><td>Q6</td><td>入射角≠∠AOC(入射角是与法线OF的夹角)</td><td>审题找"法线"关键词,入射角=光线与法线的夹角</td></tr>
+<tr><td>Q7</td><td>列表时遗漏"同端选两个"≠"两端各选一个"</td><td>画清楚列表，标明(A端选2个)×(D端选2个)=9种</td></tr>
+<tr><td>Q9</td><td>追及问题速度比设置(犬:兔=250:(100+250-30))</td><td>逐句翻译:"追250步不及30步"→犬走250,兔额外走了320-250-100步</td></tr>
+<tr><td>Q14</td><td>tan22°≈0.40需要精确使用参考数据</td><td>代入前确认是tan还是sin/cos</td></tr>
+<tr><td>Q17</td><td>分式方程需检验增根</td><td>解完必回代检验</td></tr>
+<tr><td>Q22(3)</td><td>CN⊥FG条件与相似比混淆</td><td>标清对应边,先求比再算长度</td></tr>
+<tr><td>Q23(2)</td><td>分段函数边界点取等号(包含与y=m的交点)</td><td>注意定义中"均包括与直线y=m的交点"</td></tr>
+</table>
+
+<div class="card-highlight">
+<strong>冲刺建议：</strong>本卷第23题"翻折函数"是辽宁中考主流新定义题型。建议重点训练：① 分段函数表达式书写(先确定x范围→分段翻折y=2m-y₁)；② 直线与分段函数交点个数问题(画图+切线判别式+特殊点代入)。第22题为传统等腰+全等模型，掌握"过顶点作垂线"的辅助线技巧即可突破第(3)问。
+</div>
+</section>
+
+<footer>
+  📐 万唯白卷·数学试卷深度分析 | 基于OCR文本与答案的五维分析 | 2026辽宁中考复习专用
+</footer>
+
+</div>
+</body>
+</html>
