@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>万唯黑卷·语文试卷深度分析</title>
+  <style>
+    :root{--bg:#f5f1e8;--primary:#8b2e2e;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e}*{box-sizing:border-box}body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(139,46,46,.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(139,46,46,.06),transparent 26%),var(--bg);line-height:1.75}.container{width:min(1120px,92vw);margin:28px auto 48px}header{background:linear-gradient(135deg,rgba(139,46,46,.08),rgba(245,241,232,.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,.06)}h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}.subtitle{margin:0;color:var(--muted);font-size:.98rem}.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}nav{margin:18px 0 26px;display:flex;flex-wrap:wrap;gap:8px}nav a{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:.88rem;background:var(--card);transition:all .2s}nav a:hover,nav a.active{background:var(--primary);color:#fff;border-color:var(--primary)}.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:20px}.toc h2{margin:0 0 8px;font-size:1.02rem;color:var(--primary)}.toc ol{margin:0;padding-left:18px;columns:2;column-gap:34px}.toc li{margin:5px 0;break-inside:avoid}.toc a{color:var(--text);text-decoration:none;border-bottom:1px dashed rgba(139,46,46,.35)}section{background:rgba(251,248,241,.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,.04)}h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid rgba(139,46,46,.2);padding-bottom:8px}h3{margin:16px 0 8px;font-size:1.06rem;color:#5f1f1f}p{margin:8px 0}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.88rem;background:#fffef9}th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}th{background:#f2ead9;color:#4e2f2f;text-align:left;font-weight:700}.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-right:6px;margin-bottom:6px;color:#51493f;background:#f8f3e8}.level-high{color:var(--bad);font-weight:700}.level-mid{color:var(--warn);font-weight:700}.level-good{color:var(--good);font-weight:700}ul,ol{margin:8px 0;padding-left:20px}.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:10px}.kpi-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}.kpi-title{color:var(--muted);font-size:.86rem;margin-bottom:3px}.kpi-value{font-size:1.2rem;color:var(--primary);font-weight:700}.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;margin-top:12px}.module-card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px}.module-card h4{margin:0 0 8px;color:var(--primary);font-size:1rem}.dna-item{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-top:10px}.dna-item strong{color:var(--primary)}footer{margin-top:24px;color:var(--muted);font-size:.86rem;text-align:center}@media(max-width:900px){.toc ol{columns:1}.grid-2{grid-template-columns:1fr}table{font-size:.82rem}}
+  </style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>万唯黑卷·语文试卷深度分析</h1>
+  <p class="subtitle">2026辽宁中考考前密卷 | 五维模型：结构-考点-逐题-命题-提分</p>
+  <div class="meta">
+    <span class="chip">总题量 22题</span>
+    <span class="chip">满分 120分</span>
+    <span class="chip">考试时长 150分钟</span>
+    <span class="chip">情境整合：辽金冬捕文化</span>
+    <span class="chip">作文：二选一</span>
+  </div>
+</header>
+
+<nav>
+  <a href="../语文模拟试卷横向对比分析.html">横向对比</a>
+  <a href="万唯黑卷_语文分析.html" class="active">黑卷分析</a>
+  <a href="万唯白卷_语文分析.html">白卷分析</a>
+  <a href="万唯黑白卷_交叉分析.html">交叉分析</a>
+</nav>
+
+<div class="toc">
+  <h2>目录</h2>
+  <ol>
+    <li><a href="#d1">维度一：试卷结构与分值画像</a></li>
+    <li><a href="#d2">维度二：核心考点与知识分布</a></li>
+    <li><a href="#d3">维度三：逐题映射与能力评估</a></li>
+    <li><a href="#d4">维度四：命题特征与趋势研判</a></li>
+    <li><a href="#d5">维度五：提分策略与落地方案</a></li>
+  </ol>
+</div>
+
+<!-- ===== 维度一 ===== -->
+<section id="d1">
+  <h2>维度一：试卷结构与分值画像</h2>
+
+  <div class="kpi">
+    <div class="kpi-card"><div class="kpi-title">积累与运用</div><div class="kpi-value">17分 (Q1-Q5)</div></div>
+    <div class="kpi-card"><div class="kpi-title">古诗文默写</div><div class="kpi-value">6分 (Q5)</div></div>
+    <div class="kpi-card"><div class="kpi-title">古诗阅读</div><div class="kpi-value">3分 (Q6)</div></div>
+    <div class="kpi-card"><div class="kpi-title">文言文阅读</div><div class="kpi-value">14分 (Q7-Q10)</div></div>
+    <div class="kpi-card"><div class="kpi-title">非连续性文本</div><div class="kpi-value">8分 (Q11-Q13)</div></div>
+    <div class="kpi-card"><div class="kpi-title">记叙文阅读</div><div class="kpi-value">17分 (Q14-Q18)</div></div>
+    <div class="kpi-card"><div class="kpi-title">议论文阅读</div><div class="kpi-value">11分 (Q19-Q21)</div></div>
+    <div class="kpi-card"><div class="kpi-title">写作</div><div class="kpi-value">50分 (Q22)</div></div>
+  </div>
+
+  <h3>结构特征总结</h3>
+  <ul>
+    <li><strong>板块完整性：</strong>完整覆盖积累运用+古诗文+三类现代文（非连续性文本+记叙文+议论文）+写作，标准22题结构。</li>
+    <li><strong>辽宁地域素材：</strong>Q2情境为"沈阳卧龙湖冬捕季"（辽金文化捺钵渔猎传统），深度嵌入辽宁本土文化。</li>
+    <li><strong>能力梯度：</strong>从字音字形识记→词语语境判断→语法逻辑分析→阅读鉴赏→综合表达→写作创作，呈清晰递进。</li>
+    <li><strong>写作题型：</strong>二选一。题目(1)命题作文"纵伏扬鞭问春山"；题目(2)材料作文"铭记、记录、释怀与前行"。</li>
+    <li><strong>积累运用整合度：</strong>Q1-Q3基于统一语段（辽金文化冬捕季）整合字音字形+词语运用+语法分析。</li>
+  </ul>
+</section>
+
+<!-- ===== 维度二 ===== -->
+<section id="d2">
+  <h2>维度二：核心考点与知识分布</h2>
+
+  <h3>2.1 积累与运用板块</h3>
+  <p><strong>考点标签：</strong></p>
+  <div>
+    <span class="tag">字音字形辨析（谦逊/挑衅/贴切/诸如此类等）</span>
+    <span class="tag">近义词辨析（焕发vs迸发/相映成趣vs相得益彰/不仅…而且vs不仅…反而/厚重vs浓重）</span>
+    <span class="tag">语法分析（短语结构/关联词搭配/成分完整性）</span>
+    <span class="tag">文学文化常识（红楼梦朝代/格列佛游记/资治通鉴）</span>
+    <span class="tag">名著阅读·困境与突破（红星照耀中国/海底两万里/水浒传）</span>
+    <span class="tag">理解性默写6空</span>
+  </div>
+  <p><strong>情境主题：</strong>以"第十一届沈阳卧龙湖冬捕季"为统一语段，串联Q1字音字形+Q2词语运用+Q3语法分析，体现"辽金文化+传统民俗+沈阳地标"三位一体的命题思路。</p>
+  <p><strong>名著考查方式：</strong>情境驱动型——班级开展"名著中的困境与突破"主题阅读活动，要求从毛泽东/尼摩船长/林冲中任选一人，结合情节分析其突破困境的方式。考查人物精神分析+情节概括能力。</p>
+
+  <h3>2.2 古诗文板块</h3>
+  <div>
+    <span class="tag">古诗对比：同一作者不同作品（龚自珍）</span>
+    <span class="tag">课内：己亥杂诗（其五）</span>
+    <span class="tag">课外：吴山人文征、沈书记锡东人钱之虎丘饯</span>
+    <span class="tag">文言文对比：治国理政·君民关系</span>
+    <span class="tag">课内：曹刿论战（左传）</span>
+    <span class="tag">课外：齐景公麦丘游（战国策）</span>
+    <span class="tag">实词辨析：何/信/若/固</span>
+    <span class="tag">翻译：弗/专/诚/得罪/安</span>
+    <span class="tag">断句</span>
+    <span class="tag">对比分析：取信于民/以民为本/深谋远虑/知错能改</span>
+  </div>
+  <p><strong>古诗对比类型：</strong>同一作者（龚自珍）不同场合之作——甲诗为辞官离京抒怀，乙诗为赴京途中苏州离别之作。两诗均含"落花"意象但情感基调迥异：甲格调昂扬（报国奉献），乙氛围凄清伤感（壮志难酬）。</p>
+  <p><strong>文言文对比主题：</strong>均关于君民关系与治国之道。甲文曹刿强调"取信于民"为战争取胜基础；乙文齐景公麦丘游中封人直谏"无得罪于民"，体现古代以民为本的政治智慧。两文交叉揭示"臣子深谋远虑+君主知错能改"的治国理念。</p>
+
+  <h3>2.3 现代文阅读板块</h3>
+  <div>
+    <span class="tag">非连续性文本：长征主题（4则材料）</span>
+    <span class="tag">记叙文：《钢轨阅流年》·铁路变迁20年</span>
+    <span class="tag">议论文：《"破茧"是成才必经之苦》</span>
+  </div>
+  <p><strong>非连续性文本：</strong>主题为"长征胜利90周年"，包含4则材料——【材料一】主题艺术展、【材料二】革命文物（4件）、【材料三】翻雪山场景描写、【材料四】青年重走长征路。考查方向：信息判断+文物精神探究+实践意义论述。任务驱动型设计——"明辨·崇敬长征魂""探源·解码长征魂""践行·走好新长征"三个层级任务。</p>
+  <p><strong>记叙文：</strong>《钢轨阅流年》（选自《中国铁路文艺》2026年4月），以第一人称讲述作者2005-2025年间五次乘坐火车的经历，从绿皮车到"绿巨人"动车组，以铁路变迁映射时代进步。考查方向：信息梳理（时间线图表）+修辞赏析（比喻）+情感分析+拟声词对比效果+标题作用。文学性强，散文笔法。</p>
+  <p><strong>议论文：</strong>《"破茧"是成才必经之苦》（选自《解放军报》2026年2月），中心论点"破茧虽是必经的痛苦，却是通往成功的必由之路"。总分总结构，三个分论点：突破自我局限/直面痛苦挑战/不改初衷坚持。考查方向：论证思路图示+论证方法分析+事实论据补充判断。</p>
+
+  <h3>2.4 写作</h3>
+  <div>
+    <span class="tag">题目一：命题作文"纵伏扬鞭问春山"</span>
+    <span class="tag">题目二：材料作文"铭记、记录、释怀与前行"</span>
+    <span class="tag">二选一</span>
+    <span class="tag">600字以上</span>
+  </div>
+  <p><strong>题目(1)：</strong>"纵伏扬鞭问春山"——以"马"为核心意象的命题作文，材料层层递进（骏马腾跃→骥骐驰骋→万马奔腾），对应个人精进→群体担当→民族复兴三个层次。考查情感叙事+理想信念+奋斗精神。</p>
+  <p><strong>题目(2)：</strong>四位同学围绕"铭记、记录、释怀与前行"的对话——文文强调记录是坚守与感恩，宁宁强调行以致善，程程强调释怀，桐桐强调开拓创新。考查思辨能力+生活经验+辩证思考（铭记与释怀的关系）。</p>
+</section>
+
+<!-- ===== 维度三 ===== -->
+<section id="d3">
+  <h2>维度三：逐题映射与能力评估</h2>
+
+  <h3>3.1 逐题映射表</h3>
+  <table>
+    <thead><tr><th>题号</th><th>分值</th><th>考点</th><th>能力维度</th><th>教材定位</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td>2分</td><td>字音字形辨析（谦逊xùn/挑衅xìn/贴切tiē/诸如此类zhū）</td><td>识记·辨析</td><td>七—九年级常用字积累</td></tr>
+      <tr><td>Q2</td><td>2分</td><td>近义词语境辨析（焕发/迸发、相映成趣/相得益彰、而且/反而、厚重/浓重）</td><td>理解·语境判断</td><td>词语运用专题</td></tr>
+      <tr><td>Q3</td><td>2分</td><td>语法综合（短语结构判断+关联词语搭配+成分完整性判断）</td><td>理解·语法分析</td><td>语法知识专题</td></tr>
+      <tr><td>Q4(1)</td><td>2分</td><td>文学文化常识（《红楼梦》朝代/《格列佛游记》/《资治通鉴》编年体）</td><td>识记·辨析</td><td>文学常识汇总</td></tr>
+      <tr><td>Q4(2)</td><td>3分</td><td>名著人物困境与突破分析（毛泽东/尼摩船长/林冲）</td><td>分析·概括</td><td>《红星照耀中国》八上/《海底两万里》七下/《水浒传》九上</td></tr>
+      <tr><td>Q5</td><td>6分</td><td>理解性默写（6空6篇）</td><td>识记·辨析</td><td>课内古诗文（含使至塞上/破阵子等）</td></tr>
+      <tr><td>Q6</td><td>3分</td><td>古诗对比鉴赏（龚自珍两首诗的意象/情感/手法差异）</td><td>分析·比较</td><td>《己亥杂诗》九下 + 课外龚自珍</td></tr>
+      <tr><td>Q7</td><td>3分</td><td>文言实词一词多义辨析（何/信/若/固）</td><td>理解·语境判断</td><td>《曹刿论战》九下 + 课外战国策</td></tr>
+      <tr><td>Q8(1)</td><td>2分</td><td>文言文翻译（"衣食所安，弗敢专也，必以分人"）</td><td>理解·翻译</td><td>《曹刿论战》九下</td></tr>
+      <tr><td>Q8(2)</td><td>3分</td><td>文言文翻译（"诚有百姓得罪于君，安有君得罪于民"）</td><td>理解·翻译</td><td>课外文言文</td></tr>
+      <tr><td>Q9</td><td>2分</td><td>断句（"君过矣/彼朴者有罪/贵者治之"）</td><td>理解·语法分析</td><td>文言断句专项</td></tr>
+      <tr><td>Q10</td><td>4分</td><td>对比分析主题（两文的治国启示：取信于民/以民为本/深谋远虑/知错能改）</td><td>分析·比较</td><td>《曹刿论战》九下 + 课外战国策</td></tr>
+      <tr><td>Q11</td><td>2分</td><td>非连续性文本信息判断（长征主题4则材料）</td><td>分析·概括</td><td>非连续性文本阅读</td></tr>
+      <tr><td>Q12</td><td>3分</td><td>文物与场景的精神探究（对话补全：革命理想/诚信待人/坚忍不拔）</td><td>综合·感悟</td><td>非连续性文本阅读</td></tr>
+      <tr><td>Q13</td><td>3分</td><td>论述新时代青年如何继承长征精神（结合材料阐述）</td><td>综合·表达</td><td>非连续性文本阅读</td></tr>
+      <tr><td>Q14</td><td>4分</td><td>记叙文信息梳理（时间+事件+感受图表填空）</td><td>分析·概括</td><td>记叙文阅读</td></tr>
+      <tr><td>Q15</td><td>3分</td><td>修辞手法赏析（"铁路像一根银线，串起了这片土地上最璀璨的明珠"比喻）</td><td>分析·鉴赏</td><td>记叙文阅读·修辞</td></tr>
+      <tr><td>Q16</td><td>4分</td><td>情感分析(2分)+结尾段作用(2分)</td><td>综合·感悟 + 分析·逻辑</td><td>记叙文阅读·结构</td></tr>
+      <tr><td>Q17</td><td>3分</td><td>拟声词对比效果分析（"哐当哐当"vs"嗡嗡"）</td><td>分析·鉴赏</td><td>记叙文阅读·词语赏析</td></tr>
+      <tr><td>Q18</td><td>3分</td><td>标题作用分析（"钢轨阅流年"：线索/修辞/含义）</td><td>分析·鉴赏</td><td>记叙文阅读·标题</td></tr>
+      <tr><td>Q19</td><td>4分</td><td>议论文论证思路（图示补全：论点→分论点→结论）</td><td>分析·逻辑</td><td>议论文阅读</td></tr>
+      <tr><td>Q20</td><td>4分</td><td>论证方法分析（比喻论证+道理论证/引用论证）</td><td>分析·鉴赏</td><td>议论文阅读</td></tr>
+      <tr><td>Q21</td><td>3分</td><td>事实论据补充判断（王羲之临池学书→是否契合"不改初衷的坚持"分论点）</td><td>分析·逻辑</td><td>议论文阅读</td></tr>
+      <tr><td>Q22</td><td>50分</td><td>写作（二选一：命题"纵伏扬鞭问春山"/材料"铭记记录释怀前行"）</td><td>表达·构思·写作</td><td>作文训练（情感/思辨）</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.2 四模块风险评估</h3>
+  <div class="grid-2">
+    <div class="module-card">
+      <h4>模块A：积累与运用（17分）</h4>
+      <p>覆盖：Q1-Q5 | 风险等级：<span class="level-mid">中等</span></p>
+      <p><strong>失分点：</strong></p>
+      <ul>
+        <li>Q2近义词辨析"相映成趣"与"相得益彰"区别——学生易混淆两者适用场景（视觉映衬vs互相增益）</li>
+        <li>Q3语法综合题多角度判断——短语结构+关联词+成分三合一，容易顾此失彼</li>
+        <li>Q4(2)名著阅读要求"结合具体情节"——只写笼统精神不给分，需精准到事件</li>
+      </ul>
+      <p><strong>提分抓手：</strong>近义词辨析做题时先定"两词差异点"（轻重/范围/搭配/感情色彩），再代入语境验证；名著阅读坚持"人物+事件+品质"三要素答题法。</p>
+    </div>
+    <div class="module-card">
+      <h4>模块B：古诗文阅读（17分）</h4>
+      <p>覆盖：Q6-Q10 | 风险等级：<span class="level-mid">中等</span></p>
+      <p><strong>失分点：</strong></p>
+      <ul>
+        <li>Q6古诗对比选D——甲诗非离别诗而是辞官抒怀，学生易将两诗都理解为"离别"</li>
+        <li>Q8(2)课外翻译"诚""得罪""安"三个关键词——课外义项迁移困难</li>
+        <li>Q10对比分析需从两文中精准摘录原句+提炼启示——答题角度不清时易失分</li>
+      </ul>
+      <p><strong>提分抓手：</strong>古诗对比题先判断"各自主旨"再找差异，避免被共同意象误导；课外翻译重点练习"课内义项迁移法"——找课内同字同义的例句做类比。</p>
+    </div>
+    <div class="module-card">
+      <h4>模块C：现代文阅读（36分）</h4>
+      <p>覆盖：Q11-Q21 | 风险等级：<span class="level-high">较高</span></p>
+      <p><strong>失分点：</strong></p>
+      <ul>
+        <li>Q14时间线图表填空——需概括精准，漏写"感受"或"事件"任一要素不得分</li>
+        <li>Q16(1)情感分析需双层（享受满足+时代感慨）——只写一层扣1分</li>
+        <li>Q17拟声词对比——需逐一分析两组词各自的效果，再写对比作用，三步缺一不可</li>
+        <li>Q19论证思路图示——需精准用原文语句概括分论点，不能自行改写</li>
+        <li>Q21论据判断——需说明"合适/不合适"的理由，且与分论点严格对应</li>
+      </ul>
+      <p><strong>提分抓手：</strong>记叙文按"定位段落→锁定关键句→提炼+整合"三步；议论文论证思路先画"总—分—总"骨架再填分论点；对比效果题坚持"分述各自+合写对比作用"模式。</p>
+    </div>
+    <div class="module-card">
+      <h4>模块D：写作（50分）</h4>
+      <p>覆盖：Q22 | 风险等级：<span class="level-mid">中等</span></p>
+      <p><strong>失分点：</strong></p>
+      <ul>
+        <li>题目(1)审题陷阱：将"春山"理解为具体的山而非理想/目标的象征，立意跑偏</li>
+        <li>题目(1)只写"马的精神"而忽略"问"——需体现追问过程和前行姿态</li>
+        <li>题目(2)只写"铭记"或只写"释怀"——四维话题需有辩证关系，至少串联2-3个角度</li>
+        <li>两题均要求结合自身经历——纯议论无叙事不得高分</li>
+      </ul>
+      <p><strong>提分抓手：</strong>题目(1)建议采用"一人一事一精神"结构，以真实经历串联马的精神隐喻；题目(2)建议"记录→铭记→释怀→前行"层层递进结构，每层配一个生活细节。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 维度四 ===== -->
+<section id="d4">
+  <h2>维度四：命题特征与趋势研判</h2>
+  <p><strong>命题逻辑一句话：</strong>情境整合+辽宁地域嵌入+红色文化引领+社会发展赞颂+思辨写作导向。</p>
+
+  <div class="dna-item">
+    <strong>DNA-1：情境化整合命题</strong>
+    <p>Q1-Q3在"沈阳卧龙湖冬捕季"统一语段中整合字音字形+词语辨析+语法分析，学生需在连贯阅读中逐项作答。这是辽宁中考标准命题模式，12套一模卷中沈阳7区+铁岭均采用此模式。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-2：辽宁地域素材深度嵌入</strong>
+    <p>"辽金文化捺钵渔猎传统""第十一届沈阳卧龙湖冬捕季"——不仅是语境载体，更考查学生对辽宁本土历史文化的认知。答案解析中明确涉及"辽代服饰""冰封湖面"等辽宁冬季特色元素。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-3：红色文化+长征精神引领</strong>
+    <p>非连续性文本以"长征胜利90周年"为主题，设计"明辨→探源→践行"三层递进任务。4则材料涵盖艺术展+革命文物+文学场景+青年实践，从感知→理解→践行形成完整的价值教育闭环。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-4：社会发展成就赞颂（新质生产力/铁路发展）</strong>
+    <p>记叙文《钢轨阅流年》以新疆铁路20年发展为线索，从2005年绿皮车到2025年动车组，映射中国交通基建飞速进步。命题意图：以个人体验折射国家发展，弘扬建设者精神。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-5：名著阅读策略化——"困境与突破"主题驱动</strong>
+    <p>不考简单识记，而是以"困境与突破"为主题，要求结合具体情节分析人物精神。三个备选人物横跨三部名著，考查学生的情节积累深度和精神提炼能力。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-6：古诗文对比——同一作者跨作品</strong>
+    <p>龚自珍两首诗的对比较罕见（12套卷中多为"课内vs课外不同作者"），需要学生了解龚自珍在不同人生阶段的创作差异——辞官离京的昂扬vs赴京途中的凄清。课外篇目难度较高。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-7：议论文考查"结构思维"——图示化论证思路</strong>
+    <p>Q19以图示形式考查论证思路（起点→展开→终点），强调学生对文章逻辑结构的把握能力。Q21论据补充判断题要求判断材料与分论点的逻辑匹配度，考查论证严谨性认知。</p>
+  </div>
+  <div class="dna-item">
+    <strong>DNA-8：写作思辨化——多维话题辩证思考</strong>
+    <p>题目(2)"铭记、记录、释怀与前行"四位同学发言层层递进，考查学生在"铭记与释怀""记录与前行"之间建立辩证关系的能力。避免单向思维是拿高分的关键。</p>
+  </div>
+
+  <h3>趋势判断</h3>
+  <ul>
+    <li><strong>情境整合100%延续：</strong>万唯黑卷完全对标辽宁中考命题规范，Q1-Q3统一语段不会改变。</li>
+    <li><strong>地域素材与时代热点双轮驱动：</strong>辽金文化+长征90周年+铁路发展，三大素材分别对应传统文化+红色文化+社会发展三条主线。</li>
+    <li><strong>名著阅读持续升级：</strong>从识记→情节分析→精神提炼→跨文本比较，未来可能出现"多人物对比"或"阅读策略反思"。</li>
+    <li><strong>作文思辨性强化：</strong>两道作文题一"情感叙事"一"思辨议论"的搭配将持续，材料作文的思辨深度可能进一步提升。</li>
+    <li><strong>记叙文选文偏向"时代变迁"：</strong>不再局限于亲情/成长，开始出现以社会发展为主线的散文，考查学生宏观视野。</li>
+  </ul>
+</section>
+
+<!-- ===== 维度五 ===== -->
+<section id="d5">
+  <h2>维度五：提分策略与落地方案</h2>
+
+  <h3>5.1 优先级建议表</h3>
+  <table>
+    <thead><tr><th>优先级</th><th>任务</th><th>目标</th><th>建议周期</th></tr></thead>
+    <tbody>
+      <tr><td>P1</td><td>作文双模板训练（情感叙事类"纵伏扬鞭问春山" + 思辨类"铭记与前行"）</td><td>50分稳定38+</td><td>每天1篇交替</td></tr>
+      <tr><td>P2</td><td>古诗文默写+课内文言实词过关（重点练"弗/专/诚/得罪/安"等高频义项）</td><td>23分板块丢分≤4分</td><td>每日15分钟</td></tr>
+      <tr><td>P3</td><td>记叙文答题模板固化（信息梳理+修辞赏析+标题作用+对比效果四类题型）</td><td>17分稳定12+</td><td>5天专项</td></tr>
+      <tr><td>P4</td><td>议论文论证思路+论证方法模板训练</td><td>11分稳定8+</td><td>5天专项</td></tr>
+      <tr><td>P5</td><td>名著核心情节复习（3部名著×5个关键情节+人物精神标签）</td><td>5分名著题满分</td><td>3天集中</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 易错预警表</h3>
+  <table>
+    <thead><tr><th>高频易错点</th><th>本卷典型表现</th><th>纠偏策略</th></tr></thead>
+    <tbody>
+      <tr><td>近义词辨析混淆</td><td>Q2"相映成趣"vs"相得益彰"——前者强调视觉对照映衬，后者强调互相补充增益</td><td>做题时先写出两词差异点（一句话），再代入语境验证</td></tr>
+      <tr><td>古诗对比只看共同点</td><td>Q6两诗均含"落花"意象，但情感基调完全不同——甲昂扬乙凄清</td><td>对比题先各自概括主旨，再对比差异，最后写共同点（倒序法）</td></tr>
+      <tr><td>课外文言实词不会迁移</td><td>Q7"若"在课内"若为佣耕"=如同，需迁移到课外同义用法</td><td>整理"课内实词→课外迁移"对照表，每个实词列3个课内例句</td></tr>
+      <tr><td>记叙文概括遗漏要素</td><td>Q14时间线图表需同时填"事件"和"感受"，遗漏任一要素扣分</td><td>概括题强制用"事件+感受/心情"双要素模板</td></tr>
+      <tr><td>拟声词赏析只写效果不写对比</td><td>Q17需分别分析"哐当哐当"和"嗡嗡"的效果，再写对比意义</td><td>"分述+合写"模式：先各1-2句写单词效果，再1句写对比作用</td></tr>
+      <tr><td>论证思路表述笼统</td><td>Q19需精准概括分论点，不能自行改写或笼统说"展开论证"</td><td>论证思路答题必须用"首先……接着……然后……最后……"连接词</td></tr>
+      <tr><td>作文立意单向化</td><td>Q22(2)只写"铭记"不写"释怀"，或只写"释怀"不提"铭记"</td><td>材料作文审题时圈出所有关键词，确保文中至少串联2-3个</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.3 目标分数规划表</h3>
+  <table>
+    <thead><tr><th>分数档</th><th>积累+默写（17分）</th><th>古诗文阅读（17分）</th><th>现代文阅读（36分）</th><th>作文（50分）</th></tr></thead>
+    <tbody>
+      <tr><td><strong>冲刺105+</strong></td><td>15-17分</td><td>14-17分</td><td>30-36分</td><td>42-50分</td></tr>
+      <tr><td><strong>稳定90-104</strong></td><td>13-15分</td><td>11-14分</td><td>25-30分</td><td>38-42分</td></tr>
+      <tr><td><strong>保底75-89</strong></td><td>11-13分</td><td>8-11分</td><td>20-25分</td><td>33-38分</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.4 核心答题模板（本卷适用）</h3>
+
+  <div class="module-card" style="margin-top:12px">
+    <h4>模板一：修辞手法赏析（适用Q15比喻题）</h4>
+    <p><strong>格式：</strong>运用了__修辞手法（1分），将__比作__（或：生动形象地描写了__）（1分），表达了作者__的情感（1分）。</p>
+    <p><strong>本题示范：</strong>运用了比喻的修辞手法，将铁路比作银线、将新疆各地美景比作璀璨明珠，生动形象地写出了铁路串联各地壮丽风光的特点，表达了作者对铁路的赞美和对新疆风光的热爱之情。</p>
+  </div>
+
+  <div class="module-card" style="margin-top:12px">
+    <h4>模板二：拟声词/对比效果分析（适用Q17）</h4>
+    <p><strong>格式：</strong>"__"形象地模拟了__的声音，写出了__的特点（1分）；"__"生动地描绘了__的声音，写出了__的特点（1分）；两者对比，突出了__（1分）。</p>
+    <p><strong>本题示范：</strong>"哐当哐当"形象地模拟了旧式火车车轮与钢轨撞击的沉重声音，写出了旧式火车的缓慢与颠簸；"嗡嗡"生动地描绘了电气化列车行驶时轻快流畅的声音，写出了新式火车的平稳与迅捷；两种声音的对比，突出了铁路技术的发展进步，表达了作者对新时代铁路与时代进步的赞美之情。</p>
+  </div>
+
+  <div class="module-card" style="margin-top:12px">
+    <h4>模板三：标题作用分析（适用Q18）</h4>
+    <p><strong>格式：</strong>①"__"是全文线索，串联起__（结构作用）；②"__"字运用__修辞/手法，生动形象地写出了__（表达效果）；③"__"既指__，也指__（含义层次）。</p>
+    <p><strong>本题示范：</strong>①"钢轨"是全文线索，串联起作者不同时期的乘车经历；②"阅"字将钢轨人格化，生动形象地写出了铁路见证岁月流逝、时代变迁的特点；③"流年"既指作者从求学、工作到归乡的人生历程，也指铁路从绿皮车到动车组的巨大变迁，表达了作者对时代进步的感慨与赞美。</p>
+  </div>
+
+  <div class="module-card" style="margin-top:12px">
+    <h4>模板四：议论文论证思路（适用Q19）</h4>
+    <p><strong>格式：</strong>首先，通过__引出中心论点"__"；接着，从__、__、__三个角度分别论证（分论点1/2/3）；最后，总结全文，重申__。</p>
+    <p><strong>本题示范：</strong>首先，以小和尚助蝶破茧反害蝶的故事引出"破茧是成才必经之苦"的中心论点；接着从"突破自我局限""直面痛苦挑战""不改初衷坚持"三个角度展开分论证；最后总结全文，重申"破茧虽是痛苦，却是通往成功的必由之路"。</p>
+  </div>
+
+  <div class="module-card" style="margin-top:12px">
+    <h4>模板五：论据补充判断（适用Q21）</h4>
+    <p><strong>格式：</strong>合适/不合适（1分）。理由：第__段的分论点是"__"（1分），该材料中__（概括论据内容），与分论点__（阐明逻辑关系）（1分）。</p>
+    <p><strong>本题示范：</strong>合适。理由：第⑥段的分论点是"破茧之苦，在于不改初衷的坚持"，强调成才需要长期坚持与刻苦磨砺。王羲之数十年坚持临池学书，勤学不辍，最终成为"书圣"，这一事例紧扣"长期坚持、刻苦磨砺方能成才"的观点，与段落分论点高度契合，能够有力支撑本段论证。</p>
+  </div>
+</section>
+
+<footer>
+  <p>万唯黑卷·语文试卷深度分析 | 基于OCR文本+参考答案 | 五维分析模型 | 生成时间：2025年6月</p>
+</footer>
+
+</div>
+</body>
+</html>
