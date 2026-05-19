@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>万唯白卷·物理深度分析</title>
+<style>
+:root{--bg:#f2f6fb;--text:#132033;--primary:#1f5b99;--muted:#5a6f86;--line:#c9d6e6;--card:#fbfdff;}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;background:var(--bg);color:var(--text);line-height:1.75}
+.container{width:min(1120px,92vw);margin:24px auto 48px}
+header{background:linear-gradient(135deg,rgba(31,91,153,.12),rgba(251,253,255,.96));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:22px 24px}
+h1{margin:0 0 6px;color:var(--primary);font-size:clamp(1.6rem,2.6vw,2.2rem)}.sub{color:var(--muted)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chip{font-size:.86rem;color:var(--muted);border:1px solid var(--line);background:#fff;padding:3px 10px;border-radius:999px}
+nav{margin:16px 0 22px;display:flex;gap:8px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--muted);border:1px solid var(--line);background:#fff;padding:4px 12px;border-radius:999px}nav a.active,nav a:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+section{background:rgba(251,253,255,.92);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+h2{margin:0 0 12px;color:var(--primary);font-size:1.22rem;border-bottom:1px solid #dce6f2;padding-bottom:7px}h3{margin:14px 0 8px;color:#244e83;font-size:1.03rem}
+table{width:100%;border-collapse:collapse;font-size:.88rem;background:#fff}th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top}th{background:#e7effa;color:#1f4678;text-align:left}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.kpi-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}.kpi-n{font-size:1.18rem;font-weight:700;color:var(--primary)}.kpi-l{font-size:.84rem;color:var(--muted)}
+.note{margin-top:10px;padding:12px;border:1px solid #dce6f2;background:#eef4fc;border-left:4px solid var(--primary);border-radius:8px}
+footer{margin-top:24px;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>万唯白卷·物理深度分析</h1>
+  <div class="sub">2026辽宁中考考前密卷 | 六维模型：结构-逐题-板块-实验-DNA-作战</div>
+  <div class="meta">
+    <span class="chip">选择答案：1-5 BBCAB，6-9 C / BD / AD / BCD</span>
+    <span class="chip">实验与综合：24分 + 22分</span>
+    <span class="chip">考试结构：24题，80分</span>
+  </div>
+</header>
+
+<nav>
+  <a href="万唯黑卷_物理分析.html">黑卷分析</a>
+  <a class="active" href="万唯白卷_物理分析.html">白卷分析</a>
+  <a href="万唯黑白卷_物理交叉分析.html">交叉分析</a>
+</nav>
+
+<section>
+  <h2>一、骨架图·结构解剖</h2>
+  <div class="kpi">
+    <div class="kpi-card"><div class="kpi-n">80分</div><div class="kpi-l">总分</div></div>
+    <div class="kpi-card"><div class="kpi-n">24题</div><div class="kpi-l">总题量</div></div>
+    <div class="kpi-card"><div class="kpi-n">24分</div><div class="kpi-l">实验题</div></div>
+    <div class="kpi-card"><div class="kpi-n">22分</div><div class="kpi-l">综合题</div></div>
+    <div class="kpi-card"><div class="kpi-n">57.5%</div><div class="kpi-l">实验+综合占比</div></div>
+  </div>
+  <table>
+    <tr><th>题型</th><th>题号</th><th>分值</th><th>本卷特征</th></tr>
+    <tr><td>选择题</td><td>1-9</td><td>18</td><td>电学图像综合(Q9) + 体育/生活/电路场景</td></tr>
+    <tr><td>填空题</td><td>10-15</td><td>12</td><td>电磁波、热值、电池能量、漏刻浮体压强</td></tr>
+    <tr><td>作图题</td><td>16-17</td><td>4</td><td>杠杆最小力+凸透镜光路</td></tr>
+    <tr><td>实验题</td><td>18-21</td><td>24</td><td>热学/平面镜/电学/密度测量</td></tr>
+    <tr><td>综合题</td><td>22-24</td><td>22</td><td>滑轮组+电热水壶+智能温控系统</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>二、逐题档案·考点定位</h2>
+  <h3>选择题主线</h3>
+  <table>
+    <tr><th>题号</th><th>板块</th><th>核心公式/概念</th><th>思想方法</th><th>难度</th></tr>
+    <tr><td>1-4</td><td>半导体/声学/平面镜/汽化</td><td>基础概念判断</td><td>模型法+生活迁移</td><td>★☆☆</td></tr>
+    <tr><td>5-6</td><td>内燃机类比+并联电路判断</td><td>能量转化、P=UI</td><td>等效替代</td><td>★★☆</td></tr>
+    <tr><td>7-8</td><td>足球运动+电磁应用</td><td>平衡力、摩擦力、电磁原理</td><td>受力分析+现象归因</td><td>★★☆</td></tr>
+    <tr><td>9</td><td>酒精测试仪</td><td>U=IR、P=UI、动态分压</td><td>图像法+区间讨论</td><td>★★★</td></tr>
+  </table>
+
+  <h3>填空与作图要点</h3>
+  <table>
+    <tr><th>模块</th><th>代表题</th><th>关键得分点</th></tr>
+    <tr><td>填空基础</td><td>10-12</td><td>电磁波/热值/故障处理与安全用电</td></tr>
+    <tr><td>能量计算</td><td>14</td><td>Ah与焦耳换算、充电时间估算</td></tr>
+    <tr><td>填空压轴</td><td>15</td><td>浮体受力、压强相等条件、体积变化速率</td></tr>
+    <tr><td>作图</td><td>16-17</td><td>杠杆最小力方向、凸透镜三条特殊光线</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>三、板块透视·知识地图</h2>
+  <table>
+    <tr><th>板块</th><th>涉及题号</th><th>估算分值</th><th>占比</th></tr>
+    <tr><td>力学</td><td>7,15,16,22</td><td>约23分</td><td>29%</td></tr>
+    <tr><td>电学</td><td>6,8,9,10,14,20,24</td><td>约26分</td><td>33%</td></tr>
+    <tr><td>光学</td><td>3,17,19</td><td>约11分</td><td>14%</td></tr>
+    <tr><td>热学</td><td>4,5,11,18,23</td><td>约16分</td><td>20%</td></tr>
+    <tr><td>声学及其他</td><td>2,12,13</td><td>约4分</td><td>4%</td></tr>
+  </table>
+  <div class="note">白卷电学权重略高于黑卷，且综合题24继续保留STEM控制系统，具备较强区分度。</div>
+</section>
+
+<section>
+  <h2>四、实验深剖·探究解码</h2>
+  <table>
+    <tr><th>题号</th><th>实验主题</th><th>类型</th><th>核心能力点</th><th>易错点</th></tr>
+    <tr><td>18</td><td>比较不同物质吸热能力</td><td>探究型</td><td>控制变量法、读温度计、比热容应用</td><td>“加热时间等于吸热量”表述漏条件</td></tr>
+    <tr><td>19</td><td>平面镜成像特点</td><td>探究型</td><td>镜面定位、像物等大、对称规律表达</td><td>“反射成像”与“折射成像”混淆</td></tr>
+    <tr><td>20</td><td>探究电流与电阻关系</td><td>探究型</td><td>改错电路、控压法、反比关系、拓展测阻</td><td>电压表位置和开关组合易错</td></tr>
+    <tr><td>21</td><td>测量液体密度</td><td>测量型</td><td>天平调平、量简读数、误差分析、方法评价</td><td>烧杯壁残留液体对结果影响判断错误</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>五、命题DNA与冲刺策略</h2>
+  <h3>命题DNA</h3>
+  <table>
+    <tr><th>观察</th><th>具体表现</th><th>备考启示</th></tr>
+    <tr><td>生活科技情境密集</td><td>长征火箭、酒精检测、地下车库新风、漏刻模型</td><td>知识点要会“用情境语言复述”</td></tr>
+    <tr><td>实验题更强调规范表达</td><td>19和20题有较多“文字表述+电路改错”</td><td>术语表达要精准，步骤不能口语化</td></tr>
+    <tr><td>电学区分度稳定</td><td>Q9动态电路、Q20控压实验、Q24控制系统</td><td>电学需形成“公式链+电路图”双通道</td></tr>
+    <tr><td>综合题过程分权重大</td><td>22、23计算步骤多</td><td>先公式后代入，单位规范可稳分</td></tr>
+  </table>
+
+  <h3>作战地图</h3>
+  <table>
+    <tr><th>优先级</th><th>任务</th><th>目标</th></tr>
+    <tr><td>P1</td><td>20题电学实验反复演练</td><td>6分保4+</td></tr>
+    <tr><td>P2</td><td>22-23综合计算规范书写</td><td>过程分损失≤1分/题</td></tr>
+    <tr><td>P3</td><td>9题酒精测试仪模型训练</td><td>动态电路多选稳定拿1-2分</td></tr>
+    <tr><td>P4</td><td>19题平面镜实验术语背诵</td><td>实验表述题不失分</td></tr>
+  </table>
+  <div class="note"><strong>白卷结论：</strong>本卷“电学+实验规范表达”是决定分数层级的关键，计算题过程分与电路分析能力要同步强化。</div>
+</section>
+
+<footer>万唯白卷·物理分析 | 2026辽宁中考冲刺</footer>
+</div>
+</body>
+</html>
