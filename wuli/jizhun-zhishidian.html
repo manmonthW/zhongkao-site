@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>物理基线知识点总览（大连一模）</title>
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+.page-head { margin-bottom: 14px; }
+.page-head .sub { color: #6b6257; margin-top: 6px; }
+.note-box { border-left: 4px solid #2e4a8b; background: #fbf8f1; border: 1px solid #d9cfbf; border-left-width: 4px; border-radius: 10px; padding: 12px 14px; margin: 10px 0 16px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 10px; margin: 12px 0; }
+.kv .card { background: #fbf8f1; border: 1px solid #d9cfbf; border-radius: 10px; padding: 10px 12px; }
+.kv .k { color: #6b6257; font-size: 12px; }
+.kv .v { color: #2e4a8b; font-size: 18px; font-weight: 700; margin-top: 3px; }
+.table-wrap { overflow-x: auto; }
+.module-box { border: 1px solid #d9cfbf; border-radius: 10px; padding: 14px; margin: 12px 0; background: #fbf8f1; }
+.module-box h4 { border-bottom: 2px solid #2e4a8b; padding-bottom: 8px; margin-bottom: 10px; color: #2e4a8b; }
+.point-item { margin: 8px 0; padding: 8px; background: white; border-left: 3px solid #5a7db4; padding-left: 10px; }
+.point-title { font-weight: 600; color: #2c2c2c; }
+.point-desc { font-size: 13px; color: #666; margin-top: 3px; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <nav>
+      <a href="../jijiu/index.html">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="../shuxue/index.html">数学</a>
+      <a href="index.html" class="active">物理</a>
+      <a href="../huaxue/index.html">化学</a>
+      <a href="../yingyu/index.html">英语</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">首页</a> / <a href="index.html">物理</a> / 基线知识点总览</div>
+
+<div class="container">
+  <div class="subject-hero page-head">
+    <h1>大连一模基线 · 物理知识点总览</h1>
+    <div class="sub">重应试版本：只保留可直接提分的分析结论（已考重点、未考高价值点、两张矩阵）</div>
+  </div>
+
+  <h2 class="section-title">A. 基线画像（先看这部分）</h2>
+  <div class="kv">
+    <div class="card"><div class="k">总分</div><div class="v">80分</div></div>
+    <div class="card"><div class="k">总题量</div><div class="v">24题</div></div>
+    <div class="card"><div class="k">考试形式</div><div class="v">物化合卷</div></div>
+    <div class="card"><div class="k">建议用时</div><div class="v">70-80分钟</div></div>
+    <div class="card"><div class="k">核心分布</div><div class="v">实验30% · 综合27.5%</div></div>
+    <div class="card"><div class="k">难度分布</div><div class="v">基础55% · 中档28% · 压轴17%</div></div>
+  </div>
+
+  <div class="note-box">
+    <strong>核心认知：</strong>大连一模物理试卷24题80分，与辽宁省卷结构**完全对齐**。题型分布：选择9题(Q1-Q9，18分)、填空6题(Q10-Q15，12分)、作图2题(Q16-Q17，4分)、实验4题(Q18-Q21，24分)、综合3题(Q22-Q24，22分)。**实验题24分占比30%，综合题22分占比27.5%——两大分值堡垒**。选择压轴Q9(压强多选)，填空压轴Q15(电路综合计算)，综合压轴Q23(电热水器9分)。难度均衡：基础题55%、中档题28%、压轴题17%。
+  </div>
+
+  <h2 class="section-title">B. 已考重点（五大板块分析）</h2>
+
+  <div class="module-box">
+    <h4>📊 五大板块分值分布</h4>
+    <div class="kv">
+      <div class="card">
+        <div class="k">力学</div>
+        <div class="v" style="color: #5a7db4;">~27分(34%)</div>
+      </div>
+      <div class="card">
+        <div class="k">电学</div>
+        <div class="v" style="color: #5a7db4;">~25分(31%)</div>
+      </div>
+      <div class="card">
+        <div class="k">光学</div>
+        <div class="v">~10分(13%)</div>
+      </div>
+      <div class="card">
+        <div class="k">热学</div>
+        <div class="v">~10分(13%)</div>
+      </div>
+      <div class="card">
+        <div class="k">声学</div>
+        <div class="v">~2分(3%)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>🔧 板块一：力学（27分，34%）【主战场】</h4>
+    <div class="point-item">
+      <div class="point-title">选择Q1 参照物与运动相对性</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：参照物概念、运动相对性 | 题型：概念辨析 | 关键：乘客相对路边站牌后退(理解参照物选择)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">选择Q3 惯性与重力势能变化</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：惯性不是力、重力势能与高度关系 | 题型：过程分析 | 关键：实心球运动轨迹判断(水平抛出后h↓→Ep↓)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">选择Q5 杠杆分类(费力vs省力)</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：动力臂与阻力臂关系 | 题型：概念辨析 | 关键：四种工具判断(动力臂<阻力臂→费力)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">选择Q9 **压强综合多选【压轴】</div>
+      <div class="point-desc">难度：★★★ 高 | 考查：圆柱体A+正方体B压强、图像分析 | 题型：多选+图像法 | 难点：p=mg/S与密度ρ=m/V的关系、截取质量m影响压强的p-m曲线分析</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">填空Q11 深海压强与浮力变化</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：p=ρgh(深度↑→p↑)、F浮=ρ液gV排 | 关键：下潜时压强变大、浮力不变(排水体积不变)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">填空Q13 研墨摩擦与分子扩散</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：增大压力增大摩擦、分子扩散 | 关键：文房四宝研墨示例的两个原理</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">填空Q14 大气压与胶头滴管</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：大气压应用、气体压强与体积反比关系 | 关键：大气压>管内气压(吸液)、体积减小压强增大(逆向思维)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">作图Q16 光的反射作图</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：反射定律应用、入射角=反射角 | 关键：定日镜反射太阳光到吸热塔，标出入射角度数</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">实验Q21 盐水密度测量</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：天平测量、体积读数、密度计算 | 关键：天平调平、量筒读数精确、ρ=m/V计算、自制密度计原理比较</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">综合Q22 动滑轮提升建材</div>
+      <div class="point-desc">难度：★☆☆→★★☆ | 考查：重力G=mg、有用功W有=Gh、功率P=Fs/t | 3问递进：①计算重力②估算功③求功率</div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>⚡ 板块二：电学（25分，31%）【主战场】</h4>
+    <div class="point-item">
+      <div class="point-title">选择Q4 电磁感应现象</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：磁铁穿过线圈→发光(动生电动势) | 题型：概念辨析 | 关键：自制手电筒原理</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">选择Q8 **CO浓度检测电路【多选】</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：电磁铁磁极判定、气敏电阻、串联分压、弹性势能 | 难点：多项混合判断、电磁继电器原理</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">填空Q15 **电路综合计算【填空压轴】</div>
+      <div class="point-desc">难度：★★★ 高 | 考查：R₁=20Ω已知、电表指针正中间→求R₂和电压 | 难点：U=IR串联应用、电表量程分析、换接电表后重新计算</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">作图Q17 家庭电路接线</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：开关接火线、灯泡接法、安全用电 | 关键：三孔插座接地线、开关控制灯泡</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">实验Q20 欧姆定律验证</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：补连电路、滑片方向、画I-U图像、结论、故障排查 | 关键：6分分布：补连电路(2分)→滑片方向(1分)→图像(2分)→结论(1分)</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">综合Q23 **家用电热水器【9分压轴】</div>
+      <div class="point-desc">难度：★★☆→★★★ | 考查：电功率P=UI、阻值R=U²/P、电热Q=I²Rt、热量Q=cmΔt、效率η | 4问递进：①标准档求电流②快速档求阻值③加热时间④比较两档效率 | **全卷单题最高分**</div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>💡 板块三：光学（10分，13%）</h4>
+    <div class="point-item">
+      <div class="point-title">选择Q2 光学现象辨析</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：光的反射/折射/直线传播 | 题型：现象辨析 | 关键：杯弓蛇影/海市蜃楼/立竿见影/凿壁借光的物理本质</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">实验Q18 凸透镜成倒立缩小实像</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：焦距测量、三心同高、成像规律 | 关键：调节光具座直到像最清晰、测焦距、分析像距变化趋势(u↑→v↓)</div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>🔥 板块四：热学（10分，13%）</h4>
+    <div class="point-item">
+      <div class="point-title">选择Q6 内能知识梳理</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：内能改变方式(热传递/功)、热值/比热容概念 | 题型：概念辨析 | 关键：扩散现象/分子动理论</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">填空Q12 保鲜袋静电与蒸发</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：同种电荷排斥、蒸发影响因素 | 关键：静电+蒸发两个原理</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">实验Q19 防冻液凝固特性探究</div>
+      <div class="point-desc">难度：中档 ★★☆ | 考查：凝固温度判断、晶体vs非晶体、凝华现象 | 关键：试管放置位置、温度记录、放热确认</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">综合Q24 无链条电动自行车</div>
+      <div class="point-desc">难度：★★☆→★★★ | 考查：齿轮啮合方向、能量密度、效率η=W有/W总、锂电池原理 | 4问递进：题型综合跨学科(力学+电学+能源)</div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>🔊 板块五：声学（2分，3%）</h4>
+    <div class="point-item">
+      <div class="point-title">填空Q10 声纹锁原理</div>
+      <div class="point-desc">难度：基础 ★☆☆ | 考查：声音产生条件(振动)、音色辨别 | 关键：声带振动→不同音色→无法解锁</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">C. 未考或覆盖不足的高价值点</h2>
+
+  <div class="note-box" style="background: #fef5f5; border-left-color: #2e4a8b;">
+    <strong>风险提示：</strong>这些知识块在一模中缺席或权重低，但从往年看二模有补考迹象。
+  </div>
+
+  <div class="module-box">
+    <div class="point-item">
+      <div class="point-title">🔴 高 | 电功率的串并联应用题型</div>
+      <div class="point-desc">一模中电热水器单题高分，但未单独考查串联分压/并联分流的综合应用 | 预测：二模可能在综合题中增加电器并联分组控制题型 | 复习建议：掌握P=UI与R=U²/P双向应用，串并联功率分配</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">🟡 中 | 机械效率(η>0.5)临界问题</div>
+      <div class="point-desc">一模Q22只涉及简单功率计算，未涉及η的临界值判断(定滑轮η<100%,动滑轮η≈50%的工程意义) | 复习建议：理解各种机械的典型η值范围</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">🟡 中 | 浮力的利用题(造船/潜水艇沉浮原理)</div>
+      <div class="point-desc">Q11仅考查浮力不变，未考浮力利用的工程实际 | 复习建议：理解排水量法、充放水原理</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">D. 题型-能力映射矩阵</h2>
+
+  <div class="table-wrap">
+    <table style="border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 12px;">
+      <thead>
+        <tr style="background: #fbf8f1;">
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left; width: 100px;">题型分类</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">分值/题数</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">核心能力要求</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">答题难点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>选择(Q1-Q9)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">18分/9题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【概念辨析】理解物理概念准确性<br/>【图像分析】读图能力(Q9压强多选)<br/>【系统判断】综合信息分析能力</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q9是选择压轴，需对比两物体的p-m关系曲线</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>填空(Q10-Q15)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">12分/6题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【简明表述】精准填空，不允许冗长<br/>【单步计算】Q15电路综合(Q15压轴)<br/>【概念辨析】物理现象理解</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q15需三步推导：电表指针→电压→阻值，且换接电表后数值改变</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>作图(Q16-Q17)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">4分/2题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【图形作图】准确绘制几何图形<br/>【原理应用】反射定律、安全用电</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q16入射角标记需准确(标度尺辅助)</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>实验(Q18-Q21)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">24分/4题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【完整探究链】问题→方案→证据→结论<br/>【操作规范】仪器使用正确<br/>【数据处理】读数、计算、作图</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q20欧姆定律实验的I-U图像需正确作图；Q21密度测量需精确读数</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>综合(Q22-Q24)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">22分/3题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【公式链条】G=mg→W=Fs→P=W/t逐步递进<br/>【情境分析】理解实际应用中的物理过程<br/>【多步计算】综合应用3个以上公式</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q23电热水器需区分标准档vs快速档，两档参数不同</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">E. 知识点覆盖率统计</h2>
+
+  <div class="table-wrap">
+    <table style="border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 12px;">
+      <thead>
+        <tr style="background: #fbf8f1;">
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left; width: 140px;">知识块</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">一模覆盖</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">表现形式</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">预测二模</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #fff5e6;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>力学·动力学基础</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a7db4; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q1(参照物)、Q3(惯性)、Q11(压强)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>电学·欧姆定律</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a7db4; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q15(填空)、Q20(实验)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>光学·反射与透镜</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a7db4; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q2(选择)、Q16(作图)、Q18(实验)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>热学·热传递与比热容</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a7db4; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q6(选择)、Q19(实验)、Q23(综合)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>实验·四板块全覆盖</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a7db4; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q18(光)、Q19(热)、Q20(电)、Q21(力)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">F. 结论导向 · 应试行动清单</h2>
+
+  <div class="note-box" style="background: #e8f5e9; border-left-color: #2e4a8b;">
+    <strong>✅ 本周最小行动（5条，可直接提分）</strong>
+  </div>
+
+  <div style="margin: 16px 0;">
+    <div class="point-item" style="border-left-color: #2e4a8b; background: #f1f8f5;">
+      <div class="point-title">1. 压轴题突破：Q9压强多选 + Q15电路 + Q23电热水器 = 20分</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        内容：三大压轴题覆盖"图像法"(Q9)、"多步推导"(Q15)、"公式链"(Q23)<br/>
+        行动：每天精练一题(含尝试→对答案→理解错因→变式训练)，3天一轮，共3轮<br/>
+        预期收益：从14-16分 → 18-20分 +4-6分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #2e4a8b; background: #f1f8f5;">
+      <div class="point-title">2. 实验题得分最大化：Q18+Q19+Q20+Q21 = 24分</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        分工：四大板块各1题(光18+热19+电20+力21)，务求得分最高<br/>
+        关键板块：Q20欧姆定律实验的图像作图(易失分)、Q21密度测量的读数准确(易出错)<br/>
+        行动：每题对标官方评分标准，逐项检查回答完整性(原理→操作→数据→结论)<br/>
+        预期收益：从18-20分 → 22-24分 +2-6分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #2e4a8b; background: #f1f8f5;">
+      <div class="point-title">3. 选择题基础保底：Q1-Q8各小题逐条理解</div>
+      <div class="point-desc">
+        优先级：🟡 中<br/>
+        目标：Q1-Q8力争16/16分(只允许Q9多选失1分)<br/>
+        方法：逐题分析物理概念准确性、典型错因、变式演练<br/>
+        预期收益：从14-15分 → 16-17分 +1-3分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #2e4a8b; background: #f1f8f5;">
+      <div class="point-title">4. 填空题精准表述：Q10-Q14确保全对，Q15逐步突破</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        分工：①Q10-Q14各1分，力求满分(5分)②Q15电路计算2分，拆解三步推导<br/>
+        易错点：填空不能过冗长、数值单位必须对应、推导过程不能省步<br/>
+        预期收益：从9-10分 → 11-12分 +1-3分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #2e4a8b; background: #f1f8f5;">
+      <div class="point-title">5. 综合题稳中求进：Q22(基础7分) + Q23(压轴9分) + Q24(综合6分)</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        分工：Q22争7分(相对容易)、Q23争7-8分(电热计算复杂，但价值大)、Q24争5-6分(STEM综合降低失分风险)<br/>
+        核心：建立"情境→分析→公式链→逐步计算→检验"的完整流程<br/>
+        预期收益：从16-18分 → 20-22分 +2-6分
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="background: #fff3e0; border-left-color: #ff9800; margin-top: 20px;">
+    <strong>⚠️ 高频失分陷阱（做题时避免）</strong><br/>
+    <ul style="margin: 10px 0; padding-left: 16px; font-size: 13px;">
+      <li><strong>陷阱 1：</strong>多选题部分选项混淆 → Q9图像分析时混淆两物体的p-m曲线斜率意义</li>
+      <li><strong>陷阱 2：</strong>电路计算中单位混淆 → 功率单位(W)、热量单位(J)、温升单位(°C)必须对应</li>
+      <li><strong>陷阱 3：</strong>实验读数估不准 → Q21密度测量中量筒读数常错(需读到0.1mL)</li>
+      <li><strong>陷阱 4：</strong>公式套用不当 → Q23电热水器标准档vs快速档参数不同，不能混用公式</li>
+      <li><strong>陷阱 5：</strong>推导过程省步 → 综合题写答案时必须过程完整(推导可见，不能只写答案)</li>
+      <li><strong>陷阱 6：</strong>时间分配不当 → 建议选填作图35分钟、实验综合40-45分钟</li>
+    </ul>
+  </div>
+
+  <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #d9cfbf; color: #666; font-size: 12px;">
+    <p><strong>数据源：</strong>基于大连一模物理试卷 24 题 80 分卷面完整分析（物化合卷，150分钟总时长）</p>
+    <p><strong>结构特征总结：</strong>①与省卷结构完全对齐②实验30%+综合27.5%双堡垒③基础55%+中档28%+压轴17%难度均衡④力学34%+电学31%=65%主战场⑤四大实验板块全覆盖</p>
+    <p><strong>更新日期：</strong>一模后整理</p>
+  </div>
+</div>
+
+</body>
+</html>
