@@ -6,3 +6,6 @@ __pycache__/
 # 临时文件
 *.Zone.Identifier
 output_custom.txt
+
+# 备份目录
+site_backup
