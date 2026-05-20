@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>数学基线知识点总览（大连一模）</title>
+<link rel="stylesheet" href="../css/main.css" />
+<style>
+.page-head { margin-bottom: 14px; }
+.page-head .sub { color: #6b6257; margin-top: 6px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #f5ede1; color: #6d4c41; font-size: 12px; margin-right: 6px; }
+.note-box { border-left: 4px solid #1a5276; background: #fbf8f1; border: 1px solid #d9cfbf; border-left-width: 4px; border-radius: 10px; padding: 12px 14px; margin: 10px 0 16px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 10px; margin: 12px 0; }
+.kv .card { background: #fbf8f1; border: 1px solid #d9cfbf; border-radius: 10px; padding: 10px 12px; }
+.kv .k { color: #6b6257; font-size: 12px; }
+.kv .v { color: #1a5276; font-size: 18px; font-weight: 700; margin-top: 3px; }
+.table-wrap { overflow-x: auto; }
+.module-box { border: 1px solid #d9cfbf; border-radius: 10px; padding: 14px; margin: 12px 0; background: #fbf8f1; }
+.module-box h4 { border-bottom: 2px solid #1a5276; padding-bottom: 8px; margin-bottom: 10px; color: #1a5276; }
+.point-item { margin: 8px 0; padding: 8px; background: white; border-left: 3px solid #5a9bd5; padding-left: 10px; }
+.point-title { font-weight: 600; color: #2c2c2c; }
+.point-desc { font-size: 13px; color: #666; margin-top: 3px; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="logo" href="../index.html">王笑の备考站</a>
+    <nav>
+      <a href="../jijiu/index.html">冲刺加油站</a>
+      <a href="../yuwen/index.html">语文</a>
+      <a href="index.html" class="active">数学</a>
+      <a href="../wuli/index.html">物理</a>
+      <a href="../huaxue/index.html">化学</a>
+      <a href="../yingyu/index.html">英语</a>
+      <a href="../lishi/index.html">历史</a>
+      <a href="../daofa/index.html">道法</a>
+    </nav>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="../index.html">首页</a> / <a href="index.html">数学</a> / 基线知识点总览</div>
+
+<div class="container">
+  <div class="subject-hero page-head">
+    <h1>大连一模基线 · 数学知识点总览</h1>
+    <div class="sub">重应试版本：只保留可直接提分的分析结论（已考重点、未考高价值点、两张矩阵）</div>
+  </div>
+
+  <h2 class="section-title">A. 基线画像（先看这部分）</h2>
+  <div class="kv">
+    <div class="card"><div class="k">试卷结构</div><div class="v">23题 / 120分</div></div>
+    <div class="card"><div class="k">题型分布</div><div class="v">选择10 + 填空5 + 解答8</div></div>
+    <div class="card"><div class="k">分差拉开点</div><div class="v">压轴题20分</div></div>
+    <div class="card"><div class="k">压轴顺序</div><div class="v">Q22代数 · Q23几何</div></div>
+    <div class="card"><div class="k">难度梯度</div><div class="v">基础56% + 中档27% + 压轴17%</div></div>
+    <div class="card"><div class="k">主观题占比</div><div class="v">62.5% (75分)</div></div>
+  </div>
+
+  <div class="note-box">
+    <strong>核心认知：</strong>大连卷 23 题结构与标准辽宁省卷(25题)略有差异——填空5题而非6题、解答8题而非9题。<strong>核心特征：</strong>①压轴题创新排序（Q22代数压轴 Q23几何压轴，与常规相反）②第21题综合与实践(吸管乐器) ③基础题比例略低(56%)，压轴题比例相对较高(17%)。分差主要在压轴题(20分)和中档题(33分)。
+  </div>
+
+  <h2 class="section-title">B. 已考重点（按题型统计）</h2>
+
+  <div class="module-box">
+    <h4>📊 题型分值分布</h4>
+    <div class="kv">
+      <div class="card">
+        <div class="k">选择题</div>
+        <div class="v" style="color: #5a9bd5;">30分(10题)</div>
+      </div>
+      <div class="card">
+        <div class="k">填空题</div>
+        <div class="v">15分(5题)</div>
+      </div>
+      <div class="card">
+        <div class="k">解答题</div>
+        <div class="v" style="color: #5a9bd5;">75分(8题)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>🔢 板块一：选择题（30分，10题）</h4>
+    <div class="point-item">
+      <div class="point-title">Q1-4 基础运算（3分×4）</div>
+      <div class="point-desc">正负数、科学记数法、整式运算、三视图 | 难度：基础 | 特点：地面一块必做</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q5-7 几何+统计（3分×3）</div>
+      <div class="point-desc">对称图形判断(轴对称+中心对称)、平行线角度、方差比较 | 难度：基础-中档 | 易错：对称图形需逐一检验；方差的意义</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q8-10 应用+函数（3分×3）</div>
+      <div class="point-desc">《算学启蒙》追及方程、二次函数图像判断、反比例函数性质 | 难度：中档 | 高频陷阱：反比例系数k与图像位置的关系</div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>✍️ 板块二：填空题（15分，5题）</h4>
+    <div class="point-item">
+      <div class="point-title">Q11-15 含参运算与数形结合</div>
+      <div class="point-desc">
+        Q11: 含参整式求值 | Q12: 平面直角坐标系中点坐标 | Q13: 圆周角性质 | Q14: 统计频率计算 | Q15: 图形运动(动点轨迹)<br/>
+        <strong>总特征：</strong>填空题不求过程，只填答案，但难度梯度与解答题接近 | <strong>易错点：</strong>坐标标记、频率vs频数混淆、圆周角与圆心角关系
+      </div>
+    </div>
+  </div>
+
+  <div class="module-box">
+    <h4>📐 板块三：解答题（75分，8题）</h4>
+    <div class="point-item">
+      <div class="point-title">Q16 实数综合（10分）</div>
+      <div class="point-desc">根号化简、分式求值、绝对值 | 难度：基础 | 必分点：化简步骤清晰、分母有理化</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q17 应用题（8分）- 数码产品补贴</div>
+      <div class="point-desc">一次函数与方程、增长率、不等式应用 | 难度：基础-中档 | 关键：审题准确、理解"每件优惠x元"的表述</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q18 统计图表（8分）</div>
+      <div class="point-desc">频数分布表、直方图作图、总体估计 | 难度：基础 | 易错：频率/组距计算、直方图纵轴含义</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q19 分段函数（8分）- 园林队绿化</div>
+      <div class="point-desc">分段函数表达式、求值、应用 | 难度：中档 | 难点：读懂分段条件、函数单调性判断</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q20 圆的综合（8分）</div>
+      <div class="point-desc">内接四边形性质、圆的切线证明与计算 | 难度：中档 | 关键考点：圆内接四边形对角互补、切线的性质定理</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q21 综合与实践（8分）- 吸管乐器</div>
+      <div class="point-desc">反比例函数建模、数据分析、应用意识 | 难度：中档 | 亮点题型：与物理声学结合，考查数学建模思想</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q22 抛物线综合（12分）【代数压轴】</div>
+      <div class="point-desc">二次函数解析式、坐标几何、面积计算、存在性问题 | 难度：高 | 压轴特点：通常分3小问(求抛物线→求特殊点→存在性)+第④小问拓展</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">Q23 等腰三角形综合（13分）【几何压轴】</div>
+      <div class="point-desc">等腰三角形性质、相似三角形、直角、计算 | 难度：高 | 压轴特点：证明+计算混合，通常需要添加辅助线或利用相似与勾股定理</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">C. 未考或覆盖不足的高价值点</h2>
+
+  <div class="note-box" style="background: #fef5f5; border-left-color: #1a5276;">
+    <strong>风险提示：</strong>这些知识块在一模中缺席或权重低，但从往年看二模有补考迹象。
+  </div>
+
+  <div class="module-box">
+    <div class="point-item">
+      <div class="point-title">🔴 高 | 因式分解与分式方程</div>
+      <div class="point-desc">一模未出现独立的因式分解题或分式方程应用题 | 预测：二模在解答题中补考可能性高 | 复习建议：掌握"十字相乘法、分组分解"；分式方程的增根检验</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">🔴 高 | 解直角三角形与立体几何</div>
+      <div class="point-desc">一模古诗文缺少独立的"解直角三角形"应用题，立体几何仅体现在三视图中 | 预测：二模可能在解答题补考(如斜坡问题) | 复习建议：三角函数值与实际应用的转化</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">🟡 中 | 逻辑推理与数学归纳</div>
+      <div class="point-desc">一模未体现"数列规律、图形规律"的归纳题 | 预测：概率不高，但选择题或填空题可能出现 | 复习建议：观察图形/数字序列，总结第n项通项</div>
+    </div>
+    <div class="point-item">
+      <div class="point-title">🟡 中 | 不等式组与线性规划(拓展)</div>
+      <div class="point-desc">一模无线性规划专题题，不等式组仅在应用题中涉及 | 预测：中职/高职升学方向可能补考 | 复习建议：掌握"可行域的画法"即可，中考概率低</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">D. 题型-能力映射矩阵</h2>
+
+  <div class="table-wrap">
+    <table style="border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 12px;">
+      <thead>
+        <tr style="background: #fbf8f1;">
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left; width: 120px;">题型分类</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">分值/数量</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">核心能力要求</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">答题难点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>选择题</strong>(Q1-10)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">30分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【快速判断】4选1的选择<br/>【计算】简化运算、验算<br/>【数形结合】图像与性质</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q5对称图形遗漏、Q7方差概念混淆、Q10反比例系数与图像位置</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>填空题</strong>(Q11-15)</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">15分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【准确计算】无过程，只填答案<br/>【知识整合】多个知识点<br/>【空间想象】坐标与图形</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q12坐标符号易错、Q13圆周角定理应用、Q14频率计算</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>解答Q16</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">10分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【分解】根号化简、分母有理化<br/>【规范】分步骤、每步有依据</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">化简过程的完整性、分母有理化判断</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>应用Q17-19</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">24分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【建模】文字→方程/函数<br/>【推导】逐步求解、合理性检验<br/>【分析】统计图表的理解</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">审题准确性、增长率与百分数混淆、频率/组距计算</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>几何Q20</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">8分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【性质】圆内接四边形、切线<br/>【证明】演绎推理链条<br/>【计算】勾股+相似</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">切线性质与判定混淆、辅助线的选择</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>建模Q21</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">8分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【转化】实际→数学模型<br/>【分析】函数性质的应用<br/>【表达】清晰的解题思路</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">建模过程的严谨性、参数含义的理解</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>压轴Q22(代数)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">12分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【构造】二次函数表达式<br/>【坐标】点的坐标与距离<br/>【存在】分情况讨论<br/>【拓展】第④小问创新思维</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">分类讨论的完整性、坐标计算中的符号错误</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>压轴Q23(几何)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">13分</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">【证明】几何推理的严谨<br/>【计算】相似+勾股定理<br/>【辅助线】几何美感<br/>【分类】等腰特殊位置讨论</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">辅助线的添加、相似三角形的识别、角度关系的建立</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">E. 知识点覆盖率统计</h2>
+
+  <div class="table-wrap">
+    <table style="border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 12px;">
+      <thead>
+        <tr style="background: #fbf8f1;">
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left; width: 140px;">知识块</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">一模覆盖</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: left;">表现形式</th>
+          <th style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">预测二模</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #fff5e6;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>有理数与实数</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q1正负数、Q16实数化简</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>代数与方程</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q4整式、Q8追及方程、Q17应用题</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟠 可补考因式分解/分式方程</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>函数与图像</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q10反比例、Q19分段函数、Q22抛物线</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>平面几何</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q5对称、Q6平行线、Q20圆、Q23等腰三角形</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>统计与概率</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q7方差、Q14频率、Q18直方图</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>坐标与视图</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #5a9bd5; color: white;">✓</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">Q2三视图、Q12坐标系</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🟢 保持</td>
+        </tr>
+        <tr style="background: #f9f6f0;">
+          <td style="border: 1px solid #d9cfbf; padding: 8px;"><strong>立体几何(拓展)</strong></td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center; background: #d9cfbf;">~</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px;">仅在三视图间接涉及</td>
+          <td style="border: 1px solid #d9cfbf; padding: 8px; text-align: center;">🔴 补考可能(解直角三角形)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">F. 结论导向 · 应试行动清单</h2>
+
+  <div class="note-box" style="background: #e8f5e9; border-left-color: #1a5276;">
+    <strong>✅ 本周最小行动（5条，可直接提分）</strong>
+  </div>
+
+  <div style="margin: 16px 0;">
+    <div class="point-item" style="border-left-color: #1a5276; background: #f1f8f5;">
+      <div class="point-title">1. 压轴题分类突破 = 20分中争15分</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        分工：Q22抛物线准备"求解析式→求点→存在性"的标准框架；Q23等腰三角形准备"证明思路→相似/勾股→分情况"<br/>
+        行动：各做 3 套压轴题，重点关注"分类讨论"和"辅助线"<br/>
+        预期收益：压轴题从 7/25 → 15-18/25 +8-11 分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #1a5276; background: #f1f8f5;">
+      <div class="point-title">2. 选择题快速攻坚 = 30分中争28分</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        重点：Q5对称图形(逐一检验)、Q7方差(明确概念)、Q10反比例(k与象限关系)<br/>
+        行动：做 2 套完整模拟，计时 25-30 分钟，逐题复盘错误<br/>
+        预期收益：选择题得分率 → 27-30/30 +2-3 分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #1a5276; background: #f1f8f5;">
+      <div class="point-title">3. 中档解答题夯实 = 33分中争28分</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        内容：Q17应用题(读题准确)、Q18统计(频率/组距)、Q19分段函数(理解分段条件)、Q20圆(切线性质)<br/>
+        行动：逐题完整写出解答过程，形成"审题→列式→求解→验证"的习惯<br/>
+        预期收益：Q17-20 从 22/32 → 28-32/32 +6-10 分
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #1a5276; background: #f1f8f5;">
+      <div class="point-title">4. 基础计算无失分 = 45分保底不失手</div>
+      <div class="point-desc">
+        优先级：🔴 必做<br/>
+        内容：Q1-4基础题、Q11-15填空、Q16实数化简<br/>
+        行动：每天 10 分钟快速过一遍计算，关注"符号""分母有理化""频率公式"<br/>
+        预期收益：基础题保持 43-45/45 分 (失分 ≤ 2分)
+      </div>
+    </div>
+
+    <div class="point-item" style="border-left-color: #1a5276; background: #f1f8f5;">
+      <div class="point-title">5. 二模补考预案 = 因式分解+解直角三角形</div>
+      <div class="point-desc">
+        优先级：🟡 中<br/>
+        内容：十字相乘法因式分解(3-5 道题)、解直角三角形应用(2-3 道题)<br/>
+        行动：预留 1-2 天集中补课，防止二模突然出现<br/>
+        预期收益：二模适应周期缩短 +2-4 分防守分
+      </div>
+    </div>
+  </div>
+
+  <div class="note-box" style="background: #fff3e0; border-left-color: #ff9800; margin-top: 20px;">
+    <strong>⚠️ 高频失分陷阱（做题时避免）</strong><br/>
+    <ul style="margin: 10px 0; padding-left: 16px; font-size: 13px;">
+      <li><strong>陷阱 1：</strong>选择题草率选择 → 必须计算验证，尤其Q5对称图形要逐一检验</li>
+      <li><strong>陷阱 2：</strong>应用题审题不足 → 仔细读每一个条件，画出辅助图形</li>
+      <li><strong>陷阱 3：</strong>填空题无过程就写答案 → 容易出现计算错误，最好打草稿验证</li>
+      <li><strong>陷阱 4：</strong>圆的切线混淆判定与性质 → 判定用"垂直+经过半径端点"，性质用"垂直+相等"</li>
+      <li><strong>陷阱 5：</strong>统计题频率与频数混淆 → 频数是计数，频率=频数/总数</li>
+      <li><strong>陷阱 6：</strong>压轴题放弃前两小问 → 即使第③小问难，也要力争前两问基础分</li>
+    </ul>
+  </div>
+
+  <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #d9cfbf; color: #666; font-size: 12px;">
+    <p><strong>数据源：</strong>基于大连一模 23 题 120 分卷面完整分析</p>
+    <p><strong>结构特征总结：</strong>①压轴题顺序创新(Q22代数 Q23几何)②填空5题而非6题③综合与实践题设计(吸管乐器)④基础题比例略低(56%)压轴题比例高(17%)</p>
+    <p><strong>更新日期：</strong>一模后整理 | 预计二模前补充"补考风险预案"</p>
+  </div>
+</div>
+
+</body>
+</html>
