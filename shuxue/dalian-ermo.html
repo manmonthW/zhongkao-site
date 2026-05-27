@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>大连二模数学试卷深度分析</title>
+<style>
+:root{--bg:#f5f1e8;--primary:#1a5276;--text:#1a1815;--muted:#6b6257;--card:#fbf8f1;--line:#d9cfbf;--good:#2f6b3b;--warn:#9b6b00;--bad:#8b2e2e;--accent:#1a5276;--accent-light:rgba(26,82,118,0.08);--accent-border:rgba(26,82,118,0.2)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Serif SC","Source Han Serif SC",serif;color:var(--text);background:radial-gradient(circle at 20% 12%,rgba(26,82,118,0.08),transparent 28%),radial-gradient(circle at 82% 90%,rgba(26,82,118,0.06),transparent 26%),var(--bg);line-height:1.75}
+.container{width:min(1120px,92vw);margin:28px auto 48px}
+header{background:linear-gradient(135deg,var(--accent-light),rgba(245,241,232,0.9));border:1px solid var(--line);border-left:6px solid var(--primary);border-radius:14px;padding:24px 26px;box-shadow:0 8px 24px rgba(26,24,21,0.06)}
+h1{margin:0 0 6px;font-size:clamp(1.6rem,2.7vw,2.3rem);letter-spacing:1px;color:var(--primary)}
+.subtitle{margin:0;color:var(--muted);font-size:.98rem}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px;font-size:.88rem;color:var(--muted)}
+nav{margin:18px 0 26px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+nav a{color:var(--text);text-decoration:none;margin-right:16px;font-size:.95rem}
+nav a.active{color:var(--primary);font-weight:700;border-bottom:2px solid var(--primary)}
+section{background:rgba(251,248,241,0.88);border:1px solid var(--line);border-radius:14px;margin-top:16px;padding:20px 22px;box-shadow:0 6px 20px rgba(26,24,21,0.04)}
+h2{margin:0 0 14px;font-size:1.28rem;color:var(--primary);border-bottom:1px solid var(--accent-border);padding-bottom:8px}
+h3{margin:16px 0 8px;font-size:1.06rem;color:#1a3d5c}
+p{margin:8px 0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:10px}
+.kpi-card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.kpi-title{color:var(--muted);font-size:.86rem;margin-bottom:3px}
+.kpi-value{font-size:1.2rem;color:var(--primary);font-weight:700}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.94rem;background:#fffef9}
+th,td{border:1px solid var(--line);padding:8px 9px;vertical-align:top}
+th{background:#dce8f0;color:#1a3d5c;text-align:left;font-weight:700}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.module-card{border:1px solid var(--line);border-left:4px solid var(--primary);border-radius:10px;background:#fffdf7;padding:12px}
+.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:999px;border:1px solid var(--line);margin-right:6px;margin-bottom:6px;color:#51493f;background:#f8f3e8}
+.level-high{color:var(--bad);font-weight:700}
+.level-mid{color:var(--warn);font-weight:700}
+.level-good{color:var(--good);font-weight:700}
+ul,ol{margin:8px 0;padding-left:20px}
+li{margin:3px 0}
+.card-highlight{background:linear-gradient(135deg,var(--accent-light),#f0ebe0);border:1px solid var(--accent-border);border-left:4px solid var(--primary);border-radius:10px;padding:14px 16px;margin:12px 0}
+.card-highlight strong{color:var(--primary)}
+.card-highlight.warn{border-left-color:var(--warn)}.card-highlight.warn strong{color:var(--warn)}
+.card-highlight.good{border-left-color:var(--good)}.card-highlight.good strong{color:var(--good)}
+.diff-easy{background:#d5f5e3;color:#1e8449;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-mid{background:#fef9e7;color:#9a7d0a;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+.diff-hard{background:#fadbd8;color:#922b21;padding:2px 8px;border-radius:4px;font-size:.82rem;font-weight:700}
+footer{margin-top:18px;color:var(--muted);font-size:.86rem;text-align:center}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📐 大连二模 · 数学试卷深度分析</h1>
+  <p class="subtitle">2026年大连市初中学业水平考试模拟考试（二）| 数学学科 | 五维分析模型</p>
+  <div class="meta">
+    <span class="chip">总题量：23题</span>
+    <span class="chip">总分：120分</span>
+    <span class="chip">考试时间：120分钟</span>
+    <span class="chip">选择10题30分 + 填空5题15分 + 解答8题75分</span>
+    <span class="chip">压轴：Q22圆+三角形综合(12分) · Q23抛物线(13分)</span>
+    <span class="chip">⚠️ 无答案卷，答案为推算</span>
+  </div>
+</header>
+
+<nav>
+  <a href="../jijiu/index.html">冲刺加油站</a>
+  <a href="../yuwen/index.html">语文</a>
+  <a href="index.html" class="active">数学</a>
+  <a href="../wuli/index.html">物理</a>
+  <a href="../huaxue/index.html">化学</a>
+  <a href="../yingyu/index.html">英语</a>
+  <a href="../lishi/index.html">历史</a>
+  <a href="../daofa/index.html">道法</a>
+  <a href="https://baokao.keaimentor.com/" target="_blank">报考指南</a>
+</nav>
+
+<!-- ========== 维度一：试卷结构 ========== -->
+<section id="d1">
+  <h2>维度一 · 骨架图：结构解剖</h2>
+
+  <div class="kpi">
+    <div class="kpi-card"><div class="kpi-title">选择题</div><div class="kpi-value">Q1-Q10 · 30分</div></div>
+    <div class="kpi-card"><div class="kpi-title">填空题</div><div class="kpi-value">Q11-Q15 · 15分</div></div>
+    <div class="kpi-card"><div class="kpi-title">解答题</div><div class="kpi-value">Q16-Q23 · 75分</div></div>
+    <div class="kpi-card"><div class="kpi-title">基础计算</div><div class="kpi-value">Q16 · 10分</div></div>
+    <div class="kpi-card"><div class="kpi-title">统计</div><div class="kpi-value">Q17 · 8分</div></div>
+    <div class="kpi-card"><div class="kpi-title">方程组</div><div class="kpi-value">Q18 · 8分</div></div>
+    <div class="kpi-card"><div class="kpi-title">函数综合</div><div class="kpi-value">Q19 · 8分</div></div>
+    <div class="kpi-card"><div class="kpi-title">三角函数应用</div><div class="kpi-value">Q20 · 8分</div></div>
+    <div class="kpi-card"><div class="kpi-title">圆</div><div class="kpi-value">Q21 · 8分</div></div>
+    <div class="kpi-card"><div class="kpi-title">综合探究(圆)</div><div class="kpi-value">Q22 · 12分</div></div>
+    <div class="kpi-card"><div class="kpi-title">抛物线压轴</div><div class="kpi-value">Q23 · 13分</div></div>
+  </div>
+
+  <h3>1.1 题型分值分布</h3>
+  <table>
+    <thead><tr><th>题型</th><th>题号</th><th>题量</th><th>分值</th><th>占比</th><th>建议用时</th></tr></thead>
+    <tbody>
+      <tr><td>选择题</td><td>1~10</td><td>10</td><td>30分（3分/题）</td><td>25.0%</td><td>25~30分钟</td></tr>
+      <tr><td>填空题</td><td>11~15</td><td>5</td><td>15分（3分/题）</td><td>12.5%</td><td>12~15分钟</td></tr>
+      <tr><td>解答题</td><td>16~23</td><td>8</td><td>75分</td><td>62.5%</td><td>75~80分钟</td></tr>
+      <tr style="font-weight:700;background:#dce8f0"><td>合计</td><td>1~23</td><td>23</td><td>120分</td><td>100%</td><td>120分钟</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.2 结构对比：一模 vs 二模</h3>
+  <table>
+    <thead><tr><th>维度</th><th>一模</th><th>二模</th><th>变化</th></tr></thead>
+    <tbody>
+      <tr><td>总结构</td><td>23题120分</td><td>23题120分</td><td class="level-good">不变</td></tr>
+      <tr><td>选择/填空/解答</td><td>10+5+8</td><td>10+5+8</td><td class="level-good">不变</td></tr>
+      <tr><td>Q16计算</td><td>整式+分式(10分)</td><td>整式+分式(10分)</td><td class="level-good">不变</td></tr>
+      <tr><td>Q17</td><td>增长率方程(8分)</td><td>统计图(8分)</td><td class="level-mid">方程→统计</td></tr>
+      <tr><td>Q18</td><td>统计(8分)</td><td>方程组·九章算术(8分)</td><td class="level-mid">统计→方程</td></tr>
+      <tr><td>Q19</td><td>全等证明(8分)</td><td>反比例+一次函数(8分)</td><td class="level-mid">几何→函数</td></tr>
+      <tr><td>Q20</td><td>函数综合(8分)</td><td>三角函数应用(8分)</td><td class="level-mid">调整</td></tr>
+      <tr><td>Q21</td><td>综合实践·吸管乐器(8分)</td><td>圆(8分)</td><td class="level-mid">实践→几何</td></tr>
+      <tr><td><strong>Q22</strong></td><td><strong>抛物线(12分)</strong></td><td><strong>综合探究·圆+切线(12分)</strong></td><td class="level-high">⚠️ 代数→几何</td></tr>
+      <tr><td><strong>Q23</strong></td><td><strong>等腰三角形(13分)</strong></td><td><strong>抛物线(13分)</strong></td><td class="level-high">⚠️ 几何→代数</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-highlight">
+    <strong>关键发现：压轴题顺序"回归正常"</strong><br/>
+    一模的压轴题顺序异常——Q22代数(抛物线)+Q23几何(等腰三角形)，与辽宁惯例（Q22几何+Q23代数）相反。<strong>二模回归标准顺序</strong>：Q22几何压轴（圆+三角形综合探究12分）+ Q23代数压轴（抛物线13分）。这说明一模的顺序调换可能只是一次性测试，中考大概率仍维持"Q22几何+Q23代数"的标准格局。
+  </div>
+
+  <div class="card-highlight">
+    <strong>Q17/Q18位置互换：</strong>一模Q17=增长率方程、Q18=统计；二模Q17=统计、Q18=方程组(九章算术)。说明<strong>统计和方程在中档题中的出题位置不固定</strong>，但都必考。二模引入《九章算术》数学文化情境，与一模的《算学启蒙》同属数学史融合命题趋势。
+  </div>
+</section>
+
+<!-- ========== 维度二：逐题档案 ========== -->
+<section id="d2">
+  <h2>维度二 · 题型谱：逐题档案</h2>
+
+  <h3>2.1 选择题（第1~10题，每题3分）</h3>
+  <table>
+    <thead><tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th><th>答案</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td>9的相反数</td><td>有理数·相反数</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>A. -9</td></tr>
+      <tr><td>Q2</td><td>无理数判断</td><td>实数分类</td><td>概念辨析</td><td><span class="diff-easy">★☆☆</span></td><td>C. √3</td></tr>
+      <tr><td>Q3</td><td>根式/指数运算判断</td><td>实数运算(零次幂/立方根/平方根)</td><td>计算与判断</td><td><span class="diff-easy">★☆☆</span></td><td>B. 3⁰=1</td></tr>
+      <tr><td>Q4</td><td>商品利润计算</td><td>一次方程·代数式</td><td>建模思想</td><td><span class="diff-easy">★☆☆</span></td><td>D. 0.96a</td></tr>
+      <tr><td>Q5</td><td>多边形外角和→正多边形</td><td>多边形外角和360°</td><td>转化思想</td><td><span class="diff-easy">★☆☆</span></td><td>C. 六边形</td></tr>
+      <tr><td>Q6</td><td>一元二次方程根的判别式</td><td>判别式Δ=b²-4ac</td><td>Δ判定法</td><td><span class="diff-mid">★★☆</span></td><td>D. 无实数根</td></tr>
+      <tr><td>Q7</td><td>正方形中扇形面积</td><td>扇形面积·圆心角90°</td><td>公式应用</td><td><span class="diff-mid">★★☆</span></td><td>C. 4π</td></tr>
+      <tr><td>Q8</td><td>角平分线性质·角度计算</td><td>全等三角形·角平分线</td><td>推理判断</td><td><span class="diff-mid">★★☆</span></td><td>A. 40°</td></tr>
+      <tr><td>Q9</td><td>位似图形·坐标变换</td><td>位似变换·比例</td><td>图形变换</td><td><span class="diff-mid">★★☆</span></td><td>B. (4,2)</td></tr>
+      <tr><td>Q10</td><td>行程问题·分式方程列式</td><td>分式方程·行程公式</td><td>建模思想</td><td><span class="diff-mid">★★☆</span></td><td>B</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2 填空题（第11~15题，每题3分）</h3>
+  <table>
+    <thead><tr><th>题号</th><th>考查内容</th><th>知识点</th><th>数学思想方法</th><th>难度</th></tr></thead>
+    <tbody>
+      <tr><td>Q11</td><td>概率估计(蔬菜种子发芽频率→概率)</td><td>频率估计概率</td><td>统计思想</td><td><span class="diff-easy">★☆☆</span></td></tr>
+      <tr><td>Q12</td><td>平行线+圆弧→∠GPD</td><td>平行线性质·等腰三角形</td><td>推理链</td><td><span class="diff-mid">★★☆</span></td></tr>
+      <tr><td>Q13</td><td>菱形对角线，∠A:∠ABC=1:2，BD=4→△ABD周长</td><td>菱形性质·三角函数</td><td>分类+计算</td><td><span class="diff-mid">★★☆</span></td></tr>
+      <tr><td>Q14</td><td>不等式组 {2x-1≥2, 3x≤6} 的解集</td><td>一元一次不等式组</td><td>数轴法</td><td><span class="diff-easy">★☆☆</span></td></tr>
+      <tr><td>Q15</td><td>y=x²-4x+3在[0,3]上最值，m-n=?</td><td>二次函数·闭区间最值</td><td>配方+端点比较</td><td><span class="diff-mid">★★☆</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.3 解答题（第16~23题，共75分）</h3>
+  <table>
+    <thead><tr><th>题号</th><th>分值</th><th>考查内容</th><th>知识点</th><th>难度</th><th>答案要点</th></tr></thead>
+    <tbody>
+      <tr><td>Q16(1)</td><td>5</td><td>整式化简：6x²+3/2(5x-1)-2x(3x+1)</td><td>整式运算</td><td><span class="diff-easy">★☆☆</span></td><td>展开→合并同类项</td></tr>
+      <tr><td>Q16(2)</td><td>5</td><td>分式化简：(a+(2ab+b²)/a)÷(a+b)/a</td><td>分式运算·因式分解</td><td><span class="diff-mid">★★☆</span></td><td>通分→提公因式→约分</td></tr>
+      <tr><td>Q17</td><td>8</td><td>统计图(条形+扇形)：全民阅读书籍喜好</td><td>统计图·扇形圆心角·样本估计总体</td><td><span class="diff-easy">★☆☆</span></td><td>(1)圆心角 (2)小说人数 (3)估计860人</td></tr>
+      <tr><td>Q18</td><td>8</td><td>二元一次方程组(九章算术)：甲乙持钱</td><td>二元一次方程组</td><td><span class="diff-easy">★☆☆</span></td><td>设甲x乙y，列方程组求解</td></tr>
+      <tr><td>Q19</td><td>8</td><td>反比例+一次函数交点→不等式→证AC=AD</td><td>反比例函数·一次函数·平移·全等/等腰</td><td><span class="diff-mid">★★☆</span></td><td>(1)k₁=2,求m→一次函数 (2)图象法 (3)坐标计算证明</td></tr>
+      <tr><td>Q20</td><td>8</td><td>公交站台雨棚截面·三角函数应用</td><td>三角函数(sin/cos/tan 20°)·几何建模</td><td><span class="diff-mid">★★☆</span></td><td>建立直角三角形→利用给定三角函数值计算CH</td></tr>
+      <tr><td>Q21</td><td>8</td><td>圆：直径AB，∠CDB=2∠ABB (1)证CD=BD (2)求DE</td><td>圆周角·直径性质·相似/等腰</td><td><span class="diff-hard">★★★</span></td><td>(1)圆周角定理+等腰 (2)相似或勾股定理</td></tr>
+      <tr><td>Q22</td><td>12</td><td>综合探究：圆+等腰三角形+切线<br/>(1)CE与⊙A相切→求BC (2)∠BAC=90°→求CH</td><td>圆的切线·相似三角形·勾股定理</td><td><span class="diff-hard">★★★</span></td><td>(1)切线⊥半径→勾股+相似 (2)作辅助线→全等/相似</td></tr>
+      <tr><td>Q23</td><td>13</td><td>抛物线压轴：y=ax²+la+3<br/>(1)求B坐标和m (2)①求表达式 ②面积比→求PF ③动点Q→d取值范围</td><td>二次函数·面积比·动点·区间分析</td><td><span class="diff-hard">★★★</span></td><td>(1)令x=0→B(0,3), nm²+(6+1)m-6=0<br/>(2)①代入A(6,0)求a ②坐标法求面积比 ③抛物线单调性+矩形约束</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-highlight">
+    <strong>⚠️ 压轴题回归标准顺序：</strong>二模Q22=几何压轴（圆+切线+等腰三角形综合探究12分），Q23=代数压轴（抛物线13分），符合辽宁中考标准"Q22几何+Q23代数"格局。一模的反转（Q22代数+Q23几何）未延续。
+  </div>
+</section>
+
+<!-- ========== 维度三：知识定位 ========== -->
+<section id="d3">
+  <h2>维度三 · 考点标签：知识定位</h2>
+
+  <h3>3.1 知识板块分布</h3>
+  <table>
+    <thead><tr><th>知识板块</th><th>对应题号</th><th>分值</th><th>占比</th></tr></thead>
+    <tbody>
+      <tr><td><strong>数与式</strong></td><td>Q1, Q2, Q3, Q14, Q16</td><td>22分</td><td>18.3%</td></tr>
+      <tr><td><strong>方程与不等式</strong></td><td>Q4, Q6, Q10, Q14, Q18</td><td>19分</td><td>15.8%</td></tr>
+      <tr><td><strong>函数</strong></td><td>Q15, Q19, Q23</td><td>24分</td><td>20.0%</td></tr>
+      <tr><td><strong>三角形与四边形</strong></td><td>Q5, Q8, Q13</td><td>9分</td><td>7.5%</td></tr>
+      <tr><td><strong>圆</strong></td><td>Q7, Q12, Q21, Q22</td><td>26分</td><td>21.7%</td></tr>
+      <tr><td><strong>图形变换</strong></td><td>Q9</td><td>3分</td><td>2.5%</td></tr>
+      <tr><td><strong>三角函数</strong></td><td>Q20</td><td>8分</td><td>6.7%</td></tr>
+      <tr><td><strong>统计与概率</strong></td><td>Q11, Q17</td><td>11分</td><td>9.2%</td></tr>
+      <tr style="font-weight:700;background:#dce8f0"><td>合计</td><td>—</td><td>120分</td><td>~100%</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.2 一模 vs 二模 知识板块对比</h3>
+  <table>
+    <thead><tr><th>知识板块</th><th>一模占比</th><th>二模占比</th><th>变化趋势</th></tr></thead>
+    <tbody>
+      <tr><td>函数(含抛物线)</td><td>约22%</td><td>20.0%</td><td class="level-good">基本持平</td></tr>
+      <tr><td>圆</td><td>约15%</td><td>21.7%</td><td class="level-high">⬆ 大幅提升</td></tr>
+      <tr><td>三角函数</td><td>约5%</td><td>6.7%</td><td class="level-mid">↑ 小幅提升</td></tr>
+      <tr><td>统计与概率</td><td>约11%</td><td>9.2%</td><td class="level-mid">↓ 小幅下降</td></tr>
+      <tr><td>方程</td><td>约18%</td><td>15.8%</td><td class="level-good">基本持平</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-highlight">
+    <strong>圆的权重显著提升：</strong>二模中"圆"相关题目达26分(21.7%)，涵盖Q7扇形面积(选择)、Q12圆弧+平行线(填空)、Q21圆周角+直径(解答8分)、Q22切线+等腰综合(解答12分)。一模仅约15%。这与辽宁中考近年加大圆的考查力度的趋势一致——<strong>圆几乎是几何压轴的必选载体</strong>。
+  </div>
+
+  <h3>3.3 逐题知识-能力映射</h3>
+  <table>
+    <thead><tr><th>题号</th><th>知识维度</th><th>能力维度</th><th>教材定位(人教版)</th></tr></thead>
+    <tbody>
+      <tr><td>Q1</td><td>有理数·相反数</td><td>识记</td><td>七上·第1章</td></tr>
+      <tr><td>Q2</td><td>实数·无理数概念</td><td>辨析</td><td>八上·第13章</td></tr>
+      <tr><td>Q3</td><td>零次幂·立方根·平方根</td><td>计算判断</td><td>七上/八上</td></tr>
+      <tr><td>Q4</td><td>代数式·百分数应用</td><td>建模</td><td>七上·第2章</td></tr>
+      <tr><td>Q5</td><td>多边形外角和</td><td>推理</td><td>八上·第11章</td></tr>
+      <tr><td>Q6</td><td>一元二次方程判别式</td><td>计算判断</td><td>九上·第21章</td></tr>
+      <tr><td>Q7</td><td>扇形面积</td><td>计算</td><td>九上·第24章</td></tr>
+      <tr><td>Q8</td><td>角平分线性质·全等</td><td>推理</td><td>八上·第12-13章</td></tr>
+      <tr><td>Q9</td><td>位似变换</td><td>图形变换</td><td>九下·第27章</td></tr>
+      <tr><td>Q10</td><td>分式方程应用·行程</td><td>建模</td><td>八下·第16章</td></tr>
+      <tr><td>Q11</td><td>频率→概率估计</td><td>统计推断</td><td>九上·第25章</td></tr>
+      <tr><td>Q12</td><td>平行线性质·等腰三角形</td><td>推理计算</td><td>七下·第5章/八上·第13章</td></tr>
+      <tr><td>Q13</td><td>菱形对角线·角度比</td><td>综合计算</td><td>八下·第18章</td></tr>
+      <tr><td>Q14</td><td>一元一次不等式组</td><td>解方程</td><td>七下·第9章</td></tr>
+      <tr><td>Q15</td><td>二次函数闭区间最值</td><td>函数分析</td><td>九上·第22章</td></tr>
+      <tr><td>Q16</td><td>整式·分式运算</td><td>计算化简</td><td>七上/八下</td></tr>
+      <tr><td>Q17</td><td>统计图(条形+扇形)·样本估计</td><td>数据分析</td><td>七上·第10章/八下·第20章</td></tr>
+      <tr><td>Q18</td><td>二元一次方程组·数学文化</td><td>建模求解</td><td>七下·第8章</td></tr>
+      <tr><td>Q19</td><td>反比例函数+一次函数·平移</td><td>综合分析</td><td>八下·第17-19章/九上·第26章</td></tr>
+      <tr><td>Q20</td><td>三角函数实际应用</td><td>几何建模</td><td>九下·第28章</td></tr>
+      <tr><td>Q21</td><td>圆·直径·圆周角</td><td>证明计算</td><td>九上·第24章</td></tr>
+      <tr><td>Q22</td><td>圆切线+等腰三角形+综合探究</td><td>探究证明</td><td>九上·第24章(综合)</td></tr>
+      <tr><td>Q23</td><td>二次函数·面积比·动点</td><td>综合建模</td><td>九上·第22章(综合)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ========== 维度四：命题DNA ========== -->
+<section id="d4">
+  <h2>维度四 · 命题DNA：趋势解码</h2>
+
+  <div class="card-highlight">
+    <strong>趋势一 · 压轴题顺序回归标准</strong><br/>
+    一模Q22=代数(抛物线)+Q23=几何(等腰三角形)，与辽宁惯例相反。二模Q22=几何(圆+切线综合)+Q23=代数(抛物线)，回归标准。<strong>结论：中考大概率维持"Q22几何+Q23代数"格局</strong>，一模的反转属测试性质。备考时仍应按标准顺序分配时间：Q22几何≤15分钟、Q23代数≤20分钟。
+  </div>
+
+  <div class="card-highlight">
+    <strong>趋势二 · 圆的地位持续强化</strong><br/>
+    二模中圆相关题目占21.7%（选择Q7+填空Q12+解答Q21+压轴Q22），涵盖<strong>扇形面积→圆弧性质→圆周角定理→切线综合</strong>四级递进。Q22的"综合与实践"活动以圆和等腰三角形为载体，设计了"初步探究(切线求BC)→深入探究(∠BAC=90°求CH)"两级问题链。<strong>圆几乎可以确认为几何压轴的核心考点</strong>。
+  </div>
+
+  <div class="card-highlight">
+    <strong>趋势三 · 数学文化持续融入</strong><br/>
+    一模用《算学启蒙》，二模用《九章算术》（Q18"今有甲、乙二人持钱不知其数"）。数学文化情境已成为大连卷的固定组件。<strong>预计中考仍会出现数学史相关情境题</strong>，但本质仍是方程/不等式等基础代数知识，不需要额外的历史知识——关键是审题，把文言文叙述转化为数学表达。
+  </div>
+
+  <div class="card-highlight">
+    <strong>趋势四 · 抛物线压轴延续"三小问"结构</strong><br/>
+    一模Q22和二模Q23都是抛物线压轴题，都采用"(1)基础设问 → (2)中档计算 → (3)动点/运动/区间分析"的三级结构。二模Q23的第(2)题第③小问"点Q沿折线运动→求d的取值范围"是典型的<strong>动点+抛物线单调性+矩形约束</strong>综合问题，属最高难度。
+  </div>
+
+  <div class="card-highlight">
+    <strong>趋势五 · 生活情境题保持多元</strong><br/>
+    二模情境覆盖：商品利润(Q4)、红色教育基地行程(Q10)、蔬菜种子发芽(Q11)、全民阅读(Q17)、九章算术(Q18)、公交站台雨棚(Q20)。一模情境覆盖：消费补贴、课间15分钟、算学启蒙、吸管乐器等。情境化命题比例保持在35-40%。
+  </div>
+
+  <h3>4.1 难度梯度分析</h3>
+  <table>
+    <thead><tr><th>难度</th><th>题号</th><th>预估分值</th><th>占比</th></tr></thead>
+    <tbody>
+      <tr><td><span class="diff-easy">基础</span></td><td>Q1-Q5, Q11, Q14, Q16, Q17, Q18</td><td>≈52分</td><td>43%</td></tr>
+      <tr><td><span class="diff-mid">中档</span></td><td>Q6-Q10, Q12, Q13, Q15, Q19, Q20</td><td>≈35分</td><td>29%</td></tr>
+      <tr><td><span class="diff-hard">压轴</span></td><td>Q21, Q22, Q23</td><td>≈33分</td><td>28%</td></tr>
+      <tr style="font-weight:700;background:#dce8f0"><td>合计</td><td>—</td><td>120分</td><td>100%</td></tr>
+    </tbody>
+  </table>
+  <p>难度梯度约 <strong>4.3 : 2.9 : 2.8</strong>，基础题比例低于一模(5.6)，中档和压轴比例均有提升，<strong>整体难度高于一模</strong>。</p>
+</section>
+
+<!-- ========== 维度五：作战地图 ========== -->
+<section id="d5">
+  <h2>维度五 · 作战地图：行动转化</h2>
+
+  <h3>5.1 分层得分策略</h3>
+  <table>
+    <thead><tr><th>目标分段</th><th>策略</th><th>目标题目</th><th>预期分数</th></tr></thead>
+    <tbody>
+      <tr><td>保底80分</td><td>确保基础题零失误</td><td>Q1-Q5选择(15分) + Q11,Q14填空(6分) + Q16(10分) + Q17(8分) + Q18(8分)</td><td>~47分 + 中档Q6-Q10部分(~12分) + Q19前两问(~5分) + Q20(~5分) = ~70-80分</td></tr>
+      <tr><td>冲刺90-100分</td><td>突破中档题+压轴前两问</td><td>选择全对(30分) + 填空前4题(12分) + Q16-Q20全做(42分) + Q21(1)(4分) + Q22(1)(4分) + Q23(1)(4分)</td><td>~96分</td></tr>
+      <tr><td>冲刺110+</td><td>攻克压轴题第二/三问</td><td>上述 + Q15(3分) + Q21(2) + Q22(2) + Q23(2)①②</td><td>~110分+</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 必拿分清单</h3>
+  <div class="card-highlight good">
+    <strong>选择题必拿(18分)：</strong>Q1(相反数) · Q2(无理数) · Q3(运算) · Q4(利润) · Q5(多边形) · Q6(判别式) → 这6题纯基础，零失误<br/>
+    <strong>填空题必拿(9分)：</strong>Q11(概率估计) · Q14(不等式组) · Q12(平行线角度) → 常规题型<br/>
+    <strong>解答题必拿(26分)：</strong>Q16全题(计算+分式，10分) · Q17全题(统计图，8分) · Q18全题(方程组，8分) → 基础解答题<br/>
+    <strong>必拿合计：≈53分</strong>（不含中档题）
+  </div>
+
+  <h3>5.3 重点突破清单</h3>
+  <div class="grid-2">
+    <div class="module-card">
+      <h4>🔴 圆的综合(Q21+Q22) = 20分</h4>
+      <p>二模圆占21.7%，几何压轴Q22以圆为核心载体。</p>
+      <ul>
+        <li>圆周角定理 + 直径对应直角</li>
+        <li>切线性质(切点连心⊥切线)</li>
+        <li>弦切角 + 相似三角形</li>
+        <li>"综合探究"题型：问题情境→初步探究→深入探究</li>
+      </ul>
+    </div>
+    <div class="module-card">
+      <h4>🔴 抛物线压轴(Q23) = 13分</h4>
+      <p>必考，至少拿到第(1)问和第(2)①的8分。</p>
+      <ul>
+        <li>抛物线与坐标轴交点(令x=0/y=0)</li>
+        <li>面积比 → 坐标法求三角形面积</li>
+        <li>动点+单调性：闭区间内抛物线的升降</li>
+        <li>矩形约束下求取值范围</li>
+      </ul>
+    </div>
+    <div class="module-card">
+      <h4>🟡 函数综合(Q19) = 8分</h4>
+      <p>反比例+一次函数的交点问题是高频题型。</p>
+      <ul>
+        <li>已知交点求函数表达式</li>
+        <li>图象法解不等式</li>
+        <li>坐标系中的证明(AC=AD)</li>
+      </ul>
+    </div>
+    <div class="module-card">
+      <h4>🟡 三角函数应用(Q20) = 8分</h4>
+      <p>实际情境中的三角函数计算。</p>
+      <ul>
+        <li>建立直角三角形模型</li>
+        <li>利用特殊角(20°)的三角函数近似值</li>
+        <li>结果精确到0.1m——注意精度要求</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>5.4 一模预测兑现率</h3>
+  <table>
+    <thead><tr><th>一模特征/预测</th><th>二模是否兑现</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>压轴顺序可能回归标准</td><td class="level-good">✅ 兑现</td><td>Q22=几何, Q23=代数, 回归标准</td></tr>
+      <tr><td>圆仍是几何重点</td><td class="level-good">✅ 兑现</td><td>圆占比从15%→21.7%，更加重要</td></tr>
+      <tr><td>数学文化情境保持</td><td class="level-good">✅ 兑现</td><td>一模《算学启蒙》→二模《九章算术》</td></tr>
+      <tr><td>抛物线必考</td><td class="level-good">✅ 兑现</td><td>仍是13分代数压轴</td></tr>
+      <tr><td>综合实践题保持</td><td class="level-good">✅ 兑现</td><td>一模吸管乐器→二模Q22综合探究</td></tr>
+      <tr><td>统计必考</td><td class="level-good">✅ 兑现</td><td>一模Q18统计→二模Q17统计</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.5 基于二模的中考冲刺建议</h3>
+  <div class="card-highlight warn">
+    <strong>⚠️ 高频失分陷阱（二模版）</strong>
+    <ul>
+      <li><strong>陷阱1：</strong>Q6判别式计算x²-2x+8=0，注意c=8不是-8，Δ=4-32=-28<0 → 容易误算为有根</li>
+      <li><strong>陷阱2：</strong>Q7正方形内扇形，圆心角是90°(正方形内角)不是180° → 面积=(90/360)π·4²=4π</li>
+      <li><strong>陷阱3：</strong>Q10行程方程列式，"过了0.25h后"要正确翻译为时间差关系 → 慢车时间-0.25=快车时间</li>
+      <li><strong>陷阱4：</strong>Q15闭区间最值，顶点x=2在[0,3]内 → 最小值在顶点，最大值需比较两端点f(0)和f(3)</li>
+      <li><strong>陷阱5：</strong>Q22切线题，切线⊥半径是关键条件 → 不要忘记这个直角关系</li>
+      <li><strong>陷阱6：</strong>Q23第③问动点运动，注意"折线CH→HA"的路径方向和矩形约束</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>数据来源：大连二模数学试卷PDF（8页OCR提取） · ⚠️ 无答案卷，答案为推算 · 分析日期：2026年5月27日</p>
+  <p>对比基准：大连一模数学试卷分析（2026年4月）</p>
+</footer>
+
+</div>
+</body>
+</html>
